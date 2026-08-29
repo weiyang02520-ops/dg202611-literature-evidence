@@ -1,0 +1,2447 @@
+{
+ "merged": [
+  {
+   "area": "UWB",
+   "queries": [
+    {
+     "query": "UWB NLOS identification",
+     "tool": "OpenAlex API (python urllib, https://api.openalex.org/works?search=...)",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 6,
+     "notes": "命中 Maranò 2010 JSAC（收录）；同时命中 Güvenç WCNC 2007（后改由查询9核验收录）；rejected: Khodjaev 2009 综述(旧)、Li 2013 ICCT、Zeng 2019 ICCE、Wu 2024 IoT-J TinyML、Deng 2023 GAF（重叠/池上限）、Güvenç EURASIP 2008（与会议版重复）"
+    },
+    {
+     "query": "UWB NLOS mitigation",
+     "tool": "OpenAlex API",
+     "screened": 8,
+     "accepted": 3,
+     "rejected": 2,
+     "notes": "命中并收录 Kim 2022 IoT-J、Yu 2018 TVT、Wang 2023 Electronics 综述、Barral 2019 Sensors（同页复现）；rejected: Yang 2018 SPGP（纯仿真）、Khodjaev 2009"
+    },
+    {
+     "query": "UWB positioning accuracy LOS NLOS",
+     "tool": "OpenAlex API",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 3,
+     "notes": "命中并收录 Jiang 2020 Comm. Letters；Jourdan 2008 TAES 亦在此页出现（经单篇 DOI 抓取核验后收录）；rejected: Yang 2021 JSEN(IMU虚拟点补偿)、Cui 2020 MWT-CNN（纯仿真）、Yang 2023 JSEN SVM"
+    },
+    {
+     "query": "tightly coupled UWB IMU",
+     "tool": "OpenAlex API",
+     "screened": 7,
+     "accepted": 1,
+     "rejected": 4,
+     "notes": "命中并收录 Hol 2009 ICUWB；rejected/未收录: Miraglia 2017、Wen 2020 TVT（行人）、Xu 2016 i2MTC、Nguyen 2021 VIRAL SLAM arXiv:2105.03296（池上限）"
+    },
+    {
+     "query": "UWB inertial odometry",
+     "tool": "OpenAlex API",
+     "screened": 7,
+     "accepted": 1,
+     "rejected": 5,
+     "notes": "命中并收录 Hyun & Myung 2021 NR-UIO；未收录: Lin 2022 Measurement、Gao 2022 IET、Shin 2021 MIR-VIO、Delama 2023 UVIO、Xu 2022 Omni-Swarm T-RO"
+    },
+    {
+     "query": "UWB GNSS integration fusion",
+     "tool": "OpenAlex API",
+     "screened": 7,
+     "accepted": 2,
+     "rejected": 1,
+     "notes": "命中并收录 Guo 2022 JSEN(GNSS/UWB时间标定+自适应加权)、Di Pietra 2020（后按池上限让位给 Wang 2021，记 rejected）；Alarifi 2016 与 Barbieri 2021 亦复现；rejected: Hsu 2017（GNSS 多径 ML，非 UWB）"
+    },
+    {
+     "query": "UWB ranging error model",
+     "tool": "OpenAlex API",
+     "screened": 7,
+     "accepted": 3,
+     "rejected": 3,
+     "notes": "命中并收录 Bellusci 2008（误差模型）、Dardari 2009 Proc. IEEE、Wymeersch 2012 TComm；rejected: Dizdarevic 2007、Şahinoğlu 2006、Perakis 2018 IPIN（池上限/重叠）"
+    },
+    {
+     "query": "UWB anchor placement geometry dilution of precision",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 3,
+     "rejected": 3,
+     "notes": "命中并收录 Cao 2023 TIM(WPDOP)、Guo 2022 Remote Sensing(窄空间DOP)、Jiang 2022 JAT(停车场布站)；未收录: Albaidhani 2019、Wang 2020 IEEE Access(DOP适用性)、Fontaine 2020 autoencoder"
+    },
+    {
+     "query": "robust adaptive Kalman filter UWB localization",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 4,
+     "rejected": 1,
+     "notes": "命中并收录 Dong 2023 IRACKF、Juston 2025 JSEN(轮式差分机器人)、Li 2020 JSEN(井下ESKF)、Zou 2023 Sensors(自适应R)；rejected: Chen 2015 WiFi/PDR（非UWB）"
+    },
+    {
+     "query": "UWB RSSI first path power NLOS features",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 1,
+     "rejected": 3,
+     "notes": "命中并收录 Che 2022 JSEN(GGD)；Barral 2019 复现；未收录: Barral 2020 PDP加速（同团队重叠）、Ridolfi 2021 ACM CSUR、Leitch 2023 多技术综述"
+    },
+    {
+     "query": "UWB indoor positioning survey review",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 1,
+     "rejected": 5,
+     "notes": "命中并收录 Alarifi 2016 Sensors 综述；rejected: Al-Fuqaha 2015 IoT、Yassin 2016、Brena 2017、Mautz 2012、Mazhar 2017（通用/重叠）"
+    },
+    {
+     "query": "UWB dataset LOS NLOS public",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 3,
+     "rejected": 2,
+     "notes": "命中并收录 Sang 2020 Applied Sciences、Zhao 2024 IJRR UTIL 数据集、Fontaine 2023 IoT-J 迁移学习；rejected: Leitch 2023、Wang 2025 JESTCH（与 Fontaine 2023 重叠）"
+    },
+    {
+     "query": "GNSS UWB tightly coupled urban canyon",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 2,
+     "rejected": 2,
+     "notes": "命中并收录 Wang 2021 Remote Sensing(无缝GNSS/UWB/INS/地图)、Chen 2022 Remote Sensing(UWB/LiDAR NLOS识别)；rejected: Wang 2016 V2I GPS/INS/UWB（池上限）、Gakne 2018（GNSS/视觉，非UWB）"
+    },
+    {
+     "query": "UWB number of anchors accuracy experimental",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 0,
+     "rejected": 3,
+     "notes": "主要为已收录文献复现（Li 2020、Barbieri 2021、Wymeersch 2012）；rejected/未收录: Poulose 2020 LSTM、Ridolfi 2018 运动姿态实测、Djosic 2020 指纹"
+    },
+    {
+     "query": "UWB LiDAR fusion robot localization",
+     "tool": "OpenAlex API",
+     "screened": 6,
+     "accepted": 1,
+     "rejected": 3,
+     "notes": "命中并收录 Zhen & Scherer 2019 ICRA(隧道可定位性)；Chen 2022 RS 复现；rejected: Song 2019 ICRA 合作SLAM、Alatise 2020 综述、Xu 2022 3D LiDAR SLAM 综述"
+    },
+    {
+     "query": "\"ultra-wideband time-difference-of-arrival indoor localization dataset\"（UTIL 数据集 arXiv 版本确认）",
+     "tool": "arXiv API (export.arxiv.org/api/query, curl+python)",
+     "screened": 5,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "确认 UTIL = arXiv:2203.14471（v6，2022-03-28 首发，2024 刊于 IJRR DOI 10.1177/02783649241230640）"
+    },
+    {
+     "query": "MDPI 全文直连 https://www.mdpi.com/1424-8220/19/16/3464/htm 与 /2076-3417/10/11/3980/htm",
+     "tool": "curl (python urllib)",
+     "screened": 2,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "HTTP 403 Forbidden（反爬），放弃直连，改用 mcp web_reader 抓取同站正文页成功"
+    },
+    {
+     "query": "Barral 2019 Sensors 全文抓取",
+     "tool": "mcp web_reader (https://www.mdpi.com/1424-8220/19/16/3464)",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "获取全文：NLOS Soft/Hard 误差、GP 校正后 MAE、二分类 F1、CIR 读取 300 ms、'非 LOS 直接忽略'结论"
+    },
+    {
+     "query": "Sang 2020 Applied Sciences 全文抓取",
+     "tool": "mcp web_reader (https://www.mdpi.com/2076-3417/10/11/3980)",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "获取全文：阈值法 4.12±1.13 / 10.75±5.51 dBm、三分类同/跨环境精度、DW1000 标称 10 cm、MP 误差至 60 cm（转引 Schmid 2019）"
+    },
+    {
+     "query": "Wang 2023 Electronics 综述全文抓取",
+     "tool": "mcp web_reader (https://www.mdpi.com/2079-9292/12/7/1678)",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "仅返回页面导航框架未获正文；该篇按 OpenAlex 摘要级核验收录，未引用正文数字"
+    },
+    {
+     "query": "UTIL arXiv 全文抓取与逐字校验（两次，含 Table 4/SNR 定义/卡方句）",
+     "tool": "mcp web_reader + python urllib (https://arxiv.org/html/2203.14471v6)",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "逐字命中：'approximate positioning error of 10 cm in obstacle-free environments'、'deteriorates greatly'、'static obstacles consistently influence...'、'completely blocked due to severe NLOS'、'A Chi-square test outlier rejection mechanism is applied in the ESKF to discard large outliers'、SNR=Amf/σn 与 Pd=Pr−Pf、Table 4 全部数值（Const.1-4 × TDOA2/TDOA3 × ESKF/Batch）"
+    },
+    {
+     "query": "30 个入选 DOI 逐一 HEAD 解析验证",
+     "tool": "python urllib HEAD https://doi.org/<doi>",
+     "screened": 30,
+     "accepted": 30,
+     "rejected": 0,
+     "notes": "IEEE/其他 18 个返回 202/200 解析成功；MDPI/SAGE/Hindawi 12 个对脚本 HEAD 返回 403（反爬，非 DOI 失效）——这些 DOI 均已由 OpenAlex 逐条记录核验，MDPI 数篇另经 web_reader 全文抓取证实"
+    }
+   ]
+  },
+  {
+   "area": "RADAR",
+   "queries": [
+    {
+     "query": "radar odometry",
+     "tool": "Semantic Scholar API (graph/v1/paper/search)",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "两次调用均返回 429 Too Many Requests；改用 arXiv/OpenAlex 完成该主题检索。"
+    },
+    {
+     "query": "radar inertial odometry",
+     "tool": "Semantic Scholar API",
+     "screened": 20,
+     "accepted": 9,
+     "rejected": 11,
+     "notes": "命中 Doer&Trommer MFI2020、Michalczyk IROS2022、4D iRIOM RA-L2023、Go-RIO ICRA2025、Nissov ICRA2024、Temporal Delay IROS2025、RINO TASE2025 入池；VGC-RIO/FD-RIO/UNRIO/Multi-State/Baro-Radar/Multi-Radar(ICRA24)/DRIO/Drones2024/Tightly-Coupled FG(JROS2024)/GV-iRIOM/JIRS2026-smoke 筛除（容量与主线相关性）。"
+    },
+    {
+     "query": "all:\"radar odometry\" (sortBy=relevance)",
+     "tool": "arXiv API",
+     "screened": 20,
+     "accepted": 6,
+     "rejected": 14,
+     "notes": "入池 CFEAR/ORORA/Burnett/Kung/DRO 相关候选等；Masking-by-Moving、Fast-MbyM、SE(3)、What-Goes-Around、BFAR、LodeStar、RaDiVe、Equi-RO、DNOI-4DRO、off-road 2026、subarctic 2026 等未入池（容量限制，方法主线已由入池文献覆盖）。"
+    },
+    {
+     "query": "radar odometry (cited_by_count:desc)",
+     "tool": "OpenAlex API",
+     "screened": 15,
+     "accepted": 0,
+     "rejected": 15,
+     "notes": "按引用排序造成关键词碰撞，返回通用机器人综述（Thrun 2001、Colomina 2014 等），全部拒绝，已记录于 rejected。"
+    },
+    {
+     "query": "all:\"radar place recognition\"",
+     "tool": "arXiv API",
+     "screened": 15,
+     "accepted": 1,
+     "rejected": 14,
+     "notes": "入池 Open-RadVLAD；RaPlace/SHeRLoc/AutoPlace/Off-the-Radar/ReFeree/OORD/XPRESS 等筛除。"
+    },
+    {
+     "query": "all:\"4D radar\" AND all:\"SLAM\"",
+     "tool": "arXiv API",
+     "screened": 15,
+     "accepted": 2,
+     "rejected": 13,
+     "notes": "入池 NTU4DRadLM（另经 Crossref 升级 venue）；Doppler-SLAM/SNAIL/HeRCULES/DIDLM/Introspective-Loop-Closure/AgriLiRa4D 等筛除（SNAIL/HeRCULES 作为对比出现于 Low-Speed 论文全文）。"
+    },
+    {
+     "query": "all:\"radar\" AND all:\"fog\" AND cat:cs.RO",
+     "tool": "arXiv API",
+     "screened": 15,
+     "accepted": 3,
+     "rejected": 12,
+     "notes": "入池 Oxford Radar RobotCar、RADIATE、RadarSLAM、New Wave 综述（同批命中）；RMap/RadarHD(2206.09273)/Get-It-For-Free/RaNDT 等筛除。"
+    },
+    {
+     "query": "all:\"Oxford Radar\" OR all:\"MulRan\" OR all:\"Boreas dataset\"",
+     "tool": "arXiv API",
+     "screened": 15,
+     "accepted": 3,
+     "rejected": 12,
+     "notes": "入池 Oxford、Boreas、Are-We-Ready、Under-the-Radar(后因容量调整未入池，其后续 Burnett RSS2021 在池)。"
+    },
+    {
+     "query": "all:\"Doppler-Aware Direct Radar Odometry\" OR all:\"Doppler radar odometry\"",
+     "tool": "arXiv API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "入池 DRO (2504.20339)。"
+    },
+    {
+     "query": "all:\"MulRan\" OR all:\"K-Radar\" OR all:\"View of Delft\"",
+     "tool": "arXiv API",
+     "screened": 15,
+     "accepted": 1,
+     "rejected": 14,
+     "notes": "入池 K-Radar；VoD 未命中；LoGG3D-Net/CenterRadarNet/SpikingRTNH 等检测类筛除。"
+    },
+    {
+     "query": "all:\"MulRan\"",
+     "tool": "arXiv API",
+     "screened": 10,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "确认 MulRan 数据集论文不在 arXiv；改走 Crossref + Semantic Scholar DOI 核验。"
+    },
+    {
+     "query": "all:\"radar-lidar\" AND cat:cs.RO",
+     "tool": "arXiv API",
+     "screened": 15,
+     "accepted": 2,
+     "rejected": 13,
+     "notes": "入池 GaRLIO（经 Crossref 升级 ICRA2025）与 AF-RLIO（经 Crossref 升级 ICRA2025）；Pointing-the-Way/IMU-Preintegrated-ASF/iKalibr/CaRLi-V 等筛除。"
+    },
+    {
+     "query": "all:\"radar\" AND all:\"smoke\" AND cat:cs.RO",
+     "tool": "arXiv API",
+     "screened": 12,
+     "accepted": 2,
+     "rejected": 10,
+     "notes": "入池 Noh 浓烟融合 (2403.17441)；SubT IMU-drift 2026/RadarHD/Teach-Repeat/Kramer-Suburban 等筛除。"
+    },
+    {
+     "query": "all:\"60 GHz\" AND all:\"radar\" AND cat:cs.RO",
+     "tool": "arXiv API",
+     "screened": 2,
+     "accepted": 0,
+     "rejected": 2,
+     "notes": "未找到 60GHz 机器人里程计专门论文（记入 rejected 数组第 5 条）；60GHz 证据改由 TI IWR6843 官方页支撑。"
+    },
+    {
+     "query": "all:\"cross-modal\" AND all:\"radar\" AND cat:cs.RO",
+     "tool": "arXiv API",
+     "screened": 12,
+     "accepted": 1,
+     "rejected": 11,
+     "notes": "入池 LiDAR Teach, Radar Repeat (2605.02809)；Hidden-Gems/Towards-Dense-Accurate/UWB-SLAM 等筛除。"
+    },
+    {
+     "query": "all:\"automotive radar\" AND all:\"survey\"",
+     "tool": "arXiv API",
+     "screened": 2,
+     "accepted": 0,
+     "rejected": 2,
+     "notes": "仅命中 radar-communication 共存类，与定位无关；汽车雷达能力差异证据改由 TI AWR2944 官方页 + New Wave 综述支撑。"
+    },
+    {
+     "query": "all:\"4DRadarSLAM\" OR all:\"4D imaging radar\"",
+     "tool": "arXiv API",
+     "screened": 15,
+     "accepted": 0,
+     "rejected": 15,
+     "notes": "4DRadarSLAM 论文本体未在 arXiv 命中，改走 Crossref DOI 10.1109/icra48891.2023.10160670 核验（PARTIALLY_VERIFIED）；检测类条目筛除。"
+    },
+    {
+     "query": "query.bibliographic=MulRan Multimodal Range Dataset Urban Place Recognition",
+     "tool": "Crossref API",
+     "screened": 2,
+     "accepted": 1,
+     "rejected": 1,
+     "notes": "命中 MulRan ICRA2020 DOI 10.1109/icra40945.2020.9197298（无摘要）；第二条为无关 VPR 论文。"
+    },
+    {
+     "query": "paper/DOI:10.1109/MFI49285.2020.9235254",
+     "tool": "Semantic Scholar API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "Doer & Trommer MFI2020 摘要全文（含 <0.6% 位置误差、200m+ 轨迹、动捕 GT）。"
+    },
+    {
+     "query": "paper/DOI:10.1109/icra40945.2020.9197298",
+     "tool": "Semantic Scholar API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "MulRan 摘要全文（数据形态、radar PR 优于 LiDAR PR）。"
+    },
+    {
+     "query": "paper/DOI:10.1109/IROS47612.2022.9981396",
+     "tool": "Semantic Scholar API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "Michalczyk IROS2022 摘要全文。"
+    },
+    {
+     "query": "id_list=2105.01457,2303.01876,2105.14152,2001.10789,2103.07908,2504.20339,2509.07683,2503.02509,2303.13962,2411.07699,2502.08093,2502.07703,2507.18317,2403.05332,2403.17441,2605.02809,2203.10174,2005.02198,2401.15380,2305.01135,2307.07861,1909.01300,2203.10168,2206.08171,2010.09076,2309.00962,2206.09273",
+     "tool": "arXiv API (bulk id_list)",
+     "screened": 27,
+     "accepted": 26,
+     "rejected": 1,
+     "notes": "一次抓取 27 篇摘要全文；2206.09273 (RadarHD) 后因容量让位未入池，其余 26 篇全部入池成为核心证据。"
+    },
+    {
+     "query": "https://www.ti.com/product/IWR6843",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "官方页规格引用：60-64GHz、3TX/4RX、4GHz 带宽、FMCW、点云访问（EVM）、CAN-FD/SPI/UART 等。"
+    },
+    {
+     "query": "https://www.ti.com/product/AWR2944",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "官方页规格引用：76-81GHz、>4GHz 带宽、4TX/4RX、方位面位置+速度跟踪、CAN-FD/Ethernet/LVDS/CSI2。"
+    },
+    {
+     "query": "Continental ARS548 High-Resolution-Radar 页面",
+     "tool": "WebFetch + curl(UA)",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 1,
+     "notes": "continental-automotive.com -> 301 aumovio.com -> 404 / WebFetch 403；记入 rejected，ARS548 参数仅采信池内论文 (2509.07683) 全文自述。"
+    },
+    {
+     "query": "navtechradar.com/products/cir304-h/",
+     "tool": "WebFetch + curl(UA)",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 1,
+     "notes": "404；WebSearch 未获官方 datasheet 数值；CIR304-H 仅以 Boreas 论文描述入池。"
+    },
+    {
+     "query": "Navtech CIR304-H specifications",
+     "tool": "WebSearch",
+     "screened": 8,
+     "accepted": 0,
+     "rejected": 8,
+     "notes": "返回 Boreas 论文 PDF、pyboreas、Scribd 转载 HDR100 等二手源，无官方 datasheet；仅采纳'Boreas 含 360° Navtech CIR304-H 扫描雷达'这一与 arXiv 摘要一致的信息。"
+    },
+    {
+     "query": "arxiv.org/html/2502.08093v2 | 2502.07703v2 | 2403.17441v2",
+     "tool": "curl + HTML 文本抽取",
+     "screened": 3,
+     "accepted": 3,
+     "rejected": 0,
+     "notes": "全文抽取：Go-RIO 高程误差 18m/2.5km(0.72%)；GaRLIO 垂直均值误差 1.21m/2.045km、sweep reconstruction 同步；Noh 烟雾 NTU4DRadLM APE/RPE 表。"
+    },
+    {
+     "query": "arxiv.org/html/2203.10174v3 | 2509.07683v3 | 2303.13962v2",
+     "tool": "curl + HTML 文本抽取",
+     "screened": 3,
+     "accepted": 3,
+     "rejected": 0,
+     "notes": "全文抽取：Are-We-Ready 0.1m 跨模态定位与雪暴序列条件；Low-Speed ARS548 级传感器、2cm GT、10cm@63%、RPE 0.06m vs Doppler-SLAM 0.14m；iRIOM ColoRadar 表 IV、~400 points/scan、Bynav GT 3cm/25cm。"
+    },
+    {
+     "query": "arxiv.org/html/2105.01457v3 | 2504.20339v1",
+     "tool": "curl + HTML 文本抽取",
+     "screened": 2,
+     "accepted": 2,
+     "rejected": 0,
+     "notes": "全文抽取：CFEAR 1.76%/0.5°/100m、CTS350-X 4.38cm、矿区 15m/1235m；DRO Boreas 榜 0.26%/0.05°、MulRan 1.45%/0.38°、消融 6.00%/1.57°、隧道 3/4<2.5%。"
+    },
+    {
+     "query": "query.bibliographic=4DRadarSLAM ... / Kellner Doppler ego-motion ...",
+     "tool": "Crossref API",
+     "screened": 8,
+     "accepted": 2,
+     "rejected": 6,
+     "notes": "4DRadarSLAM ICRA2023 DOI 核验（入池，PARTIALLY_VERIFIED）；Kellner 2013/2014/2015 Doppler 自车运动系列确认存在（经典，未入池因容量）；其余条目为无关命中。"
+    },
+    {
+     "query": "14 项标题逐一 query.bibliographic（CFEAR/Kung/RadarSLAM/DRO/Low-Speed/Oxford/Boreas/RADIATE/NTU4DRadLM/Open-RadVLAD/Burnett/AGV-survey/AF-RLIO/GaRLIO）",
+     "tool": "Crossref API (python 批处理)",
+     "screened": 14,
+     "accepted": 14,
+     "rejected": 0,
+     "notes": "为入池条目升级 venue/DOI：IROS2021、ICRA2021、IROS2020、RSS2025、RA-L2026(检出)、ICRA2020、IJRR2023、ICRA2021、ITSC2023、RadarConf24、RSS2021、T-IV2024、ICRA2025×2。"
+    },
+    {
+     "query": "ORORA / Noh-Smoke venue 复核",
+     "tool": "Crossref API",
+     "screened": 4,
+     "accepted": 1,
+     "rejected": 3,
+     "notes": "ORORA 命中 ICRA2023 DOI 10.1109/icra48891.2023.10160997；Noh 浓烟论文未检索到正式版，保持 arXiv preprint 标注。"
+    },
+    {
+     "query": "The Oxford Radar RobotCar Dataset（复核会议/期刊版本）",
+     "tool": "Crossref API",
+     "screened": 5,
+     "accepted": 1,
+     "rejected": 4,
+     "notes": "同题 ICRA2020 DOI 10.1109/icra40945.2020.9196884 为本次实际核验到的记录；池内注明本会话未核验 IJRR 版记录。"
+    }
+   ]
+  },
+  {
+   "area": "EVENT",
+   "queries": [
+    {
+     "query": "all:\"event-based visual odometry\"",
+     "tool": "arXiv API (export.arxiv.org)",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "返回 'Rate exceeded'，未重试，立即改道 DBLP。"
+    },
+    {
+     "query": "all:\"event camera\" AND all:\"visual inertial odometry\"",
+     "tool": "arXiv API",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "同上限流，改道 DBLP。"
+    },
+    {
+     "query": "q=event camera visual odometry",
+     "tool": "DBLP search/publ/api",
+     "screened": 18,
+     "accepted": 12,
+     "rejected": 6,
+     "notes": "命中 Mueggler IJRR2017 数据集、ESVO2 TRO2025、Stereo-DEVO RA-L2025、LEVI-SAM、TIM2023 B-Spline、IROS2023 legged ATS、Sensors2022 ray warping、DEVO ICRA2022、EVIMO2、INTSYS2019、TRO2018 CT-VIO、BMVC2017 real-time VIO。"
+    },
+    {
+     "query": "search=event-based visual odometry event camera",
+     "tool": "OpenAlex API",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "返回 'Rate limit exceeded / Insufficient budget'（当日预算耗尽，resets midnight UTC）；本会话放弃 OpenAlex。"
+    },
+    {
+     "query": "q=event camera synchronization",
+     "tool": "DBLP",
+     "screened": 6,
+     "accepted": 3,
+     "rejected": 3,
+     "notes": "命中 Event Density Alignment (ICIRA2023/arXiv2507.04314)、Event-CMOS CNN-DGCNN (Sensors2024)、Wide-baseline sync (arXiv2309.16990)；2015/2005 音视频与普通相机网络同步两条不相关。"
+    },
+    {
+     "query": "q=event frame fusion odometry",
+     "tool": "DBLP",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "0 命中，改用 frame-event fusion 关键词。"
+    },
+    {
+     "query": "q=event camera fusion",
+     "tool": "DBLP",
+     "screened": 25,
+     "accepted": 7,
+     "rejected": 18,
+     "notes": "命中 InfFusion2026 帧事件融合综述、TUMTraf Event TIV2024、AdaFuse-Det、TIE2026 event-triggered async fusion (cam+UWB)、Radar+Event arXiv2506.18443、Dense Depth event+LiDAR TIM2022、Standard+Event Dense Mapping；其余为不相关（SNN、audio-visual、drug-drug 等）。"
+    },
+    {
+     "query": "q=event-based SLAM survey",
+     "tool": "DBLP",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "0 命中；改 q=event-based vision survey。"
+    },
+    {
+     "query": "q=event camera high dynamic range",
+     "tool": "DBLP",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "首次返回非 JSON（瞬时错误），未死磕；主题经 E2VID 专查补齐。"
+    },
+    {
+     "query": "q=event-based vision survey",
+     "tool": "DBLP",
+     "screened": 7,
+     "accepted": 2,
+     "rejected": 5,
+     "notes": "命中 Gallego TPAMI2022 综述（arXiv1904.08405）与 arXiv1902? 无——另命中 Deep Learning for Event-based Vision 2302.08890、FPGA survey 等；正式池只收 Gallego。"
+    },
+    {
+     "query": "q=ultimate SLAM event",
+     "tool": "DBLP",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "命中 RA-L2018 DOI 10.1109/LRA.2018.2793357。"
+    },
+    {
+     "query": "q=event camera low light",
+     "tool": "DBLP",
+     "screened": 8,
+     "accepted": 4,
+     "rejected": 4,
+     "notes": "命中 EvLight++ TPAMI2026/arXiv2408.16254、AdaFuse-Det、ERetinex ICRA2025、ASTEF FCCM2025；DarkShake-DVS、冷却SNR(TBioCAS2018) 等未入池。"
+    },
+    {
+     "query": "q=stereo event camera depth",
+     "tool": "DBLP",
+     "screened": 2,
+     "accepted": 1,
+     "rejected": 1,
+     "notes": "命中 CVPR2022 'Stereo Depth from Events Cameras: Concentrate and Focus on the Future'；IECON2023 adaptive stacks 未入池（篇幅）。"
+    },
+    {
+     "query": "q=event camera simulator",
+     "tool": "DBLP",
+     "screened": 9,
+     "accepted": 1,
+     "rejected": 8,
+     "notes": "命中 ESIM CoRL2018（PMLR 页核验）；v2e 由专查命中；其余 NeRF 模拟器、slip detection、attention 模拟器不相关。"
+    },
+    {
+     "query": "q=DSEC stereo event + q=hierarchy event-based time-surfaces",
+     "tool": "DBLP",
+     "screened": 4,
+     "accepted": 2,
+     "rejected": 2,
+     "notes": "命中 DSEC RA-L2021 与 HOTS TPAMI2017；FPGA gesture (Sensors2020) 不入池。"
+    },
+    {
+     "query": "q=multi vehicle stereo event camera dataset",
+     "tool": "DBLP",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "命中 MVSEC arXiv1801.10202；期刊版经 Crossref 确认为 RA-L2018 10.1109/LRA.2018.2800793。"
+    },
+    {
+     "query": "q=high speed high dynamic range video event",
+     "tool": "DBLP",
+     "screened": 3,
+     "accepted": 2,
+     "rejected": 1,
+     "notes": "命中 E2VID TPAMI（DOI 10.1109/TPAMI.2019.2963386, arXiv1906.07165）与 Zou CVPR2021 Learning To Reconstruct；后者因篇幅未入正式池。"
+    },
+    {
+     "query": "q=asynchronous fusion localization",
+     "tool": "DBLP",
+     "screened": 6,
+     "accepted": 2,
+     "rejected": 4,
+     "notes": "命中 TIE2026 event-triggered async fusion (cam+UWB) 与 ICRA2018 Geneva Asynchronous Multi-Sensor Fusion；其余（多机器人协同、粒子滤波、2003 CIRA）不入池。"
+    },
+    {
+     "query": "q=temporal calibration event",
+     "tool": "DBLP",
+     "screened": 6,
+     "accepted": 3,
+     "rejected": 3,
+     "notes": "命中 TIM2025 CMax 标定、ROBIO2025 EvMultiCalib (arXiv2508.12564)、RA-L2024 Spatio-Temporal Calibration (arXiv2307.06810)；fMRI 2007 与重复记录剔除。"
+    },
+    {
+     "query": "q=TUM stereo visual inertial event + q=multi-vehicle multi-sensor event dataset",
+     "tool": "DBLP",
+     "screened": 2,
+     "accepted": 1,
+     "rejected": 1,
+     "notes": "命中 TUM-VIE IROS2021 (arXiv2108.07329)；M3ED 该查询 0 命中，改 q=M3ED event 后命中 CVPRW2023（未入正式池，venue 误记已记入 rejected）。"
+    },
+    {
+     "query": "q=v2e video to events + q=voxel grid event camera",
+     "tool": "DBLP",
+     "screened": 3,
+     "accepted": 1,
+     "rejected": 2,
+     "notes": "命中 v2e CVPRW2021 (arXiv2006.07722)；voxel grid 查询仅命中 2026 稀疏检测 arXiv2603.21638（不入池）；Zenodo 数据集记录剔除。"
+    },
+    {
+     "query": "q=1 megapixel event camera dataset + q=frame event camera odometry",
+     "tool": "DBLP",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 2,
+     "notes": "两查询均 0 命中；1Mpx 记忆候选判为未证实（记入 rejected）。"
+    },
+    {
+     "query": "q=Ev-FlowNet + q=M3ED event",
+     "tool": "DBLP",
+     "screened": 3,
+     "accepted": 2,
+     "rejected": 1,
+     "notes": "命中 EV-FlowNet RSS2018 (DOI 10.15607/RSS.2018.XIV.062) 与 M3ED CVPRW2023。"
+    },
+    {
+     "query": "q=frame-event fusion + q=contrast maximization event",
+     "tool": "DBLP",
+     "screened": 94,
+     "accepted": 6,
+     "rejected": 88,
+     "notes": "frame-event fusion 71 条中命中 Frame-Event Alignment CVPR2023 (arXiv2305.15688)、InfFusion 综述等；contrast maximization 23 条中命中 CMax-SLAM TRO2024 (arXiv2403.08119)、Secrets of CMax TPAMI2024、Taming CMax ICCV2023；大量跟踪/分割/文本事件抽取不相关。"
+    },
+    {
+     "query": "q=low-latency automotive vision + Crossref query.bibliographic=The Multi Vehicle Stereo Event Camera Dataset",
+     "tool": "DBLP + Crossref API",
+     "screened": 7,
+     "accepted": 2,
+     "rejected": 5,
+     "notes": "命中 Nature2024 Low-latency automotive vision (10.1038/s41586-024-07409-w) 与 MVSEC RA-L2018 (10.1109/lra.2018.2800793)；其余 Crossref 噪声剔除。"
+    },
+    {
+     "query": "Crossref DOI 直查 x6：10.1109/LRA.2018.2793357 / 10.1038/s41586-024-07409-w / 10.1109/TIE.2026.3657005 / 10.1109/TIM.2025.3568945 / 10.1109/TRO.2024.3378443 / 10.1109/TIV.2024.3393749",
+     "tool": "Crossref API (api.crossref.org/works/DOI)",
+     "screened": 6,
+     "accepted": 6,
+     "rejected": 0,
+     "notes": "全部确认题名/作者/venue/年份；仅 Nature 返回截断摘要（后续由 Semantic Scholar 补全）。"
+    },
+    {
+     "query": "https://arxiv.org/abs/1904.08405",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "成功：拿到 11 位作者、journal-ref TPAMI 2020、DOI，及摘要定量句 '140 dB vs. 60 dB'、'microseconds'、'kHz'。"
+    },
+    {
+     "query": "https://arxiv.org/abs/1906.07165 ; /abs/2410.09374 ; /abs/2202.02556",
+     "tool": "WebFetch（并行4路）",
+     "screened": 3,
+     "accepted": 0,
+     "rejected": 3,
+     "notes": "分别遇 captcha verify failed / user concurrency limit exceeded / 超时；未死磕，改用 Semantic Scholar API + curl 全文 HTML。"
+    },
+    {
+     "query": "Semantic Scholar bulk 39 titles (fields=title,authors,year,venue,externalIds,abstract)",
+     "tool": "api.semanticscholar.org (python urllib, 1.3s 间隔)",
+     "screened": 39,
+     "accepted": 4,
+     "rejected": 35,
+     "notes": "成功返回完整摘要 4 篇：E2VID、MVSEC、Nature2024、EV-FlowNet；其余 35 次 HTTP 429（未认证限额），各仅重试一次即放弃。"
+    },
+    {
+     "query": "arXiv API ti:\"<标题>\" x32（Ultimate SLAM、DSEC、TUM-VIE、ESVO2、DEVO、两篇 sync、ST-calib、EvLight++、AdaFuse-Det、FE240hz、CMax-SLAM、v2e、legged ATS、ERetinex、Stereo-DEVO、TUMTraf、2102.03567、ray warping、CT-VIO、EvMultiCalib、rpg dataset 等）",
+     "tool": "arXiv API (python urllib, 3s 间隔)",
+     "screened": 32,
+     "accepted": 24,
+     "rejected": 8,
+     "notes": "24 篇命中并取回完整摘要/作者/journal-ref；8 篇不在 arXiv（ESIM、Geneva ICRA2018、Zou CVPR2021、Nam CVPR2022、INTSYS2019、BMVC2017、LEVI-SAM、TIM2023 B-Spline、InfFusion 综述、M3ED），分别由 PMLR/DBLP/Crossref 元数据兜底。"
+    },
+    {
+     "query": "https://ar5iv.labs.arxiv.org/html/2103.06011 (DSEC 全文)",
+     "tool": "curl + python 本地解析",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "取到硬件同步链细节（GPS PPS→MC→20Hz trigger→special events→GPS clock）、>120 dB、sub-ms latency、静态场景无事件等原文。"
+    },
+    {
+     "query": "https://arxiv.org/html/2410.09374 (ESVO2 全文)",
+     "tool": "WebFetch（超时弃用）→ curl + python 本地解析",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "取到 Table VI（ARE°/ATE cm，DSEC/MVSEC/rpg 行）、mapping 20 Hz VGA CPU、back-end 5 ms、ESIO 37.34 ms、RTK GT 车载数据集等原文。"
+    },
+    {
+     "query": "https://proceedings.mlr.press/v87/rebecq18a.html (ESIM)",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "PMLR 官方页：标题/作者/CoRL2018 v87 pp.969-982/摘要确认；页面无量化指标。"
+    }
+   ]
+  },
+  {
+   "area": "FUSION",
+   "queries": [
+    {
+     "query": "Sage-Husa adaptive Kalman filter",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "入池: Liu2021(modified SH SINS/DVL)。其余为 FOG 去噪/EV 等离题或同质重复；Narasimhappa2019(MSHARKF) 核验后因池容量放弃。"
+    },
+    {
+     "query": "innovation-based adaptive estimation Kalman filter",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "入池: Mohamed & Schwarz 1999。大量数据同化(EnKF)/电力系统结果被剔除。"
+    },
+    {
+     "query": "Mahalanobis gating tracking",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "入池: Bailey et al. 2006 验证门理论。DeepSORT/MOT 类为视觉跟踪应用被剔除。"
+    },
+    {
+     "query": "chi-square test fault detection Kalman filter navigation",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 3,
+     "rejected": 7,
+     "notes": "入池: Brumback & Srinath 1987、Joerger & Pervan 2013、Yu et al. 2021。Geng2017 FTKF、Jiao2024 T-Rel、El-Mowafy2019、Gao2020 CSTRKF 等核验后因池容量/重复未入池。"
+    },
+    {
+     "query": "measurement rejection Kalman filter outlier",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 2,
+     "rejected": 8,
+     "notes": "入池: Li et al. 2020 (TSP variational)、Davari & Gholami 2019（后被 Särkkä2009 替换）。Olson2006/Vaganay1996/Bloesch2013 经典但领域(水下/足式)偏移。"
+    },
+    {
+     "query": "robust Kalman filter outliers navigation",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "入池: Gao et al. 2022 (TVT, 卡方+SPRT 约束 R 的 MLE, 有数值)。Student-t/双核/重力匹配等因池容量未入池。"
+    },
+    {
+     "query": "GNSS UWB adaptive fusion Kalman",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 2,
+     "rejected": 8,
+     "notes": "入池: Zhu et al. 2020 (TVT 联邦 KF 自适应信息分配)、Barbieri et al. 2021 (TIM UWB 可见性跟踪)。WiFi 室内定位/综述类剔除。"
+    },
+    {
+     "query": "switchable constraints robust SLAM factor graph",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "入池: Sünderhauf & Protzel 2012。ORB-SLAM3/Kimera-Multi/Lynen2013 核验后未入池（池容量）；Sünderhauf2013 比较文在 conflicts 中提及。"
+    },
+    {
+     "query": "max-mixture robust mapping networks of mixtures",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 0,
+     "rejected": 8,
+     "notes": "全不相关（SCENIC/GAN 等），改用 DBLP 命中。"
+    },
+    {
+     "query": "outlier-robust Kalman filter Agamennoni unsupervised",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 0,
+     "rejected": 8,
+     "notes": "OpenAlex 全文搜索未命中，改用 DBLP 成功。"
+    },
+    {
+     "query": "recursive noise adaptive Kalman filtering variational Bayes",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 7,
+     "notes": "经后续精确检索命中 Särkkä & Nummenmaa 2009 (TAC, DOI 10.1109/tac.2008.2008348) 并取回摘要，替换 Davari2019 入池。"
+    },
+    {
+     "query": "LiDAR inertial odometry degeneracy degradation detection",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "入池: GenZ-ICP 2024。LVI-SAM/Wildcat/Wisth2021/Cho2018 等未入池（Wisth 因池容量让位雷达/视觉不确定度方向）。"
+    },
+    {
+     "query": "UWB NLOS identification mitigation localization",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "入池: Güvenç et al. 2007 (EURASIP JASP WLS)。Maranò2010 JSAC/Yu2018 TVT/Barral2019 等核验后未入池。"
+    },
+    {
+     "query": "GNSS stochastic model signal-to-noise ratio elevation weighting",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 7,
+     "notes": "入池: Zhang et al. 2018 (RS 自适应加权)。Paziewski2021 (C/N0 vs elevation 证据, 有数值) 核验后因池容量未入池，其观点记录在 conflicts；Luo2008 SNR 加权未入池。"
+    },
+    {
+     "query": "4D millimeter wave radar odometry localization robust",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 2,
+     "rejected": 6,
+     "notes": "入池: Cheng et al. 2023 (JFR 视觉退化重定位)、DGRO 2024 (Sensors RCS 加权)。GV-iRIOM2025 记入 rejected。"
+    },
+    {
+     "query": "wheel odometer fault detection integrated navigation",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 2,
+     "rejected": 6,
+     "notes": "入池: Huang & Su 2015 (GOS FDI)、Al Hage et al. 2020 (T-ITS 完整性+FDE)。轮速/里程计专文按评审五类范围裁剪（见 rejected 第4条）。"
+    },
+    {
+     "query": "Approaches to adaptive filtering Mehra",
+     "tool": "Crossref",
+     "screened": 5,
+     "accepted": 1,
+     "rejected": 4,
+     "notes": "入池: Mehra 1972 (TAC)。同作者 1970 会议版一并核验。"
+    },
+    {
+     "query": "Adaptive filtering with unknown prior statistics Sage Husa",
+     "tool": "Crossref",
+     "screened": 6,
+     "accepted": 1,
+     "rejected": 5,
+     "notes": "入池: Sage & Husa 1969 (IEEE Symposium on Adaptive Processes)。JACC 常引版本未命中 → rejected 第1条。"
+    },
+    {
+     "query": "networks of mixtures robust mapping",
+     "tool": "DBLP",
+     "screened": 3,
+     "accepted": 1,
+     "rejected": 2,
+     "notes": "入池: Olson & Agarwal 2013 (IJRR; 另核验 RSS2012 版本)。"
+    },
+    {
+     "query": "outlier-robust Kalman filter Agamennoni",
+     "tool": "DBLP",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "入池: Agamennoni et al. 2011 (ICRA)。"
+    },
+    {
+     "query": "degeneracy optimization-based state estimation",
+     "tool": "DBLP",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "入池: Zhang, Kaess, Singh 2016 (ICRA)。作者名单纠正：Ji Zhang（非常被误记的 Jingdong Zhang）。"
+    },
+    {
+     "query": "visual odometry uncertainty aware failure detection texture",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 7,
+     "notes": "入池: D3VO 2020 (arXiv, 学习型光度不确定度加权)。"
+    },
+    {
+     "query": "wheel slip detection odometry vehicle localization",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 0,
+     "rejected": 8,
+     "notes": "Reina2006/Maimone2007 核验后按范围裁剪（见 rejected 第4条）。"
+    },
+    {
+     "query": "LiDAR rain fog degraded point cloud localization weather",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 7,
+     "notes": "入池: Kim et al. 2023 (Sensors 雨雾退化定量实测)。感知类雪天仿真等剔除。"
+    },
+    {
+     "query": "sensor reliability weighting fusion localization health",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 0,
+     "rejected": 8,
+     "notes": "结果偏向结构健康监测/活动识别，全不相关。"
+    },
+    {
+     "query": "adaptive fading factor Kalman filter GNSS INS",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 2,
+     "rejected": 6,
+     "notes": "入池: Gao et al. 2018 (Sensors, Mahalanobis 距离自适应渐消+最优融合)、Jiang et al. 2021 (GPS Solutions 评估, PARTIAL)。Gao2021CJA/Lou2019/Ning2018 未入池。"
+    },
+    {
+     "query": "UWB GNSS integration urban NLOS vehicle localization",
+     "tool": "OpenAlex",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 7,
+     "notes": "入池: Hsu 2017 (ITSC GNSS 多径 ML 分类, 75% 数值)。DiPietra2020/Che2022 未入池。"
+    },
+    {
+     "query": "all:\"GenZ-ICP\"",
+     "tool": "arXiv API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "确认 arXiv id 2411.06766，随后 WebFetch HTML 全文提取表格数值。"
+    },
+    {
+     "query": "all:\"robust variational\" AND all:\"Kalman\" AND all:\"outlier\"",
+     "tool": "arXiv API",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "无结果；Li et al. 2020 TSP 摘要改由 OpenAlex 获取。"
+    },
+    {
+     "query": "id_list=2003.01060 (D3VO)",
+     "tool": "arXiv API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "取回 D3VO 摘要全文与作者。"
+    },
+    {
+     "query": "filter=doi:<12-14 DOIs 批量元数据+摘要> x4 轮",
+     "tool": "OpenAlex",
+     "screened": 52,
+     "accepted": 30,
+     "rejected": 22,
+     "notes": "对候选池按 DOI 批量抓取完整摘要与作者；摘要为空的(Mohamed&Schwarz/Jiang2021/Davari2019/GV-iRIOM 等)另行补抓或放弃。'rejected' 计数指未最终入池的已核验候选。"
+    },
+    {
+     "query": "DOI:10.1007/s001900050236 (Mohamed & Schwarz)",
+     "tool": "Semantic Scholar",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 1,
+     "notes": "仅元数据，无摘要；摘要最终经 WebFetch Springer 落地页获取。"
+    },
+    {
+     "query": "works/10.1007/s10291-021-01165-4 与 works/10.1016/j.oceaneng.2019.01.012",
+     "tool": "Crossref",
+     "screened": 2,
+     "accepted": 1,
+     "rejected": 1,
+     "notes": "两者均无 abstract 字段；Jiang2021 入池(PARTIAL)，Davari2019 被 Särkkä2009 替换。"
+    },
+    {
+     "query": "https://arxiv.org/html/2411.06766 (GenZ-ICP 全文)",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "提取权重公式(local surface variation λ3/Σλ, α=N_pl/(N_pl+N_po))与 KITTI/MulRan/Newer College/SubT-MRS/Ground-Challenge 表格数值 → FULLTEXT 级性能数据 4 条。"
+    },
+    {
+     "query": "https://www.mdpi.com/2072-4292/10/7/1157 (Zhang2018RS 全文)",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 1,
+     "notes": "HTTP 403，全文数值未获取；该文以 ABSTRACT 级入池。"
+    },
+    {
+     "query": "https://onlinelibrary.wiley.com/doi/10.1155/2021/1745383 (Yu2021 全文)",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 1,
+     "notes": "cookie 拦截错误页，全文数值未获取；该文以 ABSTRACT 级入池。"
+    },
+    {
+     "query": "http://www.roboticsproceedings.org/rss08/p40.html (Olson RSS2012)",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "仅摘要页；确认 RSS2012 版本存在与定性结论，无数值。"
+    },
+    {
+     "query": "https://link.springer.com/article/10.1007/s001900050236 (Mohamed & Schwarz, 经 idp.springer 两次重定向)",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "确认卷期页(JoG 73:193-203, 1999)并读摘要：IAE/MMAE、权因子极大似然选择、两次动态实测；状态从 PARTIAL 升为 VERIFIED。"
+    },
+    {
+     "query": "container-title 批量确认 6 个会议/期刊 DOI",
+     "tool": "Crossref",
+     "screened": 6,
+     "accepted": 6,
+     "rejected": 0,
+     "notes": "确认 icif.2006(FUSION 9th)、iros.2012、icra.2016、itsc.2017、icra.2011、EURASIP JASP(2007 在线/2008 卷) 的正式 venue 名称。"
+    }
+   ]
+  },
+  {
+   "area": "GNSS",
+   "queries": [
+    {
+     "query": "search=GNSS denied navigation (per-page=14)",
+     "tool": "OpenAlex API (api.openalex.org/works)",
+     "screened": 14,
+     "accepted": 3,
+     "rejected": 11,
+     "notes": "命中 Schmidt 2014 (CJA 综述)、Tang 2015 (LiDAR+INS, UGV)、Dai 2019 (RNN, Defence Technology)。其余多为 UAV 专用（UWB、协同、RSSI、雷达/视觉里程计等），按轮式平台相关性筛除；Mostafa 2018、Jarraya 2025 记入 rejected 说明。"
+    },
+    {
+     "query": "search=GNSS urban canyon positioning (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 3,
+     "rejected": 4,
+     "notes": "收录 Groves 2011 shadow matching、Xie & Petovello 2014 (IEEE TIM 多路径分布实测)、Bai/Wen/Hsu 2020 (鱼眼+LiDAR 辅助 SPP)。Bourdeau 2012、Kumar & Petovello 2014、Suzuki & Kubo 2012 因无 DOI/venue 记入 rejected。"
+    },
+    {
+     "query": "search=GNSS NLOS detection multipath urban (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 4,
+     "rejected": 2,
+     "notes": "收录 Groves & Jiang 2013（C/N0 加权/高度辅助/一致性检验）、Hsu 2015（RAIM+3D 建筑模型）、Hsu 2017（SVM 三分类 ~75%）、Suzuki & Amano 2021（NN 97.7%）、Sun 2021（IMU 辅助多故障 FDE，仅元数据）。Portfolio 版本（无 DOI）与 Jiang 2012 双极化天线（专用硬件）记入 rejected。 Sun 2021（仅元数据）后移入 rejected。"
+    },
+    {
+     "query": "search=GNSS outage inertial navigation drift (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 4,
+     "rejected": 5,
+     "notes": "收录 Falco 2017（松/紧组合真实城市实测）、GVINS 2022 (T-RO)、Chang 2020（IMU/ODO/LiDAR-SLAM，2 分钟模拟中断漂移降幅）、Li Xingxing 2021（PPP+S-VINS 半紧耦合）。Li Tuan 2019（单目+MEMS+RTK）与 Chen Chao 2019（TDCP-INS）经摘要复核后受篇幅控制取舍，最终 Li Tuan 2019 收录于 A 块（见后续 DOI 批量抓取），Chen Chao 2019 收录。"
+    },
+    {
+     "query": "search=GNSS satellite selection weighted HDOP (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 4,
+     "rejected": 4,
+     "notes": "收录 Jang 2022（HDOP/VDOP 双星座分析）、Kubo 2020（C/N0 时间序列 NLOS 检测）、Zhang Guohao 2020（3DMA 协同 FGO，30 m→<10 m）、Fredeluces 2024（修正 RTK fix 可靠性）。Gerbeth 2016（航空 ARAIM）、Rybanský 2023（林区）、HAPS-RAIM 2023、USGS 手册记入 rejected/筛除。Xia 2020 由此查询重复出现并收录。"
+    },
+    {
+     "query": "search=BeiDou RTK positioning urban (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 5,
+     "rejected": 3,
+     "notes": "收录 Teunissen 2013（BDS+GPS 高截止角瞬时 RTK）、Odolinski 2015（GPS+BDS 短/中/长基线）、Wang Liang 2016（智能手机 BDS/GPS RTK 城市 97%/90% 固定率）、Huang 2022（农机 RTK-BDS/INS 三路况）、Li Tuan 2018（单频多星座 RTK/MEMS-IMU 武汉车载）。PPP-RTK 综述两篇（Satellite Navigation）、韩国 NRTK 对比（韩文）、Kubo 2017 CSAC（无摘要）筛除。"
+    },
+    {
+     "query": "search=GNSS robust adaptive Kalman filter innovation weighting (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 4,
+     "notes": "收录 Zhang Qieqie 2018（PPP 抗差自适应 KF，观测粗差+动态模型误差定权）。高超声速飞行器 UKF 系列（Hu Gaoge 等）、自适应渐消 UKF 多传感器融合等与轮式平台主题不符筛除。"
+    },
+    {
+     "query": "search=BeiDou short message communication (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 5,
+     "rejected": 3,
+     "notes": "收录 Li Gang 2021（BDS-3 全球短报文架构+在轨测试）、Bofeng Li 2019（海洋高精度定位+短报文）、Nie 2020（海上实时 PPP+短报文）、Hu 2023（海事安全信息压缩，直面消息长度限制）、Qiao 2023（UAV 短报文路径重规划）。An 2020 船舶监管平台（超上限）、SM4 加密方案（偏安全主题）、隐写通信等记入 rejected/筛除。"
+    },
+    {
+     "query": "search=BeiDou RDSS satellite (per-page=10)",
+     "tool": "OpenAlex API",
+     "screened": 10,
+     "accepted": 4,
+     "rejected": 4,
+     "notes": "收录 Yang Yuanxi 2021（BDS-3 特色服务性能：RSMCS 99.9%/GSMCS 95.6%/RDSS <12 m 等）、Lu Jun 2020（BDS 全球能力）、Wang Fei 2020（CRDSS 抗欺骗，RDSS 双向应答机制）、Li Xiaojie 2022（RDSS 短报文测距 GEO 定轨）、Lu & Yao 2020 图书章节（RDSS 双向有源定位体制）。Han 2011 时间基准、Wang 2018 RDSS 授时评估、5G 频段共存、GECAM、BDS POD 综述等筛除。 Lu & Yao 章节后移入 rejected（K 块上限）。"
+    },
+    {
+     "query": "search=polarized skylight navigation (per-page=8)",
+     "tool": "OpenAlex API",
+     "screened": 8,
+     "accepted": 4,
+     "rejected": 2,
+     "notes": "收录 Kong 2023（CJA 综述，非成像式 ±0.1°）、Karman 2012（Sensors 综述）、Hamaoui 2016（Applied Optics 状态估计路线）、Dou 2021（SINS+偏振+里程计 GPS-denied 车载）。Sakura 2007、Wehner 2006 生物学文献记入 rejected。"
+    },
+    {
+     "query": "search=polarization odometry bio-inspired (per-page=8)",
+     "tool": "OpenAlex API",
+     "screened": 8,
+     "accepted": 2,
+     "rejected": 5,
+     "notes": "收录 Du 2020（移动机器人偏振 SLAM，定位误差 -30% 仿真）、Xie 2021（IROS 偏振相机多传感器系统）。普通里程计/定位综述、蝗虫视觉模型、差分机器人编队、光学流自动驾驶等筛除。"
+    },
+    {
+     "query": "search=celestial optical navigation spacecraft (per-page=8)",
+     "tool": "OpenAlex API",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 6,
+     "notes": "收录 Christian 2019 StarNAV（恒星相对论性光行差导航）。Gaia、ICRF/VLBI、FITS 坐标、航天器着陆光学制导（Miso 1999，着陆制导主题偏深空任务）、IAU 分辨率等筛除并记入 rejected 代表条目。"
+    },
+    {
+     "query": "works?filter=doi:... 批量摘要抓取 #1（12 个 A 块 DOI：s150717329/itsc.2017.8317700/s21072503/s20144059/s0373463313000350/s10291-021-01181-4/s17020255/rs10020205/iet-its.2019.0587/j.dt.2019.08.011/s18092776/s121114232）",
+     "tool": "OpenAlex API (filter=doi:...|...)",
+     "screened": 12,
+     "accepted": 12,
+     "rejected": 0,
+     "notes": "全部命中并取得完整摘要；Sun 2021 (GPS Solutions) 摘要为空，转 S2 补查仍无，标记 PARTIALLY_VERIFIED。关键性能数字来源：Groves & Jiang 2013（35%/4x/8%/-60%）、Hsu 2015（8.4%/36.2%）、Suzuki 2021（97.7%）、Hsu 2017（75%）、Dai 2019（30%/60%）、Bai 2020（1 m/100 m）。"
+    },
+    {
+     "query": "works?filter=doi:... 批量摘要抓取 #2（12 个 DOI：tro.2021.3133730/s0373463311000087/s43020-020-00033-9/rs11060610/s150716710/s20174702/s24092712/tits.2020.2988531/rs12060971/s16122201/0957-0233-26-4-045801/cja.2014.12.001）",
+     "tool": "OpenAlex API (filter=doi:...|...)",
+     "screened": 12,
+     "accepted": 12,
+     "rejected": 0,
+     "notes": "全部命中。关键数字来源：Chang 2020（62.8/72.3/52.1/62.1%，2 分钟模拟中断）、Zhang Guohao 2020（>30 m→<10 m）、Wang Liang 2016（97%/90%、0.15/0.25/0.30 m）、Xia 2020（87.0/45.9/69.6%）。",
+     "supplementary_note": "Xia 2020 摘要尾部经 works/doi:10.3390/rs12060971 单条补抓，确认 87.0%/45.9%/69.6%（离线 E/N/U）与在线两组数据集数值。"
+    },
+    {
+     "query": "works?filter=doi:... 批量摘要抓取 #3（14 个 DOI：s00190-013-0686-4/tvt.2015.2481509/tim.2014.2342452/1361-6501-ab52cb/agriculture12081169/s43020-025-00162-z/access.2020.2973759/jsen.2021.3139353/iet-rsn.2020.0260/cja.2023.05.024/s19194064/rs14184602/s43020-019-0004-2/jsen.2020.3021561）",
+     "tool": "OpenAlex API (filter=doi:...|...)",
+     "screened": 14,
+     "accepted": 10,
+     "rejected": 0,
+     "notes": "14 个 DOI 全部命中；Ko & Kong 2015、Zidan 2020、Ouyang 2020、Jarraya 2025 复核后移入 rejected，最终 10 条进入论文库。Teunissen 2013、多数命中；Kong 2023（±0.1°）、Du 2020（30%/25%）、Wang Fei 2020、Li Xiaojie 2022 等取得完整摘要。Ouyang 2020 RSSI 检索命中后判定超范围（记 rejected）。"
+    },
+    {
+     "query": "graph/v1/paper/DOI:{s00190-013-0686-4, s10291-021-01181-4, ao.56.000b37, 1748-3190-ab7ab7, iros51168.2021.9635932, s22165985, s10291-017-0670-1}（间隔 4 秒防 429）",
+     "tool": "Semantic Scholar API",
+     "screened": 7,
+     "accepted": 3,
+     "rejected": 0,
+     "notes": "Liang 2020（Rayleigh 模型局限）、Xie 2021（IROS）、Cao 2022（SINS/GPS/偏振/地磁，最终受 F 块 8 篇上限未收录）取得摘要；Teunissen 2013、Sun 2021、Hamaoui 2016、Kubo 2017 无摘要，仅元数据交叉确认。"
+    },
+    {
+     "query": "graph/v1/paper/DOI:{asr.2020.12.011, scib.2021.06.013, s00190-018-1145-z, s00190-020-01411-6}（间隔 4 秒）",
+     "tool": "Semantic Scholar API",
+     "screened": 4,
+     "accepted": 2,
+     "rejected": 0,
+     "notes": "Li Gang 2021（GSMC 架构/GMDSS）、Yang 2021（BDS-3 特色服务性能全量数字）取得完整摘要；Bofeng Li 2019 与 Nie 2020 摘要被出版社隐藏（abstract elided by publisher），标 PARTIALLY_VERIFIED。此前 Crossref API 对这 4 个 DOI 均无摘要。"
+    },
+    {
+     "query": "curl http://www.beidou.gov.cn/xt/gfxz/（官方规范/ICD 下载页，HTTP 200）",
+     "tool": "curl (beidou.gov.cn 官网)",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "确认官网在列 ICD：国际搜救、BDSBAS-B1C、PPP-B2b、地基增强等；未见独立的区域短报文 ICD 条目。页面同时列出《公开服务性能规范（3.0版）》中英文 PDF（本次未下载解析）。"
+    },
+    {
+     "query": "curl http://m.beidou.gov.cn/lbt/202008/t20200803_20935.html（北斗三号建成开通新闻发布会，HTTP 200）",
+     "tool": "curl (beidou.gov.cn 官网)",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "官方原文核实：『区域通信能力达到每次14000比特（1000汉字）……并支持每次560比特（40个汉字）的全球通信能力』；另载国际搜救检测概率优于 99%、全球实测定位精度均值 2.34 米。作为 K 块官方规格条目收录（candidate_core=true）。"
+    },
+    {
+     "query": "WebSearch『北斗三号 区域短报文 1000汉字 全球短报文 40汉字 官方 规格』",
+     "tool": "WebSearch",
+     "screened": 8,
+     "accepted": 0,
+     "rejected": 2,
+     "notes": "作用是定位到官网发布会 URL；搜索摘要中出现的『系统容量 1000 万次/小时、响应时间<1 秒、1200 万用户』来自百度百科/知乎等非官方来源，无法在官网核实，记入 rejected；华力创通终端营销页亦不作为规格依据。"
+    },
+    {
+     "query": "curl http://www.beidou.gov.cn/zt/gfhd/202211/t20221123_25461.html（2022 短报文服务成果发布会页，HTTP 200）",
+     "tool": "curl (beidou.gov.cn 官网)",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "页面确认 2022-07-30 北斗三号短报文通信服务成果发布会（大众智能手机短报文功能、星地融合方案），但正文无消息长度/频次数值，未产生新规格条目。"
+    },
+    {
+     "query": "WebFetch opg.optica.org/ao/abstract.cfm?uri=ao-56-2-b37（Hamaoui 摘要页）与 https://www.mdpi.com/1424-8220/20/14/4059（Kubo 2020 全文）",
+     "tool": "WebFetch",
+     "screened": 2,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "Optica 页 404、MDPI 页 403（反爬），均未取到正文；相应条目仅以 OpenAlex 摘要（ABSTRACT 级）为准，未抄录全文表格数值。另 WebFetch https://arxiv.org/abs/2103.07899 成功确认 GVINS 标题/作者/摘要（arxiv_id=2103.07899）。"
+    }
+   ]
+  },
+  {
+   "area": "LIDAR",
+   "queries": [
+    {
+     "query": "LiDAR degeneracy detection",
+     "tool": "Semantic Scholar API (api.semanticscholar.org/graph/v1/paper/search)",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "HTTP 429 限流，切换数据源；后续一次重试返回空响应，S2 全程未产出记录。"
+    },
+    {
+     "query": "LiDAR degeneracy SLAM",
+     "tool": "OpenAlex API /works?search=",
+     "screened": 15,
+     "accepted": 10,
+     "rejected": 5,
+     "notes": "命中 DALI-SLAM、P2d-DO、Real-Time Degeneracy Sensing(T-ITS)、Switch-SLAM、Intensity-Augmented(T-IM)、Intermittent VIO(T-IM)、GenZ-ICP、Anti-Degeneracy PF(RA-L)、Degeneracy-Resistant JFR、Quatro++；Visual SLAM trends/MULLS(另路)/虚拟INS等按相关性剔除。"
+    },
+    {
+     "query": "all:\"LiDAR degeneracy\"",
+     "tool": "arXiv API",
+     "screened": 5,
+     "accepted": 0,
+     "rejected": 2,
+     "notes": "返回雷达融合类传感器退化论文（2403.17441、2403.05332 等），与几何退化主题不符。"
+    },
+    {
+     "query": "all:\"degeneracy-aware\" AND all:\"LiDAR\"",
+     "tool": "arXiv API",
+     "screened": 14,
+     "accepted": 6,
+     "rejected": 8,
+     "notes": "命中 LODESTAR(2511.09142)、LF-GICP(2608.19522)、Probabilistic Degeneracy Detection(2410.10784)、Informed Constrained Aligned(2408.11809)、DCReg(2509.06285)、FUSE 等；雷达/多传感器融合类剔除。"
+    },
+    {
+     "query": "dynamic object removal LiDAR SLAM",
+     "tool": "OpenAlex API /works?search=",
+     "screened": 15,
+     "accepted": 8,
+     "rejected": 7,
+     "notes": "命中 DOR-LINS、SPLIN(T-IM 2025)、Nonparametric Background Model(T-ITS 2022)、RF-LIO(IROS 2021)、Coarse-to-Fine(ION GNSS+ 2021)、Review of Dynamic Object Filtering(Sensors 2024) 等；RGB-D/视觉类综述剔除。"
+    },
+    {
+     "query": "semantic LiDAR odometry dynamic objects localization",
+     "tool": "OpenAlex API /works?search=",
+     "screened": 15,
+     "accepted": 1,
+     "rejected": 14,
+     "notes": "命中 SD-SLAM(Big Data Research 2024) 等语义路线备份，最终因已含足量几何/占据类动态方法未入池。"
+    },
+    {
+     "query": "localizability LiDAR odometry degeneracy",
+     "tool": "OpenAlex API /works?search=",
+     "screened": 12,
+     "accepted": 4,
+     "rejected": 8,
+     "notes": "命中 LIVER(RA-L 2024)、Rail Vehicle Tunnels(IEEE Sensors 2023)、Train Localization(Sensors 2025)、RELEAD(ICRA 2024)。"
+    },
+    {
+     "query": "tunnel LiDAR SLAM featureless self-similar",
+     "tool": "OpenAlex API /works?search=",
+     "screened": 12,
+     "accepted": 3,
+     "rejected": 9,
+     "notes": "命中 GEODE 数据集(IJRR 2025)、MULLS(arXiv 2021) 等。"
+    },
+    {
+     "query": "scan matching inlier ratio uncertainty LiDAR localization",
+     "tool": "OpenAlex API /works?search=",
+     "screened": 12,
+     "accepted": 0,
+     "rejected": 12,
+     "notes": "结果噪声大（视觉里程计/移动测图综述），未产出匹配条目；scan-matching 置信度主题改由 X-ICP/P2d-DO/GenZ-ICP 覆盖。"
+    },
+    {
+     "query": "title.search:erasor",
+     "tool": "OpenAlex API",
+     "screened": 8,
+     "accepted": 0,
+     "rejected": 8,
+     "notes": "OpenAlex title.search 对该词不生效（返回 Random Erasing 等无关结果），改用 DBLP。"
+    },
+    {
+     "query": "title.search:removert",
+     "tool": "OpenAlex API",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "0 命中，改用 DBLP。"
+    },
+    {
+     "query": "ERASOR",
+     "tool": "DBLP publ/api",
+     "screened": 5,
+     "accepted": 3,
+     "rejected": 2,
+     "notes": "命中 ERASOR(RA-L 2021, DOI 10.1109/LRA.2021.3061363)、ERASOR++(ICRA 2024)、ERASOR2(RSS 2023)。"
+    },
+    {
+     "query": "Removert",
+     "tool": "DBLP publ/api",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "0 命中（DBLP 未以 Removert 名收录），改以原题检索。"
+    },
+    {
+     "query": "remove then revert point cloud",
+     "tool": "DBLP publ/api",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "命中 Removert IROS 2020 DOI 10.1109/IROS45743.2020.9340856（Giseop Kim, Ayoung Kim）。"
+    },
+    {
+     "query": "X-ICP localizability",
+     "tool": "DBLP publ/api",
+     "screened": 3,
+     "accepted": 2,
+     "rejected": 1,
+     "notes": "命中 X-ICP(T-RO 2024, arXiv 2211.16335) 与 LP-ICP(arXiv 2501.02580)。"
+    },
+    {
+     "query": "degeneracy optimization-based state estimation",
+     "tool": "OpenAlex API /works?filter=title.search:",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "精确命中 Zhang, Kaess, Singh ICRA 2016 DOI 10.1109/icra.2016.7487211。"
+    },
+    {
+     "query": "all:\"ERASOR\" AND cat:cs.RO",
+     "tool": "arXiv API",
+     "screened": 3,
+     "accepted": 3,
+     "rejected": 0,
+     "notes": "命中 ERASOR(2103.04316)、ERASOR++(2403.05019)、DynaHull(2401.07541)。"
+    },
+    {
+     "query": "all:\"GenZ-ICP\"",
+     "tool": "arXiv API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "命中 arXiv 2411.06766。"
+    },
+    {
+     "query": "all:\"Remove, then Revert\"",
+     "tool": "arXiv API",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "0 命中（Removert 原文无 arXiv 预印本），转 DBLP 命中。"
+    },
+    {
+     "query": "all:\"On degeneracy of optimization-based state estimation\"",
+     "tool": "arXiv API",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "0 命中，Zhang 2016 无 arXiv 预印本，以 OpenAlex+Crossref 题录核验。"
+    },
+    {
+     "query": "all:\"degeneracy\" AND all:\"condition number\" AND all:\"LiDAR\"",
+     "tool": "arXiv API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "命中 LODESTAR（条件数+localizability 贡献筛选量测）。"
+    },
+    {
+     "query": "ti:\"degenerate\" AND abs:\"benchmark\" AND abs:\"LiDAR\"",
+     "tool": "arXiv API",
+     "screened": 2,
+     "accepted": 2,
+     "rejected": 0,
+     "notes": "命中 GEODE(2409.04961) 与 Adaptive Denoising-Enhanced LIO(2309.14641，备份未入池)。"
+    },
+    {
+     "query": "all:\"FAST-LIO2\"",
+     "tool": "arXiv API",
+     "screened": 8,
+     "accepted": 1,
+     "rejected": 7,
+     "notes": "命中 FAST-LIO2(2107.06829) 作为基线收录；其余为引用它的论文。"
+    },
+    {
+     "query": "id_list=2211.16335,2411.06766,2409.04961,2410.10784,2102.03771,2501.02580",
+     "tool": "arXiv API (摘要批取)",
+     "screened": 6,
+     "accepted": 6,
+     "rejected": 0,
+     "notes": "拉取6篇摘要原文作 ABSTRACT 级证据。"
+    },
+    {
+     "query": "id_list=2608.19522,2511.09142,2309.14641,2408.11809,2103.04316,2403.05019,2401.07541",
+     "tool": "arXiv API (摘要批取)",
+     "screened": 7,
+     "accepted": 7,
+     "rejected": 0,
+     "notes": "拉取7篇摘要原文；LF-GICP 摘要含 KITTI 0.865% 数值。"
+    },
+    {
+     "query": "id_list=2608.19522,2511.09142,2408.11809,2410.10784,2401.07541,2309.14641,2102.03771,2411.06766,2211.16335,2409.04961,2103.04316,2403.05019",
+     "tool": "arXiv API (作者批取)",
+     "screened": 12,
+     "accepted": 12,
+     "rejected": 0,
+     "notes": "核验12篇 arXiv 论文完整作者名单。"
+    },
+    {
+     "query": "DOI 批量: 12个 RA-L/T-ITS/T-IM/Sensors/IROS/GNSS+ DOI",
+     "tool": "OpenAlex API /works?filter=doi:...|...&select=abstract_inverted_index",
+     "screened": 12,
+     "accepted": 12,
+     "rejected": 0,
+     "notes": "重建12篇付费墙论文摘要（P2d-DO、RF-LIO、Switch-SLAM、LIVER、DOR-LINS、Nonparametric、SPLIN、RailTunnel、RealTimeDeg、AntiDegPF、IntensityAug、DALI-SLAM空）与第二批16条作者/venue元数据。"
+    },
+    {
+     "query": "Crossref works/ 7个 DOI (DALI-SLAM, Zhang2016, ERASOR2, RELEAD, JFR, GNSS+ 2021, Sensors review)",
+     "tool": "Crossref API",
+     "screened": 7,
+     "accepted": 3,
+     "rejected": 4,
+     "notes": "JFR(10.1002/rob.70026)与Sensors综述返回摘要；DALI-SLAM/Zhang2016/ERASOR2/RELEAD/GNSS+ 无摘要（仅题录核验）。"
+    },
+    {
+     "query": "ar5iv 2103.04316 (ERASOR 全文表格)",
+     "tool": "curl + python 解析表格行",
+     "screened": 15,
+     "accepted": 6,
+     "rejected": 0,
+     "notes": "抓到 TABLE II 全部 PR/RR/F1 行（00/01/02/05/07 各方法）与 TABLE III runtime 行。"
+    },
+    {
+     "query": "arxiv.org/html/2411.06766v1 (GenZ-ICP 全文)",
+     "tool": "curl + python 解析 table/figcaption",
+     "screened": 21,
+     "accepted": 8,
+     "rejected": 0,
+     "notes": "抓到 TABLE I-VI 数值与 caption（Newer College/MulRan/KITTI/HILTI-Oxford/Ground-Challenge/SubT-MRS）。"
+    },
+    {
+     "query": "arxiv.org/html/2409.04961v2 (GEODE 全文)",
+     "tool": "curl + python 解析 table/figcaption",
+     "screened": 9,
+     "accepted": 4,
+     "rejected": 0,
+     "notes": "抓到 Table 6 ATE(M) 全部序列行（Inland Waterways/Metro Tunnels 等）与传感器规格表。"
+    },
+    {
+     "query": "arxiv.org/html/2403.05019v1 (ERASOR++ 全文)",
+     "tool": "curl + python 解析 table",
+     "screened": 10,
+     "accepted": 2,
+     "rejected": 0,
+     "notes": "抓到 TABLE I（KITTI seq. 00/01/02/05/07 PR/RR/F1/时间）与 TABLE II。"
+    },
+    {
+     "query": "arxiv.org/html/2401.07541v2 (DynaHull 全文)",
+     "tool": "curl + python 解析 table/figcaption",
+     "screened": 4,
+     "accepted": 3,
+     "rejected": 0,
+     "notes": "抓到 Table 2/3 数值与 Fig.8 定位失败 caption。"
+    },
+    {
+     "query": "arxiv.org/html/2211.16335v4 (X-ICP 全文)",
+     "tool": "curl + python 解析 table/figcaption",
+     "screened": 29,
+     "accepted": 5,
+     "rejected": 0,
+     "notes": "抓到 Seemühle 矿井 APE/RPE 表与 Rümlang 耗时表。"
+    },
+    {
+     "query": "RF-LIO 作者核验",
+     "tool": "Crossref API + DBLP + WebSearch + arXiv API",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "Crossref/DBLP/OpenAlex 均无作者；WebSearch 指向 arXiv 2206.09463；arXiv API 核验作者 Chenglong Qian, Zhaohong Xiang, Zhuoran Wu, Hongbin Sun。"
+    },
+    {
+     "query": "RF-LIO Removal-First Tightly-coupled Lidar Inertial Odometry IROS 2021 authors",
+     "tool": "WebSearch (内置搜索)",
+     "screened": 4,
+     "accepted": 1,
+     "rejected": 3,
+     "notes": "搜索摘要指向 arXiv 2206.09463；最终以 arXiv API 原文为证据源。"
+    }
+   ]
+  },
+  {
+   "area": "RELOCSYNC",
+   "queries": [
+    {
+     "query": "search=active relocalization robot",
+     "tool": "OpenAlex",
+     "screened": 15,
+     "accepted": 3,
+     "rejected": 12,
+     "notes": "命中 TIE 2022 变电站主动位姿重定位、TPAMI 2018/2019 主动相机重定位、RAS 1998。本次会话 OpenAlex 共约11次查询后预算耗尽（API 返回 'Insufficient budget... dailyRemainingUsd 0.0003'），后续全部改用 Crossref/DBLP/arXiv/WebFetch/webReader。"
+    },
+    {
+     "query": "search=active localization mobile robot uncertainty",
+     "tool": "OpenAlex",
+     "screened": 15,
+     "accepted": 1,
+     "rejected": 14,
+     "notes": "命中 Robust Monte Carlo localization (AIJ 2001)。"
+    },
+    {
+     "query": "search=kidnapped robot problem recovery",
+     "tool": "OpenAlex",
+     "screened": 15,
+     "accepted": 3,
+     "rejected": 12,
+     "notes": "命中 IROS 2004 expansion resetting、TIM 2026 稀疏假设采样（后经 Crossref 核验）、ROSE 2013 resume navigation（收入候选池后未进最终35篇）。"
+    },
+    {
+     "query": "all:\"active relocalization\"",
+     "tool": "arXiv API (curl export.arxiv.org)",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "持续限流（'Rate exceeded'/HTTP 429），本次会话多次重试（间隔3-6s）均失败；改用 WebFetch 抓 arXiv 搜索页。"
+    },
+    {
+     "query": "filter=title.search:active localization (sorted by citations)",
+     "tool": "OpenAlex",
+     "screened": 25,
+     "accepted": 4,
+     "rejected": 21,
+     "notes": "命中 Active Markov localization (RAS 1998)、Jensfelt active global localization (TRA 2001)、Active SLAM survey (TRO 2023)。标题检索噪声大（医学生物类），人工筛选。"
+    },
+    {
+     "query": "search=\"relocalization success rate\"",
+     "tool": "OpenAlex",
+     "screened": 16,
+     "accepted": 2,
+     "rejected": 14,
+     "notes": "命中 GOReloc (RA-L 2024)、Tackling the Kidnapped Robot Problem (TIM 2026)。"
+    },
+    {
+     "query": "search=active Markov localization robot",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "复核性查询，与 title.search 结果交叉确认 Active Markov localization。"
+    },
+    {
+     "query": "search=coastal navigation mobile robot uncertainty",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "命中 Coastal navigation (ICRA 1999)；OpenAlex 年份字段标 2003（疑错误），Crossref 无年份，按 DOI/会议记 1999 并在 raw 中标注冲突。"
+    },
+    {
+     "query": "search=optimizing motions global localization planning",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 0,
+     "rejected": 10,
+     "notes": "记忆候选 'Planning for the Unexpected' 经 DBLP 证实为腿式跑步论文（主题无关），记入 rejected。"
+    },
+    {
+     "query": "search=viewpoint selection robot localization uncertainty",
+     "tool": "OpenAlex",
+     "screened": 10,
+     "accepted": 0,
+     "rejected": 10,
+     "notes": "噪声为主；视点选择方向的可用文献经 JIRS 2009 active visual perception 覆盖。"
+    },
+    {
+     "query": "search=active LiDAR relocalization exploration",
+     "tool": "OpenAlex",
+     "screened": 15,
+     "accepted": 3,
+     "rejected": 12,
+     "notes": "命中 Global LiDAR Localization survey (arXiv 2302.07433, 后经 arXiv abs 页核验为 IJCV 出版)、Relocalization with Submaps (RA-L 2020)、Active SLAM review last decade (Sensors 2023, 收入候选池未进最终35篇)。"
+    },
+    {
+     "query": "q=global localization planning unexpected",
+     "tool": "DBLP",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "0 命中；用于排除记忆候选。"
+    },
+    {
+     "query": "search=active Monte Carlo localization action selection",
+     "tool": "OpenAlex",
+     "screened": 12,
+     "accepted": 1,
+     "rejected": 11,
+     "notes": "命中 Active Visual Perception for Mobile Robot Localization (JIRS 2009)。"
+    },
+    {
+     "query": "search=POMDP active localization robot",
+     "tool": "OpenAlex",
+     "screened": 12,
+     "accepted": 0,
+     "rejected": 12,
+     "notes": "POMDP 规划文献为主，无主动重定位直接命中。"
+    },
+    {
+     "query": "search=entropy action selection global localization particle filter",
+     "tool": "OpenAlex",
+     "screened": 12,
+     "accepted": 1,
+     "rejected": 11,
+     "notes": "命中 Information Gain-based Exploration Using RBPF (RSS 2005)，收入候选池未进最终35篇（偏 SLAM 建图探索）。"
+    },
+    {
+     "query": "query=targetless LiDAR camera extrinsic calibration",
+     "tool": "Crossref",
+     "screened": 15,
+     "accepted": 6,
+     "rejected": 9,
+     "notes": "命中 Pandey AAAI MI 标定、AI Review 2023 survey、Galibr/EdgeCalib/TIV-OU/TLAC（后三者收入候选池，因35篇上限未收录）。"
+    },
+    {
+     "query": "query=temporal spatial calibration camera IMU multi-sensor",
+     "tool": "Crossref",
+     "screened": 15,
+     "accepted": 6,
+     "rejected": 9,
+     "notes": "命中 Furgale IROS（年份据 Crossref 定为2013）、Li&Mourikis ICRA 2013、Liu&Hu ICPR 2018（未收录）、3DV 2024 global pose sensor、GLIC-Calib IROS 2025。"
+    },
+    {
+     "query": "q=targetless calibration lidar camera",
+     "tool": "DBLP",
+     "screened": 51,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "复核性查询：与 Crossref 交叉确认 targetless 方向文献（AI Review survey、Galibr、EdgeCalib、TIV 等）。"
+    },
+    {
+     "query": "query=end-to-end active camera relocalization",
+     "tool": "Crossref",
+     "screened": 10,
+     "accepted": 1,
+     "rejected": 9,
+     "notes": "命中 ICASSP 2018 active camera relocalization (Miao/Tian/Feng)。"
+    },
+    {
+     "query": "query=online temporal calibration monocular visual-inertial",
+     "tool": "Crossref",
+     "screened": 10,
+     "accepted": 3,
+     "rejected": 7,
+     "notes": "命中 Qin&Shen IROS 2018、Feng Sensors 2019、EKF-Based Radar-Inertial Odometry With Online Temporal Calibration (RA-L 2025)。"
+    },
+    {
+     "query": "q=radar camera extrinsic calibration",
+     "tool": "DBLP",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "DBLP 间歇性失败（连接重置/空响应），重试一次仍空；雷达方向改用 Crossref 完成。"
+    },
+    {
+     "query": "query=event camera temporal calibration synchronization",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 2,
+     "rejected": 10,
+     "notes": "命中 EF-Calib (RA-L 2024)、EventAlign (ITSC 2024，未收录)。附带发现 Ekalibr-Stereo (RA-L 2025，未收录)。"
+    },
+    {
+     "query": "query=hardware time synchronization multi-sensor PPS PTP robot",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 1,
+     "rejected": 11,
+     "notes": "命中 Hardware-Based Time Synchronization for a Multi-Sensor System (IROS 2024)；PTP/ISPCS 类工业文献与机器人场景贴合度低未收录。"
+    },
+    {
+     "query": "query=spatiotemporal calibration LiDAR IMU continuous-time",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 5,
+     "rejected": 7,
+     "notes": "命中 Lv IROS 2020、TMech 2024 (Xingxing Li)、Sensors 2017 时延标定 (Wanli Liu)、Sensors 2025 方法综述 (Lyu)、TII 2024 multi-LiDAR（未收录）。"
+    },
+    {
+     "query": "query=radar camera targetless extrinsic calibration automotive",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 1,
+     "rejected": 11,
+     "notes": "命中 Targetless Radar-Camera Calibration via Trajectory Alignment (Sensors 2025)；NAECON/ICUFN/CaRaCTO 等未收录。"
+    },
+    {
+     "query": "query=timestamp offset time delay impact sensor fusion localization accuracy",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 0,
+     "rejected": 12,
+     "notes": "噪声为主（声源定位/TDOA）；‘时偏→融合精度’的量化证据改由 Sensors 2017/2019 两篇 OA 全文覆盖。"
+    },
+    {
+     "query": "query=active relocalization reinforcement learning robot navigation recovery",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 0,
+     "rejected": 12,
+     "notes": "RL 导航通用文献为主，无主动重定位直接命中。"
+    },
+    {
+     "query": "query=active global localization mobile robot exploration",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 3,
+     "rejected": 9,
+     "notes": "命中 Jensfelt TRA 2001（含作者）、Burgard entropy minimization 1997（含作者）、Heuristic Search Assisted Active Localization (ROBOT 2012)。"
+    },
+    {
+     "query": "query=next best view planning robot localization uncertainty",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 0,
+     "rejected": 12,
+     "notes": "NBV 文献以三维重建为主，与重定位弱相关。"
+    },
+    {
+     "query": "query=time synchronization error effect visual inertial odometry calibration",
+     "tool": "Crossref",
+     "screened": 12,
+     "accepted": 1,
+     "rejected": 11,
+     "notes": "命中 Robotica 2024 double-stage EKF 在线时标（收入候选池未进最终35篇）。"
+    },
+    {
+     "query": "query.bibliographic 批量解析 arXiv ID（GOReloc/GLIC-Calib/EKF-RIO/Cross-modality/EdgeCalib/VINS-Mono/Pandey 等13题）",
+     "tool": "Crossref",
+     "screened": 39,
+     "accepted": 5,
+     "rejected": 0,
+     "notes": "确认 GLIC-Calib/GRIL-Calib(附带发现)/EdgeCalib/EKF-RIO/VINS-Mono 的 DOI 与年份；大多数 RA-L/IROS 论文无 arXiv 预印本 DOI 记录。"
+    },
+    {
+     "query": "q=active relocalization",
+     "tool": "DBLP",
+     "screened": 8,
+     "accepted": 3,
+     "rejected": 0,
+     "notes": "关键命中：SII 2024 position-lost recovery、arXiv 2204.06580 + Neurocomputing 2022 (illumination-invariant ACR)、ICVS 2017 active loop closure；并交叉确认 TIE/TPAMI 年份。"
+    },
+    {
+     "query": "单条记录批量核验（H块10个DOI）",
+     "tool": "Crossref",
+     "screened": 10,
+     "accepted": 10,
+     "rejected": 0,
+     "notes": "逐条确认标题/作者/venue；IEEE 记录均无摘要字段。"
+    },
+    {
+     "query": "单条记录批量核验（I块 20个DOI，含完整作者名单补全）",
+     "tool": "Crossref",
+     "screened": 24,
+     "accepted": 24,
+     "rejected": 0,
+     "notes": "确认 Furgale=IROS 2013（pages 1280-1286）、EF-Calib/GRIL-Calib/EKF-RIO/Lv/GLIC/3DV/硬件同步/TIM2026/GOReloc 等；补全全部作者名单。"
+    },
+    {
+     "query": "ti 批量标题检索（EF-Calib/GOReloc/Submaps/Lv/EKF-RIO/ActiveSLAM survey/TPAMI ACR/ACR 2022，8题）",
+     "tool": "arXiv API (curl)",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "全部 'Rate exceeded'（持续限流），0 获取。"
+    },
+    {
+     "query": "title search 7题（EF-Calib/GOReloc/Submaps/Lv/EKF-RIO/ActiveSLAM survey/VINS-Mono）",
+     "tool": "Semantic Scholar Graph API",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "返回空 data（限流），0 获取。"
+    },
+    {
+     "query": "query 批量查 arXiv 预印本 DOI（6题, 10.48550 前缀）",
+     "tool": "Crossref",
+     "screened": 48,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "EF-Calib/GOReloc/Submaps/Lv/EKF-RIO/GRIL-Calib 均无 arXiv DOI 记录；GRIL-Calib 的 arXiv ID 改由 arXiv 搜索页获得。"
+    },
+    {
+     "query": "WebFetch https://arxiv.org/search/?query=GRIL-Calib",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "获得 arXiv:2312.14035（v1 2023-12-21, v2 2024-05-24）。"
+    },
+    {
+     "query": "WebFetch https://arxiv.org/search/?query=%22active+relocalization%22",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 0,
+     "rejected": 1,
+     "notes": "仅命中生物物理论文；证实 arXiv 无以 active relocalization 为题的机器人论文，记忆候选记入 rejected。"
+    },
+    {
+     "query": "WebFetch https://arxiv.org/search/?query=GOReloc",
+     "tool": "WebFetch",
+     "screened": 1,
+     "accepted": 1,
+     "rejected": 0,
+     "notes": "获得 arXiv:2408.07917。"
+    },
+    {
+     "query": "WebFetch abs 页深读：2204.06580 / 1708.03852 / 2302.07433 / 2312.14035 / 2408.07917(abs+html) / 2209.06404",
+     "tool": "WebFetch",
+     "screened": 7,
+     "accepted": 6,
+     "rejected": 1,
+     "notes": "2204.06580(ACR 1.6x加速)、1708.03852(VINS-Mono 摘要无数值→rejected)、2302.07433(Global LiDAR survey, IJCV 出版确认)、2312.14035(标定精度表)、2408.07917(成功率定义+表格+耗时)、2209.06404(实为数学论文→rejected)。另有一次 https://arxiv.org/html/2312.14035v2 抓取超时，改用不带版本号的 html 成功。"
+    },
+    {
+     "query": "webReader 开放获取全文：MDPI 17/3/539 (Liu 2017)、19/10/2273 (Feng 2019)、25/24/7574 (Durmaz 2025)；IEEE ieeexplore.ieee.org/document/9341405",
+     "tool": "webReader (mcp web_reader)",
+     "screened": 4,
+     "accepted": 3,
+     "rejected": 1,
+     "notes": "MDPI 三篇全文成功抽取性能数值（时延9.58→0.50ms；时偏扫描 RMSE；雷达相机标定精度）；IEEE Xplore 返回 'Request Rejected'（反爬），IEEE 付费墙论文一律不填数值。MDPI 对 WebFetch 返回 403，webReader 可用。"
+    },
+    {
+     "query": "OpenAlex search=unified temporal and spatial calibration multi-sensor systems / targetless LiDAR camera extrinsic calibration",
+     "tool": "OpenAlex",
+     "screened": 0,
+     "accepted": 0,
+     "rejected": 0,
+     "notes": "发起时 OpenAlex 已超每日预算（'Rate limit exceeded / Insufficient budget'，retryAfter≈67381s），0 获取；同批 Crossref/DBLP 完成同等查询。"
+    }
+   ]
+  },
+  {
+   "area": "SIM",
+   "queries": [
+    {
+     "tool": "arXiv API (http)",
+     "query": "search_query=all:\"event camera simulator\"",
+     "result": "HTTP 301 空响应（协议问题），换 https"
+    },
+    {
+     "tool": "arXiv API (http)",
+     "query": "search_query=all:gazebo AND all:GNSS",
+     "result": "HTTP 301 空响应"
+    },
+    {
+     "tool": "OpenAlex API",
+     "query": "search=gazebo GNSS simulation",
+     "result": "HTTP 429 日预算耗尽（resets midnight UTC），放弃 OpenAlex"
+    },
+    {
+     "tool": "arXiv API (https)",
+     "query": "search_query=all:\"event camera simulator\"",
+     "result": "HTTP 429 限流，稍后重试成功"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=event camera simulator ESIM&rows=8",
+     "result": "命中事件相机仿真相关（NeRF-based VISAPP 2025、slip detection WACVW 2025 等）"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=v2e event camera simulator Hu&rows=8",
+     "result": "未直接命中 v2e 原文"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=CARLA open urban driving simulator Dosovitskiy",
+     "result": "未命中 CARLA 原文（CoRL/PMLR 不在 Crossref）"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=AirSim high fidelity visual physical simulation autonomous vehicles",
+     "result": "命中 AirSim, Shah et al. 2017, DOI:10.1007/978-3-319-67361-5_40"
+    },
+    {
+     "tool": "DBLP",
+     "query": "q=event camera simulator",
+     "result": "命中 ESIM CoRL 2018 (PMLR v87)、Event-Camera Dataset and Simulator IJRR 2017 (DOI:10.1177/0278364917691115)、Physical-Based Event Camera Simulator ECCV 2024"
+    },
+    {
+     "tool": "DBLP",
+     "query": "q=CARLA",
+     "result": "命中巴西 HPC 会议 CARLA 2022/2015，同名冲突"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=sensor fault injection robot localization simulation",
+     "result": "多为电路/WSN 故障注入，不相关"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=UWB localization simulation Gazebo ROS",
+     "result": "命中 ROSCon Gazebo 演讲（Agüero 2017 等，不入池）与 SpringSim 2020 ROS-Gazebo 传感器可扩展性论文"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=automotive radar sensor simulation open source",
+     "result": "命中 Chipengo 4D 雷达仿真 IEEE Access 2023 (DOI:10.1109/access.2023.3244137) 及同作者 2018/2020 论文"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=UrbanNav GNSS urban canyon dataset",
+     "result": "未直接命中"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=UrbanNav&rows=8",
+     "result": "命中 Hong Kong UrbanNav, NAVIGATION 2023, DOI:10.33012/navi.602（归 DATASETS 组主用）；另命中两个同名无关工作"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query=v2e flexible visual simulator event cameras",
+     "result": "未命中"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "ti:\"CARLA\" AND ti:\"simulator\"",
+     "result": "命中 CARLA arXiv:1711.03938、KITTI-CARLA arXiv:2109.00892、Realistic Rainy Weather Simulation for LiDARs in CARLA arXiv:2312.12772"
+    },
+    {
+     "tool": "Crossref",
+     "query": "works/10.1371/journal.pone.0244664（记忆 DOI 验证）",
+     "result": "证伪：该 DOI 是无关医学论文，弃用记忆 DOI"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=GNSS outage simulation MEMS IMU navigation degraded",
+     "result": "命中 Vana & Bisnath, NAVIGATION 2023, DOI:10.33012/navi.578"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.title=v2e&rows=10",
+     "result": "命中 v2e: From Video Frames to Realistic DVS Events, CVPRW 2021, DOI:10.1109/cvprw53098.2021.00144"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=UUV simulator Gazebo underwater vehicle ROS",
+     "result": "命中 UUV Simulator, OCEANS 2016, DOI:10.1109/oceans.2016.7761080"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=ROS2 communication latency packet loss evaluation",
+     "result": "命中 DDS QoS 丢包论文但载体可信度存疑，不入池"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "all:\"sim-to-real\" AND all:\"LiDAR\" AND all:\"SLAM\"",
+     "result": "无直接命中"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.title=flexible visual simulator event cameras",
+     "result": "未命中 PLoS 版本 v2e"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "all:\"sensor degradation\" AND all:\"SLAM\"",
+     "result": "命中 Ultra-Fusion arXiv:2606.21223、A2DO arXiv:2502.20767（退化融合方法，非仿真构造，未入 SIM 池）"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=UWB NLOS identification deep learning dataset",
+     "result": "命中多篇 UWB NLOS 识别（DATASETS 组参考）"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "all:\"event camera\" AND all:\"simulator\" AND cat:cs.RO",
+     "result": "命中 EVIS arXiv:2607.08098、EsaacSim arXiv:2608.08522、ADV2E arXiv:2411.12250、Combined Physics and Event Camera Simulator arXiv:2503.04838"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "abs:\"Gazebo\" AND abs:\"SLAM\" AND abs:\"noise\"",
+     "result": "仅命中无关论文"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "all:\"ns-3\" AND all:\"ROS\"",
+     "result": "命中协同仿真中间件论文 arXiv:2211.05359，相关性弱未入池"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "all:\"GNSS outage\" AND all:\"simulation\"",
+     "result": "命中 Train Localization GNSS Outages arXiv:2406.02339（记入 rejected，归方法组）"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "all:\"UWB\" AND all:\"simulator\"",
+     "result": "命中 RadioRange arXiv:2606.23708（UWB/WiFi/5G 测距数字孪生仿真器）"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=GNSS-SDR open source software receiver",
+     "result": "未命中可确认的原始论文，记入 rejected"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "all:\"LiDAR\" AND all:\"adverse weather\" AND all:\"simulation\"",
+     "result": "命中 LISA arXiv:2107.07004、Simulating Realistic LiDAR Data Under Adverse Weather arXiv:2604.01254"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "id_list=1711.03938,2107.07004,2312.12772,2606.23708,2608.08522,2607.08098,2109.00892,2411.12250,2503.04838",
+     "result": "一次性取回 9 篇 arXiv 论文标题+摘要，用于撰写方法与可信边界笔记"
+    },
+    {
+     "tool": "arXiv API",
+     "query": "ti:\"ESIM: an Open Event Camera Simulator\"",
+     "result": "HTTP 200 但空结果（ESIM 正文未上 arXiv），以 DBLP 的 PMLR 链接为准"
+    }
+   ]
+  },
+  {
+   "area": "DATASETS",
+   "queries": [
+    {
+     "tool": "WebFetch",
+     "query": "https://www.cvlibs.net/datasets/kitti/",
+     "result": "超时，改 curl"
+    },
+    {
+     "tool": "curl",
+     "query": "https://www.cvlibs.net/datasets/kitti/raw_data.php",
+     "result": "HTTP 200：灰度/彩色双目 0.5MP、Velodyne 10万点/帧、3D GPS/IMU 10Hz、标定清单原文"
+    },
+    {
+     "tool": "curl",
+     "query": "https://www.cvlibs.net/datasets/kitti/（主站）",
+     "result": "HTTP 200：License 段落原文（署名+非商业+相同方式共享）与 Karlsruhe/乡村/高速环境描述"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets",
+     "result": "页面已迁移，指向 ethz-asl.github.io/datasets/"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://ethz-asl.github.io/datasets/",
+     "result": "301 重定向回 projects.asl.ethz.ch/datasets/（迁移环，内容在后者）"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://projects.asl.ethz.ch/datasets/",
+     "result": "索引页命中 EuRoC MAV（数据 DOI 10.3929/ethz-b-000690084，链接 /datasets/euroc-mav/）"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://projects.asl.ethz.ch/datasets/euroc-mav/",
+     "result": "两次抓取：WVGA 双目 2x20FPS、MEMS IMU 200Hz、Vicon+Leica MS50 GT、许可未标注、序列名未列出"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://cvg.cit.tum.de/data/datasets/visual-inertial-dataset",
+     "result": "一次 user concurrency limit exceeded，重试成功：TUM-VI 传感器/序列/CC BY 4.0/下载全览"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://sites.google.com/view/mulran-pr/home",
+     "result": "成功：Multimodal Range Dataset、6D baseline trajectories、IMU+GPS 增发、2023 许可更新说明"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://oxford-robotics-institute.github.io/radar-robotcar-dataset/",
+     "result": "成功：Navtech CTS350-X、HDL-32E、280km、optimised radar odometry GT、CC BY-NC-SA 4.0"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://dsec.ifi.uzh.ch/",
+     "result": "成功：事件+帧相机+LiDAR+RTK GPS+IMU、53 序列、CC BY-SA 4.0"
+    },
+    {
+     "tool": "curl",
+     "query": "https://mvsec.io/",
+     "result": "curl HTTP 000（schannel TLS 握手失败）；WebFetch 亦失败（ECONNRESET/超时）→ 官网不可达"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://m3ed.io/",
+     "result": "成功：EVK4 HD 事件双目、64 线 LiDAR、car/spot/falcon、CC BY-SA 4.0、CVPR 2023 Workshops"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/IPNL-POLYU/UrbanNav",
+     "result": "404，仓库已迁移"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search/repositories?q=UrbanNav",
+     "result": "命中 IPNL-POLYU/UrbanNavDataset（602 stars，pushed 2025-11）与早期镜像 weisongwen/UrbanNavDataset"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/IPNL-POLYU/UrbanNavDataset",
+     "result": "200：Python、602 stars、license None"
+    },
+    {
+     "tool": "curl",
+     "query": "raw.githubusercontent.com/IPNL-POLYU/UrbanNavDataset/master/README.md",
+     "result": "HTTP 200：GNSS receivers+LiDAR(HDL-32E)+camera+IMU、SPAN-CPT GT、RINEX 原始观测、Honda Fit 平台、Hong Kong/Tokyo 两套"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=Complex Urban Dataset multi-level sensors",
+     "result": "命中 Jeong et al. IJRR 2019 DOI:10.1177/0278364919843996"
+    },
+    {
+     "tool": "curl",
+     "query": "https://irap.kaist.ac.kr/datasets/",
+     "result": "HTTP 000 连接失败；WebFetch 亦 ECONNRESET"
+    },
+    {
+     "tool": "WebSearch",
+     "query": "\"Complex Urban\" dataset KAIST 3D map GPS RTK download",
+     "result": "定位官方 Google Sites 下载页 sites.google.com/view/complex-urban-dataset"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://sites.google.com/view/complex-urban-dataset/",
+     "result": "成功：LiDAR+stereo+position sensors、Urban00-17/38/39、KAIST+Naver Labs 版权、CC BY-NC-SA 4.0"
+    },
+    {
+     "tool": "WebSearch",
+     "query": "NCLT dataset University of Michigan download",
+     "result": "给出官方页 robots.engin.umich.edu/nclt/ 与 Deep Blue Data 镜像"
+    },
+    {
+     "tool": "curl",
+     "query": "https://robots.engin.umich.edu/NCLT/（旧）",
+     "result": "404"
+    },
+    {
+     "tool": "curl",
+     "query": "https://robots.engin.umich.edu/nclt/",
+     "result": "HTTP 200：HDL-32E/Ladybug3/GX3 IMU/KVH FOG/轮速里程计/标准+RTK GPS、27 sessions、34.9h/147.4km、ODbL"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/ori-drs/newer_college_dataset 与 ori-dss/...",
+     "result": "均 404；数据集经官网 WebFetch 核验（ori-drs.github.io/newer-college-dataset）"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=newer college dataset",
+     "result": "未命中官方仓库（均为第三方使用仓库）"
+    },
+    {
+     "tool": "WebSearch",
+     "query": "UWB dataset indoor localization public download NLOS ranging CIR benchmark",
+     "result": "汇总 eWINE、Nature SciData 2023、Deep UWB Zenodo、UTIL、imec GitLab 等候选"
+    },
+    {
+     "tool": "Crossref",
+     "query": "works/10.1038/s41597-023-02639-5",
+     "result": "命中：Indoor UWB Positioning and Position Tracking Data Set | Bregar | 2023 | Scientific Data，license CC BY 4.0"
+    },
+    {
+     "tool": "curl",
+     "query": "https://zenodo.org/api/records/4399187",
+     "result": "HTTP 200：Deep UWB、cc-by-4.0、Decawave EVB1000、关联 arXiv 2011.14684"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/ewine-project/UWB-LOS-NLOS-Data-Set",
+     "result": "200：7 室内场景 LOS/NLOS、CC-BY-4.0、pushed 2017-02-14"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://learnsyslab.github.io/util-uwb-dataset/",
+     "result": "一次并发超限，重试成功：DWM1000 TDoA2/3、Vicon GT、IJRR 2024 引用"
+    },
+    {
+     "tool": "WebSearch",
+     "query": "GNSS outage degraded dataset benchmark vehicle navigation open download urban canyon multipath",
+     "result": "确认 UrbanNav 为最强匹配（navi.ion.org 链接），另列两个未核验候选（记入 rejected）"
+    },
+    {
+     "tool": "WebFetch",
+     "query": "https://navi.ion.org/content/70/4/navi.602",
+     "result": "超时（未影响：UrbanNav 已由 GitHub README+Crossref 双重核验）"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/SJTU-ViSYS/M2DGR 与 M2DGR-plus",
+     "result": "200：MIT、1195/206 stars、pushed 2026-06/2026-08"
+    },
+    {
+     "tool": "curl",
+     "query": "raw.githubusercontent.com/SJTU-ViSYS/M2DGR/master/README.md",
+     "result": "HTTP 200：传感器全景（鱼眼/事件/红外/VI-sensor/双 IMU/VLP-32C/消费 GNSS+RTK GNSS-IMU）、36 序列 1TB、GT=动捕+激光3D跟踪仪+RTK；交叉提及 SJTU_GVI（ZED-F9P 原始观测）"
+    },
+    {
+     "tool": "Crossref",
+     "query": "query.bibliographic=EuRoC micro aerial vehicle datasets Burri",
+     "result": "命中 IJRR 2016 DOI:10.1177/0278364915620033，摘要含 industrial environment 表述"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/sjtuyinjie/SJTU_GVI",
+     "result": "200：'A GNSS-Visual-IMU Dataset for SLAM'、100 stars、license None、pushed 2024-11-22"
+    }
+   ]
+  },
+  {
+   "area": "OPENSOURCE",
+   "queries": [
+    {
+     "tool": "GitHub API",
+     "query": "repos/hku-mars/FAST_LIO",
+     "result": "C++/GPL-2.0/5109★/pushed 2025-01-15"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/TixiaoShan/LIO-SAM",
+     "result": "C++/BSD-3-Clause/4899★/pushed 2025-02-14"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/HKUST-Aerial-Robotics/VINS-Fusion",
+     "result": "C++/GPL-3.0/4689★/pushed 2024-05-23"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/ucla-vision/openvins",
+     "result": "404 → 转 GitHub search 定位 rpng/open_vins"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/borglab/gtsam",
+     "result": "license NOASSERTION/3658★/pushed 2026-08-28"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/HKUST-Aerial-Robotics/GVINS",
+     "result": "C++/GPL-3.0/1157★/pushed 2021-09-11"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/rtklibexplorer/RTKLIB",
+     "result": "C/NOASSERTION/966★/pushed 2026-08-28"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/ethz-asl/kalibr",
+     "result": "C++/NOASSERTION/5684★/pushed 2024-03-30"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/cra-ros-pkg/robot_localization",
+     "result": "1949★/pushed 2026-07-16/default_branch=rolling-devel"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/locusrobotics/fuse",
+     "result": "C++/NOASSERTION/876★/pushed 2026-08-19/default_branch=devel"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=openvins",
+     "result": "命中 rpng/ov_maplab 等衍生，间接确认主仓库属 rpng 组织"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/rpng/open_vins",
+     "result": "C++/GPL-3.0/3064★/pushed 2025-11-30"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/uzh-rpg/rpg_dvs_ros",
+     "result": "C++/MIT/332★/pushed 2025-03-11"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/uzh-rpg/esim_ros",
+     "result": "404 → search 定位 rpg_esim"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/SensorManipulation/v2e",
+     "result": "404 → search 定位 SensorsINI/v2e"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/tu-darmstadt-ros-pkg/hector_gazebo",
+     "result": "C++/license None/200★/pushed 2023-10-10"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/ros-simulation/gazebo_ros_pkgs",
+     "result": "C++/license None/864★/archived True/pushed 2025-02-26"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/PX4/PX4-SITL_gazebo",
+     "result": "404 → search 定位 PX4-SITL_gazebo-classic"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/xinhe-yifan/gnss-ins-sim",
+     "result": "404 → search 定位 Aceinna/gnss-ins-sim"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/utiasDSL/util-uwb-dataset",
+     "result": "404 → search 定位 learnsyslab/util-uwb-dataset"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=esim+event+camera+simulator",
+     "result": "uzh-rpg/rpg_esim | 727★ | pushed 2023-12-25 | MIT"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=v2e+event",
+     "result": "SensorsINI/v2e | 481★ | pushed 2026-04-13 | MIT"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=PX4-SITL_gazebo",
+     "result": "PX4/PX4-SITL_gazebo-classic | 466★ | pushed 2026-07-15 | license 未标注"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=gnss-ins-sim",
+     "result": "Aceinna/gnss-ins-sim | 1485★ | pushed 2024-11-27 | MIT"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=util-uwb-dataset",
+     "result": "learnsyslab/util-uwb-dataset | 60★ | pushed 2025-10-27 | license 未标注"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/gazebosim/gz-sim",
+     "result": "C++/Apache-2.0/1472★/pushed 2026-08-29"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=radar+odometry sort=stars",
+     "result": "命中 christopherdoer/rio、utiasASRL/steam_icp、Radar4Motion、ORORA、HKUST-Aerial-Robotics/RIO、ntnu-arl/lidar_degeneracy_datasets、ethz-asl/rio、yeti_radar_odometry"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "search q=uwb+localization+ros sort=stars",
+     "result": "命中 TIERS/uwb-drone-dataset、PulkitRustagi/UWB-Localization、advoard/advoard_localization、cliansang/uwb-tracking-ros、TIERS/uwb-cooperative-mrs-localization、AUVSL/UWB-Jackal-World、joeyjyyang/fy03_localization、TIERS/uwb-vio-lidar-fusion"
+    },
+    {
+     "tool": "raw README",
+     "query": "hku-mars/FAST_LIO README.md",
+     "result": "ROS >= Melodic（ROS1）"
+    },
+    {
+     "tool": "raw README",
+     "query": "TixiaoShan/LIO-SAM README.md",
+     "result": "第56行原文：original ROS1 implementation…For a ROS2 implementation see branch ros2"
+    },
+    {
+     "tool": "raw README",
+     "query": "HKUST-Aerial-Robotics/VINS-Fusion README.md",
+     "result": "依赖 Kinetic/Melodic/Ceres；ROS2 未检出"
+    },
+    {
+     "tool": "raw README",
+     "query": "rpng/open_vins ReadMe.md（注意大小写）",
+     "result": "ROS 1/ROS 2 workflow CI 徽章 + ROS2 支持更新日志行"
+    },
+    {
+     "tool": "raw README",
+     "query": "HKUST-Aerial-Robotics/GVINS README.md",
+     "result": "Kinetic/catkin 命中；ROS2 未检出"
+    },
+    {
+     "tool": "raw README",
+     "query": "cra-ros-pkg/robot_localization README.md",
+     "result": "README 指向 wiki；ROS2 证据来自 default_branch=rolling-devel"
+    },
+    {
+     "tool": "raw README",
+     "query": "locusrobotics/fuse README.md",
+     "result": "'ROS framework for sensor fusion using nonlinear least squares'；ROS2 状态未核验"
+    },
+    {
+     "tool": "raw README",
+     "query": "url-kaist/outlier-robust-radar-odometry README.md",
+     "result": "catkin build（ROS1）"
+    },
+    {
+     "tool": "raw README",
+     "query": "ethz-asl/rio README.md",
+     "result": "Install ROS noetic（ROS1）"
+    },
+    {
+     "tool": "raw README",
+     "query": "christopherdoer/rio README.md",
+     "result": "ROS Kinetic/Melodic/Noetic 列表"
+    },
+    {
+     "tool": "raw README",
+     "query": "uzh-rpg/rpg_esim、SensorsINI/v2e、hector_gazebo、Aceinna/gnss-ins-sim、ntnu-arl/lidar_degeneracy_datasets README",
+     "result": "ROS 版本表述均未检出，标'未核验'"
+    },
+    {
+     "tool": "GitHub API",
+     "query": "repos/rpng/open_vins/contents/",
+     "result": "根目录含 ReadMe.md 与 Dockerfile_ros1_16/18/20_04、Dockerfile_ros2_18/20/22_04 → 双 ROS 支持证据"
+    }
+   ]
+  }
+ ]
+}

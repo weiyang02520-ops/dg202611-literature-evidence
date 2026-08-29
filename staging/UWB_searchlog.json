@@ -1,0 +1,36 @@
+{
+  "area": "UWB",
+  "queries": [
+    {"query": "UWB NLOS identification", "tool": "OpenAlex API (python urllib, https://api.openalex.org/works?search=...)", "screened": 8, "accepted": 1, "rejected": 6, "notes": "命中 Maranò 2010 JSAC（收录）；同时命中 Güvenç WCNC 2007（后改由查询9核验收录）；rejected: Khodjaev 2009 综述(旧)、Li 2013 ICCT、Zeng 2019 ICCE、Wu 2024 IoT-J TinyML、Deng 2023 GAF（重叠/池上限）、Güvenç EURASIP 2008（与会议版重复）"},
+    {"query": "UWB NLOS mitigation", "tool": "OpenAlex API", "screened": 8, "accepted": 3, "rejected": 2, "notes": "命中并收录 Kim 2022 IoT-J、Yu 2018 TVT、Wang 2023 Electronics 综述、Barral 2019 Sensors（同页复现）；rejected: Yang 2018 SPGP（纯仿真）、Khodjaev 2009"},
+    {"query": "UWB positioning accuracy LOS NLOS", "tool": "OpenAlex API", "screened": 8, "accepted": 1, "rejected": 3, "notes": "命中并收录 Jiang 2020 Comm. Letters；Jourdan 2008 TAES 亦在此页出现（经单篇 DOI 抓取核验后收录）；rejected: Yang 2021 JSEN(IMU虚拟点补偿)、Cui 2020 MWT-CNN（纯仿真）、Yang 2023 JSEN SVM"},
+    {"query": "tightly coupled UWB IMU", "tool": "OpenAlex API", "screened": 7, "accepted": 1, "rejected": 4, "notes": "命中并收录 Hol 2009 ICUWB；rejected/未收录: Miraglia 2017、Wen 2020 TVT（行人）、Xu 2016 i2MTC、Nguyen 2021 VIRAL SLAM arXiv:2105.03296（池上限）"},
+    {"query": "UWB inertial odometry", "tool": "OpenAlex API", "screened": 7, "accepted": 1, "rejected": 5, "notes": "命中并收录 Hyun & Myung 2021 NR-UIO；未收录: Lin 2022 Measurement、Gao 2022 IET、Shin 2021 MIR-VIO、Delama 2023 UVIO、Xu 2022 Omni-Swarm T-RO"},
+    {"query": "UWB GNSS integration fusion", "tool": "OpenAlex API", "screened": 7, "accepted": 2, "rejected": 1, "notes": "命中并收录 Guo 2022 JSEN(GNSS/UWB时间标定+自适应加权)、Di Pietra 2020（后按池上限让位给 Wang 2021，记 rejected）；Alarifi 2016 与 Barbieri 2021 亦复现；rejected: Hsu 2017（GNSS 多径 ML，非 UWB）"},
+    {"query": "UWB ranging error model", "tool": "OpenAlex API", "screened": 7, "accepted": 3, "rejected": 3, "notes": "命中并收录 Bellusci 2008（误差模型）、Dardari 2009 Proc. IEEE、Wymeersch 2012 TComm；rejected: Dizdarevic 2007、Şahinoğlu 2006、Perakis 2018 IPIN（池上限/重叠）"},
+    {"query": "UWB anchor placement geometry dilution of precision", "tool": "OpenAlex API", "screened": 6, "accepted": 3, "rejected": 3, "notes": "命中并收录 Cao 2023 TIM(WPDOP)、Guo 2022 Remote Sensing(窄空间DOP)、Jiang 2022 JAT(停车场布站)；未收录: Albaidhani 2019、Wang 2020 IEEE Access(DOP适用性)、Fontaine 2020 autoencoder"},
+    {"query": "robust adaptive Kalman filter UWB localization", "tool": "OpenAlex API", "screened": 6, "accepted": 4, "rejected": 1, "notes": "命中并收录 Dong 2023 IRACKF、Juston 2025 JSEN(轮式差分机器人)、Li 2020 JSEN(井下ESKF)、Zou 2023 Sensors(自适应R)；rejected: Chen 2015 WiFi/PDR（非UWB）"},
+    {"query": "UWB RSSI first path power NLOS features", "tool": "OpenAlex API", "screened": 6, "accepted": 1, "rejected": 3, "notes": "命中并收录 Che 2022 JSEN(GGD)；Barral 2019 复现；未收录: Barral 2020 PDP加速（同团队重叠）、Ridolfi 2021 ACM CSUR、Leitch 2023 多技术综述"},
+    {"query": "UWB indoor positioning survey review", "tool": "OpenAlex API", "screened": 6, "accepted": 1, "rejected": 5, "notes": "命中并收录 Alarifi 2016 Sensors 综述；rejected: Al-Fuqaha 2015 IoT、Yassin 2016、Brena 2017、Mautz 2012、Mazhar 2017（通用/重叠）"},
+    {"query": "UWB dataset LOS NLOS public", "tool": "OpenAlex API", "screened": 6, "accepted": 3, "rejected": 2, "notes": "命中并收录 Sang 2020 Applied Sciences、Zhao 2024 IJRR UTIL 数据集、Fontaine 2023 IoT-J 迁移学习；rejected: Leitch 2023、Wang 2025 JESTCH（与 Fontaine 2023 重叠）"},
+    {"query": "GNSS UWB tightly coupled urban canyon", "tool": "OpenAlex API", "screened": 6, "accepted": 2, "rejected": 2, "notes": "命中并收录 Wang 2021 Remote Sensing(无缝GNSS/UWB/INS/地图)、Chen 2022 Remote Sensing(UWB/LiDAR NLOS识别)；rejected: Wang 2016 V2I GPS/INS/UWB（池上限）、Gakne 2018（GNSS/视觉，非UWB）"},
+    {"query": "UWB number of anchors accuracy experimental", "tool": "OpenAlex API", "screened": 6, "accepted": 0, "rejected": 3, "notes": "主要为已收录文献复现（Li 2020、Barbieri 2021、Wymeersch 2012）；rejected/未收录: Poulose 2020 LSTM、Ridolfi 2018 运动姿态实测、Djosic 2020 指纹"},
+    {"query": "UWB LiDAR fusion robot localization", "tool": "OpenAlex API", "screened": 6, "accepted": 1, "rejected": 3, "notes": "命中并收录 Zhen & Scherer 2019 ICRA(隧道可定位性)；Chen 2022 RS 复现；rejected: Song 2019 ICRA 合作SLAM、Alatise 2020 综述、Xu 2022 3D LiDAR SLAM 综述"},
+    {"query": "\"ultra-wideband time-difference-of-arrival indoor localization dataset\"（UTIL 数据集 arXiv 版本确认）", "tool": "arXiv API (export.arxiv.org/api/query, curl+python)", "screened": 5, "accepted": 1, "rejected": 0, "notes": "确认 UTIL = arXiv:2203.14471（v6，2022-03-28 首发，2024 刊于 IJRR DOI 10.1177/02783649241230640）"},
+    {"query": "MDPI 全文直连 https://www.mdpi.com/1424-8220/19/16/3464/htm 与 /2076-3417/10/11/3980/htm", "tool": "curl (python urllib)", "screened": 2, "accepted": 0, "rejected": 0, "notes": "HTTP 403 Forbidden（反爬），放弃直连，改用 mcp web_reader 抓取同站正文页成功"},
+    {"query": "Barral 2019 Sensors 全文抓取", "tool": "mcp web_reader (https://www.mdpi.com/1424-8220/19/16/3464)", "screened": 1, "accepted": 1, "rejected": 0, "notes": "获取全文：NLOS Soft/Hard 误差、GP 校正后 MAE、二分类 F1、CIR 读取 300 ms、'非 LOS 直接忽略'结论"},
+    {"query": "Sang 2020 Applied Sciences 全文抓取", "tool": "mcp web_reader (https://www.mdpi.com/2076-3417/10/11/3980)", "screened": 1, "accepted": 1, "rejected": 0, "notes": "获取全文：阈值法 4.12±1.13 / 10.75±5.51 dBm、三分类同/跨环境精度、DW1000 标称 10 cm、MP 误差至 60 cm（转引 Schmid 2019）"},
+    {"query": "Wang 2023 Electronics 综述全文抓取", "tool": "mcp web_reader (https://www.mdpi.com/2079-9292/12/7/1678)", "screened": 1, "accepted": 0, "rejected": 0, "notes": "仅返回页面导航框架未获正文；该篇按 OpenAlex 摘要级核验收录，未引用正文数字"},
+    {"query": "UTIL arXiv 全文抓取与逐字校验（两次，含 Table 4/SNR 定义/卡方句）", "tool": "mcp web_reader + python urllib (https://arxiv.org/html/2203.14471v6)", "screened": 1, "accepted": 1, "rejected": 0, "notes": "逐字命中：'approximate positioning error of 10 cm in obstacle-free environments'、'deteriorates greatly'、'static obstacles consistently influence...'、'completely blocked due to severe NLOS'、'A Chi-square test outlier rejection mechanism is applied in the ESKF to discard large outliers'、SNR=Amf/σn 与 Pd=Pr−Pf、Table 4 全部数值（Const.1-4 × TDOA2/TDOA3 × ESKF/Batch）"},
+    {"query": "30 个入选 DOI 逐一 HEAD 解析验证", "tool": "python urllib HEAD https://doi.org/<doi>", "screened": 30, "accepted": 30, "rejected": 0, "notes": "IEEE/其他 18 个返回 202/200 解析成功；MDPI/SAGE/Hindawi 12 个对脚本 HEAD 返回 403（反爬，非 DOI 失效）——这些 DOI 均已由 OpenAlex 逐条记录核验，MDPI 数篇另经 web_reader 全文抓取证实"}
+  ],
+  "totals": {
+    "openalex_searches": 15,
+    "arxiv_searches": 1,
+    "fulltext_fetches": 4,
+    "failed_attempts": 1,
+    "doi_checks": 30,
+    "screened_items_approx": 105,
+    "final_pool_size": 30
+  }
+}

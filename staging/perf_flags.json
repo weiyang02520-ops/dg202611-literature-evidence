@@ -1,0 +1,1325 @@
+[
+ {
+  "Matrix_ID": "PM-001",
+  "Paper_ID": "UWB-02",
+  "Metric": "LOS/NLOS 正确识别率",
+  "Value": "over 90%（大多数信道模型下）",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-002",
+  "Paper_ID": "UWB-03",
+  "Metric": "NLOS Soft / NLOS Hard 测距误差增幅（相对 LOS）",
+  "Value": "Soft 约 +30 cm；Hard 约 +1 m",
+  "EV": "NO"
+ },
+ {
+  "Matrix_ID": "PM-003",
+  "Paper_ID": "UWB-03",
+  "Metric": "NLOS Hard 场景原始测距 MAE（校正前）",
+  "Value": "约 1.9 m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-004",
+  "Paper_ID": "UWB-03",
+  "Metric": "NLOS Hard 经 GP 回归校正后 MAE",
+  "Value": "<0.2 m（训练集含 NLOS Hard 数据时）",
+  "EV": "PARTIAL"
+ },
+ {
+  "Matrix_ID": "PM-005",
+  "Paper_ID": "UWB-03",
+  "Metric": "NLOS combined (Soft+Hard) 原始测距 MAE",
+  "Value": "约 1 m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-006",
+  "Paper_ID": "UWB-03",
+  "Metric": "LOS/NLOS 二分类 F1-score",
+  "Value": ">0.9",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-007",
+  "Paper_ID": "UWB-03",
+  "Metric": "CIR 内存读取时延（工程约束）",
+  "Value": "约 300 ms/次",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-008",
+  "Paper_ID": "UWB-04",
+  "Metric": "阈值法首径功率差（RX power − first path power）LOS/NLOS 实测统计",
+  "Value": "LOS 4.12±1.13 dBm；NLOS 10.75±5.51 dBm",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-009",
+  "Paper_ID": "UWB-04",
+  "Metric": "厂商阈值约定",
+  "Value": "LOS<6 dBm，NLOS>10 dBm（threshold method）",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-010",
+  "Paper_ID": "UWB-04",
+  "Metric": "三分类（LOS/NLOS/MP）总体准确率",
+  "Value": "最好 91.9%，最差 72.9%；F1 最好 0.92、最差 0.69",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-011",
+  "Paper_ID": "UWB-04",
+  "Metric": "跨环境三分类退化",
+  "Value": "SVM F1 0.75（acc 75.35%）、RF 0.73（73.52%）、MLP 0.73（72.86%）",
+  "EV": "PARTIAL"
+ },
+ {
+  "Matrix_ID": "PM-012",
+  "Paper_ID": "UWB-04",
+  "Metric": "DW1000 数据手册标称精度",
+  "Value": "10 cm",
+  "EV": "NO"
+ },
+ {
+  "Matrix_ID": "PM-013",
+  "Paper_ID": "UWB-04",
+  "Metric": "MP（多径）条件测距误差量级（论文转引 Schmid et al. IPIN 2019）",
+  "Value": "数 cm 至 60 cm",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-014",
+  "Paper_ID": "UWB-06",
+  "Metric": "不平衡数据集 NLoS 检测准确率",
+  "Value": "GD 98.0%；GGD 96.7%（对比 SVM 92.6%、DT 92.8%、NB 93.2%、NN 95.5%）",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-015",
+  "Paper_ID": "UWB-08",
+  "Metric": "UWB 定位误差量级（工业场景）",
+  "Value": "LOS 1–10 cm；NLOS typically >30 cm",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-016",
+  "Paper_ID": "UWB-08",
+  "Metric": "跨环境迁移学习收益",
+  "Value": "误差改善 50%；(N)LOS 分类准确率提升 15%",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-017",
+  "Paper_ID": "UWB-08",
+  "Metric": "新环境小样本校正后精度",
+  "Value": "±10 cm 精度，(N)LOS 检测率 93%",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-018",
+  "Paper_ID": "UWB-08",
+  "Metric": "NLOS 环境定位误差改善（绝对值）",
+  "Value": "643 mm → 245 mm",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-019",
+  "Paper_ID": "UWB-11",
+  "Metric": "LOS 测距误差（满带宽 TOA）",
+  "Value": "centimeter level（厘米级）",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-020",
+  "Paper_ID": "UWB-16",
+  "Metric": "紧组合定位精度提升（相对常规紧耦合）",
+  "Value": "46.15%",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-021",
+  "Paper_ID": "UWB-18",
+  "Metric": "位置误差降低（IRACKF 对比三基线）",
+  "Value": "38.0% / 45.1% / 25.3%",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-022",
+  "Paper_ID": "UWB-19",
+  "Metric": "定位精度提升（相对先前 SHFAF 实现）",
+  "Value": "约 30%–25%",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-023",
+  "Paper_ID": "UWB-21",
+  "Metric": "MGWO 优化布站的平均 WPDOP 改善",
+  "Value": "≥37.6%（最低平均改善幅度）",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-024",
+  "Paper_ID": "UWB-25",
+  "Metric": "水平定位精度改善（RMSE）",
+  "Value": "实测 57.58% / 31.03%；仿真 41.60% / 15.43%",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-025",
+  "Paper_ID": "UWB-27",
+  "Metric": "UWB/LiDAR-SLAM 紧组合定位 RMSE",
+  "Value": "0.094 m（亚分米级）",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-026",
+  "Paper_ID": "UWB-29",
+  "Metric": "无遮挡环境 UWB TDOA+IMU 定位 RMSE（基准）",
+  "Value": "约 10 cm（Const.1–2：TDOA2 ESKF 0.094–0.123 m；Const.3：0.19–0.34 m，含手动采集序列）",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-027",
+  "Paper_ID": "UWB-29",
+  "Metric": "遮挡/边缘环境定位 RMSE 恶化（最差序列）",
+  "Value": "Const.4 全部序列 ESKF 0.16–0.92 m；最差序列 3.1：TDOA2 ESKF 0.919 / TDOA2 Batch 0.788 / TDOA3 ESKF 0.742 / TDOA3 Batch 0.563 m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-028",
+  "Paper_ID": "UWB-29",
+  "Metric": "质量指标定义（DW1000 寄存器）",
+  "Value": "SNR=Amf/σn；Pd=Pr−Pf；SNR 越高、Pd 越低→信号质量越好",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-029",
+  "Paper_ID": "UWB-29",
+  "Metric": "静态/动态 NLOS 偏差特性",
+  "Value": "静态障碍→一致可重复的正偏差；严重 NLOS→量测可完全中断；动态 NLOS→误差不可预测",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-030",
+  "Paper_ID": "RADAR-01",
+  "Metric": "translation error (KITTI-style mean over 100-800m subsequences)",
+  "Value": "1.76",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-031",
+  "Paper_ID": "RADAR-01",
+  "Metric": "rotation error",
+  "Value": "0.5",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-032",
+  "Paper_ID": "RADAR-01",
+  "Metric": "runtime",
+  "Value": "55",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-033",
+  "Paper_ID": "RADAR-01",
+  "Metric": "odometry loop drift (non-urban generalization)",
+  "Value": "15 m over 1235 m (1.2%)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-034",
+  "Paper_ID": "RADAR-02",
+  "Metric": "odometry accuracy (qualitative vs hand-crafted methods)",
+  "Value": "outperforms most hand-crafted methods",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-035",
+  "Paper_ID": "RADAR-04",
+  "Metric": "translational error reduction vs SOTA",
+  "Value": "51% (scanning/Oxford), 30% (automotive/nuScenes)",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-036",
+  "Paper_ID": "RADAR-04",
+  "Metric": "accuracy class",
+  "Value": "centimeter-level (comparable to lidar odometry)",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-037",
+  "Paper_ID": "RADAR-05",
+  "Metric": "average relative translation error (Boreas odometry leaderboard)",
+  "Value": "0.26",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-038",
+  "Paper_ID": "RADAR-05",
+  "Metric": "translation error with Doppler-enabling FM pattern",
+  "Value": "0.18",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-039",
+  "Paper_ID": "RADAR-05",
+  "Metric": "average KITTI-style translation/rotation error (MulRan)",
+  "Value": "1.45 / 0.38",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-040",
+  "Paper_ID": "RADAR-05",
+  "Metric": "featureless tunnel performance",
+  "Value": "3 of 4 runs under 2.5% translation error (version without Doppler constraint); Doppler constraint enables robust odometry in tunnels",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-041",
+  "Paper_ID": "RADAR-05",
+  "Metric": "ablation: without gyroscope bias estimation",
+  "Value": "6.00 / 1.57",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-042",
+  "Paper_ID": "RADAR-06",
+  "Metric": "localization accuracy (low-speed threshold)",
+  "Value": "10 cm achieved in 63% of test cases; end position within 13 cm at 63rd percentile",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-043",
+  "Paper_ID": "RADAR-06",
+  "Metric": "end pose / trajectory error percentiles",
+  "Value": "end pose 0.13/0.24/0.28 m (63rd/95th/max); trajectory 0.10/0.17/0.28 m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-044",
+  "Paper_ID": "RADAR-06",
+  "Metric": "average RPE on public low-speed sequences",
+  "Value": "0.06 (ours) vs 0.14 (Doppler-SLAM, next best)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-045",
+  "Paper_ID": "RADAR-07",
+  "Metric": "final position error",
+  "Value": "< 0.6% of distance traveled",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-046",
+  "Paper_ID": "RADAR-09",
+  "Metric": "localization error reduction from online temporal calibration",
+  "Value": "significantly reduced (qualitative)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-047",
+  "Paper_ID": "RADAR-10",
+  "Metric": "closure error & APE RMSE on ColoRadar (Seq 1: 2_23_2021_edgar_classroom_run0)",
+  "Value": "iRIOM 0.351m Hor / 0.043m Vert, Trans 0.916m, Rot 7.198°; vs EKFRIO 15.732m Hor / 6.746m Vert, Trans 5.048m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-048",
+  "Paper_ID": "RADAR-10",
+  "Metric": "radar point cloud sparsity",
+  "Value": "~400",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-049",
+  "Paper_ID": "RADAR-10",
+  "Metric": "capability statement",
+  "Value": "distance + azimuth + height + velocity",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-050",
+  "Paper_ID": "RADAR-11",
+  "Metric": "error reduction vs baseline (ORORA)",
+  "Value": "translation -1.06%; rotation -0.09",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-051",
+  "Paper_ID": "RADAR-12",
+  "Metric": "elevation error",
+  "Value": "18 m over 2.5 km (0.72%)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-052",
+  "Paper_ID": "RADAR-12",
+  "Metric": "vertical drift",
+  "Value": "less than 1%",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-053",
+  "Paper_ID": "RADAR-13",
+  "Metric": "vertical mean error",
+  "Value": "1.21",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-054",
+  "Paper_ID": "RADAR-16",
+  "Metric": "odometry RMSE APE / RPE (smoke sequences)",
+  "Value": "cp: ours(LiDAR+Radar) APE 1.133m / RPE 0.886m; radar-only APE 2.142m / RPE 1.094m; LiDAR 失败(无值). garden: ours APE 2.477m / RPE 0.737m; radar-only APE 2.925m / RPE 0.817m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-055",
+  "Paper_ID": "RADAR-17",
+  "Metric": "long-term deployment localization accuracy",
+  "Value": "centimeter-level",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-056",
+  "Paper_ID": "RADAR-18",
+  "Metric": "cross-modal radar-to-lidar map localization error",
+  "Value": "around 0.1",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-057",
+  "Paper_ID": "RADAR-18",
+  "Metric": "ranking under snowstorm",
+  "Value": "lidar-only best; radar-only competitive with much smaller map",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-058",
+  "Paper_ID": "RADAR-21",
+  "Metric": "median Recall@1",
+  "Value": "91.52 (ours) vs 69.55 (RaPlace)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-059",
+  "Paper_ID": "RADAR-22",
+  "Metric": "capability statement (band & weather)",
+  "Value": "76-81GHz FMCW; bypasses fog/dust/smoke",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-060",
+  "Paper_ID": "RADAR-24",
+  "Metric": "dataset scale",
+  "Value": "280 km / 32 traversals / 240,000+ radar scans / 4.7TB",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-061",
+  "Paper_ID": "RADAR-25",
+  "Metric": "place recognition modality comparison",
+  "Value": "radar-based PR outperforms LiDAR-based PR (longer range)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-062",
+  "Paper_ID": "RADAR-26",
+  "Metric": "dataset scale",
+  "Value": ">350 km, 1-year repeated route",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-063",
+  "Paper_ID": "RADAR-27",
+  "Metric": "capability statement (band & weather robustness)",
+  "Value": "77~81 GHz radio band; robust in adverse weathers",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-064",
+  "Paper_ID": "RADAR-27",
+  "Metric": "dataset scale & capability",
+  "Value": "35K frames 4DRT (Doppler/range/azimuth/elevation); 3DRT 无 elevation 难以 3D 检测",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-065",
+  "Paper_ID": "RADAR-28",
+  "Metric": "dataset scale & weather coverage",
+  "Value": "3 hours annotated radar images, >200K labels, sun/night/rain/fog/snow",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-066",
+  "Paper_ID": "RADAR-29",
+  "Metric": "dataset scale & platform coverage",
+  "Value": "17.6 km / 85 min / 6 trajectories (246 m - 6.95 km)",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-067",
+  "Paper_ID": "EVENT-01",
+  "Metric": "传感器动态范围（事件相机 vs 传统帧相机）",
+  "Value": "140 vs 60",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-068",
+  "Paper_ID": "EVENT-01",
+  "Metric": "事件相机时间分辨率",
+  "Value": "microseconds 量级",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-069",
+  "Paper_ID": "EVENT-01",
+  "Metric": "事件相机像素带宽",
+  "Value": "kHz 量级",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-070",
+  "Paper_ID": "EVENT-02",
+  "Metric": "相对纯事件 pipeline 的精度提升",
+  "Value": "130",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-071",
+  "Paper_ID": "EVENT-02",
+  "Metric": "相对标准帧+IMU（frames-only VIO）的精度提升",
+  "Value": "85",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-072",
+  "Paper_ID": "EVENT-03",
+  "Metric": "异步事件积分时间精度",
+  "Value": "micro-second 级",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-073",
+  "Paper_ID": "EVENT-04",
+  "Metric": "ATE RMS（本系统 vs ESVO 基线）",
+  "Value": "56.17 cm (Ours) vs 370.32 cm (ESVO)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-074",
+  "Paper_ID": "EVENT-04",
+  "Metric": "ATE RMS / ARE（本系统）",
+  "Value": "ATE 7.63 cm, ARE 1.69°",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-075",
+  "Paper_ID": "EVENT-04",
+  "Metric": "ATE RMS / ARE（本系统）",
+  "Value": "ATE 4.31 cm, ARE 2.79°",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-076",
+  "Paper_ID": "EVENT-04",
+  "Metric": "建图模块运行频率",
+  "Value": "20",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-077",
+  "Paper_ID": "EVENT-04",
+  "Metric": "后端单次更新耗时 / 基线 ESIO 后端耗时",
+  "Value": "5 ms vs 37.34 ms",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-078",
+  "Paper_ID": "EVENT-09",
+  "Metric": "等效延迟（混合 20fps RGB+事件 vs 高帧率相机）",
+  "Value": "20 fps RGB + event camera = 同 5,000 fps 相机的延迟",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-079",
+  "Paper_ID": "EVENT-09",
+  "Metric": "等效带宽",
+  "Value": "同 45 fps 相机的带宽",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-080",
+  "Paper_ID": "EVENT-10",
+  "Metric": "重建质量相对 SOTA 提升",
+  "Value": ">20",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-081",
+  "Paper_ID": "EVENT-10",
+  "Metric": "可合成视频帧率",
+  "Value": ">5,000",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-082",
+  "Paper_ID": "EVENT-11",
+  "Metric": "目标检测 mAP 提升（白天）",
+  "Value": "up to +9",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-083",
+  "Paper_ID": "EVENT-11",
+  "Metric": "目标检测 mAP 提升（夜间）",
+  "Value": "up to +13",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-084",
+  "Paper_ID": "EVENT-12",
+  "Metric": "检测 Recall",
+  "Value": "65.54",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-085",
+  "Paper_ID": "EVENT-12",
+  "Metric": "检测 Precision",
+  "Value": "53.85",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-086",
+  "Paper_ID": "EVENT-12",
+  "Metric": "检测 F1",
+  "Value": "59.12",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-087",
+  "Paper_ID": "EVENT-13",
+  "Metric": "帧-事件数据集时间对齐误差",
+  "Value": "under 0.01 s (90% 数据)",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-088",
+  "Paper_ID": "EVENT-13",
+  "Metric": "低光增强质量提升（相对单图/视频方法）",
+  "Value": "1.37 dB / 3.71 dB",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-089",
+  "Paper_ID": "EVENT-13",
+  "Metric": "下游语义分割 mIoU 提升",
+  "Value": "15.97",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-090",
+  "Paper_ID": "EVENT-17",
+  "Metric": "软件同步精度",
+  "Value": "millisecond-level",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-091",
+  "Paper_ID": "EVENT-18",
+  "Metric": "无硬件同步误差",
+  "Value": "<10",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-092",
+  "Paper_ID": "EVENT-22",
+  "Metric": "事件相机动态范围（DSEC 论文表述）",
+  "Value": ">120",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-093",
+  "Paper_ID": "EVENT-22",
+  "Metric": "事件相机延迟",
+  "Value": "sub-millisecond",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-094",
+  "Paper_ID": "EVENT-23",
+  "Metric": "GT 位姿/深度频率",
+  "Value": "up to 100",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-095",
+  "Paper_ID": "EVENT-24",
+  "Metric": "帧相机频率 / IMU 频率（数据集规格）",
+  "Value": "20 Hz 立体灰度帧 / 200 Hz IMU",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-096",
+  "Paper_ID": "EVENT-24",
+  "Metric": "GT 位姿频率",
+  "Value": "120",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-097",
+  "Paper_ID": "EVENT-27",
+  "Metric": "夜间驾驶车辆检测精度提升",
+  "Value": "40",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-098",
+  "Paper_ID": "EVENT-30",
+  "Metric": "高帧率跟踪能力",
+  "Value": "up to 240",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-099",
+  "Paper_ID": "FUSION-12",
+  "Metric": "navigation accuracy improvement vs KF",
+  "Value": "about 46",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-100",
+  "Paper_ID": "FUSION-12",
+  "Metric": "navigation accuracy improvement vs ML-based robust KF",
+  "Value": "about 30",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-101",
+  "Paper_ID": "FUSION-19",
+  "Metric": "three-class (clean/multipath/NLOS) classification accuracy",
+  "Value": "about 75",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-102",
+  "Paper_ID": "FUSION-24",
+  "Metric": "absolute pose error (APE) mean, degenerate corridor",
+  "Value": "1.69",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-103",
+  "Paper_ID": "FUSION-24",
+  "Metric": "APE mean, degenerate corridor (Ground-Challenge Corridor2)",
+  "Value": "0.18",
+  "EV": "PARTIAL"
+ },
+ {
+  "Matrix_ID": "PM-104",
+  "Paper_ID": "FUSION-24",
+  "Metric": "relative translational error",
+  "Value": "0.51",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-105",
+  "Paper_ID": "FUSION-24",
+  "Metric": "relative translational error (short experiment)",
+  "Value": "0.46",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-106",
+  "Paper_ID": "FUSION-24",
+  "Metric": "相对平移误差（短实验/长实验）",
+  "Value": "0.46 / 0.94",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-107",
+  "Paper_ID": "FUSION-24",
+  "Metric": "相对平移误差 (MulRan KAIST)",
+  "Value": "2.27",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-108",
+  "Paper_ID": "FUSION-24",
+  "Metric": "KITTI odometry Seq.00-10 平均相对平移误差",
+  "Value": "0.51",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-109",
+  "Paper_ID": "FUSION-24",
+  "Metric": "APE mean / RMSE（走廊退化序列，轮式平台相关）",
+  "Value": "0.19 / 0.24 (Corridor1); 0.18 / 0.20 (Corridor2)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-110",
+  "Paper_ID": "FUSION-24",
+  "Metric": "APE RMSE（长走廊退化，基线失败量化）",
+  "Value": "1.99",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-111",
+  "Paper_ID": "FUSION-25",
+  "Metric": "LiDAR point count (NPC) retention vs clear conditions",
+  "Value": "at least 74",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-112",
+  "Paper_ID": "FUSION-25",
+  "Metric": "non-observation distance for aluminum/steel targets",
+  "Value": "20-30",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-113",
+  "Paper_ID": "FUSION-29",
+  "Metric": "false positive loop closure constraints tolerated",
+  "Value": "up to 1000",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-114",
+  "Paper_ID": "GNSS-02",
+  "Metric": "cross-street positioning accuracy (potential, modelled)",
+  "Value": "metre-order",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-115",
+  "Paper_ID": "GNSS-03",
+  "Metric": "horizontal accuracy improvement from terrain-height aiding",
+  "Value": "35",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-116",
+  "Paper_ID": "GNSS-03",
+  "Metric": "vertical accuracy improvement from terrain-height aiding",
+  "Value": "4x",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-117",
+  "Paper_ID": "GNSS-03",
+  "Metric": "horizontal accuracy improvement from C/N0-based measurement weighting",
+  "Value": "8",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-118",
+  "Paper_ID": "GNSS-03",
+  "Metric": "horizontal accuracy degradation from conventional sequential consistency checking (wrong-exclusion risk)",
+  "Value": "-60",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-119",
+  "Paper_ID": "GNSS-05",
+  "Metric": "long-term positioning accuracy in GNSS-denied environment",
+  "Value": "centimetre-level",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-120",
+  "Paper_ID": "GNSS-06",
+  "Metric": "reduction of large-error positioning solutions (estimated on wrong side of road), middle urban canyon",
+  "Value": "8.4",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-121",
+  "Paper_ID": "GNSS-06",
+  "Metric": "reduction of large-error positioning solutions (wrong side of road), deep urban canyon",
+  "Value": "36.2",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-122",
+  "Paper_ID": "GNSS-09",
+  "Metric": "positioning error reduction vs extreme learning machine (ELM)",
+  "Value": "approximately 30",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-123",
+  "Paper_ID": "GNSS-09",
+  "Metric": "positioning error reduction vs EKF",
+  "Value": "approximately 60",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-124",
+  "Paper_ID": "GNSS-10",
+  "Metric": "ambiguity fixed rate, BDS/GPS combined RTK, static test",
+  "Value": "about 97",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-125",
+  "Paper_ID": "GNSS-10",
+  "Metric": "ambiguity fixed rate, kinematic test",
+  "Value": "about 90",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-126",
+  "Paper_ID": "GNSS-10",
+  "Metric": "positioning accuracy (RMS), static test",
+  "Value": "better than 0.15 (horizontal) / 0.25 (vertical)",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-127",
+  "Paper_ID": "GNSS-10",
+  "Metric": "positioning accuracy (RMS), kinematic test",
+  "Value": "0.30 (horizontal)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-128",
+  "Paper_ID": "GNSS-14",
+  "Metric": "NLOS signal correct discrimination rate",
+  "Value": "97.7",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-129",
+  "Paper_ID": "GNSS-15",
+  "Metric": "SPP accuracy improvement after excluding anomalous observations (offline dataset, E/N/U)",
+  "Value": "87.0 / 45.9 / 69.6",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-130",
+  "Paper_ID": "GNSS-15",
+  "Metric": "SPP accuracy improvement (two online datasets, three directions)",
+  "Value": "48.4/45.7, 39.6/63.3, 49.6/49.1",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-131",
+  "Paper_ID": "GNSS-16",
+  "Metric": "GNSS positioning error, deep urban canyon road users (before)",
+  "Value": "over 30",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-132",
+  "Paper_ID": "GNSS-16",
+  "Metric": "GNSS positioning error after 3DMA collaborative FGO (after)",
+  "Value": "less than 10",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-133",
+  "Paper_ID": "GNSS-17",
+  "Metric": "GNSS SPP accuracy in sparse areas",
+  "Value": "about 1",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-134",
+  "Paper_ID": "GNSS-17",
+  "Metric": "GNSS positioning error upper bound in dense urban areas",
+  "Value": "up to 100",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-135",
+  "Paper_ID": "GNSS-18",
+  "Metric": "minimum number of satellites usable for state estimation",
+  "Value": "1 (vs 4 for conventional GNSS)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-136",
+  "Paper_ID": "GNSS-20",
+  "Metric": "max position drift RMS reduction during 2-min GNSS outages (north/east/up) vs GNSS/INS/ODO",
+  "Value": "62.8 / 72.3 / 52.1",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-137",
+  "Paper_ID": "GNSS-20",
+  "Metric": "yaw error reduction during outages vs GNSS/INS/ODO",
+  "Value": "62.1",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-138",
+  "Paper_ID": "BDS-01",
+  "Metric": "regional short message communication capability per message",
+  "Value": "14000 bits (1000 Chinese characters)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-139",
+  "Paper_ID": "BDS-01",
+  "Metric": "global short message communication capability per message",
+  "Value": "560 bits (40 Chinese characters)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-140",
+  "Paper_ID": "BDS-01",
+  "Metric": "international SAR service detection probability",
+  "Value": "better than 99",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-141",
+  "Paper_ID": "BDS-01",
+  "Metric": "global measured positioning accuracy (weekly mean)",
+  "Value": "2.34",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-142",
+  "Paper_ID": "BDS-03",
+  "Metric": "regional short message communication service (RSMCS) success rate",
+  "Value": "better than 99.9",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-143",
+  "Paper_ID": "BDS-03",
+  "Metric": "global short message communication service (GSMCS) success rate",
+  "Value": "better than 95.6",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-144",
+  "Paper_ID": "BDS-03",
+  "Metric": "generalized RDSS positioning accuracy",
+  "Value": "usually better than 12",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-145",
+  "Paper_ID": "BDS-03",
+  "Metric": "B2b-PPP positioning accuracy and convergence time",
+  "Value": "better than 0.6 m; convergence usually < 30 min",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-146",
+  "Paper_ID": "BDS-03",
+  "Metric": "BDSBAS single/dual frequency positioning accuracy",
+  "Value": "better than 3 m (single) / 2 m (dual)",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-147",
+  "Paper_ID": "BDS-03",
+  "Metric": "MEOSAR single station success rate",
+  "Value": "better than 99",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-148",
+  "Paper_ID": "FUT-01",
+  "Metric": "navigation accuracy of non-imaging polarization sensor (heading, no drift)",
+  "Value": "±0.1",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-149",
+  "Paper_ID": "FUT-04",
+  "Metric": "localisation error reduction with polarised skylight sensor (EKF-SLAM)",
+  "Value": "about 30",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-150",
+  "Paper_ID": "FUT-04",
+  "Metric": "mapping error reduction with polarised skylight sensor (EKF-SLAM)",
+  "Value": "about 25",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-151",
+  "Paper_ID": "LDG-02",
+  "Metric": "APE translation mean(sigma), First 15 m Alignment",
+  "Value": "2.05 (1.23)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-152",
+  "Paper_ID": "LDG-02",
+  "Metric": "RPE per 10 m traversed distance, translation mean(sigma)",
+  "Value": "0.17 (0.12)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-153",
+  "Paper_ID": "LDG-02",
+  "Metric": "scan-to-map registration time",
+  "Value": "12.65",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-154",
+  "Paper_ID": "LDG-04",
+  "Metric": "KITTI relative translation error",
+  "Value": "0.865",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-155",
+  "Paper_ID": "LDG-05",
+  "Metric": "ATE (FAST-LIO2)",
+  "Value": "70.26",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-156",
+  "Paper_ID": "LDG-05",
+  "Metric": "ATE（盾构隧道全系统失败）",
+  "Value": ">100 (标记✗)",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-157",
+  "Paper_ID": "LDG-05",
+  "Metric": "数据集规模",
+  "Value": "64 trajectories / 64 km / 7 settings",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-158",
+  "Paper_ID": "LDG-14",
+  "Metric": "评估规模",
+  "Value": "100000+ frames / 7 LiDAR types / 3 datasets",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-159",
+  "Paper_ID": "LDY-01",
+  "Metric": "Preservation Rate (PR)",
+  "Value": "93.98",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-160",
+  "Paper_ID": "LDY-01",
+  "Metric": "Rejection Rate (RR)",
+  "Value": "97.081",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-161",
+  "Paper_ID": "LDY-01",
+  "Metric": "Preservation Rate (PR)",
+  "Value": "90.624",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-162",
+  "Paper_ID": "LDY-01",
+  "Metric": "Runtime per iteration",
+  "Value": "0.0732",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-163",
+  "Paper_ID": "LDY-02",
+  "Metric": "Preservation Rate (PR, Removert-RM3 配置)",
+  "Value": "85.502",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-164",
+  "Paper_ID": "LDY-02",
+  "Metric": "Runtime per iteration (Removert)",
+  "Value": "0.8307",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-165",
+  "Paper_ID": "LDY-03",
+  "Metric": "Preservation Rate PR (Seq.07)",
+  "Value": "98.5774",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-166",
+  "Paper_ID": "LDY-03",
+  "Metric": "F1 score (Seq.07)",
+  "Value": "0.986141",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-167",
+  "Paper_ID": "LDY-03",
+  "Metric": "Preservation Rate PR (Seq.02)",
+  "Value": "87.8949",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-168",
+  "Paper_ID": "LDY-05",
+  "Metric": "建图误差 MAE (DynaHull)",
+  "Value": "0.102",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-169",
+  "Paper_ID": "LDY-05",
+  "Metric": "建图误差 RMSE (DynaHull)",
+  "Value": "0.312",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-170",
+  "Paper_ID": "LDY-05",
+  "Metric": "FP% / FN% / Precision / Recall (DynaHull)",
+  "Value": "5.93 / 7.33 / 0.88 / 0.88",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-171",
+  "Paper_ID": "LDY-06",
+  "Metric": "绝对轨迹精度提升 (vs LOAM)",
+  "Value": "90",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-172",
+  "Paper_ID": "LDY-06",
+  "Metric": "绝对轨迹精度提升 (vs LIO-SAM)",
+  "Value": "70",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-173",
+  "Paper_ID": "RLC-12",
+  "Metric": "ACR 运行时加速（相对 SOTA ACR 策略）",
+  "Value": "1.6",
+  "EV": "NOT_VERIFIED"
+ },
+ {
+  "Matrix_ID": "PM-174",
+  "Paper_ID": "RLC-17",
+  "Metric": "重定位成功率（TE<2m 阈值）",
+  "Value": "17.43",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-175",
+  "Paper_ID": "RLC-17",
+  "Metric": "重定位成功率（TE<5m 阈值）",
+  "Value": "96.11",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-176",
+  "Paper_ID": "RLC-17",
+  "Metric": "重定位成功率对比 ORB-SLAM2（TE<1m）",
+  "Value": "22.79",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-177",
+  "Paper_ID": "RLC-17",
+  "Metric": "单帧重定位总耗时",
+  "Value": "19.025",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-178",
+  "Paper_ID": "SYN-04",
+  "Metric": "初始化时时间偏移估计误差",
+  "Value": "<3",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-179",
+  "Paper_ID": "SYN-04",
+  "Metric": "初始化时姿态（外参旋转）估计误差",
+  "Value": "<3",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-180",
+  "Paper_ID": "SYN-04",
+  "Metric": "100ms 时偏未补偿时 VIO 轨迹 RMSE",
+  "Value": "1.141",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-181",
+  "Paper_ID": "SYN-04",
+  "Metric": "在线时间偏移估计残差",
+  "Value": "-0.15/-0.21",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-182",
+  "Paper_ID": "SYN-09",
+  "Metric": "外参标定旋转/平移误差（M2DGR Gate 01）",
+  "Value": "0.501 deg / 0.039 m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-183",
+  "Paper_ID": "SYN-09",
+  "Metric": "外参标定旋转/平移误差（HILTI Basement 3）",
+  "Value": "0.069 deg / 0.018 m",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-184",
+  "Paper_ID": "SYN-11",
+  "Metric": "LiDAR-IMU 时延估计误差（初值→10次标定后）",
+  "Value": "9.58 -> 4.67 -> 0.50",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-185",
+  "Paper_ID": "SYN-11",
+  "Metric": "时延校正后点云对准位置误差（East/North/Up）",
+  "Value": "0.018/0.019/0.017",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-186",
+  "Paper_ID": "SYN-11",
+  "Metric": "单次标定平均对准误差（三方法对比）",
+  "Value": "0.233 / 0.151 / 0.067",
+  "EV": "YES"
+ },
+ {
+  "Matrix_ID": "PM-187",
+  "Paper_ID": "SYN-17",
+  "Metric": "标定旋转/平移误差（真实数据）",
+  "Value": "0.06 deg / 0.13 m",
+  "EV": "NO"
+ },
+ {
+  "Matrix_ID": "PM-188",
+  "Paper_ID": "SYN-17",
+  "Metric": "标定精度（100 组随机外参一致性）",
+  "Value": "translation <0.22 m / rotation <0.34 deg",
+  "EV": "NO"
+ },
+ {
+  "Matrix_ID": "PM-189",
+  "Paper_ID": "SYN-17",
+  "Metric": "与闭环方法对比",
+  "Value": "0.17 deg / 0.06 m",
+  "EV": "NO"
+ }
+]

@@ -1,0 +1,177 @@
+# 10 REJECTED OR UNVERIFIED — 淘汰与未核验记录
+
+生成日期：2026-08-29
+本文件记录文献挖掘过程中被拒绝或未能核验的候选条目。**任何条目均未混入正式文献库**；记录在此以保证过程可复查、不静默丢弃。
+另含第二层性能核验发现的 5 处问题（文件末尾「性能数字核验发现的问题」节）。
+
+总计：107 条 rejected 记录。
+
+
+## UWB 组（32 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| UWB-1 | Güvenç, Chong, Watanabe, Inamura, 'NLOS Identification and Weighted Least-Squares Localization for UWB Systems Using Mul | REJECTED | 同团队会议版（WCNC 2007，DOI 10.1109/wcnc.2007.296）已保留收录，期刊扩展版内容重叠，为控制池规模不重复收录 | OpenAlex API works/https://doi.org/10.1155/2008/271984 已抓取：标题/作者/年份/完整摘要均真实存在（含 MPC 统计加权 WLS 方法描述），DOI HEAD 解析成功(200) |
+| UWB-2 | Li-Ta Hsu, 'GNSS multipath detection using a machine learning approach', ITSC 2017, DOI 10.1109/itsc.2017.8317700 | REJECTED | 主题为 GNSS 多径/NLOS 检测，非 UWB 文献，超出本研究组范围 | OpenAlex 搜索 'UWB GNSS integration fusion' 结果中出现并阅读摘要，确认为 GNSS 领域 |
+| UWB-3 | Zhenghua Chen et al., 'Fusion of WiFi, Smartphone Sensors and Landmarks Using the Kalman Filter for Indoor Localization' | REJECTED | WiFi/PDR/地标融合，不含 UWB，不相关 | OpenAlex 搜索 'robust adaptive Kalman filter UWB localization' 结果中出现并阅读摘要确认为 WiFi 系统 |
+| UWB-4 | Rainer Mautz, 'Indoor positioning technologies', ETH Zurich 论文 2012, DOI 10.3929/ethz-a-007313554 | REJECTED | 通用室内定位综述，非 UWB 专题；已有 UWB 专题综述（Alarifi 2016、Wang 2023）覆盖 | OpenAlex 搜索 'UWB indoor positioning survey review' 结果中出现并阅读摘要 |
+| UWB-5 | Ala Al-Fuqaha et al., 'Internet of Things: A Survey on Enabling Technologies, Protocols, and Applications', IEEE COMST 2 | REJECTED | 物联网通识综述，与 UWB 定位质量/弃用策略无关 | OpenAlex 搜索 'UWB indoor positioning survey review' 结果中出现，标题/摘要确认不相关 |
+| UWB-6 | Ali Yassin et al., 'Recent Advances in Indoor Localization: A Survey...', IEEE COMST 2016, DOI 10.1109/comst.2016.263242 | REJECTED | 通用室内定位综述，非 UWB 专题 | OpenAlex 检索结果中阅读摘要确认 |
+| UWB-7 | Ramón Brena et al., 'Evolution of Indoor Positioning Technologies: A Survey', J. Sensors 2017, DOI 10.1155/2017/2630413 | REJECTED | 通用 IPS 综述，非 UWB 专题 | OpenAlex 检索结果中阅读摘要确认 |
+| UWB-8 | Mary B. Alatise, Gerhard P. Hancke, 'A Review on Challenges of Autonomous Mobile Robot and Sensor Fusion Methods', IEEE  | REJECTED | 移动机器人传感器融合通识综述，UWB 非主题 | OpenAlex 搜索 'UWB LiDAR fusion robot localization' 结果中出现并阅读摘要确认 |
+| UWB-9 | Xiaobin Xu et al., 'A Review of Multi-Sensor Fusion SLAM Systems Based on 3D LIDAR', Remote Sensing 2022, DOI 10.3390/rs | REJECTED | LiDAR SLAM 综述，非 UWB 文献 | OpenAlex 搜索 'UWB LiDAR fusion robot localization' 结果中出现并阅读摘要确认 |
+| UWB-10 | Samuel G. Leitch et al., 'On Indoor Localization Using WiFi, BLE, UWB, and IMU Technologies', Sensors 2023, DOI 10.3390/ | REJECTED | 多技术横评综述，UWB 部分深度不及专题综述，池规模有限未收录 | OpenAlex 搜索 'UWB dataset LOS NLOS public' 结果中出现并阅读摘要确认 |
+| UWB-11 | Yang Song et al., 'UWB/LiDAR Fusion For Cooperative Range-Only SLAM', ICRA 2019, DOI 10.1109/icra.2019.8794222 | REJECTED | 相关但池规模有限；UWB/LiDAR 融合已有 Chen 2022 (Remote Sensing, 含 NLOS 识别+0.094 m RMSE) 收录 | OpenAlex 搜索 'UWB LiDAR fusion robot localization' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-12 | Giulio Delama et al., 'UVIO: An UWB-Aided Visual-Inertial Odometry Framework with Bias-Compensated Anchors Initializatio | REJECTED | 相关（GDOP 引导锚点建图航迹规划）但池规模有限；几何/GDOP 已由 Cao 2023、Guo 2022、Jourdan 2008 覆盖 | OpenAlex 搜索 'UWB inertial odometry' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-13 | Abbas Albaidhani et al., 'Anchor selection for UWB indoor positioning', Trans. Emerging Telecom. Tech. 2019, DOI 10.1002 | REJECTED | GDOP 基站选择主题相关，但摘要无量化性能数据且池规模有限，未收录 | OpenAlex 搜索 'UWB anchor placement geometry dilution of precision' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-14 | Hao Xu et al., 'Omni-Swarm: A Decentralized Omnidirectional Visual–Inertial–UWB State Estimation System for Aerial Swarm | REJECTED | 无人机集群方向，与轮式平台方案相关性低，未收录 | OpenAlex 搜索 'UWB inertial odometry' 结果中出现并阅读摘要，确认真实存在（含 centimeter 级表述） |
+| UWB-15 | Thien-Minh Nguyen et al., 'VIRAL SLAM: Tightly Coupled Camera-IMU-UWB-Lidar SLAM', arXiv:2105.03296, 2021 | REJECTED | 多传感器 SLAM 框架与本项目相关，但质量门控主题由池内其他文献覆盖，且本条以 arXiv 预印本为主，未收录 | OpenAlex 搜索 'tightly coupled UWB IMU' 结果中出现（DOI 10.48550/arxiv.2105.03296）并阅读摘要，确认真实存在 |
+| UWB-16 | Zhichao Cui et al., 'LOS/NLOS Identification for Indoor UWB Positioning Based on Morlet Wavelet Transform and Convolutio | REJECTED | 纯仿真（802.15.4a 模型+开源数据集），NLOS 分类方向已收录实测类文献（Maranò/Barral/Sang/Jiang），未收录 | OpenAlex 搜索 'UWB positioning accuracy LOS NLOS' 结果中出现并阅读摘要（含 100%/99.89%/96.10% 场景精度），确认真实存在 |
+| UWB-17 | Shoude Wang, Nur Syazreen Ahmad, 'Improved UWB-based indoor positioning system via NLOS classification and error mitigat | REJECTED | 摘要声明'NLOS 下定位误差通常超过 30 cm'与已收录 Fontaine 2023 一致，方法(SVM-RFE 特征选择)与池内文献重叠，未收录 | OpenAlex 搜索 'UWB dataset LOS NLOS public' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-18 | Valentín Barral et al., 'Using the Power Delay Profile to Accelerate the Training of Neural Network-Based Classifiers fo | REJECTED | 与已收录 Barral 2019 同团队、主题高度重叠（PDP 特征加速训练），未重复收录 | OpenAlex 搜索 'UWB RSSI first path power NLOS features' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-19 | Jaron Fontaine et al., 'Edge Inference for UWB Ranging Error Correction Using Autoencoders', IEEE Access 2020, DOI 10.11 | REJECTED | 同团队 Fontaine 2023 (IoT-J) 已收录且更新更全面（摘要含 NLOS >300 mm 表述，与 2023 篇 >30 cm 一致） | OpenAlex 搜索 'UWB anchor placement geometry dilution of precision' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-20 | Giovanni Miraglia et al., 'Comparison of two sensor data fusion methods in a tightly coupled UWB/IMU 3-D localization sy | REJECTED | 会议影响面小、摘要无量化数据；UWB/IMU 紧组合已由 Hol 2009/Li 2020/Zou 2023/Juston 2025 覆盖 | OpenAlex 搜索 'tightly coupled UWB IMU' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-21 | Alwin Poulose, Dong Seog Han, 'UWB Indoor Localization Using Deep Learning LSTM Networks', Applied Sciences 2020, DOI 10 | REJECTED | UWB+LSTM 定位（非 NLOS 质量判别主题），池规模有限未收录 | OpenAlex 搜索 'UWB number of anchors accuracy experimental' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-22 | Matteo Ridolfi et al., 'Experimental Evaluation of UWB Indoor Positioning for Sport Postures', Sensors 2018, DOI 10.3390 | REJECTED | 运动姿态下 UWB 精度实测，与轮式平台场景相关性弱，未收录 | OpenAlex 搜索 'UWB number of anchors accuracy experimental' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-23 | Kai Wen et al., 'A New Quaternion Kalman Filter Based Foot-Mounted IMU and UWB Tightly-Coupled Method for Indoor Pedestr | REJECTED | 行人导航专用（足绑 IMU），与轮式平台不符，未收录 | OpenAlex 搜索 'tightly coupled UWB IMU' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-24 | Weide You et al., 'Data Fusion of UWB and IMU Based on Unscented Kalman Filter for Indoor Localization of Quadrotor UAV' | REJECTED | 四旋翼 UKF 融合，融合方法学已由更贴近平台的文献覆盖，未收录 | OpenAlex 多个查询结果中出现并阅读摘要，确认真实存在 |
+| UWB-25 | Jian Wang et al., 'A Tightly-Coupled GPS/INS/UWB Cooperative Positioning Sensors System Supported by V2I Communication', | REJECTED | GPS/INS/UWB 鲁棒 KF 路线真实存在，但 GNSS/UWB 融合已由 Guo 2022 (JSEN) 与 Wang 2021 (RS) 收录，未重复 | OpenAlex 搜索 'GNSS UWB tightly coupled urban canyon' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-26 | Vincenzo Di Pietra et al., 'Loosely Coupled GNSS and UWB with INS Integration for Indoor/Outdoor Pedestrian Navigation', | REJECTED | 行人场景松组合；车辆场景无缝组合已由 Wang 2021 (RS) 覆盖，未重复 | OpenAlex 搜索 'UWB GNSS integration fusion' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-27 | Xiaofei Yang et al., 'A Novel NLOS Error Compensation Method Based IMU for UWB Indoor Positioning System', IEEE Sensors  | REJECTED | IMU 虚拟点 NLOS 补偿思路相关，但池规模有限且同类方法已收录（Zou 2023/Hyun 2021），未收录 | OpenAlex 搜索 'UWB positioning accuracy LOS NLOS' 结果中出现并阅读摘要，确认真实存在 |
+| UWB-28 | Huei-Yung Lin, Jia-Rong Zhan, 'GNSS-denied UAV indoor navigation with UWB incorporated visual inertial odometry', Measur | REJECTED | UWB+VIO 方向文献，与质量判别主题关联较间接，池规模有限未收录 | OpenAlex 搜索 'UWB inertial odometry' 结果中出现并阅读摘要，确认均真实存在 |
+| UWB-29 | Fazeelat Mazhar et al., 'Precise Indoor Positioning Using UWB: A Review of Methods, Algorithms and Implementations', Wir | REJECTED | UWB 综述，与已收录 Alarifi 2016/Wang 2023 重叠，未重复收录 | OpenAlex 搜索 'UWB indoor positioning survey review' 结果中出现（标题/作者/年份/venue），确认真实存在 |
+| UWB-30 | Jasurbek Khodjaev et al., 'Survey of NLOS identification and error mitigation problems in UWB-based positioning algorith | REJECTED | 早期 NLOS 综述，已被 2023 年 Wang 综述覆盖，未收录 | OpenAlex 搜索 'UWB NLOS identification'/'UWB NLOS mitigation' 结果中多次出现，确认真实存在 |
+| UWB-31 | Weijie Li et al., ICCT 2013 (DOI 10.1109/icct.2013.6820422)；Zhuoqi Zeng et al., ICCE 2019 (DOI 10.1109/icce.2019.8662065 | REJECTED | 均为真实存在的 UWB NLOS 识别/ML 文献（OpenAlex 摘要已读），但主题与池内已收录文献重叠度高、或为纯仿真，按'宁缺毋滥'与池规模上限（30 篇）未收录 | OpenAlex 搜索 'UWB NLOS identification'/'UWB NLOS mitigation' 结果中逐一阅读摘要确认 |
+| UWB-32 | Vedran Dizdarevic, Klaus Witrisal, ICICS 2007 (DOI 10.1109/icics.2007.4449805)；Z. Şahinoğlu, İ. Güvenç, ICU 2006 (DOI 10 | REJECTED | 真实存在的测距误差/TOA 估计/误差标定文献（摘要已读），但测距误差建模已由 Bellusci 2008 收录，池规模有限未收录 | OpenAlex 搜索 'UWB ranging error model' 结果中出现并阅读摘要确认 |
+
+## RADAR 组（5 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| RADAR-1 | Continental ARS548 官方产品页（4D 成像雷达规格：FOV、量程、elevation、点云输出）作为 vendor datasheet 条目入池 | REJECTED | 官方 URL 返回 301 重定向至 aumovio.com 后为 404 页面，WebFetch 直接返回 403；无法获取官方原文规格，按铁律不得凭记忆填写 ARS548 参数。 | WebFetch https://www.continental-automotive.com/en/gl/.../ARS548-RDI/High-Resolution-Radar.html -> 301 重定向提示；WebFetch https://www.aumovio.com/... -> 403 Forbidden；curl（带浏览器 UA）https://www.aumovio.com/ |
+| RADAR-2 | Navtech CIR304-H 官方 datasheet 规格（range bins、分辨率等）作为 vendor 条目入池 | REJECTED | navtechradar.com 产品页 404，WebSearch 仅返回 CIR204-H/HDR100 等其他型号的二手规格摘要，无法直接核验 CIR304-H datasheet 数值；CIR304-H 仅以 Boreas 论文描述（360° 扫描雷达）入池。 | WebFetch https://navtechradar.com/products/cir304-h/ -> 404；curl 带 UA -> 404；WebSearch 'Navtech CIR304-H ... specifications' -> 无官方 datasheet 页面命中。 |
+| RADAR-3 | OpenAlex 'radar odometry' 按引用数排序的前 15 条结果作为雷达里程计文献 | REJECTED | 关键词碰撞：返回的是通用机器人/自主驾驶综述（Colomina 2014 摄影测量综述、Thrun 2001 MCL、Yurtsever 2021 自动驾驶综述等），与毫米波雷达定位无关，全部拒绝。 | curl https://api.openalex.org/works?search=radar%20odometry&sort=cited_by_count:desc 输出 15 条清单逐条审读。 |
+| RADAR-4 | Enhanced K-Radar: Optimal Density Reduction ... (arXiv 2303.06342) 入池 | REJECTED | 检索确认其存在（arXiv API 返回），但主题为 4D 雷达目标检测的密度优化，与定位/里程计主线相关性弱，且池容量有限，按范围排除。 | arXiv API all:"MulRan" OR all:"K-Radar" 检索返回标题/作者/年份。 |
+| RADAR-5 | 60GHz 频段机器人雷达里程计专门论文（用于 60 vs 77GHz 差异的定位侧证据） | REJECTED | arXiv all:'60 GHz' AND all:'radar' AND cat:cs.RO 检索仅返回 RAPTAR 等通信/标定类论文，未找到 60GHz 里程计专门论文；60GHz 能力证据改由 TI IWR6843 官方页 + New Wave 综述（76-81GHz 覆盖机器人主流）支撑。 | arXiv API 查询（max_results=12, sortBy=relevance）逐条审读。 |
+
+## EVENT 组（5 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| EVENT-1 | MVSEC 数据集论文发表于 IJRR（2018，记忆候选） | REJECTED | Crossref 题名检索明确显示其发表于 IEEE Robotics and Automation Letters 2018（DOI 10.1109/LRA.2018.2800793）；IJRR 2017 的事件相机数据集论文是 Mueggler 等的 rpg 数据集（10.1177/0278364917691115），两者易混。 | curl Crossref https://api.crossref.org/works?query.bibliographic=The+Multi+Vehicle+Stereo+Event+Camera+Dataset -> 返回 RA-L 2018 与 DOI 10.1109/lra.2018.2800793。 |
+| EVENT-2 | M3ED 数据集论文发表于 ECCV 2022 主会（记忆候选） | REJECTED | DBLP 记录显示其发表于 CVPR Workshops 2023（DOI 10.1109/CVPRW59228.2023.00419，Chaney 等），并非 ECCV 2022 主会。 | DBLP q=multi-vehicle multi-sensor event dataset（0 命中）后改 q=M3ED event -> 1 命中 CVPR Workshops 2023。该论文因篇幅控制未进入正式 papers 池，仅在此记录 venue 误记修正。 |
+| EVENT-3 | Ultimate SLAM 的 arXiv 编号为 1711.08976（记忆候选） | REJECTED | arXiv 标题检索实际返回 1709.06310v4（journal-ref Robot.Autom.Lett. 3 (2018) 994-1001）；记忆中的编号未经证实，弃用。 | arXiv API ti:"Ultimate SLAM? Combining Events, Images, and IMU..." -> FOUND 1709.06310v4。 |
+| EVENT-4 | TUM-VIE 的 ground truth 由 RTK GPS 提供（记忆候选） | REJECTED | arXiv 摘要明确 GT 来自动捕系统（120 Hz，仅每段序列首尾），并非 RTK GPS；DSEC 才是 RTK GPS GT 的数据集。 | arXiv API 摘要 2108.07329v1：'ground truth poses from a motion capture system at 120Hz during the beginning and end of each sequence'。 |
+| EVENT-5 | 1Mpx 数据集（'The 1 Megapixel Event Camera Dataset'）与 'v2e IJRR 2021 期刊版'（记忆候选） | REJECTED | DBLP q=1 megapixel event camera dataset 0 命中、q=frame event camera odometry 0 命中；v2e 经 DBLP 确认的正式版本为 CVPRW 2021（DOI 10.1109/CVPRW53098.2021.00144）。两者均未获检索实证，不收入正式池。 | DBLP 两次标题检索 + v2e 标题检索（命中 CVPRW 2021）。 |
+
+## FUSION 组（4 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| FUSION-1 | Sage, A.P. & Husa, G.W., 'Adaptive filtering with unknown prior statistics', Joint Automatic Control Conference (JACC) 1 | REJECTED | 本会话在 Crossref/OpenAlex/DBLP 均未检索到该确切标题的 JACC 1969 条目；仅在 Crossref 检索到同作者同年 IEEE Symposium on Adaptive Processes 的姊妹篇 'Algorithms for sequential adaptive estimation of prior statistics'（10.1109/sap.1969 | curl Crossref https://api.crossref.org/works?query.bibliographic=Adaptive%20filtering%20with%20unknown%20prior%20statistics%20Sage%20Husa（rows=6），返回条目中无 JACC 版本；curl OpenAlex search=Sage-Husa adaptive |
+| FUSION-2 | Willsky, 'A survey of design methods for failure detection in dynamic systems'（经典 FDI 综述，常标为 Automatica 1976） | REJECTED | OpenAlex 仅命中 1977 年 Microelectronics Reliability 版本（DOI 10.1016/0026-2714(77)90326-2），且该记录无作者字段，与常引的 1976 Automatica 版本元数据不一致，无法确认条目身份，按铁律不入池。 | curl OpenAlex https://api.openalex.org/works?search=adaptive%20Kalman%20filter%20methods%20review%20survey%20navigation 命中该条目（1977, Microelectronics Reliability, 无作者）；未再做进一步核验。 |
+| FUSION-3 | GV-iRIOM: GNSS-visual-aided 4D radar inertial odometry and mapping in large-scale environments（ISPRS J. Photogramm. Remo | REJECTED | 存在性与元数据已核验（OpenAlex 命中，2025, ISPRS JPRS, DOI 10.1016/j.isprsjprs.2025.01.039），但摘要不可得（abstract_inverted_index 为空，Elsevier 非 OA），且池容量有限（30 篇已满），未入池。 radar 方向已由 Cheng 2023 与 DGRO 2024 覆盖。 | curl OpenAlex https://api.openalex.org/works?filter=doi:10.1016/j.isprsjprs.2025.01.039/...（DOI 批量抓取），返回 title/year/DOI，ABS 为空。 |
+| FUSION-4 | 以 'wheel slippage detection' 为主题把 Reina et al. 2006（IEEE/ASME TMech）与 Maimone et al. 2007（JFR, Mars Exploration Rovers V | REJECTED | 两篇均经 OpenAlex 真实核验存在，但评审范围限定为 GNSS/UWB/LiDAR/visual/radar 五类观测，轮式里程计/视觉抗滑不在此表；且池容量 30 已满，故放弃。此条非'查无实据'，是范围裁剪记录。 | curl OpenAlex https://api.openalex.org/works?search=wheel%20slip%20detection%20odometry%20vehicle%20localization 命中两篇（10.1109/tmech.2006.871095；10.1002/rob.20184）。 |
+
+## GNSS 组（21 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| GNSS-1 | A Portfolio Approach to NLOS and Multipath Mitigation in Dense Urban Areas（Groves, Jiang, Rudi, Strode, 2013） | REJECTED | 为 UCL Discovery 机构库版本（ENCORE 会议版本），OpenAlex 无 DOI 无正式 venue，内容与已收录 Groves & Jiang 2013 (J. Navigation) 高度重叠；按去重与可核验性原则不重复收录。 | OpenAlex search=GNSS NLOS detection multipath urban 返回该条：DOI 为 None、venue 显示 UCL Discovery (University College London)，有摘要但无正式出版记录。 |
+| GNSS-2 | Tight Integration of GNSS and a 3D City Model for Robust Positioning in Urban Canyons（Bourdeau, Sahmoudi, Tourneret, 201 | REJECTED | OpenAlex 记录 DOI 为 None、venue 为空（疑为 ION GNSS 会议），无法在 Crossref/出版方核实；主题（GNSS+3D 城市模型紧组合）已由 Hsu 2015、Zhang 2020 等有 DOI 的正式文献覆盖。 | OpenAlex search=GNSS urban canyon positioning 返回该条（2012，无 DOI，含摘要）；Crossref 未查（无 DOI 可查）。 |
+| GNSS-3 | A Novel GNSS Positioning Technique for Improved Accuracy in Urban Canyon Scenarios Using 3D City Model（Kumar & Petovello | REJECTED | OpenAlex 记录无 DOI、无 venue，无法核验正式出处；3D 城市模型主题已有正式文献覆盖。 | OpenAlex search=GNSS urban canyon positioning 返回该条（2014，DOI None）。 |
+| GNSS-4 | GNSS Positioning with Multipath Simulation using 3D Surface Model in Urban Canyon（Suzuki & Kubo, 2012） | REJECTED | OpenAlex 记录无 DOI、无 venue（疑 ION 会议），无法核验；多路径仿真主题已由 Xie & Petovello 2014 (IEEE TIM) 覆盖。 | OpenAlex search=GNSS urban canyon positioning 返回该条（2012，DOI None）。 |
+| GNSS-5 | NLOS GPS signal detection using a dual-polarisation antenna（Jiang & Groves, 2012, GPS Solutions） | REJECTED | 文献真实（OpenAlex 有正式 DOI 10.1007/s10291-012-0305-5），但方法依赖双极化天线专用硬件，与本项目低成本轮式平台传感器配置不符，未纳入收录上限内。 | OpenAlex search=GNSS NLOS detection multipath urban 返回该记录（2012, GPS Solutions, 有 DOI）。 |
+| GNSS-6 | Polarized Skylight Navigation in Insects: Model and Electrophysiology of e-Vector Coding（Sakura, Lambrinos, Labhart, 200 | REJECTED | 纯神经生理学机制研究，超出 FUTURE_OUTLOOK 小专题的工程范围（工程综述与系统实现已有 Kong 2023、Karman 2012 覆盖）。 | OpenAlex search=polarized skylight navigation 返回该记录（2007，J Neurophysiology，含三型 POL 神经元 60 度调谐描述）。 |
+| GNSS-7 | The significance of direct sunlight and polarized skylight in the ant's celestial system of navigation（Wehner & Müller,  | REJECTED | 纯生物学实验（沙漠蚁），非工程导航实现；作为思想源头可在综述类引用中带出，不单列。 | OpenAlex search=polarized skylight navigation 返回该记录（2006, PNAS, 有 DOI）。 |
+| GNSS-8 | Satellite Selection Methodology for Horizontal Navigation and Integrity Algorithms（Gerbeth et al., 2016, ION ITM） | REJECTED | 面向航空 ARAIM 通道受限场景的选星策略，与轮式平台需求距离较远且为会议论文无开放摘要；选星主题已由 Jang 2022 与 Hsu 2015 RAIM 覆盖。 | OpenAlex search=GNSS satellite selection weighted HDOP 返回该记录（2016, ION ITM, 有 DOI 10.33012/2016.14592，仅元数据）。 |
+| GNSS-9 | GNSS Signal Quality in Forest Stands for Off-Road Vehicle Navigation（Rybanský et al., 2023, Applied Sciences） | REJECTED | 主题为林区（植被遮挡）信号质量，与本项目城市峡谷/多路径/拒止主题不匹配。 | OpenAlex search=GNSS satellite selection weighted HDOP 返回该记录（2023, Applied Sciences, 有 DOI）。 |
+| GNSS-10 | 百度百科『北斗短报文通信』词条中的系统规格：系统容量超过 1000 万次/小时、响应时间小于 1 秒、支持用户数 1200 万 | REJECTED | 非官方来源（百科/社区），未能在 beidou.gov.cn 官方页面核实；官方规格以官网发布会原文（14000 比特/1000 汉字、560 比特/40 汉字）为准，频次/容量类数字不采用非官方口径。 | WebSearch 检索到百度百科与知乎来源含上述数字；随后 curl 抓取 beidou.gov.cn 官网发布规范页与 2020 开通发布会页，均未出现 1000 万次/小时等表述。 |
+| GNSS-11 | 华力创通 HBD6100 北斗三号短报文终端产品页『区域短报文最长 1000 个汉字（视北斗卡等级）』 | REJECTED | 厂商营销页面，按任务铁律不可作为短报文规格依据（规格必须来自官方文档或正式论文）；数字本身与官方口径一致但来源不合格。 | WebSearch 结果列表出现该产品页链接；未将其作为证据链一环，仅用于提示 1000 汉字口径与官方一致。 |
+| GNSS-12 | Realization of ship route supervision platform system based on Beidou short message communication（An et al., 2020, IEEE  | REJECTED | 文献真实（OpenAlex 有 DOI 10.1109/tocs50858.2020.9339735 与摘要），但 K 块已达 10 条上限，本文为港口船舶监管工程案例，信息密度低于已收录条目，故舍弃。 | OpenAlex search=BeiDou short message communication 返回该记录及摘要（武汉港航船舶监管平台，定位/测速/授时+短报文双向通信）。 |
+| GNSS-13 | Innovative Development and Forecast of BeiDou System（Tan Shusen, 2017, 测绘学报 via DOAJ） | REJECTED | K 块上限内未收录：OpenAlex 元数据不全（venue 显示 DOAJ），RDSS 历史发展内容与已收录系统体制文献重叠。 | OpenAlex search=BeiDou RDSS satellite 返回该记录（2017，含 RDSS 快速定位报告与短报文通信历史描述摘要）。 |
+| GNSS-14 | Gaia mission / ICRF VLBI / Representations of celestial coordinates in FITS 等天体测量文献（Prusti 2016, Charlot 2020, Ma 1998,  | REJECTED | 天文学基础数据与参考框架文献，与『天基光学导航用于导航定位』主题无直接关系，属检索噪声。 | OpenAlex search=celestial optical navigation spacecraft 返回上述记录（均有正式 DOI），逐条判定为主题不相关。 |
+| GNSS-15 | Vision-based collective motion: A locust-inspired reductionist model（Krongauz et al., 2024, PLoS Comput Biol）及 Insect In | REJECTED | 仿生群体运动/光学流控制主题，与偏振光导航、天基光学导航均不相关，检索噪声。 | OpenAlex search=polarization odometry bio-inspired 返回上述记录，主题判定不相关。 |
+| GNSS-16 | Cooperative Navigation of UAVs in GNSS-Denied Area With Colored RSSI Measurements（Ouyang et al., 2020, IEEE Sensors Jour | REJECTED | 文献真实（OpenAlex 有 DOI 与摘要），但为 UAV 集群 RSSI 协同定位，与轮式平台 GNSS 退化观测处理主线偏离，A 块上限内未收录。 | OpenAlex search=GNSS denied navigation 返回该记录（2020, IEEE Sensors Journal, DOI 10.1109/jsen.2020.3021561，含摘要）。 |
+| GNSS-17 | GNSS-denied UAV navigation review（Jarraya et al., 2025, Satellite Navigation）与 Radar and Visual Odometry Integrated Syst | REJECTED | 均为 UAV 场景；Jarraya 2025 综述质量高但视角为空中平台，Mostafa 2018 为机载雷达/视觉里程计；与轮式平台直接相关的拒止文献已收录（Tang 2015 UGV、Chang 2020 车载、GVINS、Dai 2019），受 A 块 18-26 篇上限控制舍弃。 | OpenAlex search=GNSS denied navigation 与 search=GNSS outage inertial navigation drift 均返回上述记录（DOI 10.1186/s43020-025-00162-z、10.3390/s18092776，含完整摘要）。 |
+| GNSS-18 | GNSS Multipath-Resistant Cooperative Navigation in Urban Vehicular Networks（Ko, Kim & Kong, 2015, IEEE TVT, 10.1109/tvt. | REJECTED | 文献真实、摘要已核验（基于实测多路径时延的蒙特卡洛评估）；但面向多车协同 SPAAWN/hcEKF 体制，与本项目单车退化观测处理主线距离较远，A 块 18-26 篇上限内未收录。 | OpenAlex API 批量 DOI 抓取返回完整摘要（NLOS 检测+MRH-SPAWN/MR-hcEKF，蒙特卡洛仿真，结论定性显著提升）。 |
+| GNSS-19 | GNSS Vulnerabilities and Existing Solutions: A Review of the Literature（Zidan et al., 2020, IEEE Access, 10.1109/access. | REJECTED | 文献真实、摘要已核验；综述重心在干扰/欺骗威胁与行业背景，与已收录 Schmidt 2014 综述角色重叠，A 块上限内未收录。 | OpenAlex API 批量 DOI 抓取返回完整摘要。 |
+| GNSS-20 | A new IMU-aided multiple GNSS fault detection and exclusion algorithm for integrated navigation in urban environments（Su | REJECTED | 文献真实（标题/作者/期刊经 OpenAlex 与 Semantic Scholar 双源确认），但三家 API 均无摘要，无法提取带条件的性能数据；多故障 FDE 主题已由 Hsu 2015 与 Groves & Jiang 2013 以可核验数据覆盖，A 块上限内未收录。 | OpenAlex search 与 S2 DOI 查询均返回仅元数据、摘要为空。 |
+| GNSS-21 | BeiDou Navigation Satellite System（Lu & Yao, 图书章节, DOI 10.1002/9781119458449.ch6） | REJECTED | 文献真实、摘要已核验（RDSS 双向有源定位体制、二维定位/授时/短报文）；RDSS 机制内容与已收录 Wang Fei 2020 及官网发布会口径重叠，且 OpenAlex 出版社字段不完整，K 块 6-10 条上限内未收录。 | OpenAlex API search=BeiDou RDSS satellite 返回该章节记录与摘要。 |
+
+## LIDAR 组（5 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| LIDAR-1 | DéliO: Depth only LiDAR odometry（记忆中的 IROS 2022 候选） | REJECTED | 查无实据：DBLP 查询 'depth only LiDAR odometry' 0 命中，arXiv/OpenAlex 检索亦未命中该标题，判断为模型记忆不可靠，不收入。 | DBLP publ/api?q=depth+only+LiDAR+odometry（0 hits）；arXiv/OpenAlex 关键词检索未命中同名论文。 |
+| LIDAR-2 | Degradation Resilient LiDAR-Radar-Inertial Odometry (arXiv 2403.05332) | REJECTED | 真实存在（arXiv API 命中）但主题为烟雾/传感器退化（radar 融合），非几何退化场景下的 LiDAR 质量评估，超出本块范围，不收入 papers。 | arXiv API all:"LiDAR degeneracy" 检索命中该条目并读取标题。 |
+| LIDAR-3 | An Intensity-Augmented LiDAR-Inertial SLAM for Solid-State LiDARs in Degenerated Environments (T-IM 2022, DOI 10.1109/ti | REJECTED | 题录与摘要已核验（OpenAlex DOI 抓取），但主题为固态 LiDAR 小 FoV/不规则扫描的退化补偿，与本项目旋转式主 LiDAR 的走廊/开放区域几何退化相关性较弱，名额所限未入池。 | OpenAlex works API DOI 过滤命中并重建摘要。 |
+| LIDAR-4 | Degeneracy-Resistant LiDAR-SLAM Algorithm Based on Geometric and Visual Features' Fusion (JFR, DOI 10.1002/rob.70026) | REJECTED | 题录与摘要已核验（Crossref 摘要命中：长走廊/隧道退化、几何+视觉融合），但『融合抗退化』主题与已收录的 Switch-SLAM/LIVER/Anti-Degeneracy PF 高度重叠，为控制总数未入池。 | Crossref API works/10.1002/rob.70026 返回标题、年份与摘要前段。 |
+| LIDAR-5 | Semantic Scholar 批量检索作为主要数据源 | REJECTED | 连续 429 限流（首查 HTTP:429，重试后 total 字段缺失），按预案切换为 OpenAlex/DBLP/arXiv/Crossref 组合，不影响覆盖。 | curl https://api.semanticscholar.org/graph/v1/paper/search?query=LiDAR%20degeneracy%20detection（HTTP 429）；第二次查询返回无 total 的空响应。 |
+
+## RELOCSYNC 组（5 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| RELOCSYNC-1 | Active Relocalization: Towards End-to-End Active Camera Re-localization（记忆候选，疑为 AAAI 2023） | REJECTED | 查无实据：Crossref bibliographic 检索与 arXiv 标题/全文检索均未找到该论文；arXiv 'active relocalization' 全字段搜索仅命中一篇生物物理论文（染色体质点 active relocation，arXiv:1705.03798）。 | Crossref https://api.crossref.org/works?query.bibliographic=Active+Relocalization%3A+Towards+End-to-End+Active+Camera+Re-localization（top3 无关）；WebFetch https://arxiv.org/search/?query=%22active+reloca |
+| RELOCSYNC-2 | Planning for the Unexpected: Explicitly Optimizing Motions for Global Localization（记忆候选，疑与主动全局定位相关） | REJECTED | 标题存在但主题不符：DBLP 显示该文为 IROS 2020 腿式跑步的地面不确定性运动规划（DOI 10.1109/ICRA40945.2020.9197049 / arXiv:2001.10629），与全局定位/重定位无关。 | DBLP https://dblp.org/search/publ/api?q=global%20localization%20planning%20unexpected（0 条）；q=planning%20for%20the%20unexpected（命中上述腿式跑步论文） |
+| RELOCSYNC-3 | A Survey on Active SLAM (Placed et al., TRO 2023) 的预印本为 arXiv:2209.06404（记忆 ID） | REJECTED | arXiv:2209.06404 实为组合数学论文 'On Layer-Rainbow Latin Cubes...'（Amin Bahmanian）；该综述的正确标识为 DOI 10.1109/tro.2023.3248510，已按 DOI 收录。 | WebFetch https://arxiv.org/abs/2209.06404（返回数学论文页） |
+| RELOCSYNC-4 | Furgale 等统一时空标定论文发表于 IROS 2012（记忆年份） | REJECTED | 记忆年份错误：Crossref/IEEE 官方记录为 IROS 2013（DOI 10.1109/iros.2013.6696514，event=IROS 2013, pp.1280-1286），已按 2013 收录。 | Crossref 单条记录 https://api.crossref.org/works/10.1109/IROS.2013.6696514 |
+| RELOCSYNC-5 | VINS-Mono (arXiv:1708.03852) 作为 SYNC 块核心数值来源（在线时间标定效果） | REJECTED | arXiv 摘要页确认论文真实存在且与时间标定相关，但摘要不含任何时间标定定量结果（其 TRO 版才有正文表格，未能抓取）；作为 SYNC 数值源价值不足，未收录，改以 Qin&Shen IROS 2018（元数据）+ Feng 2019（含 VINS-Mono 时偏误差实测）组合覆盖。 | WebFetch https://arxiv.org/abs/1708.03852（确认标题/作者/摘要，摘要无数值） |
+
+## SIM 组（8 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| SIM-1 | {"id":"RJ-078","group":"SIM","candidate":"ESIM: a multimodel design error and fault simulator for logic circuits (Al-Asa | REJECTED | Crossref 检索'ESIM'命中，为电路故障模拟器，与事件相机仿真无关；同名冲突记录在案 |  |
+| SIM-2 | {"id":"RJ-079","group":"SIM","candidate":"V2E: Validating Smart Contract Vulnerabilities... (2026, DOI:10.1145/3808108)  | REJECTED | Crossref 检索'v2e'命中，均为同名无关工作 |  |
+| SIM-3 | {"id":"RJ-080","group":"SIM","candidate":"UrbanNav: A Comprehensive Simulation Framework for Urban Air Mobility Research | REJECTED | Crossref 命中，与 UrbanNav 数据集同名但为 UAM 仿真框架，主题不符；名冲突记入 conflicts |  |
+| SIM-4 | {"id":"RJ-081","group":"SIM","candidate":"An Event Camera Simulator for Arbitrary Viewpoints Based on Neural Radiance Fi | REJECTED | 已核实存在（DBLP/Crossref 均命中），但本次未抓原文深挖其可信边界，暂不入池，留作候选 |  |
+| SIM-5 | {"id":"RJ-082","group":"SIM","candidate":"Vehicle and city simulation with Gazebo and ROS (Agüero, ROSCon 2017, DOI:10.3 | REJECTED | Crossref 命中，为会议演讲/幻灯类文献，学术引用价值弱于正式论文，不入池 |  |
+| SIM-6 | {"id":"RJ-083","group":"SIM","candidate":"Packet Loss and Latency Analysis of DDS Middleware Across QoS Profiles and Com | REJECTED | Crossref 命中，但发表载体（Elaris Computing Nexus / Journal of Computer and Communication Networks）可信度存疑，未采信 |  |
+| SIM-7 | {"id":"RJ-084","group":"SIM","candidate":"GNSS-SDR 开源软件接收机相关论文","reason":"Crossref 检索 'GNSS-SDR open source software rec | REJECTED | Crossref 检索 'GNSS-SDR open source software receiver' 未返回可确认的原始论文记录，未入池；仅保留仓库候选（未核验） |  |
+| SIM-8 | {"id":"RJ-085","group":"SIM","candidate":"Train Localization During GNSS Outages: A Minimalist Approach Using Track Geom | REJECTED | arXiv 检索命中且真实存在，但属'GNSS 中断下定位方法'而非退化场景构造方法，归其他组更合适 |  |
+
+## DATASETS 组（7 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| DATASETS-1 | {"id":"RJ-086","group":"DATASETS","candidate":"GOOSE dataset（GNSS 中断/退化相关）","reason":"仅凭记忆出现检索词，本次未检索到官方页面，查无实据，不入池"} | REJECTED | 仅凭记忆出现检索词，本次未检索到官方页面，查无实据，不入池 |  |
+| DATASETS-2 | {"id":"RJ-087","group":"DATASETS","candidate":"HeRCULES（林地 GNSS 退化建图数据）","reason":"未检索/未打开官方页面，未核验"} | REJECTED | 未检索/未打开官方页面，未核验 |  |
+| DATASETS-3 | {"id":"RJ-088","group":"DATASETS","candidate":"4Seasons dataset（多季节自动驾驶）","reason":"未打开官方页面核验，未入池"} | REJECTED | 未打开官方页面核验，未入池 |  |
+| DATASETS-4 | {"id":"RJ-089","group":"DATASETS","candidate":"TUM-VIE（事件相机+IMU 数据集）","reason":"未打开官方页面核验，未入池"} | REJECTED | 未打开官方页面核验，未入池 |  |
+| DATASETS-5 | {"id":"RJ-090","group":"DATASETS","candidate":"RTK-SLAM dataset（arXiv:2604.07151，GNSS 退化/拒止环境）","reason":"仅出现在 WebSearch | REJECTED | 仅出现在 WebSearch 结果摘要中，未打开核验 |  |
+| DATASETS-6 | {"id":"RJ-091","group":"DATASETS","candidate":"Open Benchmark Dataset for ML Navigation Under Degraded GNSS（Nature Sci D | REJECTED | 仅出现在 WebSearch 结果摘要中，未打开核验 |  |
+| DATASETS-7 | {"id":"RJ-092","group":"DATASETS","candidate":"KITTI-CARLA（合成数据集）","reason":"已核实存在（arXiv:2109.00892），但为 CARLA 合成数据，归入 SI | REJECTED | 已核实存在（arXiv:2109.00892），但为 CARLA 合成数据，归入 SIM 组说明，不入真实采集数据集清单 |  |
+
+## OPENSOURCE 组（15 条）
+
+| # | Claimed | Final Status | Reason | Verification Attempt |
+|---|---|---|---|---|
+| OPENSOURCE-1 | {"id":"RJ-093","group":"OPENSOURCE","candidate":"ucla-vision/openvins","reason":"GitHub API 404；OpenVINS 官方仓库实为 rpng/ope | REJECTED | GitHub API 404；OpenVINS 官方仓库实为 rpng/open_vins（已核验入池） |  |
+| OPENSOURCE-2 | {"id":"RJ-094","group":"OPENSOURCE","candidate":"uzh-rpg/esim_ros","reason":"GitHub API 404；ESIM 官方仓库已迁移为 uzh-rpg/rpg_es | REJECTED | GitHub API 404；ESIM 官方仓库已迁移为 uzh-rpg/rpg_esim（已核验入池） |  |
+| OPENSOURCE-3 | {"id":"RJ-095","group":"OPENSOURCE","candidate":"SensorManipulation/v2e","reason":"GitHub API 404；v2e 官方仓库为 SensorsINI/v | REJECTED | GitHub API 404；v2e 官方仓库为 SensorsINI/v2e（已核验入池） |  |
+| OPENSOURCE-4 | {"id":"RJ-096","group":"OPENSOURCE","candidate":"PX4/PX4-SITL_gazebo","reason":"GitHub API 404；已更名为 PX4/PX4-SITL_gazebo- | REJECTED | GitHub API 404；已更名为 PX4/PX4-SITL_gazebo-classic（已核验入池） |  |
+| OPENSOURCE-5 | {"id":"RJ-097","group":"OPENSOURCE","candidate":"xinhe-yifan/gnss-ins-sim","reason":"GitHub API 404；gnss-ins-sim 官方仓库为 A | REJECTED | GitHub API 404；gnss-ins-sim 官方仓库为 Aceinna/gnss-ins-sim（已核验入池） |  |
+| OPENSOURCE-6 | {"id":"RJ-098","group":"OPENSOURCE","candidate":"utiasDSL/util-uwb-dataset","reason":"GitHub API 404；现行仓库为 learnsyslab/u | REJECTED | GitHub API 404；现行仓库为 learnsyslab/util-uwb-dataset（已核验入池） |  |
+| OPENSOURCE-7 | {"id":"RJ-099","group":"OPENSOURCE","candidate":"ori-drs/newer_college_dataset 与 ori-dss/newer_college_dataset","reason" | REJECTED | GitHub API 均 404；Newer College 数据集本体经官网核验（入数据集清单），其官方仓库地址未核验，故不入开源图谱 |  |
+| OPENSOURCE-8 | {"id":"RJ-100","group":"OPENSOURCE","candidate":"irapkaist/urban_dataset","reason":"GitHub API 404；KAIST Complex Urban 数 | REJECTED | GitHub API 404；KAIST Complex Urban 数据集经 Google Sites 官方页核验（入数据集清单） |  |
+| OPENSOURCE-9 | {"id":"RJ-101","group":"OPENSOURCE","candidate":"utiasASRL/steam_icp（连续时间 LiDAR/雷达惯性里程计，MIT，267★，pushed 2026-02）","reaso | REJECTED | GitHub search 已核实存在，但本次池已满且连续时间路线非首选，列为备选 |  |
+| OPENSOURCE-10 | {"id":"RJ-102","group":"OPENSOURCE","candidate":"HKUST-Aerial-Robotics/RIO（优化基雷达-惯性里程计，MIT，206★，pushed 2025-03）","reason | REJECTED | GitHub search 已核实存在，与 ethz-asl/rio、ORORA 功能重叠，列为备选 |  |
+| OPENSOURCE-11 | {"id":"RJ-103","group":"OPENSOURCE","candidate":"ailab-hanyang/Radar4Motion（T-IV，Apache-2.0，230★，pushed 2025-06）","reaso | REJECTED | GitHub search 已核实存在；IMU-free 雷达里程计路线，列为备选 |  |
+| OPENSOURCE-12 | {"id":"RJ-104","group":"OPENSOURCE","candidate":"keenan-burnett/yeti_radar_odometry（BSD-3，153★，pushed 2021-12）","reason" | REJECTED | GitHub search 已核实存在；维护停滞，列为备选 |  |
+| OPENSOURCE-13 | {"id":"RJ-105","group":"OPENSOURCE","candidate":"TIERS/uwb-vio-lidar-fusion、TIERS/uwb-cooperative-mrs-localization","rea | REJECTED | GitHub search 已核实存在；与已入池 UWB 条目功能重叠，列为备选 |  |
+| OPENSOURCE-14 | {"id":"RJ-106","group":"OPENSOURCE","candidate":"advoard/advoard_localization（UWB+odom+LiDAR KF 融合 ROS）","reason":"GitHu | REJECTED | GitHub search 已核实存在（65★，license 未标注）；示例级实现，列为备选 |  |
+| OPENSOURCE-15 | {"id":"RJ-107","group":"OPENSOURCE","candidate":"AUVSL/UWB-Jackal-World、PulkitRustagi/UWB-Localization、joeyjyyang/fy03_l | REJECTED | GitHub search 已核实存在；多为示例/学位级实现，未入池 |  |
+
+## 性能数字核验发现的问题（Wave2 独立核验）
+
+以下行在第二层核验中未能在原文找到对应数字，已在该行的 Reason 列标注，**禁止引用**：
+
+- PM-002（UWB-03）：NLOS Soft / NLOS Hard 测距误差增幅（相对 LOS） = Soft 约 +30 cm；Hard 约 +1 m —— 核验代理在原文未找到该数字
+- PM-012（UWB-04）：DW1000 数据手册标称精度 = 10 cm —— 核验代理在原文未找到该数字
+- PM-187（SYN-17）：标定旋转/平移误差（真实数据） = 0.06 deg / 0.13 m —— 核验代理在原文未找到该数字
+- PM-188（SYN-17）：标定精度（100 组随机外参一致性） = translation <0.22 m / rotation <0.34 deg —— 核验代理在原文未找到该数字
+- PM-189（SYN-17）：与闭环方法对比 = 0.17 deg / 0.06 m —— 核验代理在原文未找到该数字
+
+注：除 NO 行外，另有 PARTIAL 行（口径歧义）与 NOT_VERIFIED 行（抽样未覆盖），详见 03 矩阵 EXTRACTION_VERIFIED 列。

@@ -1,0 +1,1732 @@
+{
+  "area": "GNSS",
+  "papers": [
+    {
+      "title": "Navigation sensors and systems in GNSS degraded and denied environments",
+      "authors": [
+        "George T. Schmidt"
+      ],
+      "year": 2014,
+      "venue": "Chinese Journal of Aeronautics",
+      "doi": "10.1016/j.cja.2014.12.001",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1016/j.cja.2014.12.001",
+      "keywords": [
+        "GNSS degraded",
+        "GNSS denied",
+        "GPS/INS integration",
+        "navigation sensors",
+        "review"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "GNSS 退化/拒止领域的经典综述（Draper Lab），梳理 GPS/惯性/其他辅助传感器与组合技术的进展，可为比赛技术方案的退化应对章节提供框架性引用。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20denied%20navigation) 返回该记录：标题、2014 年、DOI 10.1016/j.cja.2014.12.001、期刊 Chinese Journal of Aeronautics，并还原出完整摘要（综述性质，提及 Bluefin-21 系统等）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "综述文章，本身无实验数字；用于背景与分类。"
+    },
+    {
+      "title": "Shadow Matching: A New GNSS Positioning Technique for Urban Canyons",
+      "authors": [
+        "Paul D. Groves"
+      ],
+      "year": 2011,
+      "venue": "Journal of Navigation",
+      "doi": "10.1017/s0373463311000087",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1017/s0373463311000087",
+      "keywords": [
+        "urban canyon",
+        "3D building model",
+        "shadow matching",
+        "cross-street accuracy",
+        "GNSS"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "提出利用 3D 建筑模型预测卫星可见性做 shadow matching，改善城市峡谷横向（cross-street）定位；是 3DMA-GNSS 路线的奠基文献，支撑本项目在遮挡环境用环境先验改善 GNSS 的思路。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20urban%20canyon%20positioning 及 doi:10.1017/s0373463311000087 记录) 返回标题、2011 年、期刊 Journal of Navigation 与完整摘要；摘要明确基于建模（modelling）演示该方法潜力。",
+      "performance_data": [
+        {
+          "metric": "cross-street positioning accuracy (potential, modelled)",
+          "value": "metre-order",
+          "unit": "m",
+          "conditions": "城市峡谷建模仿真：用 3D 建筑模型预测卫星可见性并与实测可见性比对定位；非实车实验",
+          "source_level": "ABSTRACT",
+          "snippet": "Modelling is used to show that this shadow matching technique has the potential to achieve metre-order cross-street positioning in urban canyons."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "摘要中同时指出：多星座可提升沿街方向精度但横向精度仍差（建筑遮挡导致信号沿街传播）。"
+    },
+    {
+      "title": "Height Aiding, C/N0 Weighting and Consistency Checking for GNSS NLOS and Multipath Mitigation in Urban Areas",
+      "authors": [
+        "Paul D. Groves",
+        "Ziyi Jiang"
+      ],
+      "year": 2013,
+      "venue": "Journal of Navigation",
+      "doi": "10.1017/s0373463313000350",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1017/s0373463313000350",
+      "keywords": [
+        "C/N0 weighting",
+        "height aiding",
+        "consistency checking",
+        "NLOS mitigation",
+        "multipath",
+        "urban"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "与本项目『退化时降权/拒绝观测』设计最直接相关：无额外硬件条件下比较高度辅助、C/N0 加权、一致性检验三种手段在伦敦市中心的实测效果，并警示盲目剔除观测可能适得其反。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?filter=doi:... 多条批量抓取) 返回该 DOI 的完整摘要（abstract_inverted_index 还原），摘要含 35%/4 倍/8%/60% 等数字与 central London 多点实测描述。",
+      "performance_data": [
+        {
+          "metric": "horizontal accuracy improvement from terrain-height aiding",
+          "value": "35",
+          "unit": "% (improvement)",
+          "conditions": "英国伦敦市中心多地点实测数据、多星座 GNSS 单点定位、无额外硬件",
+          "source_level": "ABSTRACT",
+          "snippet": "Aiding the position solution using a terrain height database was found to have the biggest impact, improving the horizontal accuracy by 35% and the vertical accuracy by a factor of 4."
+        },
+        {
+          "metric": "vertical accuracy improvement from terrain-height aiding",
+          "value": "4x",
+          "unit": "factor",
+          "conditions": "同上：伦敦市中心实测、terrain height 数据库辅助",
+          "source_level": "ABSTRACT",
+          "snippet": "improving the horizontal accuracy by 35% and the vertical accuracy by a factor of 4"
+        },
+        {
+          "metric": "horizontal accuracy improvement from C/N0-based measurement weighting",
+          "value": "8",
+          "unit": "% (improvement)",
+          "conditions": "伦敦市中心实测；按载噪比 C/N0 对 GNSS 观测加权",
+          "source_level": "ABSTRACT",
+          "snippet": "An 8% improvement in horizontal accuracy was also obtained from weighting the GNSS measurements in the position solution according to the carrier-power-to-noise-density ratio (C/N0)."
+        },
+        {
+          "metric": "horizontal accuracy degradation from conventional sequential consistency checking (wrong-exclusion risk)",
+          "value": "-60",
+          "unit": "% (degradation)",
+          "conditions": "伦敦市中心实测；常规顺序剔除法在多信号同时受 NLOS/多路径影响时常剔除错误观测",
+          "source_level": "ABSTRACT",
+          "snippet": "Consistency checking using a conventional sequential elimination technique was found to degrade horizontal positioning performance by 60% because it often eliminated the wrong measurements in cases when multiple signals were affected by NLOS reception or strong multipath interference."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "对项目设计的核心启示：退化观测宜『先降权、谨慎硬剔除』；子集比较式一致性检查优于常规顺序剔除但仍不稳定。"
+    },
+    {
+      "title": "Measuring GNSS Multipath Distributions in Urban Canyon Environments",
+      "authors": [
+        "Peng Xie",
+        "Mark G. Petovello"
+      ],
+      "year": 2014,
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "doi": "10.1109/tim.2014.2342452",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tim.2014.2342452",
+      "keywords": [
+        "multipath distribution",
+        "urban canyon",
+        "Doppler",
+        "code phase delay",
+        "vehicular GNSS"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "实测刻画城市峡谷多路径误差分布（多普勒/码相位时延随车速与信号功率的变化及方向依赖性），为本项目理解退化观测的统计特性提供依据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20urban%20canyon%20positioning) 返回该记录：标题、2014 年、DOI、期刊 IEEE TIM 及完整摘要（含 multipath directional-dependence 现象描述）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要为误差特性测量与建模，无归纳性的精度提升数字。"
+    },
+    {
+      "title": "LiDAR Scan Matching Aided Inertial Navigation System in GNSS-Denied Environments",
+      "authors": [
+        "Jian Tang",
+        "Yuwei Chen",
+        "Xiaoji Niu",
+        "Li Wang",
+        "Liang Chen",
+        "Jingbin Liu"
+      ],
+      "year": 2015,
+      "venue": "Sensors",
+      "doi": "10.3390/s150716710",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s150716710",
+      "keywords": [
+        "LiDAR scan matching",
+        "INS",
+        "GNSS-denied",
+        "EKF",
+        "UGV",
+        "dead reckoning"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "GNSS 拒止时用低成本 LiDAR 扫描匹配辅助 INS 的松组合 EKF 方案，并在自研轮式 UGV 平台（NAVIS）实测验证，与本项目轮式平台退化备份 directly 相关。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20denied%20navigation 与批量 DOI 抓取) 返回标题、2015 年、DOI 10.3390/s150716710、期刊 Sensors 与完整摘要（含 UGV NAVIS 实测描述）。",
+      "performance_data": [
+        {
+          "metric": "long-term positioning accuracy in GNSS-denied environment",
+          "value": "centimetre-level",
+          "unit": "m (order of magnitude, qualitative)",
+          "conditions": "自研无人地面车辆（UGV）平台 NAVIS，静态与动态实地测试；INS+LiDAR SLAM 松组合 EKF，含特征缺失环境",
+          "source_level": "ABSTRACT",
+          "snippet": "The results prove that the proposed approach can provide positioning accuracy at the centimetre level for long-term operations, even in a featureless environment."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "摘要未给出具体厘米数值；作为轮式平台 GNSS 拒止备份方案证据。"
+    },
+    {
+      "title": "NLOS Correction/Exclusion for GNSS Measurement Using RAIM and City Building Models",
+      "authors": [
+        "Li-Ta Hsu",
+        "Yanlei Gu",
+        "Shunsuke Kamijo"
+      ],
+      "year": 2015,
+      "venue": "Sensors",
+      "doi": "10.3390/s150717329",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s150717329",
+      "keywords": [
+        "NLOS exclusion",
+        "RAIM",
+        "FDE",
+        "3D building model",
+        "ray tracing",
+        "urban canyon"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "3D 建筑模型射线追踪 + RAIM 卫星选择/FDE 剔除 NLOS 观测，直接对应本项目『NLOS 检测→拒绝观测』环节，并给出分环境（中/深峡谷）量化收益。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20NLOS%20detection%20multipath%20urban 与批量 DOI 抓取) 两次返回该记录完整摘要，含 8.4% 与 36.2% 数字及『错侧定位解（wrong side of the road）』指标定义。",
+      "performance_data": [
+        {
+          "metric": "reduction of large-error positioning solutions (estimated on wrong side of road), middle urban canyon",
+          "value": "8.4",
+          "unit": "% (reduction)",
+          "conditions": "3D 建筑模型法 + RAIM 卫星选择；中等城市峡谷环境",
+          "source_level": "ABSTRACT",
+          "snippet": "the RAIM satellite selection technique can reduce by about 8.4% and 36.2% the positioning solutions with large errors (solutions estimated on the wrong side of the road) for the 3D building model method in the middle and deep urban canyon environment, respectively."
+        },
+        {
+          "metric": "reduction of large-error positioning solutions (wrong side of road), deep urban canyon",
+          "value": "36.2",
+          "unit": "% (reduction)",
+          "conditions": "同上；深城市峡谷环境；射线追踪假设单次反射，不一致者判为多重反射 NLOS 并剔除",
+          "source_level": "ABSTRACT",
+          "snippet": "reduce by about 8.4% and 36.2% the positioning solutions with large errors (solutions estimated on the wrong side of the road) for the 3D building model method in the middle and deep urban canyon environment, respectively"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "指标定义是『错侧解比例』而非米级误差，使用时注意口径。"
+    },
+    {
+      "title": "GNSS multipath detection using a machine learning approach",
+      "authors": [
+        "Li-Ta Hsu"
+      ],
+      "year": 2017,
+      "venue": "IEEE International Conference on Intelligent Transportation Systems (ITSC)",
+      "doi": "10.1109/itsc.2017.8317700",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/itsc.2017.8317700",
+      "keywords": [
+        "multipath detection",
+        "NLOS classification",
+        "machine learning",
+        "SVM",
+        "GNSS raw data"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "用监督学习将伪距观测分为 clean/multipath/NLOS 三类，并提出伪距-多普勒一致性新特征；为本项目基于 C/N0+新息特征的观测质量分类提供基线方法。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20NLOS%20detection%20multipath%20urban) 返回该记录：标题、2017、DOI 10.1109/itsc.2017.8317700 与完整摘要，摘要含约 75% 分类精度数字。",
+      "performance_data": [
+        {
+          "metric": "three-class (clean/multipath/NLOS) classification accuracy",
+          "value": "about 75",
+          "unit": "%",
+          "conditions": "SVM 分类器，特征来自 GNSS 原始观测（含提出的伪距-多普勒一致性特征与信号强度）；实验数据训练评估",
+          "source_level": "ABSTRACT",
+          "snippet": "According to the experiment result, about 75% of classification accuracy can be achieved using a support vector machine (SVM) classifier trained by the proposed feature and received signal strength."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "Loose and Tight GNSS/INS Integrations: Comparison of Performance Assessed in Real Urban Scenarios",
+      "authors": [
+        "Gianluca Falco",
+        "Marco Pini",
+        "Gianluca Marucco"
+      ],
+      "year": 2017,
+      "venue": "Sensors",
+      "doi": "10.3390/s17020255",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s17020255",
+      "keywords": [
+        "loosely coupled",
+        "tightly coupled",
+        "GNSS/INS",
+        "low-cost IMU",
+        "urban scenario"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "在真实城市场景、低成本传感器与大众市场 GNSS 接收机条件下对比松/紧组合相对独立与商用模块的性能，直接支撑本项目选择紧耦合架构的论证。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20outage%20inertial%20navigation%20drift) 返回该记录：标题、2017 年、DOI 10.3390/s17020255、期刊 Sensors 与完整摘要（真实城市场景测试描述）。",
+      "performance_data": [],
+      "candidate_core": true,
+      "notes": "摘要未给具体数字；结论为紧组合（低成本器件）相较 standalone 与松组合有性能提升。"
+    },
+    {
+      "title": "An INS/GNSS integrated navigation in GNSS denied environment using recurrent neural network",
+      "authors": [
+        "Hai-fa Dai",
+        "Hongwei Bian",
+        "Rongying Wang",
+        "Heng Ma"
+      ],
+      "year": 2019,
+      "venue": "Defence Technology",
+      "doi": "10.1016/j.dt.2019.08.011",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1016/j.dt.2019.08.011",
+      "keywords": [
+        "GNSS denied",
+        "INS error estimation",
+        "recurrent neural network",
+        "boat test",
+        "EKF comparison"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "GNSS 失效期间用 RNN 估计 INS 误差（利用 INS 计算原理+RNN 记忆特性），给出与 ELM/EKF 的相对提升幅度，是『GNSS 中断期间纯惯性漂移补偿』的代表性方案。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20denied%20navigation 与批量 DOI 抓取) 返回完整摘要：先仿真验证后船试验证，含 30%/60% 相对提升数字。",
+      "performance_data": [
+        {
+          "metric": "positioning error reduction vs extreme learning machine (ELM)",
+          "value": "approximately 30",
+          "unit": "% (better than baseline)",
+          "conditions": "GNSS 信号缺失条件下 INS/GNSS 组合；仿真环境 + 实船试验验证",
+          "source_level": "ABSTRACT",
+          "snippet": "it outperforms extreme learning machine (ELM) and EKF by approximately 30% and 60%, respectively."
+        },
+        {
+          "metric": "positioning error reduction vs EKF",
+          "value": "approximately 60",
+          "unit": "% (better than baseline)",
+          "conditions": "同上：GNSS 拒止、船试实测",
+          "source_level": "ABSTRACT",
+          "snippet": "it outperforms extreme learning machine (ELM) and EKF by approximately 30% and 60%, respectively."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "提升幅度为相对指标，摘要未给绝对漂移米数。"
+    },
+    {
+      "title": "Smart Device-Supported BDS/GNSS Real-Time Kinematic Positioning for Sub-Meter-Level Accuracy in Urban Location-Based Services",
+      "authors": [
+        "Liang Wang",
+        "Zishen Li",
+        "Jiaojiao Zhao",
+        "Kai Zhou",
+        "Zhiyu Wang",
+        "Hong Yuan"
+      ],
+      "year": 2016,
+      "venue": "Sensors",
+      "doi": "10.3390/s16122201",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s16122201",
+      "keywords": [
+        "BDS/GPS RTK",
+        "smartphone",
+        "urban",
+        "fix rate",
+        "sub-meter"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "低成本 GNSS 模块+智能手机的 BDS/GPS 组合 RTK 在真实城市环境（静态与 50-80 km/h 动态）的固定率与精度数据，可作本项目低成本 RTK 硬件选型与精度预期参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=BeiDou%20RTK%20positioning%20urban 与批量 DOI 抓取) 返回完整摘要，含 97%/90% 固定率与 0.15/0.25/0.30 m RMS 数字及测试条件（Samsung Galaxy A7，城市环境）。",
+      "performance_data": [
+        {
+          "metric": "ambiguity fixed rate, BDS/GPS combined RTK, static test",
+          "value": "about 97",
+          "unit": "% of epochs",
+          "conditions": "城市环境静态测试；低成本 GNSS 模块+智能手机（Samsung Galaxy A7）",
+          "source_level": "ABSTRACT",
+          "snippet": "the fixed-rates of ambiguity resolution (the proportion of epochs of ambiguities fixed) for BDS/GPS combined RTK in the static and kinematic tests were about 97% and 90%, respectively"
+        },
+        {
+          "metric": "ambiguity fixed rate, kinematic test",
+          "value": "about 90",
+          "unit": "% of epochs",
+          "conditions": "城市环境动态测试，运动速度 50-80 km/h",
+          "source_level": "ABSTRACT",
+          "snippet": "in the static and kinematic tests were about 97% and 90%, respectively"
+        },
+        {
+          "metric": "positioning accuracy (RMS), static test",
+          "value": "better than 0.15 (horizontal) / 0.25 (vertical)",
+          "unit": "m",
+          "conditions": "城市静态 BDS/GPS RTK",
+          "source_level": "ABSTRACT",
+          "snippet": "the average positioning accuracies (RMS) were better than 0.15 m (horizontal) and 0.25 m (vertical) for the static test"
+        },
+        {
+          "metric": "positioning accuracy (RMS), kinematic test",
+          "value": "0.30 (horizontal)",
+          "unit": "m",
+          "conditions": "城市动态测试，车速 50-80 km/h（垂直精度数值在摘要截断处，未完整取得）",
+          "source_level": "ABSTRACT",
+          "snippet": "and 0.30 m (horizo..."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "原文动态垂直精度数值在本次抓取的摘要截断处，未抄录。"
+    },
+    {
+      "title": "Instantaneous BeiDou+GPS RTK positioning with high cut-off elevation angles",
+      "authors": [
+        "P. J. G. Teunissen",
+        "Robert Odolinski",
+        "Dennis Odijk"
+      ],
+      "year": 2013,
+      "venue": "Journal of Geodesy",
+      "doi": "10.1007/s00190-013-0686-4",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1007/s00190-013-0686-4",
+      "keywords": [
+        "BeiDou",
+        "GPS",
+        "RTK",
+        "cut-off elevation angle",
+        "ambiguity resolution"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "证明 BDS+GPS 组合可在高截止角下保持瞬时 RTK 固定解，对遮挡环境下（本项目）通过抬高截止角剔除低仰角退化观测具有直接指导意义。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=BeiDou%20RTK%20positioning%20urban) 返回该记录元数据（标题/作者/DOI/期刊/年份 2013），但摘要为空；Semantic Scholar DOI 查询同样无摘要。未获得性能数字。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "OpenAlex 标注 2013（在线优先），Semantic Scholar 标注 2014（卷期），见 conflicts。"
+    },
+    {
+      "title": "Combined GPS + BDS for short to long baseline RTK positioning",
+      "authors": [
+        "Robert Odolinski",
+        "P. J. G. Teunissen",
+        "Dennis Odijk"
+      ],
+      "year": 2015,
+      "venue": "Measurement Science and Technology",
+      "doi": "10.1088/0957-0233/26/4/045801",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1088/0957-0233/26/4/045801",
+      "keywords": [
+        "GPS+BDS RTK",
+        "baseline",
+        "elevation cut-off",
+        "Perth",
+        "ambiguity resolution"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "Perth 实测数据评估 GPS+BDS 短/中/长基线 RTK，结论：双系统组合允许使用高于常规的截止角，对露天矿/城市峡谷等受限视距环境有利——支撑本项目遮挡场景剔除低质观测的策略。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=BeiDou%20RTK%20positioning%20urban 与批量 DOI 抓取) 返回完整摘要（含 Perth 实测、短/中/长基线定义、高截止角结论）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要为定性结论（允许更高截止角），未给具体固定率数字。"
+    },
+    {
+      "title": "GNSS Multipath Detection Using Continuous Time-Series C/N0",
+      "authors": [
+        "Nobuaki Kubo",
+        "Kaito Kobayashi",
+        "Rei Furukawa"
+      ],
+      "year": 2020,
+      "venue": "Sensors",
+      "doi": "10.3390/s20144059",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s20144059",
+      "keywords": [
+        "C/N0",
+        "NLOS detection",
+        "time-series threshold",
+        "DGNSS",
+        "RTK",
+        "Tokyo"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "只用 C/N0 连续时间序列（持续低于阈值则一段时间内拒绝该星）检测 NLOS，在东京高楼附近静态测试中显著改善 DGNSS 并大幅提升 RTK 性能——本项目可低成本复现的退化观测拒绝策略。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20satellite%20selection%20weighted%20HDOP 与批量 DOI 抓取) 返回完整摘要：东京高层建筑附近 3 组静态测试；结论为定性『substantially mitigate / significantly improved』。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要未给具体米数/百分比；注意其指出仰角相关 C/N0 单点阈值不足以剔除 NLOS，需时间序列判据。MDPI 全文页抓取被 403 拒绝，未能取表格数值。"
+    },
+    {
+      "title": "NLOS Multipath Classification of GNSS Signal Correlation Output Using Machine Learning",
+      "authors": [
+        "Taro Suzuki",
+        "Yoshiharu Amano"
+      ],
+      "year": 2021,
+      "venue": "Sensors",
+      "doi": "10.3390/s21072503",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s21072503",
+      "keywords": [
+        "multi-correlator",
+        "NLOS classification",
+        "machine learning",
+        "SVM",
+        "neural network"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "用相关器输出波形特征 + 机器学习做 NLOS 判别，城市环境实测 NN 判别正确率 97.7%，并给出 LOS/NLOS 训练数据自动采集方法；是本项目 NLOS 检测模块的高性能参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20NLOS%20detection%20multipath%20urban 与批量 DOI 抓取) 返回完整摘要，含『97.7% of NLOS signals were correctly discriminated』及城市环境评估描述。",
+      "performance_data": [
+        {
+          "metric": "NLOS signal correct discrimination rate",
+          "value": "97.7",
+          "unit": "%",
+          "conditions": "城市环境评估；基于多相关器输出波形特征的神经网络（NN）分类器，NN 优于 SVM",
+          "source_level": "ABSTRACT",
+          "snippet": "The evaluation of the proposed NLOS detection method in an urban environment confirmed that NN was better than SVM, and 97.7% of NLOS signals were correctly discriminated."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "需要接收机多相关器输出（原始通道数据），普通模组未必开放该接口，选型时注意。"
+    },
+    {
+      "title": "Anomaly Detection for Urban Vehicle GNSS Observation with a Hybrid Machine Learning System",
+      "authors": [
+        "Yan Xia",
+        "Shuguo Pan",
+        "Xiaolin Meng",
+        "Wang Gao",
+        "Fei Ye",
+        "Qing Zhao"
+      ],
+      "year": 2020,
+      "venue": "Remote Sensing",
+      "doi": "10.3390/rs12060971",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/rs12060971",
+      "keywords": [
+        "anomaly detection",
+        "HDBSCAN",
+        "NLOS",
+        "GPS/BeiDou",
+        "vehicle",
+        "quality control"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "无 3D 建筑模型依赖的观测异常检测（离线 HDBSCAN 标注 + 在线监督分类），剔除异常观测后城市车辆单点定位精度大幅提升——本项目观测质量控制的低部署成本路线。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (works/doi:10.3390/rs12060971 单条抓取) 返回完整摘要尾部，含 87.0%/45.9%/69.6% 与在线数据集 48.4%/45.7%、39.6%/63.3%、49.6%/49.1% 数字及实测 GPS/BeiDou 车载数据条件。",
+      "performance_data": [
+        {
+          "metric": "SPP accuracy improvement after excluding anomalous observations (offline dataset, E/N/U)",
+          "value": "87.0 / 45.9 / 69.6",
+          "unit": "% (improvement in east/north/up)",
+          "conditions": "实测城市车辆 GPS/BeiDou 数据；离线数据集；HDBSCAN 离线标注+在线监督分类",
+          "source_level": "ABSTRACT",
+          "snippet": "after excluding anomalous observations the single point positioning accuracy of the offline dataset is improved by 87.0%, 45.9%, and 69.6% in the east, north, and up directions, respectively"
+        },
+        {
+          "metric": "SPP accuracy improvement (two online datasets, three directions)",
+          "value": "48.4/45.7, 39.6/63.3, 49.6/49.1",
+          "unit": "% (improvement, E/N/U, dataset1/dataset2)",
+          "conditions": "同上方法的在线数据集评估",
+          "source_level": "ABSTRACT",
+          "snippet": "the positioning accuracy of two online datasets is improved by 48.4%/45.7%, 39.6%/63.3%, and 49.6%/49.1% in the three directions"
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "3D Mapping Database Aided GNSS Based Collaborative Positioning Using Factor Graph Optimization",
+      "authors": [
+        "Guohao Zhang",
+        "Hoi-Fung Ng",
+        "Weisong Wen",
+        "Li-Ta Hsu"
+      ],
+      "year": 2020,
+      "venue": "IEEE Transactions on Intelligent Transportation Systems",
+      "doi": "10.1109/tits.2020.2988531",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tits.2020.2988531",
+      "keywords": [
+        "3DMA GNSS",
+        "collaborative positioning",
+        "factor graph optimization",
+        "V2X",
+        "deep urban canyon"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "3D 建筑模型辅助 + 多车 V2X 协同 + 因子图优化，把深峡谷道路用户 GNSS 误差从 30 m 以上降到 10 m 以内，给出本项目『环境先验+协同』路线的量化上限参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20satellite%20selection%20weighted%20HDOP 与批量 DOI 抓取) 返回完整摘要，含『reduce the GNSS positioning error from over 30 meters to less than 10 meters for road users in a deep urban canyon』及香港静/动态低成本接收机数据描述。",
+      "performance_data": [
+        {
+          "metric": "GNSS positioning error, deep urban canyon road users (before)",
+          "value": "over 30",
+          "unit": "m",
+          "conditions": "香港实测（静态+动态，多台低成本接收机，后处理）",
+          "source_level": "ABSTRACT",
+          "snippet": "We reduce the GNSS positioning error from over 30 meters to less than 10 meters for road users in a deep urban canyon."
+        },
+        {
+          "metric": "GNSS positioning error after 3DMA collaborative FGO (after)",
+          "value": "less than 10",
+          "unit": "m",
+          "conditions": "同上：射线追踪 3DMA GNSS + 双差 + 因子图优化协同定位",
+          "source_level": "ABSTRACT",
+          "snippet": "reduce the GNSS positioning error from over 30 meters to less than 10 meters for road users in a deep urban canyon."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "协同定位需要 V2X 通信，比赛中可用多设备模拟。"
+    },
+    {
+      "title": "Using Sky-pointing fish-eye camera and LiDAR to aid GNSS single-point positioning in urban canyons",
+      "authors": [
+        "Xiwei Bai",
+        "Weisong Wen",
+        "Li-Ta Hsu"
+      ],
+      "year": 2020,
+      "venue": "IET Intelligent Transport Systems",
+      "doi": "10.1049/iet-its.2019.0587",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1049/iet-its.2019.0587",
+      "keywords": [
+        "fisheye camera",
+        "LiDAR",
+        "NLOS correction",
+        "SPP",
+        "Hong Kong",
+        "urban canyon"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "用鱼眼相机检测 NLOS、再用 3D LiDAR 修正而非直接剔除（避免深峡谷卫星几何崩塌），香港实测验证；其『修正优于硬剔除』结论对项目退化策略设计很有价值。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20urban%20canyon%20positioning 与批量 DOI 抓取) 返回完整摘要，含『SPP 约 1 m（稀疏区）/最高 100 m（密集城区）』与香港实测描述。",
+      "performance_data": [
+        {
+          "metric": "GNSS SPP accuracy in sparse areas",
+          "value": "about 1",
+          "unit": "m",
+          "conditions": "开阔/稀疏区域普通单点定位",
+          "source_level": "ABSTRACT",
+          "snippet": "Satisfactory accuracy (about 1 m) can be obtained in sparse areas."
+        },
+        {
+          "metric": "GNSS positioning error upper bound in dense urban areas",
+          "value": "up to 100",
+          "unit": "m",
+          "conditions": "密集城区，多路径与 NLOS 反射/遮挡导致（普通 SPP）",
+          "source_level": "ABSTRACT",
+          "snippet": "the GNSS positioning error can be up to 100 m in dense urban areas due to the multipath effects and non-line-of-sight (NLOS) receptions caused by reflection and blockage from buildings."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "GVINS: Tightly Coupled GNSS–Visual–Inertial Fusion for Smooth and Consistent State Estimation",
+      "authors": [
+        "Shaozu Cao",
+        "Xiuyuan Lu",
+        "Shaojie Shen"
+      ],
+      "year": 2022,
+      "venue": "IEEE Transactions on Robotics",
+      "doi": "10.1109/tro.2021.3133730",
+      "arxiv_id": "2103.07899",
+      "url": "https://arxiv.org/abs/2103.07899",
+      "keywords": [
+        "GNSS-visual-inertial",
+        "factor graph",
+        "indoor-outdoor transition",
+        "satellite loss and reacquisition"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "GNSS 伪距/多普勒 + 视觉 + IMU 紧组合因子图，专门处理 GNSS 间歇可用与室内外切换、退化情形；开源实现，是本项目 GNSS 退化/拒止期间多源状态估计的强参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回 T-RO 2022 记录与摘要；WebFetch https://arxiv.org/abs/2103.07899 确认标题/作者/摘要，摘要含『can gain from even a single satellite while conventional GNSS algorithms need four at least』。",
+      "performance_data": [
+        {
+          "metric": "minimum number of satellites usable for state estimation",
+          "value": "1 (vs 4 for conventional GNSS)",
+          "unit": "satellite count",
+          "conditions": "GNSS 间歇/不可达的室内外复杂环境；GNSS+视觉+惯性紧组合因子图",
+          "source_level": "ABSTRACT",
+          "snippet": "the system can gain from even a single satellite while conventional GNSS algorithms need four at least"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "摘要另述仿真+实机充分评估，但未给米级误差数字（arXiv abs 页仅有上述定量表述）。"
+    },
+    {
+      "title": "Semi-tightly coupled integration of multi-GNSS PPP and S-VINS for precise positioning in GNSS-challenged environments",
+      "authors": [
+        "Xingxing Li",
+        "Xuanbin Wang",
+        "Xin Li",
+        "Shengyu Li",
+        "Xin Li"
+      ],
+      "year": 2021,
+      "venue": "Satellite Navigation",
+      "doi": "10.1186/s43020-020-00033-9",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1186/s43020-020-00033-9",
+      "keywords": [
+        "PPP",
+        "stereo VINS",
+        "semi-tightly coupled",
+        "GNSS-challenged",
+        "graph optimization"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "PPP 在频繁遮挡下可靠性显著退化，本文用双目 VINS 与 PPP 半紧组合双向互补并用 S-VINS 预测位置辅助 PPP，含 GNSS 中断仿真测试——对应项目『PPP 退化』主题。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要：PPP 退化动机、半紧耦合框架、GNSS outage 仿真测试结论（摘要尾部截断于 suppress the d[rift]）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要定性结论：S-VINS 模式能有效抑制（中断期间）漂移；具体数值未在可见摘要文本中给出。"
+    },
+    {
+      "title": "GNSS/IMU/ODO/LiDAR-SLAM Integrated Navigation System Using IMU/ODO Pre-Integration",
+      "authors": [
+        "Le Chang",
+        "Xiaoji Niu",
+        "Tianyi Liu"
+      ],
+      "year": 2020,
+      "venue": "Sensors",
+      "doi": "10.3390/s20174702",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s20174702",
+      "keywords": [
+        "GNSS outage",
+        "odometer",
+        "pre-integration",
+        "LiDAR-SLAM",
+        "land vehicle",
+        "position drift"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "轮式平台强相关：IMU/ODO 预积分 + LiDAR-SLAM 图优化，在模拟 2 分钟 GNSS 中断期间定量给出相对 GNSS/INS/ODO 的最大位置漂移降幅（N/E/H 三方向），直接可用于本项目退化性能论证。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要，含 62.8%/72.3%/52.1% 与 62.1% 数字及『mimic two-minute GNSS outages』『Land vehicle tests in open-sky areas and tunnel cases』条件。",
+      "performance_data": [
+        {
+          "metric": "max position drift RMS reduction during 2-min GNSS outages (north/east/up) vs GNSS/INS/ODO",
+          "value": "62.8 / 72.3 / 52.1",
+          "unit": "% (reduction, N/E/height)",
+          "conditions": "开阔地与隧道车载实测；模拟 2 分钟 GNSS 中断；对比常规 GNSS/INS/ODO 组合",
+          "source_level": "ABSTRACT",
+          "snippet": "During the navigation drift evaluation of the mimic two-minute GNSS outages, compared to the conventional GNSS/INS (inertial navigation system)/ODO integration, the root mean square (RMS) of the maximum position drift errors during outages in the proposed navigation system were reduced by 62.8%, 72.3%, and 52.1%, along the north, east, and height, respectively."
+        },
+        {
+          "metric": "yaw error reduction during outages vs GNSS/INS/ODO",
+          "value": "62.1",
+          "unit": "% (reduction)",
+          "conditions": "同上：模拟 2 分钟 GNSS 中断，车载实测",
+          "source_level": "ABSTRACT",
+          "snippet": "Moreover, the yaw error was reduced by 62.1%."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "注意是『相对降幅』而非绝对漂移米数；ODO 里程计是轮式平台天然可用传感器。"
+    },
+    {
+      "title": "Modified RTK-GNSS for Challenging Environments",
+      "authors": [
+        "Ellarizza Fredeluces",
+        "Tomohiro Ozeki",
+        "Nobuaki Kubo",
+        "Ahmed El-Mowafy"
+      ],
+      "year": 2024,
+      "venue": "Sensors",
+      "doi": "10.3390/s24092712",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s24092712",
+      "keywords": [
+        "RTK-GNSS",
+        "fix reliability",
+        "surplus satellites",
+        "urban",
+        "wrong fix detection"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "利用未参与定位的冗余卫星检测错误固定解，东京密集建成区 3 组测试中固定率与可靠性超过最新商用接收机与 RTKLIB——本项目 RTK fix 质量控制（FIX/FLOAT 状态把关）的近期参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要：东京地区密集建成区 3 组测试；结论为定性『surpasses the fix rate ... improves positional reliability』。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要未给具体固定率数值；MDPI 全文抓取被 403 拒绝。"
+    },
+    {
+      "title": "An Improved Robust Adaptive Kalman Filter for GNSS Precise Point Positioning",
+      "authors": [
+        "Qieqie Zhang",
+        "Luodi Zhao",
+        "Long Zhao",
+        "Jianhua Zhou"
+      ],
+      "year": 2018,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2018.2820097",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2018.2820097",
+      "keywords": [
+        "robust adaptive Kalman filter",
+        "PPP",
+        "gross error",
+        "innovation",
+        "weighting"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "面向 PPP 的抗差自适应 Kalman 滤波：先验方差不可靠时基于观测粗差与动态模型误差做在线定权，是本项目『基于新息/残差的动态降权』算法设计的直接参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20robust%20adaptive%20Kalman%20filter%20innovation%20weighting) 返回该记录：标题、2018、DOI、IEEE Sensors Journal 及完整摘要（描述粗差/动态模型误差对 PPP 的影响与抗差自适应滤波方案）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要为方法描述，未在可见文本中给出数字结果。"
+    },
+    {
+      "title": "Research on Integrated Navigation System of Agricultural Machinery Based on RTK-BDS/INS",
+      "authors": [
+        "Yourui Huang",
+        "Jiahao Fu",
+        "Shanyong Xu",
+        "Tao Han",
+        "Yuwen Liu"
+      ],
+      "year": 2022,
+      "venue": "Agriculture",
+      "doi": "10.3390/agriculture12081169",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/agriculture12081169",
+      "keywords": [
+        "RTK-BDS",
+        "INS",
+        "agricultural machinery",
+        "wheeled platform",
+        "signal shielding"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "轮式农机的低成本 RTK-BDS/INS 一体化控制板与差分基站方案，实验覆盖开放道路/信号遮挡道路/城市拥堵道路——与本项目轮式无人平台 + 北斗高精度定位场景高度相似。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要：自研控制板（BDS 高精度模块+IMU+电台）、自建差分基准站/车载移动站、三种路况实验描述；结果段在可见文本中未含具体数字。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "HDOP and VDOP Analysis in an Ideal Placement Environment for Dual GNSSs",
+      "authors": [
+        "JinHyeok Jang",
+        "Dana Park",
+        "Sangkyung Sung",
+        "Young Jae Lee"
+      ],
+      "year": 2022,
+      "venue": "Sensors",
+      "doi": "10.3390/s22093475",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s22093475",
+      "keywords": [
+        "HDOP",
+        "VDOP",
+        "GDOP",
+        "satellite selection",
+        "dual GNSS"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "双 GNSS 理想星位布局下的 HDOP/VDOP 分析与选星方法，支撑本项目按 HDOP/卫星数做观测质量分级与动态加权的设计。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=GNSS%20satellite%20selection%20weighted%20HDOP) 返回该记录：标题、2022、DOI、期刊 Sensors 及摘要（理想星位布局、最小 GDOP、选星必要性讨论）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "分析型文章，摘要未给数值结果。"
+    },
+    {
+      "title": "Tight Fusion of a Monocular Camera, MEMS-IMU, and Single-Frequency Multi-GNSS RTK for Precise Navigation in GNSS-Challenged Environments",
+      "authors": [
+        "Tuan Li",
+        "Hongping Zhang",
+        "Zhouzheng Gao",
+        "Xiaoji Niu",
+        "Naser El-Sheimy"
+      ],
+      "year": 2019,
+      "venue": "Remote Sensing",
+      "doi": "10.3390/rs11060610",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/rs11060610",
+      "keywords": [
+        "RTK",
+        "MEMS-IMU",
+        "monocular camera",
+        "MSCKF",
+        "GNSS-challenged",
+        "centimeter-level"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "单频多星座 RTK + MEMS IMU + 单目相机的 EKF 紧组合（MSCKF 视觉模型 + 双差 GNSS 模型），GNSS 挑战环境下厘米级定位可用性提升；低成本轮式平台可直接借鉴。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要：车载实测（GNSS-challenged 环境），结论为多星座与视觉均显著提升厘米级定位可用性（摘要尾部截断于 availability 详值）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "Low-cost GNSS/INS integration for enhanced land vehicle performance",
+      "authors": [
+        "Chao Chen",
+        "Guobin Chang"
+      ],
+      "year": 2019,
+      "venue": "Measurement Science and Technology",
+      "doi": "10.1088/1361-6501/ab52cb",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1088/1361-6501/ab52cb",
+      "keywords": [
+        "TDCP",
+        "GNSS outage",
+        "non-holonomic constraint",
+        "odometer",
+        "land vehicle"
+      ],
+      "subarea": "GNSS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "单频低成本 GNSS 载波相位时间差分（TDCP）+INS，并引入非完整约束与里程计抑制 GNSS 中断期间的 INS 位置漂移；城郊/城市车载实测，与轮式平台传感器配置高度契合。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要：TDCP 噪声随机模型、NHC+里程计抑制 GNSS outage 期间漂移的方案与城郊/城市车载实测描述（结果数值未在可见文本中）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "北斗三号建成开通新闻发布会（短报文服务规格官方表述）",
+      "authors": [
+        "中国卫星导航系统管理办公室（北斗官网）"
+      ],
+      "year": 2020,
+      "venue": "beidou.gov.cn（北斗卫星导航系统官方网站）",
+      "doi": null,
+      "arxiv_id": null,
+      "url": "http://m.beidou.gov.cn/lbt/202008/t20200803_20935.html",
+      "keywords": [
+        "BDS-3",
+        "short message",
+        "14000 bits",
+        "1000 Chinese characters",
+        "560 bits",
+        "40 Chinese characters",
+        "official specification"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "北斗三号短报文通信能力的官方权威口径：区域短报文每次 14000 比特（1000 汉字，支持文字/语音/图片），全球短报文每次 560 比特（40 汉字）。比赛做短报文原型集成时消息长度设计必须以此为约束。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "用 curl 抓取 http://m.beidou.gov.cn/lbt/202008/t20200803_20935.html（HTTP 200），页面正文含原句：『短报文通信服务进行了升级拓展，区域通信能力达到每次14000比特（1000汉字），既能传输文字，还可传输语音和图片，并支持每次560比特（40个汉字）的全球通信能力。』；同页另有『国际搜救服务检测概率优于99%』『北斗系统全球实测定位精度均值为2.34米』（全球连续监测评估系统最近一周测算）。",
+      "performance_data": [
+        {
+          "metric": "regional short message communication capability per message",
+          "value": "14000 bits (1000 Chinese characters)",
+          "unit": "bits per message",
+          "conditions": "BDS-3 区域短报文服务（GEO 卫星，中国及周边区域），官方发布口径，支持文字/语音/图片",
+          "source_level": "FULLTEXT",
+          "snippet": "区域通信能力达到每次14000比特（1000汉字），既能传输文字，还可传输语音和图片"
+        },
+        {
+          "metric": "global short message communication capability per message",
+          "value": "560 bits (40 Chinese characters)",
+          "unit": "bits per message",
+          "conditions": "BDS-3 全球短报文服务（MEO 星座），官方发布口径",
+          "source_level": "FULLTEXT",
+          "snippet": "并支持每次560比特（40个汉字）的全球通信能力"
+        },
+        {
+          "metric": "international SAR service detection probability",
+          "value": "better than 99",
+          "unit": "%",
+          "conditions": "BDS-3 国际搜救服务，官方发布口径，含返向链路确认",
+          "source_level": "FULLTEXT",
+          "snippet": "国际搜救服务检测概率优于99%，具备返向链路确认特色能力"
+        },
+        {
+          "metric": "global measured positioning accuracy (weekly mean)",
+          "value": "2.34",
+          "unit": "m (mean)",
+          "conditions": "BDS-3 全球实测，全球连续监测评估系统最近一周测算（2020-08 发布会口径）",
+          "source_level": "FULLTEXT",
+          "snippet": "根据全球连续监测评估系统最近一周测算结果，北斗系统全球实测定位精度均值为2.34米"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "该页为官方新闻发布会通稿；单条消息发送频次限制（每分钟/每小时次数）未见官方数值，列为未解决疑点。另见同站《北斗卫星导航系统公开服务性能规范（3.0版）》PDF 链接（未下载解析）。"
+    },
+    {
+      "title": "Introduction to global short message communication service of BeiDou-3 navigation satellite system",
+      "authors": [
+        "Gang Li",
+        "Shuren Guo",
+        "Jing Lv",
+        "Kanglian Zhao",
+        "Zehua He"
+      ],
+      "year": 2021,
+      "venue": "Advances in Space Research",
+      "doi": "10.1016/j.asr.2020.12.011",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1016/j.asr.2020.12.011",
+      "keywords": [
+        "BDS-3",
+        "global short message communication",
+        "GSMC",
+        "MEO",
+        "crosslink",
+        "GMDSS",
+        "positioning report"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "BDS-3 全球短报文（GSMC）系统架构的权威技术论文（基于 MEO 星座+星间链路），定义定位报告、应急搜救、常规短报文三类服务并给出在轨测试初步结果，是短报文原型工作机制设计的第一参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar API (https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.asr.2020.12.011?fields=title,abstract,year,venue) 返回标题、作者、2021 年与完整英文摘要（OpenAlex/Crossref 该 DOI 无摘要）。",
+      "performance_data": [],
+      "candidate_core": true,
+      "notes": "OpenAlex 标注 2020（在线优先 2020-12），S2 标注 2021（卷期）；摘要含在轨载荷首批测试结果与 GMDSS 满足性结论，但未列具体数字。"
+    },
+    {
+      "title": "Featured services and performance of BDS-3",
+      "authors": [
+        "Yuanxi Yang",
+        "Li Liu",
+        "Jinlong Li",
+        "Yufei Yang",
+        "Tianqiao Zhang",
+        "Yue Mao",
+        "Bijiao Sun",
+        "Xia Ren"
+      ],
+      "year": 2021,
+      "venue": "Science Bulletin",
+      "doi": "10.1016/j.scib.2021.06.013",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1016/j.scib.2021.06.013",
+      "keywords": [
+        "BDS-3",
+        "RSMCS",
+        "GSMCS",
+        "RDSS",
+        "BDSBAS",
+        "B2b-PPP",
+        "MEOSAR",
+        "success rate"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "杨元喜团队对 BDS-3 特色服务的系统性性能评估：区域/全球短报文成功率、广义 RDSS 定位精度、B2b-PPP 精度与收敛时间等量化指标，是短报文服务指标设计（成功率预期）的权威依据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar API (https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.scib.2021.06.013?fields=title,abstract,year,venue) 返回完整摘要，含 99.9%/95.6%/12 m/6 m/0.6 m/30 min/99% 等数字；OpenAlex 该 DOI 无摘要。",
+      "performance_data": [
+        {
+          "metric": "regional short message communication service (RSMCS) success rate",
+          "value": "better than 99.9",
+          "unit": "%",
+          "conditions": "BDS-3 特色服务性能评估（GEO 区域服务）",
+          "source_level": "ABSTRACT",
+          "snippet": "the success rates of RSMCS and GSMCS are better than 99.9% and 95.6%, respectively"
+        },
+        {
+          "metric": "global short message communication service (GSMCS) success rate",
+          "value": "better than 95.6",
+          "unit": "%",
+          "conditions": "BDS-3 特色服务性能评估（MEO 全球服务）",
+          "source_level": "ABSTRACT",
+          "snippet": "the success rates of RSMCS and GSMCS are better than 99.9% and 95.6%, respectively"
+        },
+        {
+          "metric": "generalized RDSS positioning accuracy",
+          "value": "usually better than 12",
+          "unit": "m",
+          "conditions": "BDS-3 广义 RDSS 服务评估",
+          "source_level": "ABSTRACT",
+          "snippet": "the positioning accuracy of single frequency is better than 6 m, and that of the generalized RDSS is usually better than 12 m"
+        },
+        {
+          "metric": "B2b-PPP positioning accuracy and convergence time",
+          "value": "better than 0.6 m; convergence usually < 30 min",
+          "unit": "m / min",
+          "conditions": "BDS-3 B2b 信号精密单点定位服务评估",
+          "source_level": "ABSTRACT",
+          "snippet": "the positioning accuracy of B2b-PPP is better than 0.6 m, and the convergence time is usually smaller than 30 min"
+        },
+        {
+          "metric": "BDSBAS single/dual frequency positioning accuracy",
+          "value": "better than 3 m (single) / 2 m (dual)",
+          "unit": "m",
+          "conditions": "BDS-3 星基增强服务评估",
+          "source_level": "ABSTRACT",
+          "snippet": "the positioning accuracies of single and dual frequency BDSBAS are better than 3 and 2 m, respectively"
+        },
+        {
+          "metric": "MEOSAR single station success rate",
+          "value": "better than 99",
+          "unit": "%",
+          "conditions": "BDS-3 MEO 搜救服务单站测试",
+          "source_level": "ABSTRACT",
+          "snippet": "the single station test shows that the success rate of MEOSAR is better than 99%"
+        }
+      ],
+      "candidate_core": false,
+      "notes": "同文还给出 BDS-3 精密轨道 RMS 25.1 cm、广播钟差 RMS 2.01 ns（ISL 贡献）。"
+    },
+    {
+      "title": "High-precision GNSS ocean positioning with BeiDou short-message communication",
+      "authors": [
+        "Bofeng Li",
+        "Zhiteng Zhang",
+        "Nan Zang",
+        "Siyao Wang"
+      ],
+      "year": 2019,
+      "venue": "Journal of Geodesy",
+      "doi": "10.1007/s00190-018-1145-z",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1007/s00190-018-1145-z",
+      "keywords": [
+        "BeiDou short message",
+        "ocean positioning",
+        "RDSS",
+        "communication-navigation integration"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "示范『定位+短报文』协同的代表作：用北斗短报文链路回传海上高精度定位结果，论证通信导航一体化系统架构，可迁移到本项目无人平台位置报告链路设计。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "OpenAlex API 与 Crossref API（api.crossref.org/works/10.1007/s00190-018-1145-z）均返回元数据（标题/作者/期刊/DOI）；Semantic Scholar 返回元数据并提示摘要被出版社隐藏（abstract elided by publisher）。未获得摘要与性能数字。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "年份：S2 标 2019，OpenAlex 标 2018（在线优先），见 conflicts。"
+    },
+    {
+      "title": "An offshore real-time precise point positioning technique based on a single set of BeiDou short-message communication devices",
+      "authors": [
+        "Zhixi Nie",
+        "Boyang Wang",
+        "Zhenjie Wang",
+        "Kaifei He"
+      ],
+      "year": 2020,
+      "venue": "Journal of Geodesy",
+      "doi": "10.1007/s00190-020-01411-6",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1007/s00190-020-01411-6",
+      "keywords": [
+        "BeiDou short message",
+        "offshore PPP",
+        "real-time",
+        "single device set"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "单套北斗短报文设备同时承担差分/改正数下发与 positioning 报告，实现海上实时 PPP——短报文数据链在实时高精度定位中角色的参考。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "OpenAlex API 与 Crossref API 均返回元数据；Semantic Scholar 返回元数据并提示 abstract elided by publisher。未获得摘要与性能数字。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "Research on BeiDou anti-spoofing technology based on comprehensive radio determination satellite service",
+      "authors": [
+        "Fei Wang",
+        "Caibo Hu",
+        "Wu Shuang",
+        "Yixue Tao",
+        "Yunxiang Xu"
+      ],
+      "year": 2020,
+      "venue": "Satellite Navigation",
+      "doi": "10.1186/s43020-019-0004-2",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1186/s43020-019-0004-2",
+      "keywords": [
+        "RDSS",
+        "CRDSS",
+        "anti-spoofing",
+        "two-way communication",
+        "BDS security"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "阐明 RDSS 机制的安全价值：用户收到主站询问信号后须经卫星向主站回传应答，双向链路天然难以欺骗；可用于本项目论证短报文链路作为可信备份通道。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=BeiDou%20RDSS%20satellite 与批量 DOI 抓取) 返回开放获取期刊 Satellite Navigation 的完整摘要（RDSS 双向应答机制与 CRDSS 抗欺骗方案）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "机制描述清晰：RNSS 单向广播 vs RDSS 双向应答。"
+    },
+    {
+      "title": "Global capabilities of BeiDou Navigation Satellite System",
+      "authors": [
+        "Jun Lu",
+        "Xia Guo",
+        "Chengeng Su"
+      ],
+      "year": 2020,
+      "venue": "Satellite Navigation",
+      "doi": "10.1186/s43020-020-00025-9",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1186/s43020-020-00025-9",
+      "keywords": [
+        "BDS-3",
+        "global services",
+        "PNT",
+        "inter-satellite link",
+        "featured services"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "北斗系统全球服务能力的官方背景文章（含全球特色服务与星间链路），为比赛材料中 BDS-3 服务能力概述提供权威引用。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?filter=doi:https://doi.org/10.1186/s43020-020-00025-9，批量抓取中) 返回开放获取完整摘要（BDS 完成星座部署、开始提供全球服务、PNT/ISL/特色服务能力）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "OpenAlex 作者字段显示为 Lu Jun; Xia Guo; Chengeng Su（名姓顺序疑似颠倒），引用时需按原文核对作者姓名。"
+    },
+    {
+      "title": "UAV Path Replanning Based on BeiDou Short Message Communication Function",
+      "authors": [
+        "Xuyang Qiao",
+        "Yirui Cong",
+        "Kehao Wang",
+        "Xiangke Wang"
+      ],
+      "year": 2023,
+      "venue": "Proceedings of the 42nd Chinese Control Conference (CCC)",
+      "doi": "10.23919/ccc58697.2023.10239888",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.23919/ccc58697.2023.10239888",
+      "keywords": [
+        "BeiDou short message",
+        "UAV",
+        "path replanning",
+        "INS error",
+        "position uncertainty"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "无人系统（UAV）+ 北斗短报文组合的直接案例：弱 GNSS 环境下以短报文为 INS 辅助源建立位置不确定性模型并做路径重规划（PSO-IIFDS），仿真显示任务成功率显著提升——本项目『拒止区短报文低频位置修正』思路的同类先行工作。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=BeiDou%20short%20message%20communication 与批量 DOI 抓取) 返回完整摘要：INS 误差特性分析、位置不确定性建模、PSO-IIFDS 重规划与仿真结论。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "仿真验证；摘要未给具体成功率数值。"
+    },
+    {
+      "title": "An Efficient Dual-Stage Compression Model for Maritime Safety Information Based on BeiDou Short-Message Communication",
+      "authors": [
+        "Jiwei Hu",
+        "Hong Yue",
+        "Qiwen Jin",
+        "Guangpeng Zhao",
+        "Hongyang Lu"
+      ],
+      "year": 2023,
+      "venue": "Journal of Marine Science and Engineering",
+      "doi": "10.3390/jmse11081521",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/jmse11081521",
+      "keywords": [
+        "BeiDou SMC",
+        "message length limitation",
+        "compression",
+        "maritime safety information"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "直面短报文『消息长度受限』约束：针对海上安全信息设计两级压缩（专用二进制编码+哈希字典），并用六类海上数据集实验验证——本项目短报文报文编码/压缩设计的同类方法参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=BeiDou%20short%20message%20communication 与批量 DOI 抓取) 返回开放获取完整摘要：明确挑战为 information redundancy and limited message length，实验含六类海事对象数据集。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要称显著压缩效率但未给具体压缩比数字。"
+    },
+    {
+      "title": "New Orbit Determination Method for GEO Satellites Based on BeiDou Short-Message Communication Ranging",
+      "authors": [
+        "Xiaojie Li",
+        "Rui Guo",
+        "Jianbing Chen",
+        "Shuai Liu",
+        "Zhiqiao Chang",
+        "Jie Xin"
+      ],
+      "year": 2022,
+      "venue": "Remote Sensing",
+      "doi": "10.3390/rs14184602",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/rs14184602",
+      "keywords": [
+        "RDSS",
+        "GEO orbit determination",
+        "short-message ranging",
+        "BDS-3"
+      ],
+      "subarea": "BDS_SMS",
+      "real_or_sim": "REAL",
+      "potential_relevance": "从系统侧展示 RDSS 短报文测距/位置报告链路的工作方式与 GEO 卫星运控关系，帮助理解短报文服务背后的 RDSS 体制（出站询问+入站应答）。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=BeiDou%20RDSS%20satellite 与批量 DOI 抓取) 返回开放获取完整摘要：RDSS 提供短报文通信、位置报告与国际搜救服务；L 波段伪距/相位为 GEO 定轨主要数据源。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "Review on bio-inspired polarized skylight navigation",
+      "authors": [
+        "Fang Kong",
+        "Yingjing Guo",
+        "Jianhua Zhang",
+        "Xiaojing Fan",
+        "Xiaohan Guo"
+      ],
+      "year": 2023,
+      "venue": "Chinese Journal of Aeronautics",
+      "doi": "10.1016/j.cja.2023.05.024",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1016/j.cja.2023.05.024",
+      "keywords": [
+        "polarized skylight",
+        "bio-inspired navigation",
+        "polarization sensor",
+        "review",
+        "Rayleigh model"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "仿生偏振天空光导航的最新综述（理论/探测/传感器设计/导航实现四条线），给出非成像式偏振罗盘 ±0.1° 无漂移精度的量级结论——作为未来展望小专题的主综述引用。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=polarized%20skylight%20navigation 与批量 DOI 抓取) 返回完整摘要，含『the accuracy that it can reach is ± 0.1° of navigation accuracy without drift error』（非成像型）。",
+      "performance_data": [
+        {
+          "metric": "navigation accuracy of non-imaging polarization sensor (heading, no drift)",
+          "value": "±0.1",
+          "unit": "deg",
+          "conditions": "综述归纳：非成像式偏振导航传感器精度测量，无漂移误差；高于成像式",
+          "source_level": "ABSTRACT",
+          "snippet": "In precision measurement, the non-imaging type is higher than the imaging type, and the accuracy that it can reach is ± 0.1° of navigation accuracy without drift error."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "FUTURE_OUTLOOK 小专题，candidate_core 按要求一律 false。"
+    },
+    {
+      "title": "Bio-Inspired Polarized Skylight-Based Navigation Sensors: A Review",
+      "authors": [
+        "Salmah Karman",
+        "S. Zaleha M. Diah",
+        "Ille C. Gebeshuber"
+      ],
+      "year": 2012,
+      "venue": "Sensors",
+      "doi": "10.3390/s121114232",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s121114232",
+      "keywords": [
+        "polarized skylight",
+        "dorsal rim area",
+        "sensor review",
+        "desert ant",
+        "path integration"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "偏振天空光导航传感器的早期系统综述（昆虫复眼背缘区感光机理到人工传感器），适合在展望部分交代技术源头。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回开放获取完整摘要（昆虫背缘区/微绒毛感光结构、路径积分机理与传感器研制综述）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "综述。"
+    },
+    {
+      "title": "Polarized skylight navigation",
+      "authors": [
+        "Moshe Hamaoui"
+      ],
+      "year": 2016,
+      "venue": "Applied Optics",
+      "doi": "10.1364/ao.56.000b37",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1364/ao.56.000b37",
+      "keywords": [
+        "skylight polarization",
+        "state estimation",
+        "solar position",
+        "autonomous flight"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "将天空偏振模式用于载体状态估计（太阳方位信息编码于偏振分布），代表偏振导航从『罗盘』走向『状态估计』的路线。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=polarized%20skylight%20navigation) 返回该记录：标题、DOI 10.1364/ao.56.000b37、期刊 Applied Optics、年份 2016，及摘要开头段（大气散射使太阳位置编码于天空偏振模式；昆虫感知偏振的证据）。Optica 官网摘要页 WebFetch 返回 404，未能补齐完整摘要。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "OpenAlex 年份 2016（在线），Applied Optics 卷期 56(2) 印刷年为 2017；年份以 2016（OpenAlex）记录并注明。"
+    },
+    {
+      "title": "Multi-sensor fusion SLAM approach for the mobile robot with a bio-inspired polarised skylight sensor",
+      "authors": [
+        "Tao Du",
+        "Yun Zeng",
+        "Jian Yang",
+        "Chang Zheng Tian",
+        "Peng Bai"
+      ],
+      "year": 2020,
+      "venue": "IET Radar, Sonar & Navigation",
+      "doi": "10.1049/iet-rsn.2020.0260",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1049/iet-rsn.2020.0260",
+      "keywords": [
+        "polarised skylight sensor",
+        "SLAM",
+        "mobile robot",
+        "EKF",
+        "lidar",
+        "odometry"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "REAL",
+      "potential_relevance": "把仿生偏振天空光传感器接入移动机器人 SLAM（偏振+LiDAR+里程计，三种非线性滤波对比），是偏振导航落到轮式移动机器人平台的直接先例。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要：EKF-SLAM 仿真定位误差降约 30%、建图误差降约 25%，并有实验验证描述。",
+      "performance_data": [
+        {
+          "metric": "localisation error reduction with polarised skylight sensor (EKF-SLAM)",
+          "value": "about 30",
+          "unit": "% (reduction)",
+          "conditions": "仿真测试；偏振天空光传感器+LiDAR+里程计 EKF-SLAM",
+          "source_level": "ABSTRACT",
+          "snippet": "The simulations show that the EKF–SLAM with the polarised skylight sensor reduces the error of localisation about 30% and the error of mapping about 25%."
+        },
+        {
+          "metric": "mapping error reduction with polarised skylight sensor (EKF-SLAM)",
+          "value": "about 25",
+          "unit": "% (reduction)",
+          "conditions": "同上仿真",
+          "source_level": "ABSTRACT",
+          "snippet": "reduces the error of localisation about 30% and the error of mapping about 25%"
+        }
+      ],
+      "candidate_core": false,
+      "notes": "数字来自仿真部分；实验部分摘要称方法有效但未给数值。"
+    },
+    {
+      "title": "Limitation of Rayleigh sky model for bioinspired polarized skylight navigation in three-dimensional attitude determination",
+      "authors": [
+        "Huaju Liang",
+        "Hongyang Bai",
+        "Ning Liu",
+        "Kai Shen"
+      ],
+      "year": 2020,
+      "venue": "Bioinspiration & Biomimetics",
+      "doi": "10.1088/1748-3190/ab7ab7",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1088/1748-3190/ab7ab7",
+      "keywords": [
+        "Rayleigh sky model",
+        "polarization pattern",
+        "attitude determination",
+        "theoretical limitation"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "从理论上证明 Rayleigh 天空模型仅含单一太阳矢量信息（两维姿态信息），不能唯一确定三维姿态——展望部分讨论偏振导航适用边界的关键文献。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar API (https://api.semanticscholar.org/graph/v1/paper/DOI:10.1088/1748-3190/ab7ab7?fields=title,abstract,year,venue) 返回标题、2020、期刊与完整摘要（旋转与平面对称性分析、仅含单太阳矢量信息的证明）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "A Bio-Inspired Multi-Sensor System for Robust Orientation and Position Estimation",
+      "authors": [
+        "Jia Xie",
+        "Xiaofeng He",
+        "Jun Mao",
+        "Lilian Zhang",
+        "Guo-liang Han",
+        "Wenzhou Zhou"
+      ],
+      "year": 2021,
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "doi": "10.1109/iros51168.2021.9635932",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/iros51168.2021.9635932",
+      "keywords": [
+        "polarization camera",
+        "magnetometer",
+        "VIO",
+        "bio-inspired navigation",
+        "orientation"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "磁力计+单目相机+MIMU+偏振相机的仿生多传感器组合（航向用磁+偏振互补、位置用 VIO），展示偏振相机在机器人导航系统中的集成方式。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar API (https://api.semanticscholar.org/graph/v1/paper/DOI:10.1109/iros51168.2021.9635932?fields=title,abstract,year,venue) 返回标题、2021、venue 与摘要（系统组成三轴磁力计/单目相机/MIMU/偏振相机，VIO+绝对航向组合设计）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要截断处未见实验数值。"
+    },
+    {
+      "title": "A Novel Polarized Skylight Navigation Model for Bionic Navigation With Marginalized Unscented Kalman Filter",
+      "authors": [
+        "Qingfeng Dou",
+        "Tao Du",
+        "Shanpeng Wang",
+        "Jian Yang",
+        "Lei Guo"
+      ],
+      "year": 2021,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2021.3139353",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2021.3139353",
+      "keywords": [
+        "polarized skylight",
+        "SINS",
+        "odometer",
+        "GPS-denied",
+        "measurement model",
+        "MUKF"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "SINS+偏振天空光传感器+里程计的 GPS 拒止车载导航模型（偏振矢量叉积测量模型+MUKF），并做可观测性分析——偏振辅助与里程计结合对轮式平台展望最贴切。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API（批量 DOI 抓取）返回完整摘要：面向 GPS-denied 车辆导航，SINS+偏振传感器+里程计新测量模型（叉积计算偏振矢量误差、直接处理方向模糊），MUKF 降计算量并给出分段线性系统可观测性分析。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "StarNAV: Autonomous Optical Navigation of a Spacecraft by the Relativistic Perturbation of Starlight",
+      "authors": [
+        "John A. Christian"
+      ],
+      "year": 2019,
+      "venue": "Sensors",
+      "doi": "10.3390/s19194064",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s19194064",
+      "keywords": [
+        "celestial optical navigation",
+        "starlight",
+        "relativistic aberration",
+        "spacecraft",
+        "autonomous navigation"
+      ],
+      "subarea": "FUTURE_OUTLOOK",
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "天基光学自主导航前沿：仅凭恒星光相对论性扰动（星间角变化）即可在整个太阳系自主导航，无需地面测控——展望小专题『天基光学导航』的代表性工作。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?search=celestial%20optical%20navigation%20spacecraft) 返回开放获取完整摘要：恒星光谱多普勒频移路线实践无效，恒星间夹角（光行差）变化为最有前景的测量。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要为数学框架与可行性探索，无精度数字。"
+    }
+  ],
+  "rejected": [
+    {
+      "claimed": "A Portfolio Approach to NLOS and Multipath Mitigation in Dense Urban Areas（Groves, Jiang, Rudi, Strode, 2013）",
+      "reason": "为 UCL Discovery 机构库版本（ENCORE 会议版本），OpenAlex 无 DOI 无正式 venue，内容与已收录 Groves & Jiang 2013 (J. Navigation) 高度重叠；按去重与可核验性原则不重复收录。",
+      "verification_attempt": "OpenAlex search=GNSS NLOS detection multipath urban 返回该条：DOI 为 None、venue 显示 UCL Discovery (University College London)，有摘要但无正式出版记录。"
+    },
+    {
+      "claimed": "Tight Integration of GNSS and a 3D City Model for Robust Positioning in Urban Canyons（Bourdeau, Sahmoudi, Tourneret, 2012）",
+      "reason": "OpenAlex 记录 DOI 为 None、venue 为空（疑为 ION GNSS 会议），无法在 Crossref/出版方核实；主题（GNSS+3D 城市模型紧组合）已由 Hsu 2015、Zhang 2020 等有 DOI 的正式文献覆盖。",
+      "verification_attempt": "OpenAlex search=GNSS urban canyon positioning 返回该条（2012，无 DOI，含摘要）；Crossref 未查（无 DOI 可查）。"
+    },
+    {
+      "claimed": "A Novel GNSS Positioning Technique for Improved Accuracy in Urban Canyon Scenarios Using 3D City Model（Kumar & Petovello, 2014）",
+      "reason": "OpenAlex 记录无 DOI、无 venue，无法核验正式出处；3D 城市模型主题已有正式文献覆盖。",
+      "verification_attempt": "OpenAlex search=GNSS urban canyon positioning 返回该条（2014，DOI None）。"
+    },
+    {
+      "claimed": "GNSS Positioning with Multipath Simulation using 3D Surface Model in Urban Canyon（Suzuki & Kubo, 2012）",
+      "reason": "OpenAlex 记录无 DOI、无 venue（疑 ION 会议），无法核验；多路径仿真主题已由 Xie & Petovello 2014 (IEEE TIM) 覆盖。",
+      "verification_attempt": "OpenAlex search=GNSS urban canyon positioning 返回该条（2012，DOI None）。"
+    },
+    {
+      "claimed": "NLOS GPS signal detection using a dual-polarisation antenna（Jiang & Groves, 2012, GPS Solutions）",
+      "reason": "文献真实（OpenAlex 有正式 DOI 10.1007/s10291-012-0305-5），但方法依赖双极化天线专用硬件，与本项目低成本轮式平台传感器配置不符，未纳入收录上限内。",
+      "verification_attempt": "OpenAlex search=GNSS NLOS detection multipath urban 返回该记录（2012, GPS Solutions, 有 DOI）。"
+    },
+    {
+      "claimed": "Polarized Skylight Navigation in Insects: Model and Electrophysiology of e-Vector Coding（Sakura, Lambrinos, Labhart, 2007, J Neurophysiology）",
+      "reason": "纯神经生理学机制研究，超出 FUTURE_OUTLOOK 小专题的工程范围（工程综述与系统实现已有 Kong 2023、Karman 2012 覆盖）。",
+      "verification_attempt": "OpenAlex search=polarized skylight navigation 返回该记录（2007，J Neurophysiology，含三型 POL 神经元 60 度调谐描述）。"
+    },
+    {
+      "claimed": "The significance of direct sunlight and polarized skylight in the ant's celestial system of navigation（Wehner & Müller, 2006, PNAS）",
+      "reason": "纯生物学实验（沙漠蚁），非工程导航实现；作为思想源头可在综述类引用中带出，不单列。",
+      "verification_attempt": "OpenAlex search=polarized skylight navigation 返回该记录（2006, PNAS, 有 DOI）。"
+    },
+    {
+      "claimed": "Satellite Selection Methodology for Horizontal Navigation and Integrity Algorithms（Gerbeth et al., 2016, ION ITM）",
+      "reason": "面向航空 ARAIM 通道受限场景的选星策略，与轮式平台需求距离较远且为会议论文无开放摘要；选星主题已由 Jang 2022 与 Hsu 2015 RAIM 覆盖。",
+      "verification_attempt": "OpenAlex search=GNSS satellite selection weighted HDOP 返回该记录（2016, ION ITM, 有 DOI 10.33012/2016.14592，仅元数据）。"
+    },
+    {
+      "claimed": "GNSS Signal Quality in Forest Stands for Off-Road Vehicle Navigation（Rybanský et al., 2023, Applied Sciences）",
+      "reason": "主题为林区（植被遮挡）信号质量，与本项目城市峡谷/多路径/拒止主题不匹配。",
+      "verification_attempt": "OpenAlex search=GNSS satellite selection weighted HDOP 返回该记录（2023, Applied Sciences, 有 DOI）。"
+    },
+    {
+      "claimed": "百度百科『北斗短报文通信』词条中的系统规格：系统容量超过 1000 万次/小时、响应时间小于 1 秒、支持用户数 1200 万",
+      "reason": "非官方来源（百科/社区），未能在 beidou.gov.cn 官方页面核实；官方规格以官网发布会原文（14000 比特/1000 汉字、560 比特/40 汉字）为准，频次/容量类数字不采用非官方口径。",
+      "verification_attempt": "WebSearch 检索到百度百科与知乎来源含上述数字；随后 curl 抓取 beidou.gov.cn 官网发布规范页与 2020 开通发布会页，均未出现 1000 万次/小时等表述。"
+    },
+    {
+      "claimed": "华力创通 HBD6100 北斗三号短报文终端产品页『区域短报文最长 1000 个汉字（视北斗卡等级）』",
+      "reason": "厂商营销页面，按任务铁律不可作为短报文规格依据（规格必须来自官方文档或正式论文）；数字本身与官方口径一致但来源不合格。",
+      "verification_attempt": "WebSearch 结果列表出现该产品页链接；未将其作为证据链一环，仅用于提示 1000 汉字口径与官方一致。"
+    },
+    {
+      "claimed": "Realization of ship route supervision platform system based on Beidou short message communication（An et al., 2020, IEEE TOCS）",
+      "reason": "文献真实（OpenAlex 有 DOI 10.1109/tocs50858.2020.9339735 与摘要），但 K 块已达 10 条上限，本文为港口船舶监管工程案例，信息密度低于已收录条目，故舍弃。",
+      "verification_attempt": "OpenAlex search=BeiDou short message communication 返回该记录及摘要（武汉港航船舶监管平台，定位/测速/授时+短报文双向通信）。"
+    },
+    {
+      "claimed": "Innovative Development and Forecast of BeiDou System（Tan Shusen, 2017, 测绘学报 via DOAJ）",
+      "reason": "K 块上限内未收录：OpenAlex 元数据不全（venue 显示 DOAJ），RDSS 历史发展内容与已收录系统体制文献重叠。",
+      "verification_attempt": "OpenAlex search=BeiDou RDSS satellite 返回该记录（2017，含 RDSS 快速定位报告与短报文通信历史描述摘要）。"
+    },
+    {
+      "claimed": "Gaia mission / ICRF VLBI / Representations of celestial coordinates in FITS 等天体测量文献（Prusti 2016, Charlot 2020, Ma 1998, Calabretta 2002）",
+      "reason": "天文学基础数据与参考框架文献，与『天基光学导航用于导航定位』主题无直接关系，属检索噪声。",
+      "verification_attempt": "OpenAlex search=celestial optical navigation spacecraft 返回上述记录（均有正式 DOI），逐条判定为主题不相关。"
+    },
+    {
+      "claimed": "Vision-based collective motion: A locust-inspired reductionist model（Krongauz et al., 2024, PLoS Comput Biol）及 Insect Inspired Autopilots（Franceschini 2010）等",
+      "reason": "仿生群体运动/光学流控制主题，与偏振光导航、天基光学导航均不相关，检索噪声。",
+      "verification_attempt": "OpenAlex search=polarization odometry bio-inspired 返回上述记录，主题判定不相关。"
+    },
+    {
+      "claimed": "Cooperative Navigation of UAVs in GNSS-Denied Area With Colored RSSI Measurements（Ouyang et al., 2020, IEEE Sensors Journal）",
+      "reason": "文献真实（OpenAlex 有 DOI 与摘要），但为 UAV 集群 RSSI 协同定位，与轮式平台 GNSS 退化观测处理主线偏离，A 块上限内未收录。",
+      "verification_attempt": "OpenAlex search=GNSS denied navigation 返回该记录（2020, IEEE Sensors Journal, DOI 10.1109/jsen.2020.3021561，含摘要）。"
+    },
+    {
+      "claimed": "GNSS-denied UAV navigation review（Jarraya et al., 2025, Satellite Navigation）与 Radar and Visual Odometry Integrated System for UAVs（Mostafa et al., 2018, Sensors）",
+      "reason": "均为 UAV 场景；Jarraya 2025 综述质量高但视角为空中平台，Mostafa 2018 为机载雷达/视觉里程计；与轮式平台直接相关的拒止文献已收录（Tang 2015 UGV、Chang 2020 车载、GVINS、Dai 2019），受 A 块 18-26 篇上限控制舍弃。",
+      "verification_attempt": "OpenAlex search=GNSS denied navigation 与 search=GNSS outage inertial navigation drift 均返回上述记录（DOI 10.1186/s43020-025-00162-z、10.3390/s18092776，含完整摘要）。"
+    },
+    {
+      "claimed": "GNSS Multipath-Resistant Cooperative Navigation in Urban Vehicular Networks（Ko, Kim & Kong, 2015, IEEE TVT, 10.1109/tvt.2015.2481509）",
+      "reason": "文献真实、摘要已核验（基于实测多路径时延的蒙特卡洛评估）；但面向多车协同 SPAAWN/hcEKF 体制，与本项目单车退化观测处理主线距离较远，A 块 18-26 篇上限内未收录。",
+      "verification_attempt": "OpenAlex API 批量 DOI 抓取返回完整摘要（NLOS 检测+MRH-SPAWN/MR-hcEKF，蒙特卡洛仿真，结论定性显著提升）。"
+    },
+    {
+      "claimed": "GNSS Vulnerabilities and Existing Solutions: A Review of the Literature（Zidan et al., 2020, IEEE Access, 10.1109/access.2020.2973759）",
+      "reason": "文献真实、摘要已核验；综述重心在干扰/欺骗威胁与行业背景，与已收录 Schmidt 2014 综述角色重叠，A 块上限内未收录。",
+      "verification_attempt": "OpenAlex API 批量 DOI 抓取返回完整摘要。"
+    },
+    {
+      "claimed": "A new IMU-aided multiple GNSS fault detection and exclusion algorithm for integrated navigation in urban environments（Sun et al., 2021, GPS Solutions, 10.1007/s10291-021-01181-4）",
+      "reason": "文献真实（标题/作者/期刊经 OpenAlex 与 Semantic Scholar 双源确认），但三家 API 均无摘要，无法提取带条件的性能数据；多故障 FDE 主题已由 Hsu 2015 与 Groves & Jiang 2013 以可核验数据覆盖，A 块上限内未收录。",
+      "verification_attempt": "OpenAlex search 与 S2 DOI 查询均返回仅元数据、摘要为空。"
+    },
+    {
+      "claimed": "BeiDou Navigation Satellite System（Lu & Yao, 图书章节, DOI 10.1002/9781119458449.ch6）",
+      "reason": "文献真实、摘要已核验（RDSS 双向有源定位体制、二维定位/授时/短报文）；RDSS 机制内容与已收录 Wang Fei 2020 及官网发布会口径重叠，且 OpenAlex 出版社字段不完整，K 块 6-10 条上限内未收录。",
+      "verification_attempt": "OpenAlex API search=BeiDou RDSS satellite 返回该章节记录与摘要。"
+    }
+  ],
+  "conflicts": [
+    {
+      "claim": "城市环境下『剔除不一致观测（一致性检验/RAIM FDE）』能否可靠提升水平定位精度",
+      "paper_a": "Groves & Jiang 2013 (Journal of Navigation, 10.1017/s0373463313000350)：常规顺序剔除法使水平精度劣化 60%（伦敦实测）",
+      "paper_b": "Hsu, Gu & Kamijo 2015 (Sensors, 10.3390/s150717329)：3D 建筑模型+RAIM 卫星选择使错侧解减少 8.4%（中等峡谷）/36.2%（深峡谷）",
+      "explanation": "两者不矛盾但构成设计张力：Groves 2013 中的常规剔除不知道哪颗是 NLOS，多信号同时受污染时经常剔除正确观测并破坏几何；Hsu 2015 用 3D 模型先验判定后再剔除。对项目的含义：退化观测处理应有环境先验或先降权后硬剔除，纯新息阈值剔除在深峡谷不可靠。"
+    },
+    {
+      "claim": "C/N0 用于退化观测处理的正确用法：连续加权 vs 门槛剔除",
+      "paper_a": "Groves & Jiang 2013：按 C/N0 加权带来水平精度 8% 改善（伦敦实测）",
+      "paper_b": "Kubo et al. 2020 (Sensors, 10.3390/s20144059)：单点仰角相关 C/N0 阈值不足以剔除 NLOS（C/N0 受 NLOS 影响波动大），需连续时间序列判据",
+      "explanation": "两文互补：C/N0 加权是软处理，收益温和但稳健；硬阈值剔除易误判，需要时间持续性判据。项目可组合：C/N0 加权 + 持续低 C/N0 才降权/拒绝。"
+    },
+    {
+      "claim": "Teunissen, Odolinski & Odijk《Instantaneous BeiDou+GPS RTK positioning with high cut-off elevation angles》发表年份",
+      "paper_a": "OpenAlex：publication_year = 2013",
+      "paper_b": "Semantic Scholar：year = 2014（Journal of Geodesy 卷期年）",
+      "explanation": "在线优先发表于 2013、正式卷期（J Geodesy 88）为 2014；引用时建议标注 2014 卷期年并在引文管理器核对。"
+    },
+    {
+      "claim": "Bofeng Li et al.《High-precision GNSS ocean positioning with BeiDou short-message communication》发表年份",
+      "paper_a": "OpenAlex：2018（在线优先）",
+      "paper_b": "Semantic Scholar：2019（卷期年）",
+      "explanation": "同上，在线优先/卷期差异；本文件按 2019 记录并注明。Hamaoui《Polarized skylight navigation》（Applied Optics 56(2)）亦存在 OpenAlex 2016 与印刷年 2017 的同类差异。"
+    }
+  ]
+}

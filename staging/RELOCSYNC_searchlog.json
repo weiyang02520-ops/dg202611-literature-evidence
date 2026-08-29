@@ -1,0 +1,349 @@
+{
+  "area": "RELOCSYNC",
+  "queries": [
+    {
+      "query": "search=active relocalization robot",
+      "tool": "OpenAlex",
+      "screened": 15,
+      "accepted": 3,
+      "rejected": 12,
+      "notes": "命中 TIE 2022 变电站主动位姿重定位、TPAMI 2018/2019 主动相机重定位、RAS 1998。本次会话 OpenAlex 共约11次查询后预算耗尽（API 返回 'Insufficient budget... dailyRemainingUsd 0.0003'），后续全部改用 Crossref/DBLP/arXiv/WebFetch/webReader。"
+    },
+    {
+      "query": "search=active localization mobile robot uncertainty",
+      "tool": "OpenAlex",
+      "screened": 15,
+      "accepted": 1,
+      "rejected": 14,
+      "notes": "命中 Robust Monte Carlo localization (AIJ 2001)。"
+    },
+    {
+      "query": "search=kidnapped robot problem recovery",
+      "tool": "OpenAlex",
+      "screened": 15,
+      "accepted": 3,
+      "rejected": 12,
+      "notes": "命中 IROS 2004 expansion resetting、TIM 2026 稀疏假设采样（后经 Crossref 核验）、ROSE 2013 resume navigation（收入候选池后未进最终35篇）。"
+    },
+    {
+      "query": "all:\"active relocalization\"",
+      "tool": "arXiv API (curl export.arxiv.org)",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "持续限流（'Rate exceeded'/HTTP 429），本次会话多次重试（间隔3-6s）均失败；改用 WebFetch 抓 arXiv 搜索页。"
+    },
+    {
+      "query": "filter=title.search:active localization (sorted by citations)",
+      "tool": "OpenAlex",
+      "screened": 25,
+      "accepted": 4,
+      "rejected": 21,
+      "notes": "命中 Active Markov localization (RAS 1998)、Jensfelt active global localization (TRA 2001)、Active SLAM survey (TRO 2023)。标题检索噪声大（医学生物类），人工筛选。"
+    },
+    {
+      "query": "search=\"relocalization success rate\"",
+      "tool": "OpenAlex",
+      "screened": 16,
+      "accepted": 2,
+      "rejected": 14,
+      "notes": "命中 GOReloc (RA-L 2024)、Tackling the Kidnapped Robot Problem (TIM 2026)。"
+    },
+    {
+      "query": "search=active Markov localization robot",
+      "tool": "OpenAlex",
+      "screened": 10,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "复核性查询，与 title.search 结果交叉确认 Active Markov localization。"
+    },
+    {
+      "query": "search=coastal navigation mobile robot uncertainty",
+      "tool": "OpenAlex",
+      "screened": 10,
+      "accepted": 1,
+      "rejected": 9,
+      "notes": "命中 Coastal navigation (ICRA 1999)；OpenAlex 年份字段标 2003（疑错误），Crossref 无年份，按 DOI/会议记 1999 并在 raw 中标注冲突。"
+    },
+    {
+      "query": "search=optimizing motions global localization planning",
+      "tool": "OpenAlex",
+      "screened": 10,
+      "accepted": 0,
+      "rejected": 10,
+      "notes": "记忆候选 'Planning for the Unexpected' 经 DBLP 证实为腿式跑步论文（主题无关），记入 rejected。"
+    },
+    {
+      "query": "search=viewpoint selection robot localization uncertainty",
+      "tool": "OpenAlex",
+      "screened": 10,
+      "accepted": 0,
+      "rejected": 10,
+      "notes": "噪声为主；视点选择方向的可用文献经 JIRS 2009 active visual perception 覆盖。"
+    },
+    {
+      "query": "search=active LiDAR relocalization exploration",
+      "tool": "OpenAlex",
+      "screened": 15,
+      "accepted": 3,
+      "rejected": 12,
+      "notes": "命中 Global LiDAR Localization survey (arXiv 2302.07433, 后经 arXiv abs 页核验为 IJCV 出版)、Relocalization with Submaps (RA-L 2020)、Active SLAM review last decade (Sensors 2023, 收入候选池未进最终35篇)。"
+    },
+    {
+      "query": "q=global localization planning unexpected",
+      "tool": "DBLP",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "0 命中；用于排除记忆候选。"
+    },
+    {
+      "query": "search=active Monte Carlo localization action selection",
+      "tool": "OpenAlex",
+      "screened": 12,
+      "accepted": 1,
+      "rejected": 11,
+      "notes": "命中 Active Visual Perception for Mobile Robot Localization (JIRS 2009)。"
+    },
+    {
+      "query": "search=POMDP active localization robot",
+      "tool": "OpenAlex",
+      "screened": 12,
+      "accepted": 0,
+      "rejected": 12,
+      "notes": "POMDP 规划文献为主，无主动重定位直接命中。"
+    },
+    {
+      "query": "search=entropy action selection global localization particle filter",
+      "tool": "OpenAlex",
+      "screened": 12,
+      "accepted": 1,
+      "rejected": 11,
+      "notes": "命中 Information Gain-based Exploration Using RBPF (RSS 2005)，收入候选池未进最终35篇（偏 SLAM 建图探索）。"
+    },
+    {
+      "query": "query=targetless LiDAR camera extrinsic calibration",
+      "tool": "Crossref",
+      "screened": 15,
+      "accepted": 6,
+      "rejected": 9,
+      "notes": "命中 Pandey AAAI MI 标定、AI Review 2023 survey、Galibr/EdgeCalib/TIV-OU/TLAC（后三者收入候选池，因35篇上限未收录）。"
+    },
+    {
+      "query": "query=temporal spatial calibration camera IMU multi-sensor",
+      "tool": "Crossref",
+      "screened": 15,
+      "accepted": 6,
+      "rejected": 9,
+      "notes": "命中 Furgale IROS（年份据 Crossref 定为2013）、Li&Mourikis ICRA 2013、Liu&Hu ICPR 2018（未收录）、3DV 2024 global pose sensor、GLIC-Calib IROS 2025。"
+    },
+    {
+      "query": "q=targetless calibration lidar camera",
+      "tool": "DBLP",
+      "screened": 51,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "复核性查询：与 Crossref 交叉确认 targetless 方向文献（AI Review survey、Galibr、EdgeCalib、TIV 等）。"
+    },
+    {
+      "query": "query=end-to-end active camera relocalization",
+      "tool": "Crossref",
+      "screened": 10,
+      "accepted": 1,
+      "rejected": 9,
+      "notes": "命中 ICASSP 2018 active camera relocalization (Miao/Tian/Feng)。"
+    },
+    {
+      "query": "query=online temporal calibration monocular visual-inertial",
+      "tool": "Crossref",
+      "screened": 10,
+      "accepted": 3,
+      "rejected": 7,
+      "notes": "命中 Qin&Shen IROS 2018、Feng Sensors 2019、EKF-Based Radar-Inertial Odometry With Online Temporal Calibration (RA-L 2025)。"
+    },
+    {
+      "query": "q=radar camera extrinsic calibration",
+      "tool": "DBLP",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "DBLP 间歇性失败（连接重置/空响应），重试一次仍空；雷达方向改用 Crossref 完成。"
+    },
+    {
+      "query": "query=event camera temporal calibration synchronization",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 2,
+      "rejected": 10,
+      "notes": "命中 EF-Calib (RA-L 2024)、EventAlign (ITSC 2024，未收录)。附带发现 Ekalibr-Stereo (RA-L 2025，未收录)。"
+    },
+    {
+      "query": "query=hardware time synchronization multi-sensor PPS PTP robot",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 1,
+      "rejected": 11,
+      "notes": "命中 Hardware-Based Time Synchronization for a Multi-Sensor System (IROS 2024)；PTP/ISPCS 类工业文献与机器人场景贴合度低未收录。"
+    },
+    {
+      "query": "query=spatiotemporal calibration LiDAR IMU continuous-time",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 5,
+      "rejected": 7,
+      "notes": "命中 Lv IROS 2020、TMech 2024 (Xingxing Li)、Sensors 2017 时延标定 (Wanli Liu)、Sensors 2025 方法综述 (Lyu)、TII 2024 multi-LiDAR（未收录）。"
+    },
+    {
+      "query": "query=radar camera targetless extrinsic calibration automotive",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 1,
+      "rejected": 11,
+      "notes": "命中 Targetless Radar-Camera Calibration via Trajectory Alignment (Sensors 2025)；NAECON/ICUFN/CaRaCTO 等未收录。"
+    },
+    {
+      "query": "query=timestamp offset time delay impact sensor fusion localization accuracy",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 0,
+      "rejected": 12,
+      "notes": "噪声为主（声源定位/TDOA）；‘时偏→融合精度’的量化证据改由 Sensors 2017/2019 两篇 OA 全文覆盖。"
+    },
+    {
+      "query": "query=active relocalization reinforcement learning robot navigation recovery",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 0,
+      "rejected": 12,
+      "notes": "RL 导航通用文献为主，无主动重定位直接命中。"
+    },
+    {
+      "query": "query=active global localization mobile robot exploration",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 3,
+      "rejected": 9,
+      "notes": "命中 Jensfelt TRA 2001（含作者）、Burgard entropy minimization 1997（含作者）、Heuristic Search Assisted Active Localization (ROBOT 2012)。"
+    },
+    {
+      "query": "query=next best view planning robot localization uncertainty",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 0,
+      "rejected": 12,
+      "notes": "NBV 文献以三维重建为主，与重定位弱相关。"
+    },
+    {
+      "query": "query=time synchronization error effect visual inertial odometry calibration",
+      "tool": "Crossref",
+      "screened": 12,
+      "accepted": 1,
+      "rejected": 11,
+      "notes": "命中 Robotica 2024 double-stage EKF 在线时标（收入候选池未进最终35篇）。"
+    },
+    {
+      "query": "query.bibliographic 批量解析 arXiv ID（GOReloc/GLIC-Calib/EKF-RIO/Cross-modality/EdgeCalib/VINS-Mono/Pandey 等13题）",
+      "tool": "Crossref",
+      "screened": 39,
+      "accepted": 5,
+      "rejected": 0,
+      "notes": "确认 GLIC-Calib/GRIL-Calib(附带发现)/EdgeCalib/EKF-RIO/VINS-Mono 的 DOI 与年份；大多数 RA-L/IROS 论文无 arXiv 预印本 DOI 记录。"
+    },
+    {
+      "query": "q=active relocalization",
+      "tool": "DBLP",
+      "screened": 8,
+      "accepted": 3,
+      "rejected": 0,
+      "notes": "关键命中：SII 2024 position-lost recovery、arXiv 2204.06580 + Neurocomputing 2022 (illumination-invariant ACR)、ICVS 2017 active loop closure；并交叉确认 TIE/TPAMI 年份。"
+    },
+    {
+      "query": "单条记录批量核验（H块10个DOI）",
+      "tool": "Crossref",
+      "screened": 10,
+      "accepted": 10,
+      "rejected": 0,
+      "notes": "逐条确认标题/作者/venue；IEEE 记录均无摘要字段。"
+    },
+    {
+      "query": "单条记录批量核验（I块 20个DOI，含完整作者名单补全）",
+      "tool": "Crossref",
+      "screened": 24,
+      "accepted": 24,
+      "rejected": 0,
+      "notes": "确认 Furgale=IROS 2013（pages 1280-1286）、EF-Calib/GRIL-Calib/EKF-RIO/Lv/GLIC/3DV/硬件同步/TIM2026/GOReloc 等；补全全部作者名单。"
+    },
+    {
+      "query": "ti 批量标题检索（EF-Calib/GOReloc/Submaps/Lv/EKF-RIO/ActiveSLAM survey/TPAMI ACR/ACR 2022，8题）",
+      "tool": "arXiv API (curl)",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "全部 'Rate exceeded'（持续限流），0 获取。"
+    },
+    {
+      "query": "title search 7题（EF-Calib/GOReloc/Submaps/Lv/EKF-RIO/ActiveSLAM survey/VINS-Mono）",
+      "tool": "Semantic Scholar Graph API",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "返回空 data（限流），0 获取。"
+    },
+    {
+      "query": "query 批量查 arXiv 预印本 DOI（6题, 10.48550 前缀）",
+      "tool": "Crossref",
+      "screened": 48,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "EF-Calib/GOReloc/Submaps/Lv/EKF-RIO/GRIL-Calib 均无 arXiv DOI 记录；GRIL-Calib 的 arXiv ID 改由 arXiv 搜索页获得。"
+    },
+    {
+      "query": "WebFetch https://arxiv.org/search/?query=GRIL-Calib",
+      "tool": "WebFetch",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "获得 arXiv:2312.14035（v1 2023-12-21, v2 2024-05-24）。"
+    },
+    {
+      "query": "WebFetch https://arxiv.org/search/?query=%22active+relocalization%22",
+      "tool": "WebFetch",
+      "screened": 1,
+      "accepted": 0,
+      "rejected": 1,
+      "notes": "仅命中生物物理论文；证实 arXiv 无以 active relocalization 为题的机器人论文，记忆候选记入 rejected。"
+    },
+    {
+      "query": "WebFetch https://arxiv.org/search/?query=GOReloc",
+      "tool": "WebFetch",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "获得 arXiv:2408.07917。"
+    },
+    {
+      "query": "WebFetch abs 页深读：2204.06580 / 1708.03852 / 2302.07433 / 2312.14035 / 2408.07917(abs+html) / 2209.06404",
+      "tool": "WebFetch",
+      "screened": 7,
+      "accepted": 6,
+      "rejected": 1,
+      "notes": "2204.06580(ACR 1.6x加速)、1708.03852(VINS-Mono 摘要无数值→rejected)、2302.07433(Global LiDAR survey, IJCV 出版确认)、2312.14035(标定精度表)、2408.07917(成功率定义+表格+耗时)、2209.06404(实为数学论文→rejected)。另有一次 https://arxiv.org/html/2312.14035v2 抓取超时，改用不带版本号的 html 成功。"
+    },
+    {
+      "query": "webReader 开放获取全文：MDPI 17/3/539 (Liu 2017)、19/10/2273 (Feng 2019)、25/24/7574 (Durmaz 2025)；IEEE ieeexplore.ieee.org/document/9341405",
+      "tool": "webReader (mcp web_reader)",
+      "screened": 4,
+      "accepted": 3,
+      "rejected": 1,
+      "notes": "MDPI 三篇全文成功抽取性能数值（时延9.58→0.50ms；时偏扫描 RMSE；雷达相机标定精度）；IEEE Xplore 返回 'Request Rejected'（反爬），IEEE 付费墙论文一律不填数值。MDPI 对 WebFetch 返回 403，webReader 可用。"
+    },
+    {
+      "query": "OpenAlex search=unified temporal and spatial calibration multi-sensor systems / targetless LiDAR camera extrinsic calibration",
+      "tool": "OpenAlex",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "发起时 OpenAlex 已超每日预算（'Rate limit exceeded / Insufficient budget'，retryAfter≈67381s），0 获取；同批 Crossref/DBLP 完成同等查询。"
+    }
+  ]
+}

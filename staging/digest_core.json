@@ -1,0 +1,912 @@
+[
+ {
+  "id": "UWB-01",
+  "title": "NLOS identification and mitigation for localization based on UWB experimental data",
+  "year": 2010,
+  "venue": "IEEE Journal on Selected Areas in Communications",
+  "area": "UWB",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "NLOS 检测/拒绝方向的奠基性工作：用实测 UWB 信道脉冲响应提取特征，机器学习同时完成 LOS/NLOS 判别与测距偏差回归校正，直接支撑'信号质量判断+按质量取舍量测'的策略设计。"
+ },
+ {
+  "id": "UWB-03",
+  "title": "NLOS Identification and Mitigation Using Low-Cost UWB Devices",
+  "year": 2019,
+  "venue": "Sensors",
+  "area": "UWB",
+  "status": "VERIFIED",
+  "nperf": 6,
+  "metrics": [
+   "NLOS Soft / NLOS Hard 测距误差增幅（相对 LOS）=Soft 约 +30 cm；Hard 约 +1 m m",
+   "NLOS Hard 场景原始测距 MAE（校正前）=约 1.9 m m",
+   "NLOS Hard 经 GP 回归校正后 MAE=<0.2 m（训练集含 NLOS Hard 数据时） m",
+   "NLOS combined (Soft+Hard) 原始测距 MAE=约 1 m m",
+   "LOS/NLOS 二分类 F1-score=>0.9 F1",
+   "CIR 内存读取时延（工程约束）=约 300 ms/次 ms"
+  ],
+  "relevance": "低成本 UWB（Pozyx/DW1000）真实测量下的 NLOS 软/硬遮挡分级识别与测距误差校正，给出 RSS 类特征的判别上限与'非 LOS 直接弃用'的工程结论，是本策略最直接的文献依据。"
+ },
+ {
+  "id": "UWB-07",
+  "title": "UWB Positioning System Based on LSTM Classification With Mitigated NLOS Effects",
+  "year": 2022,
+  "venue": "IEEE Internet of Things Journal",
+  "area": "UWB",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "LSTM 学习 CIR 与 UWB 测距误差的映射（而非位置坐标），判别信道状态后送 EKF 做定位——'质量判别+滤波级处理'的代表性架构，且强调对未训练位置的可泛化性。"
+ },
+ {
+  "id": "UWB-08",
+  "title": "Transfer Learning for UWB Error Correction and (N)LOS Classification in Multiple Environments",
+  "year": 2023,
+  "venue": "IEEE Internet of Things Journal",
+  "area": "UWB",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "UWB 定位误差量级（工业场景）=LOS 1–10 cm；NLOS typically >30 cm cm",
+   "跨环境迁移学习收益=误差改善 50%；(N)LOS 分类准确率提升 15% %",
+   "新环境小样本校正后精度=±10 cm 精度，(N)LOS 检测率 93% cm / %",
+   "NLOS 环境定位误差改善（绝对值）=643 mm → 245 mm mm"
+  ],
+  "relevance": "给出 LOS/NLOS 精度量级的权威区间（1–10 cm vs >30 cm）并证明用少量新环境样本(50 条)即可恢复 ±10 cm 精度与 93% 分类率——支撑'UWB 需按环境校准质量判别器'的结论。"
+ },
+ {
+  "id": "UWB-16",
+  "title": "An Improved UWB/IMU Tightly Coupled Positioning Algorithm Study",
+  "year": 2023,
+  "venue": "Sensors",
+  "area": "UWB",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "紧组合定位精度提升（相对常规紧耦合）=46.15% %"
+  ],
+  "relevance": "按 NLOS 判决结果实时调整量测噪声协方差 R 的 UWB/IMU 紧组合——'自适应协方差降权'的直接可引用范例，与本项目融合器设计意图一致。"
+ },
+ {
+  "id": "UWB-17",
+  "title": "NR-UIO: NLOS-Robust UWB-Inertial Odometry Based on Interacting Multiple Model and NLOS Factor Estimation",
+  "year": 2021,
+  "venue": "Sensors",
+  "area": "UWB",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "面向机器人室内定位的 NLOS 鲁棒 UWB/IMU 里程计：IMM 多模型并行假设 LOS/NLOS 并在线估计 NLOS 因子——'不硬判别、让滤波器自己分档'的另一种降权路线。"
+ },
+ {
+  "id": "UWB-28",
+  "title": "UWB Localization in a Smart Factory: Augmentation Methods and Experimental Assessment",
+  "year": 2021,
+  "venue": "IEEE Transactions on Instrumentation and Measurement",
+  "area": "UWB + Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "工业现场实测三种商用 UWB（Decawave/Sewio/Ubisense），用贝叶斯滤波联合跟踪运动与'随时间变化的视距可见性状态'——把'UWB 信号是否稳定'显式建模为可估计状态，正是弃用/降权开关的状态化实现。"
+ },
+ {
+  "id": "UWB-29",
+  "title": "UTIL: An ultra-wideband time-difference-of-arrival indoor localization dataset",
+  "year": 2024,
+  "venue": "The International Journal of Robotics Research",
+  "area": "UWB",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "无遮挡环境 UWB TDOA+IMU 定位 RMSE（基准）=约 10 cm（Const.1–2：TDOA2 ESKF 0.094–0.123 m；Const.3：0.19–0.34 m，含手动采集序列） m",
+   "遮挡/边缘环境定位 RMSE 恶化（最差序列）=Const.4 全部序列 ESKF 0.16–0.92 m；最差序列 3.1：TDOA2 ESKF 0.919 / TDOA2 Batch 0.788 / TDOA3 ESKF 0.742 / TDOA3 Batch 0.563 m m",
+   "质量指标定义（DW1000 寄存器）=SNR=Amf/σn；Pd=Pr−Pf；SNR 越高、Pd 越低→信号质量越好 -",
+   "静态/动态 NLOS 偏差特性=静态障碍→一致可重复的正偏差；严重 NLOS→量测可完全中断；动态 NLOS→误差不可预测 -"
+  ],
+  "relevance": "公开 UWB TDOA 数据集+基准：给出 SNR/功率差质量指标定义、静态 NLOS 一致偏差与动态 NLOS 不可预测性的实证、以及 ESKF 中卡方检验离群剔除的基准实现——质量指标与拒绝机制的可复现依据。"
+ },
+ {
+  "id": "RADAR-01",
+  "title": "CFEAR Radarodometry -- Conservative Filtering for Efficient and Accurate Radar Odometry",
+  "year": 2021,
+  "venue": "2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "translation error (KITTI-style mean over 100-800m subsequences)=1.76 %",
+   "rotation error=0.5 deg/100m",
+   "runtime=55 Hz (single laptop CPU thread)",
+   "odometry loop drift (non-urban generalization)=15 m over 1235 m (1.2%) m"
+  ],
+  "relevance": "无学习、免调参的经典雷达里程计方法，用 oriented surface points + point-to-line 配准。可直接作为本项目毫米波雷达里程计的基线算法，且证明同一套参数可跨传感器（Navtech CTS350-X / CIR154XH）和跨环境（城市/矿区/试验场）泛化。"
+ },
+ {
+  "id": "RADAR-05",
+  "title": "DRO: Doppler-Aware Direct Radar Odometry",
+  "year": 2025,
+  "venue": "Robotics: Science and Systems XXI (RSS 2025)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 5,
+  "metrics": [
+   "average relative translation error (Boreas odometry leaderboard)=0.26 % (rotation 0.05 deg/100m)",
+   "translation error with Doppler-enabling FM pattern=0.18 %",
+   "average KITTI-style translation/rotation error (MulRan)=1.45 / 0.38 % / deg-per-100m",
+   "featureless tunnel performance=3 of 4 runs under 2.5% translation error (version without Doppler constraint); Doppler constraint enables robust odometry in tunnels %",
+   "ablation: without gyroscope bias estimation=6.00 / 1.57 % / deg-per-100m (average)"
+  ],
+  "relevance": "当前公开榜单最强的雷达里程计之一，直接利用 Doppler 消除运动畸变并在无特征隧道保持可行——正对本项目'几何+Doppler 补充观测'的定位；其消融实验还量化了 IMU/陀螺偏向与雷达安装角误差的影响。"
+ },
+ {
+  "id": "RADAR-07",
+  "title": "An EKF Based Approach to Radar Inertial Odometry",
+  "year": 2020,
+  "venue": "2020 International Conference on Multisensor Fusion and Integration for Intelligent Systems (MFI)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "final position error=< 0.6% of distance traveled %"
+  ],
+  "relevance": "radar-inertial odometry 的奠基性工程路线：车载 FMCW 雷达逐目标 3D 位置+Doppler 速度 → RANSAC 自车速度 → EKF 与 IMU 融合；明确面向 GNSS 拒止与视觉退化（黑暗/雾/烟），与本项目的传感器主线完全一致。"
+ },
+ {
+  "id": "RADAR-10",
+  "title": "4D iRIOM: 4D Imaging Radar Inertial Odometry and Mapping",
+  "year": 2023,
+  "venue": "IEEE Robotics and Automation Letters (RA-L)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 3,
+  "metrics": [
+   "closure error & APE RMSE on ColoRadar (Seq 1: 2_23_2021_edgar_classroom_run0)=iRIOM 0.351m Hor / 0.043m Vert, Trans 0.916m, Rot 7.198°; vs EKFRIO 15.732m Hor / 6.746m Vert, Trans 5.048m m / deg",
+   "radar point cloud sparsity=~400 points/scan",
+   "capability statement=distance + azimuth + height + velocity "
+  ],
+  "relevance": "首个 4D 成像雷达惯性 SLAM 系统（里程计+建图+回环），明确 4D 雷达提供距离/方位/高度/速度四类信息；ColoRadar 实测表格给出 4D 雷达相对 3D 方案的精度差异，是 4D 路线的能力锚点。"
+ },
+ {
+  "id": "RADAR-12",
+  "title": "Ground-Optimized 4D Radar-Inertial Odometry via Continuous Velocity Integration using Gaussian Process",
+  "year": 2025,
+  "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "elevation error=18 m over 2.5 km (0.72%) m / %",
+   "vertical drift=less than 1% %"
+  ],
+  "relevance": "针对 4D 雷达噪声大的问题提出地面优化滤波与 GP 连续速度预积分，显著改善高程精度——轮式平台上坡/起伏场景的垂直漂移控制直接可用。"
+ },
+ {
+  "id": "RADAR-13",
+  "title": "GaRLIO: Gravity enhanced Radar-LiDAR-Inertial Odometry",
+  "year": 2025,
+  "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "vertical mean error=1.21 m over 2.045 km path"
+  ],
+  "relevance": "成熟的多传感器融合路线范例：雷达点级速度测量同时用于重力估计（抑制垂直漂移）与动态物剔除，LiDAR 保持几何精度——与本项目'雷达补充、LiDAR 主导'的融合思路高度一致。"
+ },
+ {
+  "id": "RADAR-16",
+  "title": "Adaptive LiDAR-Radar Fusion for Outdoor Odometry Across Dense Smoke Conditions",
+  "year": 2024,
+  "venue": "arXiv preprint (venue not independently verified in this session)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "odometry RMSE APE / RPE (smoke sequences)=cp: ours(LiDAR+Radar) APE 1.133m / RPE 0.886m; radar-only APE 2.142m / RPE 1.094m; LiDAR 失败(无值). garden: ours APE 2.477m / RPE 0.737m; radar-only APE 2.925m / RPE 0.817m m"
+  ],
+  "relevance": "在浓烟中定量证明 LiDAR 退化而雷达可用、融合最优——本项目'烟尘/视觉/LiDAR 局部退化用毫米波雷达补充'的核心证据链，含公开数据集上的 APE/RPE 数值。"
+ },
+ {
+  "id": "RADAR-18",
+  "title": "Are We Ready for Radar to Replace Lidar in All-Weather Mapping and Localization?",
+  "year": 2022,
+  "venue": "arXiv preprint (v3; peer-reviewed venue not independently verified in this session)",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "cross-modal radar-to-lidar map localization error=around 0.1 m (relative localization error)",
+   "ranking under snowstorm=lidar-only best; radar-only competitive with much smaller map "
+  ],
+  "relevance": "对'雷达能否全天候替代 LiDAR'给出克制结论：雪暴中 LiDAR 定位依然最准，雷达-only 精度有竞争力且地图小得多；跨模态 radar-to-lidar 定位达 ~0.1m。为本项目定位雷达的角色（补充/冗余而非替代）提供关键校准证据。"
+ },
+ {
+  "id": "RADAR-22",
+  "title": "A New Wave in Robotics: Survey on Recent mmWave Radar Applications in Robotics",
+  "year": 2023,
+  "venue": "IEEE Transactions on Robotics, 40 (2024) 4544-4560",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "capability statement (band & weather)=76-81GHz FMCW; bypasses fog/dust/smoke "
+  ],
+  "relevance": "机器人毫米波雷达权威综述（T-RO 2024）：覆盖雷达原理、运动估计/定位/建图、检测、数据集与标定——本项目雷达能力分级（60/77GHz、点云/4D）与路线图的一手入口文献。"
+ },
+ {
+  "id": "RADAR-24",
+  "title": "The Oxford Radar RobotCar Dataset: A Radar Extension to the Oxford RobotCar Dataset",
+  "year": 2019,
+  "venue": "arXiv 2019; Crossref 检出同题 ICRA 2020 版 DOI 10.1109/icra40945.2020.9196884",
+  "area": "mmWave Radar",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "dataset scale=280 km / 32 traversals / 240,000+ radar scans / 4.7TB "
+  ],
+  "relevance": "雷达定位领域最常用基准数据集：280km 城市驾驶、24 万扫描、含 GT 雷达里程计；本项目雷达算法初验证的首选公开数据。"
+ },
+ {
+  "id": "EVENT-01",
+  "title": "Event-Based Vision: A Survey",
+  "year": 2022,
+  "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 3,
+  "metrics": [
+   "传感器动态范围（事件相机 vs 传统帧相机）=140 vs 60 dB",
+   "事件相机时间分辨率=microseconds 量级 s",
+   "事件相机像素带宽=kHz 量级 Hz"
+  ],
+  "relevance": "事件相机领域最权威综述，为项目提供事件相机工作原理（异步、逐像素亮度变化）、优势边界（HDR/低延迟/无运动模糊）与算法分类的总体依据，可直接引用其传感器规格对比。"
+ },
+ {
+  "id": "EVENT-02",
+  "title": "Ultimate SLAM? Combining Events, Images, and IMU for Robust Visual SLAM in HDR and High-Speed Scenarios",
+  "year": 2018,
+  "venue": "IEEE Robotics and Automation Letters (RA-L)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "相对纯事件 pipeline 的精度提升=130 %",
+   "相对标准帧+IMU（frames-only VIO）的精度提升=85 %"
+  ],
+  "relevance": "事件+帧+IMU 紧耦合融合的开山之作，直接证明'事件相机与帧相机互补'这一项目核心假设：帧相机在高速/HDR/低光下严重退化而事件相机可靠，事件相机在近静止时输出少而帧相机信息丰富。"
+ },
+ {
+  "id": "EVENT-04",
+  "title": "ESVO2: Direct Visual-Inertial Odometry with Stereo Event Cameras",
+  "year": 2025,
+  "venue": "IEEE Transactions on Robotics (TRO)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 5,
+  "metrics": [
+   "ATE RMS（本系统 vs ESVO 基线）=56.17 cm (Ours) vs 370.32 cm (ESVO) cm",
+   "ATE RMS / ARE（本系统）=ATE 7.63 cm, ARE 1.69° cm / °",
+   "ATE RMS / ARE（本系统）=ATE 4.31 cm, ARE 2.79° cm / °",
+   "建图模块运行频率=20 Hz",
+   "后端单次更新耗时 / 基线 ESIO 后端耗时=5 ms vs 37.34 ms ms"
+  ],
+  "relevance": "当前双目事件 VIO 的代表性 SOTA（事件+IMU，CPU 实时），在 DSEC/MVSEC/TUM-VIE 等五个公开数据集与自采 RTK-GT 车载数据上系统评测，其时间表面+自适应累积表示与 IMU 先验设计可直接借鉴到本项目。"
+ },
+ {
+  "id": "EVENT-09",
+  "title": "Low-latency automotive vision with event cameras",
+  "year": 2024,
+  "venue": "Nature",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "等效延迟（混合 20fps RGB+事件 vs 高帧率相机）=20 fps RGB + event camera = 同 5,000 fps 相机的延迟 fps-equivalent",
+   "等效带宽=同 45 fps 相机的带宽 fps-equivalent"
+  ],
+  "relevance": "Nature 级证据：20 fps RGB 相机+事件相机可达到 5000 fps 相机的延迟与 45 fps 相机的带宽且不损精度——直接支撑本项目'ZED 2i 帧相机不必提高帧率，由事件流补高频观测'的技术路线。"
+ },
+ {
+  "id": "EVENT-10",
+  "title": "High Speed and High Dynamic Range Video with an Event Camera",
+  "year": 2021,
+  "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "重建质量相对 SOTA 提升=>20 %",
+   "可合成视频帧率=>5,000 fps"
+  ],
+  "relevance": "事件→图像重建（E2VID 系）的代表作，证明事件流可重建 >5000 fps 的高速现象视频并在挑战光照下做 HDR 重建，可作为事件流与 ZED 帧图像在表征层面对齐（转成类帧表示再融合）的依据。"
+ },
+ {
+  "id": "EVENT-19",
+  "title": "Spatio-Temporal Calibration for Omni-Directional Vehicle-Mounted Event Cameras",
+  "year": 2024,
+  "venue": "IEEE Robotics and Automation Letters (RA-L)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "与本平台最贴合的标定工作：利用事件数据线速度估计与轮式里程计线速度估计的运动学相关性，联合优化估计事件相机与轮速计间的时间偏移并恢复外参旋转——项目'事件相机+轮式里程计'时间对齐的首选方法学。"
+ },
+ {
+  "id": "EVENT-22",
+  "title": "DSEC: A Stereo Event Camera Dataset for Driving Scenarios",
+  "year": 2021,
+  "venue": "IEEE Robotics and Automation Letters (RA-L)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "事件相机动态范围（DSEC 论文表述）=>120 dB",
+   "事件相机延迟=sub-millisecond s"
+  ],
+  "relevance": "车载驾驶场景双目事件数据集（53 段序列，含夜/日出/日落），其'GPS PPS→微控制器→20 Hz 触发→事件相机 special event+帧相机曝光起始→统一到 GPS 时钟'的硬件同步链是项目硬件时间同步设计的直接模板。"
+ },
+ {
+  "id": "EVENT-24",
+  "title": "TUM-VIE: The TUM Stereo Visual-Inertial Event Dataset",
+  "year": 2021,
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "帧相机频率 / IMU 频率（数据集规格）=20 Hz 立体灰度帧 / 200 Hz IMU Hz",
+   "GT 位姿频率=120 Hz"
+  ],
+  "relevance": "大分辨率(1280x720)双目事件+20 Hz 灰度帧+200 Hz IMU 且 'Timestamps between all sensors are synchronized in hardware' 的数据集，含剧烈运动与 HDR 序列（SOTA SLAM 失效或大漂移）——多速率、硬件同步数据设计的标杆。"
+ },
+ {
+  "id": "EVENT-25",
+  "title": "The event-camera dataset and simulator: Event-based data for pose estimation, visual odometry, and SLAM",
+  "year": 2017,
+  "venue": "International Journal of Robotics Research (IJRR)",
+  "area": "Event Camera + Simulation",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "DAVIS（事件+全局快门帧同像素阵列）经典数据集与模拟器，是 Ultimate SLAM 等评测所用 'Event Camera Dataset' 的来源；同像素阵列结构天然规避跨传感器时间同步问题。"
+ },
+ {
+  "id": "EVENT-26",
+  "title": "ESIM: an Open Event Camera Simulator",
+  "year": 2018,
+  "venue": "Conference on Robot Learning (CoRL), PMLR v87",
+  "area": "Event Camera + Simulation",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "首个开源事件相机模拟器（自适应渲染），可在 ZED/项目场景 3D 模型上合成带时间戳的事件流，用于未来'事件+帧'算法的先导验证与标定流程演练。"
+ },
+ {
+  "id": "EVENT-27",
+  "title": "v2e: From Video Frames to Realistic DVS Events",
+  "year": 2021,
+  "venue": "CVPR Workshops (EventVision)",
+  "area": "Event Camera + Simulation",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "夜间驾驶车辆检测精度提升=40 %"
+  ],
+  "relevance": "从普通视频生成含阈值失配/有限带宽/光照相关噪声的真实 DVS 事件流；其夜间驾驶实验（事件训练检测器 +40% 精度）同时是'暗光场景事件数据价值'的量化证据。"
+ },
+ {
+  "id": "EVENT-30",
+  "title": "Frame-Event Alignment and Fusion Network for High Frame Rate Tracking",
+  "year": 2023,
+  "venue": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "area": "Event Camera",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "高帧率跟踪能力=up to 240 Hz"
+  ],
+  "relevance": "显式处理帧与事件'不同测量速率'的对齐+融合网络（cross-style and cross-frame-rate alignment），在 FE240hz 数据集实现 240 Hz 高帧率跟踪——项目'ZED 帧与事件流不必同频、按各自速率对齐融合'的最直接方法学依据。"
+ },
+ {
+  "id": "FUSION-03",
+  "title": "A Chi-square test for fault-detection in Kalman filters",
+  "year": 1987,
+  "venue": "IEEE Transactions on Automatic Control",
+  "area": "Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "卡方故障检测的奠基性文献：用在线 Kalman 估计与仅基于先验信息的估计之差构造卡方统计量并与预计算阈值比较，避免了两椭球法的迭代计算；直接对应本项目'innovation 卡方检验→降权/拒绝'链路的理论出处。"
+ },
+ {
+  "id": "FUSION-04",
+  "title": "Adaptive Kalman Filtering for INS/GPS",
+  "year": 1999,
+  "venue": "Journal of Geodesy",
+  "area": "Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "INS/GPS 自适应滤波常引经典：综述 IAE（基于新息的自适应估计）与 MMAE（多模型自适应估计）两条路线，滤波器权因子按极大似然准则选取，通过调节 Q 和/或 R 优于常规 KF；两次动态实测（高精度参考）验证。"
+ },
+ {
+  "id": "FUSION-08",
+  "title": "Multi-Sensor Optimal Data Fusion Based on the Adaptive Fading Unscented Kalman Filter",
+  "year": 2018,
+  "venue": "Sensors",
+  "area": "Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "两级融合架构与本项目同构：底层为基于 Mahalanobis 距离的自适应渐消 UKF 局部滤波器（抑制过程建模误差，相当于按质量调 Q/协方差），顶层按线性最小方差原则对 N 个局部估计做最优加权融合；INS/GNSS/CNS 仿真+实验验证。"
+ },
+ {
+  "id": "FUSION-10",
+  "title": "An outlier-robust Kalman filter",
+  "year": 2011,
+  "venue": "2011 IEEE International Conference on Robotics and Automation",
+  "area": "Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "把序列数据建模为被非高斯重尾噪声污染，给出对标准 KF/RTS 递推的直改式鲁棒化算法，并提出无监督学习全部参数——'自动降权/拒绝异常观测'的现代概率化模板。"
+ },
+ {
+  "id": "FUSION-11",
+  "title": "Robust Variational-Based Kalman Filter for Outlier Rejection With Correlated Measurements",
+  "year": 2020,
+  "venue": "IEEE Transactions on Signal Processing",
+  "area": "Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "变分滤波为每个观测引入离群指示变量并支持相关/依赖观测模型的多个离群指示——可迁移到 GNSS/UWB/里程计噪声相关场景的软拒绝机制；数值算例给出性能改进。"
+ },
+ {
+  "id": "FUSION-16",
+  "title": "Localization Integrity for Intelligent Vehicles Through Fault Detection and Position Error Characterization",
+  "year": 2020,
+  "venue": "IEEE Transactions on Intelligent Transportation Systems",
+  "area": "Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "把'测量拒绝（视为故障的观测）+ 位置误差界定'整合为智能车定位完整性框架：信息滤波器组实现故障检测与排除（FDE，不预设同时故障数），Student-t 分布在小完整性风险下界定位置误差并输出保护级（Protection Level）——与本项目'质量评估→拒绝→健康评估'链条同构的整车实例。"
+ },
+ {
+  "id": "FUSION-18",
+  "title": "Site-Specific Unmodeled Error Mitigation for GNSS Positioning in Urban Environments Using a Real-Time Adaptive Weighting Model",
+  "year": 2018,
+  "venue": "Remote Sensing",
+  "area": "Adaptive Fusion",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "以卫星高度角为基础、用 C/N0 相对标称模板的偏差估计站点特异性未建模误差（多径/NLOS）精度的实时自适应随机模型——GNSS 观测'按质量降权而不必剔除'的直接范式，城市车辆场景。"
+ },
+ {
+  "id": "FUSION-23",
+  "title": "On degeneracy of optimization-based state estimation problems",
+  "year": 2016,
+  "venue": "2016 IEEE International Conference on Robotics and Automation (ICRA)",
+  "area": "Adaptive Fusion + LiDAR Degeneracy",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "通过分析问题约束的几何结构在线判定并分离状态空间中的退化方向，只在良态方向上求解——退化感知'部分接受观测'的奠基方法；相机+LiDAR 6-DOF 自运动估计实验验证（对应视觉纹理稀疏/测距几何缺失场景）。"
+ },
+ {
+  "id": "FUSION-24",
+  "title": "GenZ-ICP: Generalizable and Degeneracy-Robust LiDAR Odometry Using an Adaptive Weighting",
+  "year": 2024,
+  "venue": "IEEE Robotics and Automation Letters",
+  "area": "Adaptive Fusion + LiDAR Degeneracy",
+  "status": "VERIFIED",
+  "nperf": 9,
+  "metrics": [
+   "absolute pose error (APE) mean, degenerate corridor=1.69 m",
+   "APE mean, degenerate corridor (Ground-Challenge Corridor2)=0.18 m",
+   "relative translational error=0.51 %",
+   "relative translational error (short experiment)=0.46 %",
+   "相对平移误差（短实验/长实验）=0.46 / 0.94 %",
+   "相对平移误差 (MulRan KAIST)=2.27 %"
+  ],
+  "relevance": "按局部表面变差（PCA 特征值 λ3/Σλ）把 ICP 对应点分为平面/非平面两类，用自适应权重 α=N_pl/(N_pl+N_po) 在点到面与点到点代价间动态加权，在走廊类退化环境防 ill-posed 问题——LiDAR 观测质量自适应加权的最新代表，多公开数据集+退化场景定量验证。"
+ },
+ {
+  "id": "GNSS-03",
+  "title": "Height Aiding, C/N0 Weighting and Consistency Checking for GNSS NLOS and Multipath Mitigation in Urban Areas",
+  "year": 2013,
+  "venue": "Journal of Navigation",
+  "area": "GNSS",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "horizontal accuracy improvement from terrain-height aiding=35 % (improvement)",
+   "vertical accuracy improvement from terrain-height aiding=4x factor",
+   "horizontal accuracy improvement from C/N0-based measurement weighting=8 % (improvement)",
+   "horizontal accuracy degradation from conventional sequential consistency checking (wrong-exclusion risk)=-60 % (degradation)"
+  ],
+  "relevance": "与本项目『退化时降权/拒绝观测』设计最直接相关：无额外硬件条件下比较高度辅助、C/N0 加权、一致性检验三种手段在伦敦市中心的实测效果，并警示盲目剔除观测可能适得其反。"
+ },
+ {
+  "id": "GNSS-06",
+  "title": "NLOS Correction/Exclusion for GNSS Measurement Using RAIM and City Building Models",
+  "year": 2015,
+  "venue": "Sensors",
+  "area": "GNSS",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "reduction of large-error positioning solutions (estimated on wrong side of road), middle urban canyon=8.4 % (reduction)",
+   "reduction of large-error positioning solutions (wrong side of road), deep urban canyon=36.2 % (reduction)"
+  ],
+  "relevance": "3D 建筑模型射线追踪 + RAIM 卫星选择/FDE 剔除 NLOS 观测，直接对应本项目『NLOS 检测→拒绝观测』环节，并给出分环境（中/深峡谷）量化收益。"
+ },
+ {
+  "id": "GNSS-08",
+  "title": "Loose and Tight GNSS/INS Integrations: Comparison of Performance Assessed in Real Urban Scenarios",
+  "year": 2017,
+  "venue": "Sensors",
+  "area": "GNSS",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "在真实城市场景、低成本传感器与大众市场 GNSS 接收机条件下对比松/紧组合相对独立与商用模块的性能，直接支撑本项目选择紧耦合架构的论证。"
+ },
+ {
+  "id": "GNSS-14",
+  "title": "NLOS Multipath Classification of GNSS Signal Correlation Output Using Machine Learning",
+  "year": 2021,
+  "venue": "Sensors",
+  "area": "GNSS",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "NLOS signal correct discrimination rate=97.7 %"
+  ],
+  "relevance": "用相关器输出波形特征 + 机器学习做 NLOS 判别，城市环境实测 NN 判别正确率 97.7%，并给出 LOS/NLOS 训练数据自动采集方法；是本项目 NLOS 检测模块的高性能参考。"
+ },
+ {
+  "id": "GNSS-16",
+  "title": "3D Mapping Database Aided GNSS Based Collaborative Positioning Using Factor Graph Optimization",
+  "year": 2020,
+  "venue": "IEEE Transactions on Intelligent Transportation Systems",
+  "area": "GNSS",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "GNSS positioning error, deep urban canyon road users (before)=over 30 m",
+   "GNSS positioning error after 3DMA collaborative FGO (after)=less than 10 m"
+  ],
+  "relevance": "3D 建筑模型辅助 + 多车 V2X 协同 + 因子图优化，把深峡谷道路用户 GNSS 误差从 30 m 以上降到 10 m 以内，给出本项目『环境先验+协同』路线的量化上限参考。"
+ },
+ {
+  "id": "GNSS-18",
+  "title": "GVINS: Tightly Coupled GNSS–Visual–Inertial Fusion for Smooth and Consistent State Estimation",
+  "year": 2022,
+  "venue": "IEEE Transactions on Robotics",
+  "area": "GNSS",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "minimum number of satellites usable for state estimation=1 (vs 4 for conventional GNSS) satellite count"
+  ],
+  "relevance": "GNSS 伪距/多普勒 + 视觉 + IMU 紧组合因子图，专门处理 GNSS 间歇可用与室内外切换、退化情形；开源实现，是本项目 GNSS 退化/拒止期间多源状态估计的强参考。"
+ },
+ {
+  "id": "GNSS-20",
+  "title": "GNSS/IMU/ODO/LiDAR-SLAM Integrated Navigation System Using IMU/ODO Pre-Integration",
+  "year": 2020,
+  "venue": "Sensors",
+  "area": "GNSS",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "max position drift RMS reduction during 2-min GNSS outages (north/east/up) vs GNSS/INS/ODO=62.8 / 72.3 / 52.1 % (reduction, N/E/height)",
+   "yaw error reduction during outages vs GNSS/INS/ODO=62.1 % (reduction)"
+  ],
+  "relevance": "轮式平台强相关：IMU/ODO 预积分 + LiDAR-SLAM 图优化，在模拟 2 分钟 GNSS 中断期间定量给出相对 GNSS/INS/ODO 的最大位置漂移降幅（N/E/H 三方向），直接可用于本项目退化性能论证。"
+ },
+ {
+  "id": "BDS-01",
+  "title": "北斗三号建成开通新闻发布会（短报文服务规格官方表述）",
+  "year": 2020,
+  "venue": "beidou.gov.cn（北斗卫星导航系统官方网站）",
+  "area": "BeiDou SMS",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "regional short message communication capability per message=14000 bits (1000 Chinese characters) bits per message",
+   "global short message communication capability per message=560 bits (40 Chinese characters) bits per message",
+   "international SAR service detection probability=better than 99 %",
+   "global measured positioning accuracy (weekly mean)=2.34 m (mean)"
+  ],
+  "relevance": "北斗三号短报文通信能力的官方权威口径：区域短报文每次 14000 比特（1000 汉字，支持文字/语音/图片），全球短报文每次 560 比特（40 汉字）。比赛做短报文原型集成时消息长度设计必须以此为约束。"
+ },
+ {
+  "id": "BDS-02",
+  "title": "Introduction to global short message communication service of BeiDou-3 navigation satellite system",
+  "year": 2021,
+  "venue": "Advances in Space Research",
+  "area": "BeiDou SMS",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "BDS-3 全球短报文（GSMC）系统架构的权威技术论文（基于 MEO 星座+星间链路），定义定位报告、应急搜救、常规短报文三类服务并给出在轨测试初步结果，是短报文原型工作机制设计的第一参考。"
+ },
+ {
+  "id": "LDG-02",
+  "title": "X-ICP: Localizability-Aware LiDAR Registration for Robust Localization in Extreme Environments",
+  "year": 2024,
+  "venue": "IEEE Transactions on Robotics",
+  "area": "LiDAR Degeneracy",
+  "status": "VERIFIED",
+  "nperf": 3,
+  "metrics": [
+   "APE translation mean(sigma), First 15 m Alignment=2.05 (1.23) m",
+   "RPE per 10 m traversed distance, translation mean(sigma)=0.17 (0.12) m",
+   "scan-to-map registration time=12.65 ms"
+  ],
+  "relevance": "提出逐自由度的细粒度 localizability 检测模块 + localizability-aware 约束化 ICP 优化：弱约束方向被限制更新或保持不变，直接示范了『按几何质量逐方向调整信息权重』的工程实现范式，与本比赛『按 LiDAR 几何质量动态调整融合权重』几乎一一对应。"
+ },
+ {
+  "id": "LDG-04",
+  "title": "LF-GICP: Parameter-Free Degeneracy-Aware LiDAR Odometry via a Voxel-Normal Localizability Field",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "area": "LiDAR Degeneracy",
+  "status": "VERIFIED",
+  "nperf": 1,
+  "metrics": [
+   "KITTI relative translation error=0.865 %"
+  ],
+  "relevance": "最新（2026）无参数退化感知里程计：指出体素化 GICP 的 Hessian 因协方差正则化会掩盖平移退化，提出免正则体素法向 localizability 场及两个统计量 f0（方向各向异性）与 lambda0（信息缺失 vs 稀释），经时间中值门控触发 Fisher 信息对应点加权——提供了两种可直接借鉴的退化度量定义。"
+ },
+ {
+  "id": "LDG-05",
+  "title": "Heterogeneous LiDAR Dataset for Benchmarking Robust Localization in Diverse Degenerate Scenarios (GEODE)",
+  "year": 2025,
+  "venue": "The International Journal of Robotics Research (IJRR)",
+  "area": "LiDAR Degeneracy",
+  "status": "VERIFIED",
+  "nperf": 3,
+  "metrics": [
+   "ATE (FAST-LIO2)=70.26 m",
+   "ATE（盾构隧道全系统失败）=>100 (标记✗) m",
+   "数据集规模=64 trajectories / 64 km / 7 settings -"
+  ],
+  "relevance": "退化场景专用公开基准（64条轨迹/64公里/7类场景，含城市隧道、桥、内陆水道、越野），给出 SOTA SLAM 在退化场景的 ATE 失败量化表：是『退化场景下定位失败的量化证据』的最强数据来源之一，可直接用于论证主局部定位源需要几何质量感知的降级机制。"
+ },
+ {
+  "id": "LDY-01",
+  "title": "ERASOR: Egocentric Ratio of Pseudo Occupancy-based Dynamic Object Removal for Static 3D Point Cloud Map Building",
+  "year": 2021,
+  "venue": "IEEE Robotics and Automation Letters (RA-L)",
+  "area": "LiDAR Dynamic",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "Preservation Rate (PR)=93.98 %",
+   "Rejection Rate (RR)=97.081 %",
+   "Preservation Rate (PR)=90.624 %",
+   "Runtime per iteration=0.0732 s"
+  ],
+  "relevance": "动态物体去除代表作（egocentric pseudo occupancy + R-GPF）：摘要明确『动态物体残留会阻碍定位与导航』；提供 SemanticKITTI 上 PR/RR/F1 与运行时间的完整条件化数据，是『动态处理方法+性能』的主锚点。"
+ },
+ {
+  "id": "LDY-02",
+  "title": "Remove, then Revert: Static Point Cloud Map Construction using Multiresolution Range Images (Removert)",
+  "year": 2020,
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "area": "LiDAR Dynamic",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "Preservation Rate (PR, Removert-RM3 配置)=85.502 %",
+   "Runtime per iteration (Removert)=0.8307 s"
+  ],
+  "relevance": "多分辨率距离像『先删后还原』的离线静态建图方法，是动态点去除方向的常用基线；其被测数值（PR/RR/runtime）在 ERASOR 论文 Table II/III 中以相同协议给出，可作对比基准。"
+ },
+ {
+  "id": "LDY-05",
+  "title": "DynaHull: Density-centric Dynamic Point Filtering in Point Clouds",
+  "year": 2024,
+  "venue": "arXiv preprint",
+  "area": "LiDAR Dynamic",
+  "status": "VERIFIED",
+  "nperf": 3,
+  "metrics": [
+   "建图误差 MAE (DynaHull)=0.102 m",
+   "建图误差 RMSE (DynaHull)=0.312 m",
+   "FP% / FN% / Precision / Recall (DynaHull)=5.93 / 7.33 / 0.88 / 0.88 -"
+  ],
+  "relevance": "室内动态（人员/移动机械）点云过滤：多帧密度差异+凸包体积密度因子+自适应阈值；论文 Figure 8 明确记录『使用含动态点的地图，机器人在第三个转弯后无法自定位』——是动态物体导致定位失败的直接实验证据，并有与 ERASOR/Removert/Dynablox/OctoMap+SOR 的条件化对比表。"
+ },
+ {
+  "id": "LDY-06",
+  "title": "RF-LIO: Removal-First Tightly-coupled Lidar Inertial Odometry in High Dynamic Environments",
+  "year": 2021,
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "area": "LiDAR Dynamic",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "绝对轨迹精度提升 (vs LOAM)=90 %",
+   "绝对轨迹精度提升 (vs LIO-SAM)=70 %"
+  ],
+  "relevance": "『先删后配』的紧耦合 LiDAR-惯性里程计：自适应多分辨率距离像先移除运动物体再与子图匹配；摘要给出高动态环境下相对 LOAM/LIO-SAM 的 ATE 精度提升幅度（90%/70%），是动态环境方法性能提升的直接量化证据。"
+ },
+ {
+  "id": "RLC-13",
+  "title": "Active Pose Relocalization for Intelligent Substation Inspection Robot",
+  "year": 2022,
+  "venue": "IEEE Transactions on Industrial Electronics",
+  "area": "Relocalization",
+  "status": "PARTIALLY_VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "变电站巡检轮式/轨道机器人的主动位姿重定位：与本项目‘轮式平台+定位健康评估→主动重定位’链路场景最接近的工业级实现（上海交大 Ling Pei 组），可作为系统架构与指标定义的直接对照。"
+ },
+ {
+  "id": "RLC-15",
+  "title": "A Survey on Active Simultaneous Localization and Mapping: State of the Art and New Frontiers",
+  "year": 2023,
+  "venue": "IEEE Transactions on Robotics",
+  "area": "Relocalization",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "TRO 权威综述：系统梳理主动定位/主动SLAM的目标函数（不确定性、信息增益）与动作选择框架，可直接作为比赛‘定位健康评估→主动重定位/恢复’模块的方法选型地图。"
+ },
+ {
+  "id": "RLC-16",
+  "title": "Active Search and Relocalization Framework for Position-Lost Recovery Under Limited Number of AMRs",
+  "year": 2024,
+  "venue": "IEEE/SICE International Symposium on System Integration (SII)",
+  "area": "Relocalization",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "AMR 丢位后的主动搜索与重定位恢复框架：与比赛链路末端‘定位健康评估→主动重定位/恢复’几乎一一对应（丢位检测→主动搜索策略→重定位成功），可提供恢复行为的状态机设计参照。"
+ },
+ {
+  "id": "RLC-17",
+  "title": "GOReloc: Graph-Based Object-Level Relocalization for Visual SLAM",
+  "year": 2024,
+  "venue": "IEEE Robotics and Automation Letters",
+  "area": "Relocalization",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "重定位成功率（TE<2m 阈值）=17.43 %",
+   "重定位成功率（TE<5m 阈值）=96.11 %",
+   "重定位成功率对比 ORB-SLAM2（TE<1m）=22.79 %",
+   "单帧重定位总耗时=19.025 ms (52.6 Hz)"
+  ],
+  "relevance": "物体级图匹配重定位（被动方法，含代码）：给出明确的成功率-阈值定义、与 ORB-SLAM2 的同表对比及逐帧重定位耗时分解，是比赛‘重定位成功率>95% + 重定位时间’指标口径设计与数值基准的直接参照。"
+ },
+ {
+  "id": "SYN-01",
+  "title": "Unified temporal and spatial calibration for multi-sensor systems",
+  "year": 2013,
+  "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "area": "Sync/Calibration",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "Kalibr 工具箱的奠基论文：基于连续时间 B 样条统一估计相机-IMU 的空间外参与时间偏移，是本项目 GNSS+UWB+LiDAR+ZED2i+IMU 同步/标定链路的基准工具与理论起点。"
+ },
+ {
+  "id": "SYN-04",
+  "title": "Online Spatial and Temporal Calibration for Monocular Direct Visual-Inertial Odometry",
+  "year": 2019,
+  "venue": "Sensors (MDPI)",
+  "area": "Sync/Calibration",
+  "status": "VERIFIED",
+  "nperf": 4,
+  "metrics": [
+   "初始化时时间偏移估计误差=<3 ms",
+   "初始化时姿态（外参旋转）估计误差=<3 deg",
+   "100ms 时偏未补偿时 VIO 轨迹 RMSE=1.141 m",
+   "在线时间偏移估计残差=-0.15/-0.21 ms（亚毫秒级）"
+  ],
+  "relevance": "直接法 VIO 的空间+时间参数在线标定，并给出‘相机时偏 0/50/100ms 未补偿→轨迹精度恶化、补偿后恢复’的量化证据链——正是 I 块需要的‘时间偏移对融合精度影响’的实验证据。"
+ },
+ {
+  "id": "SYN-09",
+  "title": "GRIL-Calib: Targetless Ground Robot IMU-LiDAR Extrinsic Calibration Method Using Ground Plane Motion Constraints",
+  "year": 2024,
+  "venue": "IEEE Robotics and Automation Letters",
+  "area": "Sync/Calibration",
+  "status": "VERIFIED",
+  "nperf": 2,
+  "metrics": [
+   "外参标定旋转/平移误差（M2DGR Gate 01）=0.501 deg / 0.039 m deg; m",
+   "外参标定旋转/平移误差（HILTI Basement 3）=0.069 deg / 0.018 m deg; m"
+  ],
+  "relevance": "面向地面机器人（平面运动退化场景）的无目标 IMU-LiDAR 外参标定：利用地面约束恢复平面运动下不可观的方向——与比赛轮式平台（只能在地面运动）的标定难题直接对症，开源可用。"
+ },
+ {
+  "id": "SYN-10",
+  "title": "EF-Calib: Spatiotemporal Calibration of Event- and Frame-Based Cameras Using Continuous-Time Trajectories",
+  "year": 2024,
+  "venue": "IEEE Robotics and Automation Letters",
+  "area": "Sync/Calibration",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "事件相机与普通帧相机的时空联合标定（连续时间轨迹）：为项目未来引入事件相机时的‘事件流-帧图像时戳对齐’提供现成方法（事件相机时戳精度极高、与帧相机异步，时偏估计是关键）。"
+ },
+ {
+  "id": "SYN-11",
+  "title": "LiDAR-IMU Time Delay Calibration Based on Iterative Closest Point and Iterated Sigma Point Kalman Filter",
+  "year": 2017,
+  "venue": "Sensors (MDPI)",
+  "area": "Sync/Calibration",
+  "status": "VERIFIED",
+  "nperf": 3,
+  "metrics": [
+   "LiDAR-IMU 时延估计误差（初值→10次标定后）=9.58 -> 4.67 -> 0.50 ms",
+   "时延校正后点云对准位置误差（East/North/Up）=0.018/0.019/0.017 m",
+   "单次标定平均对准误差（三方法对比）=0.233 / 0.151 / 0.067 m"
+  ],
+  "relevance": "LiDAR-IMU 时延标定的量化证据核心：实测‘未校准 9.58ms → 校准后 0.50ms’与对准误差从 0.09-0.17m 降至 0.02m 级——直接支撑‘时延必须校准，否则融合定位精度损失一个量级’的论断。"
+ },
+ {
+  "id": "SYN-12",
+  "title": "EKF-Based Radar-Inertial Odometry With Online Temporal Calibration",
+  "year": 2025,
+  "venue": "IEEE Robotics and Automation Letters",
+  "area": "Sync/Calibration",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "毫米波雷达-惯性里程计的在线时间标定：为项目未来接入毫米波雷达（异步、低帧率）提供‘雷达-IMU 时偏在线估计’的现成滤波框架，与 I 块未来扩展方向直接对应。"
+ },
+ {
+  "id": "SIM-09",
+  "title": "CARLA: An Open Urban Driving Simulator",
+  "year": 2017,
+  "venue": "arXiv:1711.03938",
+  "area": "Simulation",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "开源城市驾驶仿真器，内置摄像头/LiDAR/GNSS/IMU 传感器模型；城市环境与本项目轮式平台场景接近，可做 GNSS 多路径定性仿真"
+ },
+ {
+  "id": "SIM-12",
+  "title": "Low-Cost, Triple-Frequency, Multi-GNSS PPP and MEMS IMU Integration for Continuous Navigation in Simulated Urban Environments",
+  "year": 2023,
+  "venue": "NAVIGATION: Journal of the Institute of Navigation",
+  "area": "Simulation",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "用仿真城市环境构造 GNSS 退化场景并评估 PPP/INS 组合的代表性方法：先建仿真场景（遮挡/多路径），再跑实测级算法——与本项目'仿真只构造退化场景'的定位一致"
+ },
+ {
+  "id": "SIM-14",
+  "title": "Lidar Light Scattering Augmentation (LISA): Physics-based Simulation of Adverse Weather Conditions for 3D Object Detection",
+  "year": 2021,
+  "venue": "arXiv preprint",
+  "area": "Simulation",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "物理化 LiDAR 雨/雪/雾散射仿真（SNR/SBR 下降机制），为 LiDAR 退化注入提供机理依据"
+ },
+ {
+  "id": "SIM-15",
+  "title": "RadioRange: An Open-Source Digital Twin-based Ranging Simulator for UWB, Wi-Fi, and 5G",
+  "year": 2026,
+  "venue": "arXiv preprint",
+  "area": "Simulation",
+  "status": "VERIFIED",
+  "nperf": 0,
+  "metrics": [],
+  "relevance": "UWB 测距仿真器（含硬件损伤/NLOS 模型），与本项目 UWB dropout/NLOS 场景构造直接对口；作者组与 UrbanNav（Li-Ta Hsu）同源"
+ }
+]

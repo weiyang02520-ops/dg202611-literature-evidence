@@ -1,0 +1,182 @@
+{
+  "area": "GNSS",
+  "queries": [
+    {
+      "query": "search=GNSS denied navigation (per-page=14)",
+      "tool": "OpenAlex API (api.openalex.org/works)",
+      "screened": 14,
+      "accepted": 3,
+      "rejected": 11,
+      "notes": "命中 Schmidt 2014 (CJA 综述)、Tang 2015 (LiDAR+INS, UGV)、Dai 2019 (RNN, Defence Technology)。其余多为 UAV 专用（UWB、协同、RSSI、雷达/视觉里程计等），按轮式平台相关性筛除；Mostafa 2018、Jarraya 2025 记入 rejected 说明。"
+    },
+    {
+      "query": "search=GNSS urban canyon positioning (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 3,
+      "rejected": 4,
+      "notes": "收录 Groves 2011 shadow matching、Xie & Petovello 2014 (IEEE TIM 多路径分布实测)、Bai/Wen/Hsu 2020 (鱼眼+LiDAR 辅助 SPP)。Bourdeau 2012、Kumar & Petovello 2014、Suzuki & Kubo 2012 因无 DOI/venue 记入 rejected。"
+    },
+    {
+      "query": "search=GNSS NLOS detection multipath urban (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 4,
+      "rejected": 2,
+      "notes": "收录 Groves & Jiang 2013（C/N0 加权/高度辅助/一致性检验）、Hsu 2015（RAIM+3D 建筑模型）、Hsu 2017（SVM 三分类 ~75%）、Suzuki & Amano 2021（NN 97.7%）、Sun 2021（IMU 辅助多故障 FDE，仅元数据）。Portfolio 版本（无 DOI）与 Jiang 2012 双极化天线（专用硬件）记入 rejected。 Sun 2021（仅元数据）后移入 rejected。"
+    },
+    {
+      "query": "search=GNSS outage inertial navigation drift (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 4,
+      "rejected": 5,
+      "notes": "收录 Falco 2017（松/紧组合真实城市实测）、GVINS 2022 (T-RO)、Chang 2020（IMU/ODO/LiDAR-SLAM，2 分钟模拟中断漂移降幅）、Li Xingxing 2021（PPP+S-VINS 半紧耦合）。Li Tuan 2019（单目+MEMS+RTK）与 Chen Chao 2019（TDCP-INS）经摘要复核后受篇幅控制取舍，最终 Li Tuan 2019 收录于 A 块（见后续 DOI 批量抓取），Chen Chao 2019 收录。"
+    },
+    {
+      "query": "search=GNSS satellite selection weighted HDOP (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 4,
+      "rejected": 4,
+      "notes": "收录 Jang 2022（HDOP/VDOP 双星座分析）、Kubo 2020（C/N0 时间序列 NLOS 检测）、Zhang Guohao 2020（3DMA 协同 FGO，30 m→<10 m）、Fredeluces 2024（修正 RTK fix 可靠性）。Gerbeth 2016（航空 ARAIM）、Rybanský 2023（林区）、HAPS-RAIM 2023、USGS 手册记入 rejected/筛除。Xia 2020 由此查询重复出现并收录。"
+    },
+    {
+      "query": "search=BeiDou RTK positioning urban (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 5,
+      "rejected": 3,
+      "notes": "收录 Teunissen 2013（BDS+GPS 高截止角瞬时 RTK）、Odolinski 2015（GPS+BDS 短/中/长基线）、Wang Liang 2016（智能手机 BDS/GPS RTK 城市 97%/90% 固定率）、Huang 2022（农机 RTK-BDS/INS 三路况）、Li Tuan 2018（单频多星座 RTK/MEMS-IMU 武汉车载）。PPP-RTK 综述两篇（Satellite Navigation）、韩国 NRTK 对比（韩文）、Kubo 2017 CSAC（无摘要）筛除。"
+    },
+    {
+      "query": "search=GNSS robust adaptive Kalman filter innovation weighting (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 1,
+      "rejected": 4,
+      "notes": "收录 Zhang Qieqie 2018（PPP 抗差自适应 KF，观测粗差+动态模型误差定权）。高超声速飞行器 UKF 系列（Hu Gaoge 等）、自适应渐消 UKF 多传感器融合等与轮式平台主题不符筛除。"
+    },
+    {
+      "query": "search=BeiDou short message communication (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 5,
+      "rejected": 3,
+      "notes": "收录 Li Gang 2021（BDS-3 全球短报文架构+在轨测试）、Bofeng Li 2019（海洋高精度定位+短报文）、Nie 2020（海上实时 PPP+短报文）、Hu 2023（海事安全信息压缩，直面消息长度限制）、Qiao 2023（UAV 短报文路径重规划）。An 2020 船舶监管平台（超上限）、SM4 加密方案（偏安全主题）、隐写通信等记入 rejected/筛除。"
+    },
+    {
+      "query": "search=BeiDou RDSS satellite (per-page=10)",
+      "tool": "OpenAlex API",
+      "screened": 10,
+      "accepted": 4,
+      "rejected": 4,
+      "notes": "收录 Yang Yuanxi 2021（BDS-3 特色服务性能：RSMCS 99.9%/GSMCS 95.6%/RDSS <12 m 等）、Lu Jun 2020（BDS 全球能力）、Wang Fei 2020（CRDSS 抗欺骗，RDSS 双向应答机制）、Li Xiaojie 2022（RDSS 短报文测距 GEO 定轨）、Lu & Yao 2020 图书章节（RDSS 双向有源定位体制）。Han 2011 时间基准、Wang 2018 RDSS 授时评估、5G 频段共存、GECAM、BDS POD 综述等筛除。 Lu & Yao 章节后移入 rejected（K 块上限）。"
+    },
+    {
+      "query": "search=polarized skylight navigation (per-page=8)",
+      "tool": "OpenAlex API",
+      "screened": 8,
+      "accepted": 4,
+      "rejected": 2,
+      "notes": "收录 Kong 2023（CJA 综述，非成像式 ±0.1°）、Karman 2012（Sensors 综述）、Hamaoui 2016（Applied Optics 状态估计路线）、Dou 2021（SINS+偏振+里程计 GPS-denied 车载）。Sakura 2007、Wehner 2006 生物学文献记入 rejected。"
+    },
+    {
+      "query": "search=polarization odometry bio-inspired (per-page=8)",
+      "tool": "OpenAlex API",
+      "screened": 8,
+      "accepted": 2,
+      "rejected": 5,
+      "notes": "收录 Du 2020（移动机器人偏振 SLAM，定位误差 -30% 仿真）、Xie 2021（IROS 偏振相机多传感器系统）。普通里程计/定位综述、蝗虫视觉模型、差分机器人编队、光学流自动驾驶等筛除。"
+    },
+    {
+      "query": "search=celestial optical navigation spacecraft (per-page=8)",
+      "tool": "OpenAlex API",
+      "screened": 8,
+      "accepted": 1,
+      "rejected": 6,
+      "notes": "收录 Christian 2019 StarNAV（恒星相对论性光行差导航）。Gaia、ICRF/VLBI、FITS 坐标、航天器着陆光学制导（Miso 1999，着陆制导主题偏深空任务）、IAU 分辨率等筛除并记入 rejected 代表条目。"
+    },
+    {
+      "query": "works?filter=doi:... 批量摘要抓取 #1（12 个 A 块 DOI：s150717329/itsc.2017.8317700/s21072503/s20144059/s0373463313000350/s10291-021-01181-4/s17020255/rs10020205/iet-its.2019.0587/j.dt.2019.08.011/s18092776/s121114232）",
+      "tool": "OpenAlex API (filter=doi:...|...)",
+      "screened": 12,
+      "accepted": 12,
+      "rejected": 0,
+      "notes": "全部命中并取得完整摘要；Sun 2021 (GPS Solutions) 摘要为空，转 S2 补查仍无，标记 PARTIALLY_VERIFIED。关键性能数字来源：Groves & Jiang 2013（35%/4x/8%/-60%）、Hsu 2015（8.4%/36.2%）、Suzuki 2021（97.7%）、Hsu 2017（75%）、Dai 2019（30%/60%）、Bai 2020（1 m/100 m）。"
+    },
+    {
+      "query": "works?filter=doi:... 批量摘要抓取 #2（12 个 DOI：tro.2021.3133730/s0373463311000087/s43020-020-00033-9/rs11060610/s150716710/s20174702/s24092712/tits.2020.2988531/rs12060971/s16122201/0957-0233-26-4-045801/cja.2014.12.001）",
+      "tool": "OpenAlex API (filter=doi:...|...)",
+      "screened": 12,
+      "accepted": 12,
+      "rejected": 0,
+      "notes": "全部命中。关键数字来源：Chang 2020（62.8/72.3/52.1/62.1%，2 分钟模拟中断）、Zhang Guohao 2020（>30 m→<10 m）、Wang Liang 2016（97%/90%、0.15/0.25/0.30 m）、Xia 2020（87.0/45.9/69.6%）。",
+      "supplementary_note": "Xia 2020 摘要尾部经 works/doi:10.3390/rs12060971 单条补抓，确认 87.0%/45.9%/69.6%（离线 E/N/U）与在线两组数据集数值。"
+    },
+    {
+      "query": "works?filter=doi:... 批量摘要抓取 #3（14 个 DOI：s00190-013-0686-4/tvt.2015.2481509/tim.2014.2342452/1361-6501-ab52cb/agriculture12081169/s43020-025-00162-z/access.2020.2973759/jsen.2021.3139353/iet-rsn.2020.0260/cja.2023.05.024/s19194064/rs14184602/s43020-019-0004-2/jsen.2020.3021561）",
+      "tool": "OpenAlex API (filter=doi:...|...)",
+      "screened": 14,
+      "accepted": 10,
+      "rejected": 0,
+      "notes": "14 个 DOI 全部命中；Ko & Kong 2015、Zidan 2020、Ouyang 2020、Jarraya 2025 复核后移入 rejected，最终 10 条进入论文库。Teunissen 2013、多数命中；Kong 2023（±0.1°）、Du 2020（30%/25%）、Wang Fei 2020、Li Xiaojie 2022 等取得完整摘要。Ouyang 2020 RSSI 检索命中后判定超范围（记 rejected）。"
+    },
+    {
+      "query": "graph/v1/paper/DOI:{s00190-013-0686-4, s10291-021-01181-4, ao.56.000b37, 1748-3190-ab7ab7, iros51168.2021.9635932, s22165985, s10291-017-0670-1}（间隔 4 秒防 429）",
+      "tool": "Semantic Scholar API",
+      "screened": 7,
+      "accepted": 3,
+      "rejected": 0,
+      "notes": "Liang 2020（Rayleigh 模型局限）、Xie 2021（IROS）、Cao 2022（SINS/GPS/偏振/地磁，最终受 F 块 8 篇上限未收录）取得摘要；Teunissen 2013、Sun 2021、Hamaoui 2016、Kubo 2017 无摘要，仅元数据交叉确认。"
+    },
+    {
+      "query": "graph/v1/paper/DOI:{asr.2020.12.011, scib.2021.06.013, s00190-018-1145-z, s00190-020-01411-6}（间隔 4 秒）",
+      "tool": "Semantic Scholar API",
+      "screened": 4,
+      "accepted": 2,
+      "rejected": 0,
+      "notes": "Li Gang 2021（GSMC 架构/GMDSS）、Yang 2021（BDS-3 特色服务性能全量数字）取得完整摘要；Bofeng Li 2019 与 Nie 2020 摘要被出版社隐藏（abstract elided by publisher），标 PARTIALLY_VERIFIED。此前 Crossref API 对这 4 个 DOI 均无摘要。"
+    },
+    {
+      "query": "curl http://www.beidou.gov.cn/xt/gfxz/（官方规范/ICD 下载页，HTTP 200）",
+      "tool": "curl (beidou.gov.cn 官网)",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "确认官网在列 ICD：国际搜救、BDSBAS-B1C、PPP-B2b、地基增强等；未见独立的区域短报文 ICD 条目。页面同时列出《公开服务性能规范（3.0版）》中英文 PDF（本次未下载解析）。"
+    },
+    {
+      "query": "curl http://m.beidou.gov.cn/lbt/202008/t20200803_20935.html（北斗三号建成开通新闻发布会，HTTP 200）",
+      "tool": "curl (beidou.gov.cn 官网)",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "官方原文核实：『区域通信能力达到每次14000比特（1000汉字）……并支持每次560比特（40个汉字）的全球通信能力』；另载国际搜救检测概率优于 99%、全球实测定位精度均值 2.34 米。作为 K 块官方规格条目收录（candidate_core=true）。"
+    },
+    {
+      "query": "WebSearch『北斗三号 区域短报文 1000汉字 全球短报文 40汉字 官方 规格』",
+      "tool": "WebSearch",
+      "screened": 8,
+      "accepted": 0,
+      "rejected": 2,
+      "notes": "作用是定位到官网发布会 URL；搜索摘要中出现的『系统容量 1000 万次/小时、响应时间<1 秒、1200 万用户』来自百度百科/知乎等非官方来源，无法在官网核实，记入 rejected；华力创通终端营销页亦不作为规格依据。"
+    },
+    {
+      "query": "curl http://www.beidou.gov.cn/zt/gfhd/202211/t20221123_25461.html（2022 短报文服务成果发布会页，HTTP 200）",
+      "tool": "curl (beidou.gov.cn 官网)",
+      "screened": 1,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "页面确认 2022-07-30 北斗三号短报文通信服务成果发布会（大众智能手机短报文功能、星地融合方案），但正文无消息长度/频次数值，未产生新规格条目。"
+    },
+    {
+      "query": "WebFetch opg.optica.org/ao/abstract.cfm?uri=ao-56-2-b37（Hamaoui 摘要页）与 https://www.mdpi.com/1424-8220/20/14/4059（Kubo 2020 全文）",
+      "tool": "WebFetch",
+      "screened": 2,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "Optica 页 404、MDPI 页 403（反爬），均未取到正文；相应条目仅以 OpenAlex 摘要（ABSTRACT 级）为准，未抄录全文表格数值。另 WebFetch https://arxiv.org/abs/2103.07899 成功确认 GVINS 标题/作者/摘要（arxiv_id=2103.07899）。"
+    }
+  ]
+}

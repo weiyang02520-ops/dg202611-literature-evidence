@@ -1,0 +1,234 @@
+[
+ {
+  "id": "CF-01",
+  "group": "UWB",
+  "claim": "UWB NLOS 误差恶化量级",
+  "paper_a": "Fontaine et al. 2023 (10.1109/jiot.2023.3299319)：NLOS 误差 typically >30 cm",
+  "paper_b": "Barral et al. 2019 (10.3390/s19163464)：NLOS Hard 原始 MAE 约 1.9 m；NLOS Soft 约 +30 cm",
+  "explanation": "两者不矛盾但粒度不同：NLOS 严重程度分层（软遮挡 vs 硬遮挡、材质与几何），30 cm 量级对应轻度遮挡的'典型下限'，完全遮挡（墙/金属柜/人体）可达 1–2 m 甚至完全中断（Zhao 2024 UTIL）。方案书不得使用单一 NLOS 数字，必须写'0.3 m（轻度）至 1–2 m（硬遮挡）并可能完全失锁'的区间表述。"
+ },
+ {
+  "id": "CF-02",
+  "group": "UWB",
+  "claim": "UWB LOS 典型精度",
+  "paper_a": "Fontaine et al. 2023：LOS 1–10 cm（工业场景，TWR 型）",
+  "paper_b": "Zhao et al. 2024 (UTIL, 10.1177/02783649241230640)：低成本 DWM1000 TDOA 模式 + ESKF 全场约 10 cm RMSE（无遮挡）",
+  "explanation": "LOS 精度与测距模式/硬件强相关：TWR 双向测距可达 1–10 cm，TDOA（低成本模块、8 基站）基准约 10 cm。写性能声明时必须注明测距模式（TWR/TDOA）与硬件型号，不能笼统写'厘米级'。"
+ },
+ {
+  "id": "CF-03",
+  "group": "UWB",
+  "claim": "RSSI/接收功率类特征对 NLOS 识别是否足够",
+  "paper_a": "Barral et al. 2019：仅用测距值+RSS 均值/方差的特征，单场景二分类 F1>0.9（够用）",
+  "paper_b": "Sang et al. 2020 (10.3390/app10113980)：跨环境时三分类准确率从 91.9% 降到 72.9–75.4%（不足），且 MP 类最难分",
+  "explanation": "结论依赖条件：单环境、二分类（LOS/非LOS）时 RSS 类特征基本够用；跨环境泛化、或需区分多径(MP)与硬 NLOS 时 RSS 单独不足，应组合 CIR/首径功率差/残差等特征并按环境重校准（Fontaine 2023 迁移学习：50 样本恢复 93% 检测率）。"
+ },
+ {
+  "id": "CF-04",
+  "group": "RADAR",
+  "claim": "恶劣天气下雷达定位是否优于/可替代 LiDAR",
+  "paper_a": "Are We Ready for Radar to Replace Lidar in All-Weather Mapping and Localization? (arXiv 2203.10174)",
+  "paper_b": "K-Radar (arXiv 2206.08171) 与 NTU4DRadLM (arXiv 2309.00962)、RadarSLAM (arXiv 2005.02198)",
+  "explanation": "Boreas 实测显示雪暴中 LiDAR-only 定位仍最准、雷达只是'有竞争力+地图更小'；而 K-Radar/NTU4DRadLM/RadarSLAM 等在雾、烟、雨雪中给出雷达可用的证据。结论取决于天气类型与任务：中等降水对 LiDAR 的影响被高估，但浓烟/浓雾等遮蔽与低光照下 LiDAR/视觉确实退化，雷达优势最明显。对本项目：应把毫米波雷达定位为遮蔽/退化场景的补充与冗余，而非全天候全面替代。"
+ },
+ {
+  "id": "CF-05",
+  "group": "RADAR",
+  "claim": "CFEAR 雷达里程计误差数字（1.76% vs 0.61%）",
+  "paper_a": "CFEAR Radarodometry (arXiv 2105.01457)",
+  "paper_b": "DRO: Doppler-Aware Direct Radar Odometry (arXiv 2504.20339)",
+  "explanation": "CFEAR 论文在 Oxford 基准自报 1.76%（KITTI 风格 100-800m 子序列），而 DRO 论文在 Boreas leaderboard 引用 CFEAR 0.61%。数据集、序列与评测协议不同，两数不矛盾；说明跨数据集不能直接比较百分比误差，本项目评测必须绑定数据集与指标定义。"
+ },
+ {
+  "id": "CF-06",
+  "group": "EVENT",
+  "claim": "事件相机动态范围的具体 dB 数值（引用口径不统一）",
+  "paper_a": "Event-Based Vision: A Survey (TPAMI 2022)：摘要写 'very high dynamic range (140 dB vs. 60 dB)'",
+  "paper_b": "DSEC (RA-L 2021) 全文写 'high dynamic range (>120 dB)'；ESVO2 (TRO 2025) 引用的 Lichtsteiner 2008 传感器规格为 '128x128 120 dB 15 us latency'",
+  "explanation": "不同传感器型号与口径（传感器规格上限 vs 数据集论文概括）导致数值不同（120-140 dB 区间）。写入方案文档时应绑定具体传感器型号并给出区间，不能笼统写单一数值。"
+ },
+ {
+  "id": "CF-07",
+  "group": "EVENT",
+  "claim": "多相机时间同步是否必须依赖硬件触发",
+  "paper_a": "DSEC (RA-L 2021)：采用 GPS PPS + 微控制器 + 20 Hz 触发脉冲的硬件同步链，统一到 GPS 时钟",
+  "paper_b": "Hardware-Free ... Event Density Alignment (ICIRA 2023)：硬件同步 'require additional circuits' 且部分型号（CeleX5）不支持，软件对齐误差 <10 ms；Wide-baseline (arXiv 2309.16990)：软件方法达毫秒级",
+  "explanation": "二者是互补方案而非矛盾：硬件链路精度最高（可达事件时间戳原生精度量级），软件方案免布线、兼容性好但精度停留在 ms 级，比事件原生 µs 时间戳差 3-4 个数量级；高速场景下软件同步误差可能成为主导误差项。"
+ },
+ {
+  "id": "CF-08",
+  "group": "EVENT",
+  "claim": "暗光下事件相机是否'天然免疫'光照退化",
+  "paper_a": "Ultimate SLAM (RA-L 2018)：低光与 HDR 是事件相机的优势场景（与帧+IMU 融合后）",
+  "paper_b": "EvLight++ (TPAMI 2026)：低光下需 SNR-guided 区域特征选择；Stereo-DEVO (RA-L 2025)：低光 HDR 下 'signal-to-noise ratio is spatially-and-temporally varying'",
+  "explanation": "事件相机输出依赖亮度变化而非绝对光强，暗光下仍可输出事件；但光子噪声使 SNR 恶化是共识，'无退化'是误读。项目在暗光场景应预期事件噪声上升，需去噪/SNR 感知处理（EvLight++、Stereo-DEVO 即按此设计）。"
+ },
+ {
+  "id": "CF-09",
+  "group": "FUSION",
+  "claim": "GNSS 观测随机模型应以卫星高度角还是 C/N0 作为权重基础",
+  "paper_a": "Site-Specific Unmodeled Error Mitigation for GNSS Positioning in Urban Environments Using a Real-Time Adaptive Weighting Model (Zhang et al., 2018, Remote Sensing)",
+  "paper_b": "GNSS multipath detection using a machine learning approach (Hsu, 2017, ITSC) — 及本会话同时核验但未入池的 Paziewski et al. 2021 (Measurement)",
+  "explanation": "Zhang et al. 2018 把高度角作为权重模型基础、用 C/N0 偏差估计站点特异性误差精度；而 Paziewski et al. 2021 基于智能手机实测指出 C/N0 加权可能优于高度角加权。两者面向不同接收机类型（测地型 vs 消费级），说明权重函数形式依赖硬件与场景，工程上必须用本平台数据自行标定，不能直接照搬任一公式。"
+ },
+ {
+  "id": "CF-10",
+  "group": "FUSION",
+  "claim": "因子图鲁棒核的两种路线：switchable constraints（软拒绝，改拓扑）vs max-mixture（ richer error model，混合推断）",
+  "paper_a": "Switchable constraints for robust pose graph SLAM (Sünderhauf & Protzel, 2012, IROS)",
+  "paper_b": "Inference on networks of mixtures for robust robot mapping (Olson & Agarwal, 2013, IJRR)",
+  "explanation": "两文分别代表'给约束加开关变量、在优化中软化拒绝'与'用混合误差模型在优化中联合推断'两条路线，机制不同且各有鲁棒性/保守性权衡（Sünderhauf & Protzel 2013 的比较文本会话已核验存在但未入池，此处仅基于两文摘要的机制差异陈述，不引用其比较结论）。"
+ },
+ {
+  "id": "CF-11",
+  "group": "FUSION",
+  "claim": "同一恶劣天气下 LiDAR 显著退化而毫米波雷达保持稳健",
+  "paper_a": "Empirical Analysis of Autonomous Vehicle's LiDAR Detection Performance Degradation for Actual Road Driving in Rain and Fog (Kim et al., 2023, Sensors)",
+  "paper_b": "DGRO: Doppler Velocity and Gyroscope-Aided Radar Odometry (Guo et al., 2024, Sensors)",
+  "explanation": "Kim et al. 实测雨雾使 LiDAR 点数/强度显著下降（ANOVA 显著），DGRO 摘要称 4D 毫米波雷达'以其恶劣天气下的鲁棒性著称'。非真正矛盾，而是同环境下两类传感器退化模式互补——这正是本项目做质量感知多源融合（而非单传感器）的依据，但注意雷达点云自身噪声/不确定性更大（DGRO 亦如此陈述），加权模型需分别标定。"
+ },
+ {
+  "id": "CF-12",
+  "group": "GNSS",
+  "claim": "城市环境下『剔除不一致观测（一致性检验/RAIM FDE）』能否可靠提升水平定位精度",
+  "paper_a": "Groves & Jiang 2013 (Journal of Navigation, 10.1017/s0373463313000350)：常规顺序剔除法使水平精度劣化 60%（伦敦实测）",
+  "paper_b": "Hsu, Gu & Kamijo 2015 (Sensors, 10.3390/s150717329)：3D 建筑模型+RAIM 卫星选择使错侧解减少 8.4%（中等峡谷）/36.2%（深峡谷）",
+  "explanation": "两者不矛盾但构成设计张力：Groves 2013 中的常规剔除不知道哪颗是 NLOS，多信号同时受污染时经常剔除正确观测并破坏几何；Hsu 2015 用 3D 模型先验判定后再剔除。对项目的含义：退化观测处理应有环境先验或先降权后硬剔除，纯新息阈值剔除在深峡谷不可靠。"
+ },
+ {
+  "id": "CF-13",
+  "group": "GNSS",
+  "claim": "C/N0 用于退化观测处理的正确用法：连续加权 vs 门槛剔除",
+  "paper_a": "Groves & Jiang 2013：按 C/N0 加权带来水平精度 8% 改善（伦敦实测）",
+  "paper_b": "Kubo et al. 2020 (Sensors, 10.3390/s20144059)：单点仰角相关 C/N0 阈值不足以剔除 NLOS（C/N0 受 NLOS 影响波动大），需连续时间序列判据",
+  "explanation": "两文互补：C/N0 加权是软处理，收益温和但稳健；硬阈值剔除易误判，需要时间持续性判据。项目可组合：C/N0 加权 + 持续低 C/N0 才降权/拒绝。"
+ },
+ {
+  "id": "CF-14",
+  "group": "GNSS",
+  "claim": "Teunissen, Odolinski & Odijk《Instantaneous BeiDou+GPS RTK positioning with high cut-off elevation angles》发表年份",
+  "paper_a": "OpenAlex：publication_year = 2013",
+  "paper_b": "Semantic Scholar：year = 2014（Journal of Geodesy 卷期年）",
+  "explanation": "在线优先发表于 2013、正式卷期（J Geodesy 88）为 2014；引用时建议标注 2014 卷期年并在引文管理器核对。"
+ },
+ {
+  "id": "CF-15",
+  "group": "GNSS",
+  "claim": "Bofeng Li et al.《High-precision GNSS ocean positioning with BeiDou short-message communication》发表年份",
+  "paper_a": "OpenAlex：2018（在线优先）",
+  "paper_b": "Semantic Scholar：2019（卷期年）",
+  "explanation": "同上，在线优先/卷期差异；本文件按 2019 记录并注明。Hamaoui《Polarized skylight navigation》（Applied Optics 56(2)）亦存在 OpenAlex 2016 与印刷年 2017 的同类差异。"
+ },
+ {
+  "id": "CF-16",
+  "group": "LIDAR",
+  "claim": "X-ICP 在退化环境（长走廊）中稳健可靠",
+  "paper_a": "X-ICP (T-RO 2024, arXiv 2211.16335) — 摘要称在 LiDAR-challenging environments 中 demonstrate performance and reliability improvement",
+  "paper_b": "GenZ-ICP (RA-L 2024, arXiv 2411.06766) — TABLE VI (SubT-MRS Long_Corridor) 报告 X-ICP 全部指标 Div.（发散）；TABLE V (Ground-Challenge Corridor2) 报告 X-ICP APE mean 5.85 m vs GenZ-ICP 0.18 m",
+  "explanation": "两文实验设置/传感器/参数不同，GenZ-ICP 为第三方复现口径；提示 localizability 约束型方法在超长直走廊仍可能失效，引用 X-ICP 结论时须绑定其原实验（Seemühle 矿井）条件。"
+ },
+ {
+  "id": "CF-17",
+  "group": "LIDAR",
+  "claim": "ERASOR 是高精度动态点去除方法（城市道路基准 PR>90%）",
+  "paper_a": "ERASOR (RA-L 2021) — SemanticKITTI Seq.00 PR 93.980%",
+  "paper_b": "DynaHull (arXiv 2024) — 室内动态场景基准中 ERASOR FP 82.14%、Precision 0.18、MAE 0.281 m",
+  "explanation": "同一方法在室外道路基准与室内人员密集场景表现差异巨大：动态去除方法强依赖场景先验（地面接触假设），跨场景迁移时性能数字不可外推——对本比赛混合场景（室内外轮式）是重要警示。"
+ },
+ {
+  "id": "CF-18",
+  "group": "LIDAR",
+  "claim": "紧耦合 LiDAR-惯性里程计（如 FAST-LIO2）足够鲁棒，无需退化处理",
+  "paper_a": "FAST-LIO2 (arXiv 2107.06829) — 主流高精度 LIO 基线",
+  "paper_b": "GEODE (IJRR 2025) — FAST-LIO2 在 GEODE Inland Waterways Long 序列 ATE 70.26 m，Metro Tunnels Shield7-10 序列失败（>100 m 或 breakdown）",
+  "explanation": "公开退化基准的量化失败证据支持『主局部定位源必须带几何质量感知的降级/加权机制』的比赛论点。"
+ },
+ {
+  "id": "CF-19",
+  "group": "RELOCSYNC",
+  "claim": "重定位成功率数值强依赖阈值定义，跨论文/跨表格不可直接横比",
+  "paper_a": "GOReloc (RA-L 2024, arXiv:2408.07917) Table II：成功率仅按平移误差阈值 @2m/@5m 定义（无旋转阈值），fr2_person 上 @5m 达 96.11%",
+  "paper_b": "GOReloc 同文 Table III：改用 @0.5~@3m 紧阈值后，同序列同方法成功率降至 3.52%~70.17%（fr2_person），ORB-SLAM2 基线仅 1.97%~9.17%",
+  "explanation": "同一方法在同一数据上，仅因阈值口径不同，‘成功率’可从个位数变到 96%。比赛指标‘重定位成功率>95%’必须先固定成功率定义（位置/姿态阈值、初始不确定度、评测序列），再与文献数值对照，否则无意义。"
+ },
+ {
+  "id": "CF-20",
+  "group": "RELOCSYNC",
+  "claim": "统一时间基准存在‘硬件同步’与‘软件在线时偏估计’两条路线，各自声称的同步效果口径不同",
+  "paper_a": "Hardware-Based Time Synchronization for a Multi-Sensor System (IROS 2024, DOI 10.1109/iros58592.2024.10802693)：从硬件触发/时戳层面建立多传感器统一时间基准",
+  "paper_b": "Feng et al., Online Spatial and Temporal Calibration for Monocular Direct VIO (Sensors 2019, DOI 10.3390/s19102273)：证明纯软件在线时偏估计可把时偏误差压到亚毫秒级，未补偿 100ms 时偏时 VIO RMSE 恶化至 1.141m（MH5）",
+  "explanation": "两路线并不互斥：硬件同步决定误差上界（残留抖动），软件在线估计补偿慢漂移与装配时延。比赛系统建议‘硬件触发打底线 + 在线时偏估计兜底’，文献中两者数值口径（同步残留 vs 融合精度增益）不可直接互换。"
+ },
+ {
+  "id": "CF-21",
+  "group": "SIM",
+  "topic": "v2e 的 DOI",
+  "detail": "记忆中的 DOI 10.1371/journal.pone.0244664 经 Crossref 直接查询证伪（实为无关医学论文）。本清单只采用经检索确认的 CVPRW 2021 版本 DOI:10.1109/cvprw53098.2021.00144。PLoS ONE 长文版本是否存在未核实。"
+ },
+ {
+  "id": "CF-22",
+  "group": "SIM",
+  "topic": "UrbanNav / CARLA / ESIM 同名多义",
+  "detail": "检索中多次命中同名无关工作（详见 rejected），文献引用时务必核对 DOI/arXiv id 而非仅凭标题。"
+ },
+ {
+  "id": "CF-23",
+  "group": "SIM",
+  "topic": "arXiv/OpenAlex/Semantic Scholar 限流",
+  "detail": "OpenAlex 返回 429（日预算耗尽，重置于 UTC 午夜），Semantic Scholar 429，arXiv 初期 429 后恢复；SIM 组主用 Crossref+DBLP+arXiv(https)。"
+ },
+ {
+  "id": "CF-24",
+  "group": "DATASETS",
+  "topic": "MVSEC 官网可达性",
+  "detail": "mvsec.io 本会话 curl（schannel TLS 失败）与 WebFetch（ECONNRESET/超时）均不可达；论文 RA-L 2018 DOI:10.1109/lra.2018.2800793 已核验。数据集条目按 PARTIAL 处理，官网链接标注未验证。"
+ },
+ {
+  "id": "CF-25",
+  "group": "DATASETS",
+  "topic": "KAIST Complex Urban 官网",
+  "detail": "原官网 irap.kaist.ac.kr 本会话不可达（HTTP 000/ECONNRESET）；改以官方 Google Sites 下载页（sites.google.com/view/complex-urban-dataset）为可达链接。"
+ },
+ {
+  "id": "CF-26",
+  "group": "DATASETS",
+  "topic": "UrbanNav 同名多义",
+  "detail": "检索发现三个同名工作：NAVIGATION 2023 数据集论文、AAAI 2026 语言引导导航论文（CASIA-IVA-Lab）、2026 IEEE Aerospace UAM 仿真框架。本清单采用 IPNL-PolyU 数据集（GitHub IPNL-POLYU/UrbanNavDataset + DOI:10.33012/navi.602）。"
+ },
+ {
+  "id": "CF-27",
+  "group": "DATASETS",
+  "topic": "UrbanNav 仓库变迁",
+  "detail": "IPNL-POLYU/UrbanNav 已 404；现行官方仓库为 IPNL-POLYU/UrbanNavDataset（weisongwen/UrbanNavDataset 为早期镜像）。"
+ },
+ {
+  "id": "CF-28",
+  "group": "DATASETS",
+  "topic": "EuRoC 站点迁移",
+  "detail": "projects.asl.ethz.ch 旧 doku 页与 ethz-asl.github.io 互为 301 重定向；现行内容页为 projects.asl.ethz.ch/datasets/euroc-mav/，数据托管于 ETH Research Collection（DOI:10.3929/ethz-b-000690084）。页面未标注许可与序列明细。"
+ },
+ {
+  "id": "CF-29",
+  "group": "DATASETS",
+  "topic": "NCLT 旧链接失效",
+  "detail": "robots.engin.umich.edu/NCLT/ 返回 404；现行官方页为 robots.engin.umich.edu/nclt/（HTTP 200 已核验）。"
+ },
+ {
+  "id": "CF-30",
+  "group": "OPENSOURCE",
+  "topic": "License 字段 NOASSERTION/None 的含义",
+  "detail": "GitHub API 对自定义/未标准化的 LICENSE 文件返回 NOASSERTION，对缺失文件返回 None。本图谱如实记录 API 返回值；凡 NOASSERTION/None 者引用前必须人工打开仓库 LICENSE 文件核对，不得假定 BSD/MIT。"
+ },
+ {
+  "id": "CF-31",
+  "group": "OPENSOURCE",
+  "topic": "ROS2 支持判断口径",
+  "detail": "仅采信：README/仓库文件中明确写出的 ROS1/ROS2 证据（如 LIO-SAM 的 ros2 分支声明、open_vins 的 Dockerfile_ros2_* 与 CI 徽章、robot_localization 的 rolling-devel 默认分支）。未检出证据者一律标'未核验'，不凭记忆断言。"
+ },
+ {
+  "id": "CF-32",
+  "group": "OPENSOURCE",
+  "topic": "gazebo_ros_pkgs 已归档",
+  "detail": "GitHub API 显示 archived: true（pushed 2025-02-26）。新项目退化场景仿真建议以 gz-sim（Apache-2.0）+ROS2 桥接为主线，旧插件仅作参考。"
+ }
+]

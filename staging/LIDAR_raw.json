@@ -1,0 +1,783 @@
+{
+  "area": "LIDAR",
+  "retrieval_date": "2026-08-29",
+  "papers": [
+    {
+      "title": "On degeneracy of optimization-based state estimation problems",
+      "authors": ["Ji Zhang", "Michael Kaess", "Sanjiv Singh"],
+      "year": 2016,
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/icra.2016.7487211",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/icra.2016.7487211",
+      "keywords": ["degeneracy", "optimization-based state estimation", "solution remapping", "eigenvalue analysis", "ICP"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "退化处理的开山经典：提出基于最小二乘矩阵特征值/特征向量分析的退化方向检测与 solution remapping 求解器重映射，是『几何质量指标→动态调整融合权重』论证的理论源头，后续 RA-L/T-RO 工作大多引用此文。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works?filter=title.search:degeneracy%20optimization-based%20state%20estimation) 精确命中1条：title='On degeneracy of optimization-based state estimation problems', authors='Ji Zhang, Michael Kaess, Sanjiv Singh', year=2016, DOI=10.1109/icra.2016.7487211；Crossref API (https://api.crossref.org/works/10.1109/icra.2016.7487211) 返回相同标题与年份。arXiv 检索无预印本（export.arxiv.org 查询 'On degeneracy of optimization-based state estimation' 0条）。全文为 IEEE 付费墙，未读正文。",
+      "performance_data": [],
+      "candidate_core": true,
+      "notes": "实验类型未从原文核验（付费墙未读全文）。GEODE 论文 Table 7 确认 LIO-SAM/LVI-SAM 使用的『Optimization-based degeneracy detection + Solution remapping』即源于本文。"
+    },
+    {
+      "title": "X-ICP: Localizability-Aware LiDAR Registration for Robust Localization in Extreme Environments",
+      "authors": ["Turcan Tuna", "Julian Nubert", "Yoshua Nava", "Shehryar Khattak", "Marco Hutter"],
+      "year": 2024,
+      "venue": "IEEE Transactions on Robotics",
+      "doi": "10.1109/TRO.2023.3335691",
+      "arxiv_id": "2211.16335",
+      "url": "https://arxiv.org/abs/2211.16335",
+      "keywords": ["localizability", "ICP", "degeneracy", "extreme environments", "constrained optimization"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "REAL",
+      "potential_relevance": "提出逐自由度的细粒度 localizability 检测模块 + localizability-aware 约束化 ICP 优化：弱约束方向被限制更新或保持不变，直接示范了『按几何质量逐方向调整信息权重』的工程实现范式，与本比赛『按 LiDAR 几何质量动态调整融合权重』几乎一一对应。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "DBLP (https://dblp.org/search/publ/api?q=X-ICP%20localizability) 命中 T-RO 版本 DOI 10.1109/TRO.2023.3335691 与 CoRR/arXiv 2211.16335；arXiv API id_list=2211.16335 返回作者 Turcan Tuna, Julian Nubert, Yoshua Nava, Shehryar Khattak, Marco Hutter 及摘要（含 'localizability detection module ... leaving the degenerate directions of the optimization unchanged'）；arXiv HTML 全文 https://arxiv.org/html/2211.16335v4 抓取到 Seemühle 矿井实验表格数值。",
+      "performance_data": [
+        {
+          "metric": "APE translation mean(sigma), First 15 m Alignment",
+          "value": "2.05 (1.23)",
+          "unit": "m",
+          "conditions": "Seemühle 矿井真实实验，Velodyne VLP-16；同表对比 Zhang et al. 3.36(1.74) m、Hinduja et al. 5.79(5.26) m",
+          "source_level": "FULLTEXT",
+          "snippet": "arXiv HTML 2211.16335v4 TABLE I/III: 'X-ICP (Proposed) 2.05 (1.23) 2.55 (0.76) 2.45 (1.35) 2.50 (1.03) 0.27 Zhang et al. [12] 3.36(1.74) 4.06(1.37) ... Hinduja et al. [17] 5.79(5.26) ...'"
+        },
+        {
+          "metric": "RPE per 10 m traversed distance, translation mean(sigma)",
+          "value": "0.17 (0.12)",
+          "unit": "m",
+          "conditions": "Seemühle 矿井真实实验，Velodyne VLP-16，RPE 按每 10 m 行驶距离统计",
+          "source_level": "FULLTEXT",
+          "snippet": "arXiv HTML 2211.16335v4 TABLE II/IV: 'X-ICP (Proposed) 0.17 (0.12) 0.86 (0.42) Zhang et al. [12] 0.20(0.14) 0.93(0.51) Hinduja et al. [17] 0.26(0.14) 1.28(0.74)'"
+        },
+        {
+          "metric": "scan-to-map registration time",
+          "value": 12.65,
+          "unit": "ms",
+          "conditions": "Rümlang 数据集，Intel i9-13900K（i7-9750H 上为 32.19 ms）",
+          "source_level": "FULLTEXT",
+          "snippet": "arXiv HTML 2211.16335v4 TABLE V: 'Intel i9-13900K 12.65 (3.51) 11.14 (3.1) 11.1 (1.45)'"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "arXiv 摘要说明方法同时有仿真与真实实验。注意 GenZ-ICP 在 SubT-MRS 长走廊复现中报告 X-ICP 发散（见 conflicts）。"
+    },
+    {
+      "title": "GenZ-ICP: Generalizable and Degeneracy-Robust LiDAR Odometry Using an Adaptive Weighting",
+      "authors": ["Daehan Lee", "Hyungtae Lim", "Soohee Han"],
+      "year": 2024,
+      "venue": "IEEE Robotics and Automation Letters (RA-L)",
+      "doi": "10.1109/lra.2024.3498779",
+      "arxiv_id": "2411.06766",
+      "url": "https://arxiv.org/abs/2411.06766",
+      "keywords": ["adaptive weighting", "point-to-plane", "point-to-point", "corridor degeneracy", "condition number", "ICP"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "与本比赛论点最直接的对标工作：根据环境几何特征（平面度指标 psi=lambda3/(lambda1+lambda2+lambda3) 与点数比）自适应调节 point-to-plane 与 point-to-point 两类误差项的权重 alpha，走廊类退化场景下避免病态优化；还给出条件数随场景变化的量化分析。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'localizability LiDAR odometry degeneracy' 命中 RA-L DOI 10.1109/lra.2024.3498779；arXiv API id_list=2411.06766 返回作者 Daehan Lee, Hyungtae Lim, Soohee Han 与摘要（含 'adaptive weight that is adjusted based on the geometrical characteristics of the surroundings'）；arXiv HTML https://arxiv.org/html/2411.06766v1 抓取到 21 个表格及 figcaption，TABLE I-VI 数值如下方 performance_data。",
+      "performance_data": [
+        {
+          "metric": "相对平移误差（短实验/长实验）",
+          "value": "0.46 / 0.94",
+          "unit": "%",
+          "conditions": "Newer College 数据集（TABLE I），对比 KISS-ICP 0.51/0.96、CT-ICP 0.48/0.58、MULLS 0.82/1.23",
+          "source_level": "FULLTEXT",
+          "snippet": "TABLE I: 'SLAM MULLS 0.82 1.23 CT-ICP 0.48 0.58 Odometry F-LOAM 2.02 Div. KISS-ICP 0.51 0.96 MAD-ICP 0.86 0.96 Ours 0.46 0.94'，caption: 'We report the relative translational error in %'"
+        },
+        {
+          "metric": "相对平移误差 (MulRan KAIST)",
+          "value": 2.27,
+          "unit": "%",
+          "conditions": "MulRan 数据集 KAIST DCC Riverside Sejong 四场景（TABLE II），Ours 依次 2.27/2.39/3.01/4.62",
+          "source_level": "FULLTEXT",
+          "snippet": "TABLE II: 'Ours 2.27 2.39 3.01 4.62' vs 'KISS-ICP 2.28 2.34 2.89 4.69'，caption 注明 Div. 表示轨迹发散"
+        },
+        {
+          "metric": "KITTI odometry Seq.00-10 平均相对平移误差",
+          "value": 0.51,
+          "unit": "%",
+          "conditions": "KITTI odometry（TABLE III），对比 KISS-ICP 0.50、MULLS 0.55",
+          "source_level": "FULLTEXT",
+          "snippet": "TABLE III: 'SuMa++ 0.70 MULLS 0.52 CT-ICP 0.53 ... KISS-ICP 0.50 MAD-ICP 0.82 Ours 0.51'"
+        },
+        {
+          "metric": "APE mean / RMSE（走廊退化序列，轮式平台相关）",
+          "value": "0.19 / 0.24 (Corridor1); 0.18 / 0.20 (Corridor2)",
+          "unit": "m",
+          "conditions": "Ground-Challenge 数据集 Corridor1(zigzag) 与 Corridor2(straight forward) 序列，EVO 评估；对比 X-ICP Corridor1 0.94/2.05 m、Corridor2 5.85/6.92 m",
+          "source_level": "FULLTEXT",
+          "snippet": "TABLE V: 'Corridor1 ... X-ICP [24] 0.94 9.45 2.05 1.83 ... Ours 0.19 0.49 0.24 0.14; Corridor2 ... X-ICP [24] 5.85 9.69 6.92 3.70 ... Ours 0.18 0.41 0.20 0.09'"
+        },
+        {
+          "metric": "APE RMSE（长走廊退化，基线失败量化）",
+          "value": 1.99,
+          "unit": "m",
+          "conditions": "SubT-MRS Long_Corridor 序列（TABLE VI）；同表 point-to-plane ICP APE RMSE 33.16 m、CT-ICP 45.66 m、KISS-ICP 8.72 m、X-ICP 全部指标 Div.（发散）",
+          "source_level": "FULLTEXT",
+          "snippet": "TABLE VI: 'X-ICP [24] Div. Div. Div. ...; Point-to-plane ICP 32.84 40.88 33.16 4.55; CT-ICP 44.18 60.14 45.66 11.55; Ours 1.69 4.32 1.99 1.04'"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "Fig.5 给出走廊场景各方法条件数箱线图：本文方法条件数最低，直接支撑『条件数类指标可用于动态权重』。Ground-Challenge 为地面/轮式机器人挑战数据集，与本项目平台形态吻合。"
+    },
+    {
+      "title": "LF-GICP: Parameter-Free Degeneracy-Aware LiDAR Odometry via a Voxel-Normal Localizability Field",
+      "authors": ["Eunsoo Im"],
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "doi": null,
+      "arxiv_id": "2608.19522",
+      "url": "https://arxiv.org/abs/2608.19522",
+      "keywords": ["localizability field", "voxel normal", "Fisher information", "degeneracy", "tunnel", "GICP"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "最新（2026）无参数退化感知里程计：指出体素化 GICP 的 Hessian 因协方差正则化会掩盖平移退化，提出免正则体素法向 localizability 场及两个统计量 f0（方向各向异性）与 lambda0（信息缺失 vs 稀释），经时间中值门控触发 Fisher 信息对应点加权——提供了两种可直接借鉴的退化度量定义。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API 检索 all:\"degeneracy-aware\" AND all:\"LiDAR\" 命中 2608.19522v1；id_list 拉取摘要原文含 'achieves the lowest KITTI relative translation error ($0.865\\%$) under an identical evaluation protocol against re-run baselines, outperforms them on GEODE tunnels and MulRan, leads the HeLiPR mean'。作者列表经同一 API 返回为 Eunsoo Im。",
+      "performance_data": [
+        {
+          "metric": "KITTI relative translation error",
+          "value": 0.865,
+          "unit": "%",
+          "conditions": "KITTI，统一评估协议下与重新运行的基线对比；另在 GEODE 隧道、MulRan 上优于基线，HeLiPR 平均最优；一次标定后冻结、跨4类传感器免调参",
+          "source_level": "ABSTRACT",
+          "snippet": "摘要原文: 'LF-GICP achieves the lowest KITTI relative translation error (0.865%) under an identical evaluation protocol against re-run baselines, outperforms them on GEODE tunnels and MulRan, leads the HeLiPR mean'"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "单作者 arXiv 预印本（2026-08 提交），尚未见同行评审 venue；结论使用时注明预印本身份。其『直长隧道沿轴向不可观』的实证与本比赛走廊/隧道场景直接相关。"
+    },
+    {
+      "title": "Heterogeneous LiDAR Dataset for Benchmarking Robust Localization in Diverse Degenerate Scenarios (GEODE)",
+      "authors": ["Zhiqiang Chen", "Yuhua Qi", "Dapeng Feng", "Xuebin Zhuang", "Hongbo Chen", "Xiangcheng Hu", "Jin Wu", "Kelin Peng", "Peng Lu"],
+      "year": 2025,
+      "venue": "The International Journal of Robotics Research (IJRR)",
+      "doi": "10.1177/02783649251344967",
+      "arxiv_id": "2409.04961",
+      "url": "https://arxiv.org/abs/2409.04961",
+      "keywords": ["degeneracy benchmark", "dataset", "ATE", "tunnel", "inland waterways", "off-road"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "退化场景专用公开基准（64条轨迹/64公里/7类场景，含城市隧道、桥、内陆水道、越野），给出 SOTA SLAM 在退化场景的 ATE 失败量化表：是『退化场景下定位失败的量化证据』的最强数据来源之一，可直接用于论证主局部定位源需要几何质量感知的降级机制。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'tunnel LiDAR SLAM featureless self-similar' 命中 IJRR DOI 10.1177/02783649251344967；arXiv API 检索 ti:\"degenerate\" AND abs:\"benchmark\" AND abs:\"LiDAR\" 命中 2409.04961v2 并返回摘要（'64 trajectories spanning over 64 kilometers across seven diverse settings'）；arXiv HTML https://arxiv.org/html/2409.04961v2 抓取 Table 6 caption（ATE(M)，✗=breakdown or error>100m）及各序列 ATE 数值行。",
+      "performance_data": [
+        {
+          "metric": "ATE (FAST-LIO2)",
+          "value": 70.26,
+          "unit": "m",
+          "conditions": "GEODE Inland Waterways（内陆水道）alpha 设备 Long 序列；同序列 LIO-SAM ✗、DLIO 68.04 m、RELEAD 67.40 m",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML Table 6: 'Inland Waterways α Short ✗ 10.27 2.59 ... Medium ✗ 19.69 13.25 ... Long ✗ 70.26 68.04 - ✗ ✗ 67.40'，caption: '✗ denotes the algorithm breaking down or having a localization error larger than 100m'"
+        },
+        {
+          "metric": "ATE（盾构隧道全系统失败）",
+          "value": ">100 (标记✗)",
+          "unit": "m",
+          "conditions": "GEODE Metro Tunnels beta 设备 Shield7/Shield8/Shield9/Shield10 序列；除 RELEAD Shield9=12.69 m、Shield10=79.63 m 外其余算法全部 ✗",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML Table 6: 'Shield7 ✗ ✗ ✗ ✗ ✗ ✗ ✗; Shield8 ✗ ✗ ✗ ✗ ✗ ✗ ✗; Shield9 ✗ ... ✗ 12.69; Shield10 ✗ ... ✗ 79.63'"
+        },
+        {
+          "metric": "数据集规模",
+          "value": "64 trajectories / 64 km / 7 settings",
+          "unit": "-",
+          "conditions": "手持、UGV、船、车多平台；Velodyne VLP-16、Ouster OS1-64、Livox AVIA 三类 LiDAR；GT 由 CHCNAV CG610/Leica 等生成",
+          "source_level": "ABSTRACT",
+          "snippet": "摘要原文: 'GEODE comprises 64 trajectories spanning over 64 kilometers across seven diverse settings with varying degrees of degeneracy'"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "同表还含 Tunneling gamma 序列：LVI-SAM 35.40 m、DLIO 8.51 m（Tunneling1），可作传感器退化连锁失败的补充证据。"
+    },
+    {
+      "title": "Probabilistic Degeneracy Detection for Point-to-Plane Error Minimization",
+      "authors": ["Johan Hatleskog", "Kostas Alexis"],
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "doi": null,
+      "arxiv_id": "2410.10784",
+      "url": "https://arxiv.org/abs/2410.10784",
+      "keywords": ["probabilistic degeneracy detection", "point-to-plane", "Hessian noise", "ICP", "degeneracy-aware"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "REAL",
+      "potential_relevance": "给出一种可解释的退化指标定义：由点与法向量的噪声传播刻画点对面 Hessian 的噪声，从而量化『某方向退化的概率』，并在退化方向上平滑衰减更新量——为融合权重的连续（而非开关式）调整提供了概率化度量模板。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API 检索 all:\"degeneracy-aware\" AND all:\"LiDAR\" 命中 2410.10784；id_list 返回作者 Johan Hatleskog, Kostas Alexis 与摘要原文（'quantify the probability of a direction being degenerate ... validated in four real-world experiments ... github.com/ntnu-arl/drpm'）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要为定性描述（4个真实世界实验，优于 SOTA 退化检测方法），未在摘要中给出具体数值，故未填性能数字。代码开源。"
+    },
+    {
+      "title": "Informed, Constrained, Aligned: A Field Analysis on Degeneracy-aware Point Cloud Registration",
+      "authors": ["Turcan Tuna", "Julian Nubert", "Patrick Pfreundschuh", "Cesar Cadena", "Shehryar Khattak", "Marco Hutter"],
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "doi": null,
+      "arxiv_id": "2408.11809",
+      "url": "https://arxiv.org/abs/2408.11809",
+      "keywords": ["degeneracy mitigation", "TSVD", "Tikhonov regularization", "inequality constraints", "ICP"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "REAL",
+      "potential_relevance": "首次在该规模上系统对比主动/被动退化缓解手段（TSVD、不等式约束、线性/非线性 Tikhonov 正则化）并做敏感性分析，可直接指导本比赛退化场景下优化器层面的权重/正则化设计选型。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API 检索 all:\"degeneracy-aware\" AND all:\"LiDAR\" 命中 2408.11809；id_list 返回作者与摘要原文（'evaluates TSVD, inequality constraints, and linear/non-linear Tikhonov regularization ... validated through multiple real-world robotic field and si[mulation]'）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "方法论对比研究，摘要无数值。"
+    },
+    {
+      "title": "P2d-DO: Degeneracy Optimization for LiDAR SLAM With Point-to-Distribution Detection Factors",
+      "authors": ["Weinan Chen", "Sehua Ji", "Xubin Lin", "Zhi-Xin Yang", "Wenzheng Chi", "Yisheng Guan", "Haifei Zhu", "Hong Zhang"],
+      "year": 2024,
+      "venue": "IEEE Robotics and Automation Letters (RA-L)",
+      "doi": "10.1109/lra.2024.3522839",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/lra.2024.3522839",
+      "keywords": ["degeneracy detection factor", "point-to-distribution", "point cloud weighting", "confidence"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "把退化检测因子直接转化为『点云置信度加权』：检测算法输出表征退化状态的因子，反映点云置信度并在匹配中给可靠点云更大权重——与本项目『几何质量→动态融合权重』的核心论点同构。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'LiDAR degeneracy SLAM' 命中 RA-L DOI 10.1109/lra.2024.3522839；OpenAlex works API 按 DOI 批量抓取到完整摘要原文（'Factors reflecting the confidence of the point clouds are then fed to the degeneracy optimization algorithm, enabling the system to prioritize reliable point clouds by assigning larger weights during the matching process'）与8位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "付费墙，摘要未含具体数值；实验类型未核验。"
+    },
+    {
+      "title": "A Real-Time Degeneracy Sensing and Compensation Method for Enhanced LiDAR SLAM",
+      "authors": ["Zongbo Liao", "X. Y. Zhang", "Tianxiang Zhang", "Zhi Li", "Zhenqi Zheng", "Zhichao Wen", "You Li"],
+      "year": 2025,
+      "venue": "IEEE Transactions on Intelligent Transportation Systems (T-ITS)",
+      "doi": "10.1109/tits.2024.3524394",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tits.2024.3524394",
+      "keywords": ["degeneracy factor", "DBSCAN", "LiDAR-IMU fusion", "real-time"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "REAL",
+      "potential_relevance": "提出含义清晰的『退化因子』度量 + DBSCAN 聚类自适应感知退化，并用感知结果调节 LiDAR-IMU 融合——是退化指标驱动融合权重调整的另一实例。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'LiDAR degeneracy SLAM' 与 'localizability LiDAR odometry degeneracy' 两次命中 T-ITS DOI 10.1109/tits.2024.3524394；OpenAlex DOI 批量抓取摘要原文（'this paper introduces the degeneracy factor with clear meaning, which can measure the degeneracy of LiDAR ... Experiments on our dataset'）与7位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "自采数据集实验，摘要无数值。"
+    },
+    {
+      "title": "Switch-SLAM: Switching-Based LiDAR-Inertial-Visual SLAM for Degenerate Environments",
+      "authors": ["Junwoon Lee", "Ren Komatsu", "Mitsuru Shinozaki", "Toshihiro Kitajima", "Hajime Asama", "Qi An", "Atsushi Yamashita"],
+      "year": 2024,
+      "venue": "IEEE Robotics and Automation Letters (RA-L)",
+      "doi": "10.1109/lra.2024.3421792",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/lra.2024.3421792",
+      "keywords": ["degeneracy detection", "sensor switching", "LiDAR-inertial-visual", "non-heuristic"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "非启发式退化检测触发 LiDAR→视觉里程计的源切换，对应本项目『几何质量差时降低 LiDAR 权重/切换到备用源』的多源降级策略。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'LiDAR degeneracy SLAM' 命中 RA-L DOI 10.1109/lra.2024.3421792；OpenAlex DOI 批量抓取摘要原文（'non-heuristic degeneracy detection method that does not require heuristic tuning ... evaluated on diverse datasets containing both LiDAR and visual odometry degeneracy scenarios'）与7位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数值。"
+    },
+    {
+      "title": "Anti-Degeneracy Scheme for Lidar SLAM Based on Particle Filter in Geometry Feature-Less Environments",
+      "authors": ["Yanbin Li", "Wei Zhang", "Zhiguo Zhang", "Xiaogang Shi", "Ziruo Li", "Mingming Zhang", "Hongping Xie", "Wenzheng Chi"],
+      "year": 2025,
+      "venue": "IEEE Robotics and Automation Letters (RA-L)",
+      "doi": "10.1109/lra.2025.3568569",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/lra.2025.3568569",
+      "keywords": ["particle filter", "degeneracy detection model", "ResNet", "transformer", "feature-less"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "几何特征缺失室内场景：用 ResNet+Transformer 从粒子群分布识别退化（DD-Model），再自适应抗退化——展示学习型退化指标作为权重/初值调节信号的路线。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'LiDAR degeneracy SLAM' 命中 RA-L DOI 10.1109/lra.2025.3568569；OpenAlex DOI 批量抓取摘要原文（'a degeneracy detection model (DD-Model) using residual neural networks (ResNet) and transformer which is able to identify degeneracy by scrutinizing the distribution of the particle population'）与8位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数值，数据集未在摘要中指明。"
+    },
+    {
+      "title": "LIVER: A Tightly Coupled LiDAR-Inertial-Visual State Estimator With High Robustness for Underground Environments",
+      "authors": ["Tianci Wen", "Yongchun Fang", "Biao Lu", "Xuebo Zhang", "Chaoquan Tang"],
+      "year": 2024,
+      "venue": "IEEE Robotics and Automation Letters (RA-L)",
+      "doi": "10.1109/lra.2024.3355778",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/lra.2024.3355778",
+      "keywords": ["underground", "LiDAR degeneracy", "self-similar", "visual-IMU assist", "LIVO"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "REAL",
+      "potential_relevance": "井下自相似环境：以视觉-IMU 辅助评估并处理 LiDAR 退化；摘要明确记录『无退化处理的紧耦合方法在自相似区域失败』，可作为退化导致定位失败的定性证据之一。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'localizability LiDAR odometry degeneracy' 命中 RA-L DOI 10.1109/lra.2024.3355778；OpenAlex DOI 批量抓取摘要原文（'In underground mines test, tightly coupled methods without degeneracy handling lead to failure due to self-similar areas (affecting LiDAR)'）与5位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数值。"
+    },
+    {
+      "title": "LiDAR–Inertial Integration for Rail Vehicle Localization and Mapping in Tunnels",
+      "authors": ["Xinye Dai", "Weiwei Song", "Yusheng Wang", "Yangyang Xu", "Yidong Lou", "Weiming Tang"],
+      "year": 2023,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2023.3286437",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2023.3286437",
+      "keywords": ["tunnel", "rail vehicle", "degeneracy-aware feature selection", "factor graph", "plane constraints"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "隧道（走廊型退化）场景的轨道交通定位：退化解算特征选择挑信息量最大的特征，并用轨道平面约束补充 6 自由度——与本比赛轮式平台走廊/隧道工况高度相关。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'localizability LiDAR odometry degeneracy' 命中 IEEE Sensors Journal DOI 10.1109/jsen.2023.3286437；OpenAlex DOI 批量抓取摘要原文（'A degeneracy-aware feature selection is employed to select the most informative features ... leverage the plane constraints from extracted rail tracks'）与6位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要截断处未含数值，未填性能数字。"
+    },
+    {
+      "title": "MULLS: Versatile LiDAR SLAM via Multi-metric Linear Least Square",
+      "authors": ["Yue Pan", "Pengchuan Xiao", "Yujie He", "Zhenlei Shao", "Zesong Li"],
+      "year": 2021,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2102.03771",
+      "arxiv_id": "2102.03771",
+      "url": "https://arxiv.org/abs/2102.03771",
+      "keywords": ["multi-metric ICP", "feature classification", "linear least square", "LiDAR SLAM"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "按地面/立面/柱/梁等类别联合优化 point-to-point/plane/line 多种度量——多度量互补是缓解单一度量退化的通用思路（GenZ-ICP 在 KITTI 上以其为对照：0.55% vs 0.51%）。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'tunnel LiDAR SLAM featureless self-similar' 命中 arXiv DOI 10.48550/arxiv.2102.03771；arXiv API id_list=2102.03771 返回作者与摘要（'point-to-point (plane, line) error metrics within each point class are jointly optimized ... three datasets with more than 100,000 frames collected by seven types of LiDAR ... ranks among the top LiDAR-only SLAM systems'）。",
+      "performance_data": [
+        {
+          "metric": "评估规模",
+          "value": "100000+ frames / 7 LiDAR types / 3 datasets",
+          "unit": "-",
+          "conditions": "室内外多场景公开+自采数据；KITTI 上列于纯 LiDAR SLAM 前列",
+          "source_level": "ABSTRACT",
+          "snippet": "摘要原文: 'Extensive experiments are carried out on three datasets with more than 100,000 frames collected by seven types of LiDAR ... On the KITTI benchmark, MULLS ranks among the top LiDAR-only SLAM systems with real-time performance'"
+        }
+      ],
+      "candidate_core": false,
+      "notes": "venue 记录为 arXiv（作者主页称后续发表于 IEEE T-ITS 2022，本次未独立核验该期刊版本，故按 arXiv 记）。"
+    },
+    {
+      "title": "LODESTAR: Degeneracy-Aware LiDAR-Inertial Odometry with Adaptive Schmidt-Kalman Filter and Data Exploitation",
+      "authors": ["Eungchang Mason Lee", "Kevin Christiansen Marsim", "Hyun Myung"],
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "doi": null,
+      "arxiv_id": "2511.09142",
+      "url": "https://arxiv.org/abs/2511.09142",
+      "keywords": ["degeneracy-aware", "Schmidt-Kalman filter", "localizability contribution", "condition number"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "按退化水平把状态分为 active/fixed 并用 Schmidt-Kalman 部分更新；数据利用模块基于 localizability 贡献与 Jacobian 条件数筛选量测——条件数+局部化贡献作为度量直接进入量测筛选，与本论点契合。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API 检索 all:\"degeneracy-aware\" AND all:\"LiDAR\" 命中 2511.09142；检索 all:\"degeneracy\" AND all:\"condition number\" AND all:\"LiDAR\" 再次命中；id_list 返回作者与摘要原文（'based on their localizability contribution and the condition number of the Jacobian matrix ... long corridors and high-altitude flights'）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要以 'Experimental results show that LODESTAR...' 截断处无具体数值。venue 未核验到期刊版，按 arXiv 预印本记录。"
+    },
+    {
+      "title": "LP-ICP: General Localizability-Aware Point Cloud Registration for Robust Localization in Extreme Unstructured Environments",
+      "authors": ["Haosong Yue", "Qingyuan Xu", "Fei Chen"],
+      "year": 2025,
+      "venue": "arXiv preprint",
+      "doi": "10.48550/arxiv.2501.02580",
+      "arxiv_id": "2501.02580",
+      "url": "https://arxiv.org/abs/2501.02580",
+      "keywords": ["localizability", "point-to-line", "point-to-plane", "feature-less", "ICP"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "在 point-to-plane 局部化分析基础上引入 point-to-line 度量，给出逐对应约束的 localizability 贡献并据此加软/硬约束——覆盖无结构少特征环境的细粒度退化处理。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "DBLP (https://dblp.org/search/publ/api?q=X-ICP%20localizability) 命中 CoRR 条目 DOI 10.48550/ARXIV.2501.02580 'LP-ICP: General Localizability-Aware Point Cloud Registration ...'（Haosong Yue, Qingyuan Xu, Fei Chen）；arXiv API id_list=2501.02580 返回同标题与摘要（'localizability detection module and an optimization module ... adds additional soft and hard constraints'）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要截断处未含数值。DBLP 仅见 CoRR 版。"
+    },
+    {
+      "title": "FAST-LIO2: Fast Direct LiDAR-inertial Odometry",
+      "authors": ["Wei Xu", "Yixi Cai", "Dongjiao He", "Jiarong Lin", "Fu Zhang"],
+      "year": 2022,
+      "venue": "arXiv preprint (IEEE T-RO 2022 版本未在本次独立核验)",
+      "doi": null,
+      "arxiv_id": "2107.06829",
+      "url": "https://arxiv.org/abs/2107.06829",
+      "keywords": ["LiDAR-inertial odometry", "iterated EKF", "ikd-tree", "baseline"],
+      "subarea": "DEGENERACY",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "作为当前最主流的 LiDAR-惯性里程计基线收录：GEODE 退化基准显示其在内陆水道长序列 ATE 达 70.26 m——本比赛若采用类似紧耦合里程计为主局部定位源，需要几何质量感知的降级/加权机制。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API 检索 all:\"FAST-LIO2\" 命中 'FAST-LIO2: Fast Direct LiDAR-inertial Odometry' arXiv 2107.06829v1（2021提交）；GEODE 论文 arXiv HTML Table 7/8 将 FAST-LIO2 列为评估对象之一（无退化检测，✗标记列）。作者列表取自该 arXiv 条目 API 返回。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "收录目的为退化场景量化评估中的核心基线；其自身性能数字未在本次抓取范围内填入。"
+    },
+    {
+      "title": "ERASOR: Egocentric Ratio of Pseudo Occupancy-based Dynamic Object Removal for Static 3D Point Cloud Map Building",
+      "authors": ["Hyungtae Lim", "Sungwon Hwang", "Hyun Myung"],
+      "year": 2021,
+      "venue": "IEEE Robotics and Automation Letters (RA-L)",
+      "doi": "10.1109/LRA.2021.3061363",
+      "arxiv_id": "2103.04316",
+      "url": "https://arxiv.org/abs/2103.04316",
+      "keywords": ["dynamic object removal", "pseudo occupancy", "static map", "SemanticKITTI", "region-wise ground plane fitting"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "动态物体去除代表作（egocentric pseudo occupancy + R-GPF）：摘要明确『动态物体残留会阻碍定位与导航』；提供 SemanticKITTI 上 PR/RR/F1 与运行时间的完整条件化数据，是『动态处理方法+性能』的主锚点。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "DBLP (https://dblp.org/search/publ/api?q=ERASOR) 命中 RA-L DOI 10.1109/LRA.2021.3061363；arXiv API cat:cs.RO 检索 ERASOR 命中 2103.04316 并返回作者与摘要；ar5iv 全文 https://ar5iv.labs.arxiv.org/html/2103.04316 抓取 TABLE II（'00 ... ERASOR (Ours) 93.980 97.081 0.955 ... Removert - RM3 85.502 99.354 0.919'）与 TABLE III runtime 行（'ERASOR (Ours) 0.0732 / Removert 0.8307 / OctoMap 1.077'），caption 注明 PR=Preservation Rate, RR=Rejection Rate, SemanticKITTI 数据集。",
+      "performance_data": [
+        {
+          "metric": "Preservation Rate (PR)",
+          "value": 93.98,
+          "unit": "%",
+          "conditions": "SemanticKITTI Seq.00；同表 Removert-RM3 85.502%、OctoMap-0.05 76.731%",
+          "source_level": "FULLTEXT",
+          "snippet": "ar5iv TABLE II: '00 OctoMap - 0.05 [12] 76.731 99.124 0.865 ... Removert - RM3 [15] 85.502 99.354 0.919 ... ERASOR (Ours) 93.980 97.081 0.955'"
+        },
+        {
+          "metric": "Rejection Rate (RR)",
+          "value": 97.081,
+          "unit": "%",
+          "conditions": "SemanticKITTI Seq.00",
+          "source_level": "FULLTEXT",
+          "snippet": "ar5iv TABLE II: 'ERASOR (Ours) 93.980 97.081 0.955'（列序 PR, RR, F1）"
+        },
+        {
+          "metric": "Preservation Rate (PR)",
+          "value": 90.624,
+          "unit": "%",
+          "conditions": "SemanticKITTI Seq.07；RR 99.271%、F1 0.948",
+          "source_level": "FULLTEXT",
+          "snippet": "ar5iv TABLE II: '07 ... ERASOR (Ours) 90.624 99.271 0.948'"
+        },
+        {
+          "metric": "Runtime per iteration",
+          "value": 0.0732,
+          "unit": "s",
+          "conditions": "SemanticKITTI Seq.01；对比 Removert 0.8307 s、OctoMap 1.077 s、Peopleremover 1000 s",
+          "source_level": "FULLTEXT",
+          "snippet": "ar5iv TABLE III: 'Method Runtime/iteration [s] OctoMap [12] 1.077 Peopleremover [14] 1,000 Removert [15] 0.8307 ERASOR (Ours) 0.0732'"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "ERASOR++ (ICRA 2024) 在相同序列上报告 ERASOR Seq02 PR 仅 80.896%，见 ERASOR++ 条目。"
+    },
+    {
+      "title": "Remove, then Revert: Static Point Cloud Map Construction using Multiresolution Range Images (Removert)",
+      "authors": ["Giseop Kim", "Ayoung Kim"],
+      "year": 2020,
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "doi": "10.1109/IROS45743.2020.9340856",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/IROS45743.2020.9340856",
+      "keywords": ["dynamic object removal", "multiresolution range image", "ray tracing", "static map"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "多分辨率距离像『先删后还原』的离线静态建图方法，是动态点去除方向的常用基线；其被测数值（PR/RR/runtime）在 ERASOR 论文 Table II/III 中以相同协议给出，可作对比基准。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "DBLP (https://dblp.org/search/publ/api?q=remove+then+revert+point+cloud) 命中 IROS 条目 DOI 10.1109/IROS45743.2020.9340856（Giseop Kim, Ayoung Kim）；OpenAlex works API 按 DOI 返回同题录；数值证据来自 ar5iv 2103.04316（ERASOR 论文）TABLE II/III 中以 SemanticKITTI 为条件的 Removert 数值。",
+      "performance_data": [
+        {
+          "metric": "Preservation Rate (PR, Removert-RM3 配置)",
+          "value": 85.502,
+          "unit": "%",
+          "conditions": "SemanticKITTI Seq.00（由 ERASOR 论文统一协议复测），RR 99.354%、F1 0.919",
+          "source_level": "FULLTEXT",
+          "snippet": "ar5iv 2103.04316 TABLE II: 'Removert - RM3 [15] 85.502 99.354 0.919'"
+        },
+        {
+          "metric": "Runtime per iteration (Removert)",
+          "value": 0.8307,
+          "unit": "s",
+          "conditions": "SemanticKITTI Seq.01（ERASOR 论文 Table III 复测口径）",
+          "source_level": "FULLTEXT",
+          "snippet": "ar5iv 2103.04316 TABLE III: 'Removert [15] 0.8307'"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "原文为 IROS 2020 付费墙，本次未直接抓取其全文；性能数字取自 ERASOR 论文的对照表并已绑定条件。"
+    },
+    {
+      "title": "ERASOR++: Height Coding Plus Egocentric Ratio Based Dynamic Object Removal for Static Point Cloud Mapping",
+      "authors": ["Jiabao Zhang", "Yu Zhang"],
+      "year": 2024,
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/ICRA57147.2024.10610396",
+      "arxiv_id": "2403.05019",
+      "url": "https://arxiv.org/abs/2403.05019",
+      "keywords": ["dynamic object removal", "height coding", "ego-centric ratio", "SemanticKITTI"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "ERASOR 的增强版（高度编码描述子+高度栈/地面层/环绕点测试），同一协议下 PR/F1 全面优于 ERASOR——提供『动态环境方法性能提升（带条件）』的直接量化证据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "DBLP ERASOR 查询命中 ICRA DOI 10.1109/ICRA57147.2024.10610396 与 CoRR 10.48550/ARXIV.2403.05019；arXiv API id_list=2403.05019 返回作者 Jiabao Zhang, Yu Zhang 与摘要；arXiv HTML https://arxiv.org/html/2403.05019v1 抓取 TABLE I caption（'Experiments Results and Comparison in KITTI seq.'）及数值行。",
+      "performance_data": [
+        {
+          "metric": "Preservation Rate PR (Seq.07)",
+          "value": 98.5774,
+          "unit": "%",
+          "conditions": "KITTI 序列 07（ERASOR++ 论文 TABLE I，同表 ERASOR 93.4848%）",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML TABLE I: '07 ERASOR 93.4848 98.8887 0.961109 0.090536 ERASOR++ 98.5774 98.6509 0.986141 0.101062'"
+        },
+        {
+          "metric": "F1 score (Seq.07)",
+          "value": 0.986141,
+          "unit": "-",
+          "conditions": "KITTI 序列 07；ERASOR 0.961109；平均耗时 0.101 s vs 0.091 s",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML TABLE I: 'ERASOR++ 98.5774 98.6509 0.986141 0.101062'（列序 PR[%], RR[%], F1, Avg.Time[s]）"
+        },
+        {
+          "metric": "Preservation Rate PR (Seq.02)",
+          "value": 87.8949,
+          "unit": "%",
+          "conditions": "KITTI 序列 02；同序列 ERASOR 仅 80.896%",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML TABLE I: '02 ERASOR 80.896 99.2045 0.891197 0.161044 ERASOR++ 87.8949 98.9015 0.930739 0.135772'"
+        }
+      ],
+      "candidate_core": false,
+      "notes": "TABLE I 覆盖 Seq.00/01/02/05/07。"
+    },
+    {
+      "title": "ERASOR2: Instance-Aware Robust 3D Mapping of the Static World in Dynamic Scenes",
+      "authors": ["Hyungtae Lim", "Lucas Nunes", "Benedikt Mersch", "Xieyuanli Chen", "Jens Behley", "Hyun Myung", "Cyrill Stachniss"],
+      "year": 2023,
+      "venue": "Robotics: Science and Systems (RSS)",
+      "doi": "10.15607/RSS.2023.XIX.067",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.15607/RSS.2023.XIX.067",
+      "keywords": ["instance-aware", "dynamic scenes", "static mapping"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "实例感知的动态场景静态建图（ERASOR 系列的 RSS 版），把逐 bin 统计升级为实例级推理，适合行人与车辆密集的比赛场地。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "DBLP (https://dblp.org/search/publ/api?q=ERASOR) 命中 RSS 2023 条目 DOI 10.15607/RSS.2023.XIX.067 及7位作者；Crossref https://api.crossref.org/works/10.15607/rss.2023.xix.067 返回同标题与年份 2023。未抓取全文，无数值。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "仅核验题录层级；正文数值未抓取（RSS 论文页未访问）。"
+    },
+    {
+      "title": "DynaHull: Density-centric Dynamic Point Filtering in Point Clouds",
+      "authors": ["Pejman Habibiroudkenar", "Risto Ojala", "Kari Tammi"],
+      "year": 2024,
+      "venue": "arXiv preprint",
+      "doi": null,
+      "arxiv_id": "2401.07541",
+      "url": "https://arxiv.org/abs/2401.07541",
+      "keywords": ["dynamic point filtering", "density", "convex hull", "indoor", "localization failure"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "REAL",
+      "potential_relevance": "室内动态（人员/移动机械）点云过滤：多帧密度差异+凸包体积密度因子+自适应阈值；论文 Figure 8 明确记录『使用含动态点的地图，机器人在第三个转弯后无法自定位』——是动态物体导致定位失败的直接实验证据，并有与 ERASOR/Removert/Dynablox/OctoMap+SOR 的条件化对比表。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API cat:cs.RO 检索 ERASOR 命中 2401.07541v2（DynaHull）；id_list 返回作者与摘要（'compared to state-of-the-art techniques, such as ERASOR, Removert, OctoMap plus SOR, and Dynablox, by comparing each method to the ground truth map created during a low activity period'）；arXiv HTML https://arxiv.org/html/2401.07541v2 抓取 Table 2（MAE/RMSE/90%ile/CD/EMD）、Table 3（FP/FN/Precision/Recall/耗时）与 Fig.8 caption（'The robot fails to localize itself after the third turn in dynamic map'）。",
+      "performance_data": [
+        {
+          "metric": "建图误差 MAE (DynaHull)",
+          "value": 0.102,
+          "unit": "m",
+          "conditions": "室内动态环境（Dbot 机器人），以低动态时段建成的地图为 GT；对比 Removert 0.218 m、Dynablox 0.158 m、OctoMap+SOR 0.191 m、ERASOR 0.281 m",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML Table 2: 'DynaHull 0.102 0.312 0.184 4.784 0.766 ... ERASOR 0.281 0.522 0.602 7.375 2.753'（列序 MAE, RMSE, 90 Percentile, CD, EMD）"
+        },
+        {
+          "metric": "建图误差 RMSE (DynaHull)",
+          "value": 0.312,
+          "unit": "m",
+          "conditions": "同上（室内动态环境 GT 对比）；ERASOR 0.522 m",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML Table 2: 'DynaHull 0.102 0.312 ...'"
+        },
+        {
+          "metric": "FP% / FN% / Precision / Recall (DynaHull)",
+          "value": "5.93 / 7.33 / 0.88 / 0.88",
+          "unit": "-",
+          "conditions": "同上室内动态场景；对比 ERASOR FP 82.14% / FN 61.3% / Precision 0.18 / Recall 0.39（城市算法在室内场景失配）；DynaHull 耗时 15.00 s vs Dynablox 0.17 s",
+          "source_level": "FULLTEXT",
+          "snippet": "HTML Table 3: 'DynaHull 5.93 7.33 0.88 0.88 15.00 ... ERASOR 82.14 61.3 0.18 0.39 0.16'"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "ERASOR/Removert 在该室内基准上的大幅失配与 SemanticKITTI 上的高 PR 形成鲜明对比（见 conflicts）。"
+    },
+    {
+      "title": "RF-LIO: Removal-First Tightly-coupled Lidar Inertial Odometry in High Dynamic Environments",
+      "authors": ["Chenglong Qian", "Zhaohong Xiang", "Zhuoran Wu", "Hongbin Sun"],
+      "year": 2021,
+      "venue": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "doi": "10.1109/iros51168.2021.9636624",
+      "arxiv_id": "2206.09463",
+      "url": "https://doi.org/10.1109/iros51168.2021.9636624",
+      "keywords": ["dynamic environment", "removal-first", "tightly-coupled", "LiDAR-inertial", "UrbanLoco"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "REAL",
+      "potential_relevance": "『先删后配』的紧耦合 LiDAR-惯性里程计：自适应多分辨率距离像先移除运动物体再与子图匹配；摘要给出高动态环境下相对 LOAM/LIO-SAM 的 ATE 精度提升幅度（90%/70%），是动态环境方法性能提升的直接量化证据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'dynamic object removal LiDAR SLAM' 命中 IROS DOI 10.1109/iros51168.2021.9636624（OpenAlex/Crossref 均未返回作者，venue 为 IROS 2021）；作者经 arXiv API id_list=2206.09463 核验（Chenglong Qian, Zhaohong Xiang, Zhuoran Wu, Hongbin Sun，arXiv 2022 预印本）；摘要原文经 OpenAlex DOI 抓取（'the absolute trajectory accuracy of the proposed RF-LIO can be improved by 90% and 70%, respectively ... evaluated on both self-collected datasets and open Urbanloco datasets'）。",
+      "performance_data": [
+        {
+          "metric": "绝对轨迹精度提升 (vs LOAM)",
+          "value": 90,
+          "unit": "%",
+          "conditions": "高动态环境；自采数据集 + 公开 UrbanLoco 数据集；对比对象 LOAM",
+          "source_level": "ABSTRACT",
+          "snippet": "摘要原文: 'compared with LOAM and LIO-SAM, the absolute trajectory accuracy of the proposed RF-LIO can be improved by 90% and 70%, respectively'"
+        },
+        {
+          "metric": "绝对轨迹精度提升 (vs LIO-SAM)",
+          "value": 70,
+          "unit": "%",
+          "conditions": "同上（高动态环境，自采 + UrbanLoco）",
+          "source_level": "ABSTRACT",
+          "snippet": "同上摘要原文"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "摘要给出的提升百分比的基线协议细节（ATE 指标口径）未在摘要中展开，使用时标注为摘要级证据。"
+    },
+    {
+      "title": "DOR-LINS: Dynamic Objects Removal LiDAR-Inertial SLAM Based on Ground Pseudo Occupancy",
+      "authors": ["Zhoubo Wang", "Zhenhai Zhang", "Xiao Kang", "Miusi Wu", "Siyu Chen", "Qilin Li"],
+      "year": 2023,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2023.3310484",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2023.3310484",
+      "keywords": ["dynamic object removal", "ground pseudo occupancy", "LIO-SAM", "real-time", "urban"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "基于地面伪占据的实时动态物体移除（LIO-SAM 扩展）：地面点提取+非地面聚类划分静态/潜在动态，面向行人/自行车/车辆影响的城市工况。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'dynamic object removal LiDAR SLAM' 命中 IEEE Sensors Journal DOI 10.1109/jsen.2023.3310484；OpenAlex DOI 批量抓取摘要原文（'the presence of moving objects such as pedestrians, bicycles, or vehicles affects the localization accuracy of SLAM and leaves behind ghost trails in the created map'）与6位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数值。"
+    },
+    {
+      "title": "Nonparametric Background Model-Based LiDAR SLAM in Highly Dynamic Urban Environments",
+      "authors": ["Joohyun Park", "Younggun Cho", "Young-Sik Shin"],
+      "year": 2022,
+      "venue": "IEEE Transactions on Intelligent Transportation Systems (T-ITS)",
+      "doi": "10.1109/tits.2022.3204917",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tits.2022.3204917",
+      "keywords": ["background model", "dynamic urban", "probabilistic object estimation", "dynamic removal"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "用累积帧差概率估计非参数背景模型来识别并移除动态物体（车辆/自行车/行人），局部建图模块结合 LiDAR 点云动态特性优化运动估计——城市高动态环境下的概率化路线。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'dynamic object removal LiDAR SLAM' 命中 T-ITS DOI 10.1109/tits.2022.3204917；OpenAlex DOI 批量抓取摘要原文（'real-world environments having many dynamic objects such as vehicles, bicycles, and pedestrians ... estimates a nonparametric background model to recognize dynamic objects'）与3位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数值。"
+    },
+    {
+      "title": "SPLIN: A Structured Plane-Based LiDAR–Inertial SLAM With Dynamic Object Removal",
+      "authors": ["Jun Zhu", "Weiming Mi", "Hongyi Li", "Tao Xue", "Jiawei Zhao", "Shengjie Wang", "Tao Zhang"],
+      "year": 2025,
+      "venue": "IEEE Transactions on Instrumentation and Measurement (T-IM)",
+      "doi": "10.1109/tim.2025.3643083",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tim.2025.3643083",
+      "keywords": ["dynamic object removal", "plane-based", "uncertainty-consistent", "factor graph", "iterated Kalman filter"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "把实时动态抑制（ISDOR）与不确定性一致估计、不确定度感知因子图耦合——同时覆盖『动态物体处理』与『不确定度驱动后端加权』两个论点的交汇处。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'dynamic object removal LiDAR SLAM' 命中 T-IM DOI 10.1109/tim.2025.3643083；OpenAlex DOI 批量抓取摘要原文（'couples real-time dynamic suppression with uncertainty-consistent estimation ... Incremental Static-referenced Dynamic Object Removal (ISDOR) ... uncertainty-aware factor-graph optimization'）与7位作者。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要截断处未含数值。"
+    },
+    {
+      "title": "A Review of Dynamic Object Filtering in SLAM Based on 3D LiDAR",
+      "authors": ["Hongrui Peng", "Ziyu Zhao", "Liguan Wang"],
+      "year": 2024,
+      "venue": "Sensors (MDPI)",
+      "doi": "10.3390/s24020645",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.3390/s24020645",
+      "keywords": ["survey", "dynamic object filtering", "3D LiDAR SLAM"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "3D LiDAR SLAM 动态目标滤波综述（MDPI 开放获取），摘要明确『动态物体负面影响 SLAM 精度与鲁棒性』，可作为方法分类（几何/深度学习/分割）与术语对照的骨架文献。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'dynamic object removal LiDAR SLAM' 命中 Sensors DOI 10.3390/s24020645；Crossref https://api.crossref.org/works/10.3390/s24020645 返回标题、年份2024与摘要原文（'in most real-world scenarios, dynamic objects can negatively impact the accuracy and robustness of SLAM'）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "综述文献。"
+    },
+    {
+      "title": "A Coarse-to-Fine LiDAR-Based SLAM with Dynamic Object Removal in Dense Urban Areas",
+      "authors": ["Feng Huang", "Donghui Shen", "Weisong Wen", "Jiachen Zhang", "Li-Ta Hsu"],
+      "year": 2021,
+      "venue": "ION GNSS+ (Proceedings of the International Technical Meeting of the Satellite Division)",
+      "doi": "10.33012/2021.18083",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.33012/2021.18083",
+      "keywords": ["dense urban", "dynamic object removal", "coarse-to-fine", "LiDAR SLAM"],
+      "subarea": "DYNAMIC",
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "高密度城市环境的粗到细 LiDAR SLAM + 动态物体移除，面向车辆/行人密集街谷场景，与比赛城区轮式平台场景类似。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex 检索 'dynamic object removal LiDAR SLAM' 命中 DOI 10.33012/2021.18083（venue: ION GNSS+ 会议录，作者 Feng Huang, Donghui Shen, Weisong Wen 等5人）。Crossref works/10.33012/2021.18083 返回标题与年份但无摘要。未抓取全文。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "题录级核验；摘要与数值未获取。"
+    }
+  ],
+  "rejected": [
+    {
+      "claimed": "DéliO: Depth only LiDAR odometry（记忆中的 IROS 2022 候选）",
+      "reason": "查无实据：DBLP 查询 'depth only LiDAR odometry' 0 命中，arXiv/OpenAlex 检索亦未命中该标题，判断为模型记忆不可靠，不收入。",
+      "verification_attempt": "DBLP publ/api?q=depth+only+LiDAR+odometry（0 hits）；arXiv/OpenAlex 关键词检索未命中同名论文。"
+    },
+    {
+      "claimed": "Degradation Resilient LiDAR-Radar-Inertial Odometry (arXiv 2403.05332)",
+      "reason": "真实存在（arXiv API 命中）但主题为烟雾/传感器退化（radar 融合），非几何退化场景下的 LiDAR 质量评估，超出本块范围，不收入 papers。",
+      "verification_attempt": "arXiv API all:\"LiDAR degeneracy\" 检索命中该条目并读取标题。"
+    },
+    {
+      "claimed": "An Intensity-Augmented LiDAR-Inertial SLAM for Solid-State LiDARs in Degenerated Environments (T-IM 2022, DOI 10.1109/tim.2022.3190060)",
+      "reason": "题录与摘要已核验（OpenAlex DOI 抓取），但主题为固态 LiDAR 小 FoV/不规则扫描的退化补偿，与本项目旋转式主 LiDAR 的走廊/开放区域几何退化相关性较弱，名额所限未入池。",
+      "verification_attempt": "OpenAlex works API DOI 过滤命中并重建摘要。"
+    },
+    {
+      "claimed": "Degeneracy-Resistant LiDAR-SLAM Algorithm Based on Geometric and Visual Features' Fusion (JFR, DOI 10.1002/rob.70026)",
+      "reason": "题录与摘要已核验（Crossref 摘要命中：长走廊/隧道退化、几何+视觉融合），但『融合抗退化』主题与已收录的 Switch-SLAM/LIVER/Anti-Degeneracy PF 高度重叠，为控制总数未入池。",
+      "verification_attempt": "Crossref API works/10.1002/rob.70026 返回标题、年份与摘要前段。"
+    },
+    {
+      "claimed": "Semantic Scholar 批量检索作为主要数据源",
+      "reason": "连续 429 限流（首查 HTTP:429，重试后 total 字段缺失），按预案切换为 OpenAlex/DBLP/arXiv/Crossref 组合，不影响覆盖。",
+      "verification_attempt": "curl https://api.semanticscholar.org/graph/v1/paper/search?query=LiDAR%20degeneracy%20detection（HTTP 429）；第二次查询返回无 total 的空响应。"
+    }
+  ],
+  "conflicts": [
+    {
+      "claim": "X-ICP 在退化环境（长走廊）中稳健可靠",
+      "paper_a": "X-ICP (T-RO 2024, arXiv 2211.16335) — 摘要称在 LiDAR-challenging environments 中 demonstrate performance and reliability improvement",
+      "paper_b": "GenZ-ICP (RA-L 2024, arXiv 2411.06766) — TABLE VI (SubT-MRS Long_Corridor) 报告 X-ICP 全部指标 Div.（发散）；TABLE V (Ground-Challenge Corridor2) 报告 X-ICP APE mean 5.85 m vs GenZ-ICP 0.18 m",
+      "explanation": "两文实验设置/传感器/参数不同，GenZ-ICP 为第三方复现口径；提示 localizability 约束型方法在超长直走廊仍可能失效，引用 X-ICP 结论时须绑定其原实验（Seemühle 矿井）条件。"
+    },
+    {
+      "claim": "ERASOR 是高精度动态点去除方法（城市道路基准 PR>90%）",
+      "paper_a": "ERASOR (RA-L 2021) — SemanticKITTI Seq.00 PR 93.980%",
+      "paper_b": "DynaHull (arXiv 2024) — 室内动态场景基准中 ERASOR FP 82.14%、Precision 0.18、MAE 0.281 m",
+      "explanation": "同一方法在室外道路基准与室内人员密集场景表现差异巨大：动态去除方法强依赖场景先验（地面接触假设），跨场景迁移时性能数字不可外推——对本比赛混合场景（室内外轮式）是重要警示。"
+    },
+    {
+      "claim": "紧耦合 LiDAR-惯性里程计（如 FAST-LIO2）足够鲁棒，无需退化处理",
+      "paper_a": "FAST-LIO2 (arXiv 2107.06829) — 主流高精度 LIO 基线",
+      "paper_b": "GEODE (IJRR 2025) — FAST-LIO2 在 GEODE Inland Waterways Long 序列 ATE 70.26 m，Metro Tunnels Shield7-10 序列失败（>100 m 或 breakdown）",
+      "explanation": "公开退化基准的量化失败证据支持『主局部定位源必须带几何质量感知的降级/加权机制』的比赛论点。"
+    }
+  ]
+}

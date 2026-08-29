@@ -1,0 +1,891 @@
+{
+  "area": "RADAR",
+  "papers": [
+    {
+      "title": "CFEAR Radarodometry -- Conservative Filtering for Efficient and Accurate Radar Odometry",
+      "authors": ["Daniel Adolfsson", "Martin Magnusson", "Anas Alhashimi", "Achim J. Lilienthal", "Henrik Andreasson"],
+      "year": 2021,
+      "venue": "2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "doi": "10.1109/iros51168.2021.9636253",
+      "arxiv_id": "2105.01457",
+      "url": "https://arxiv.org/abs/2105.01457",
+      "keywords": ["radar odometry", "oriented surface points", "scan matching", "Navtech CTS350-X", "Oxford Radar RobotCar"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "无学习、免调参的经典雷达里程计方法，用 oriented surface points + point-to-line 配准。可直接作为本项目毫米波雷达里程计的基线算法，且证明同一套参数可跨传感器（Navtech CTS350-X / CIR154XH）和跨环境（城市/矿区/试验场）泛化。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2105.01457 返回标题/作者/摘要全文（2021，Adolfsson 等）；Crossref query.bibliographic 命中 IROS 2021 DOI 10.1109/iros51168.2021.9636253；arXiv HTML 全文 https://arxiv.org/html/2105.01457v3 抓到评测表与条件句。",
+      "performance_data": [
+        {
+          "metric": "translation error (KITTI-style mean over 100-800m subsequences)",
+          "value": "1.76",
+          "unit": "%",
+          "conditions": "Oxford Radar RobotCar 公开数据集，车顶 Navtech CTS350-X FMCW 雷达 4Hz、距离分辨率 4.38cm；空间交叉验证(SCV)设置；对比 Barnes Dual Cart 2.78%、Hong 3.11%、Cen 3.72%",
+          "source_level": "FULLTEXT",
+          "snippet": "We used the public Oxford Radar RobotCar Dataset which was collected with a roof-mounted Navtech CTS350-X FMCW radar running at 4 Hz, configured with a range resolution of γ = 4.38 cm. ... TITLE produces the lowest per-sequence and mean SCV error with a translation and rotation error of 1.76% and 0.5 deg/100m, followed by Barnes Dual Cart [12] (2.78%), Hong odometry [14] (3.11%), and Cen [15] (3.72%)."
+        },
+        {
+          "metric": "rotation error",
+          "value": "0.5",
+          "unit": "deg/100m",
+          "conditions": "同上，Oxford 城市基准 SCV 设置",
+          "source_level": "FULLTEXT",
+          "snippet": "translation and rotation error of 1.76% and 0.5 deg/100m"
+        },
+        {
+          "metric": "runtime",
+          "value": "55",
+          "unit": "Hz (single laptop CPU thread)",
+          "conditions": "纯 CPU 单线程实时运行，无 GPU",
+          "source_level": "ABSTRACT",
+          "snippet": "running at 55Hz merely on a single laptop CPU thread"
+        },
+        {
+          "metric": "odometry loop drift (non-urban generalization)",
+          "value": "15 m over 1235 m (1.2%)",
+          "unit": "m",
+          "conditions": "矿区(Kvarntorp mine)与 Volvo 试验场自采数据，大回环，无需重调参",
+          "source_level": "FULLTEXT",
+          "snippet": "The accumulated error is roughly 15 m over a distance of 1235 m driving (1.2%). ... The maximum translation error is 15 m (1.3%) over the large loop."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "arXiv HTML 中 'TITLE' 为论文自身占位宏名，即 CFEAR。摘要另给 'overall translation error of 1.76% in a public urban radar odometry benchmark'。"
+    },
+    {
+      "title": "Radar Odometry Combining Probabilistic Estimation and Unsupervised Feature Learning",
+      "authors": ["Keenan Burnett", "David J. Yoon", "Angela P. Schoellig", "Timothy D. Barfoot"],
+      "year": 2021,
+      "venue": "Robotics: Science and Systems XVII (RSS 2021)",
+      "doi": "10.15607/rss.2021.xvii.029",
+      "arxiv_id": "2105.14152",
+      "url": "https://arxiv.org/abs/2105.14152",
+      "keywords": ["radar odometry", "unsupervised learning", "sliding window", "Oxford Radar RobotCar"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "无监督学习特征 + 概率估计的雷达里程计，不需要 GT 轨迹训练；证明雷达里程计在恶劣天气下有效。适合作为本项目学习型雷达前端的参考路线。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2105.14152 返回标题/作者/摘要全文；Crossref 命中 RSS 2021 DOI 10.15607/rss.2021.xvii.029。",
+      "performance_data": [
+        {
+          "metric": "odometry accuracy (qualitative vs hand-crafted methods)",
+          "value": "outperforms most hand-crafted methods",
+          "unit": "",
+          "conditions": "Oxford Radar RobotCar + 额外 100 km 城市自采数据；无 GT 训练数据（无监督）",
+          "source_level": "ABSTRACT",
+          "snippet": "Our sliding-window implementation of radar odometry outperforms most hand-crafted methods and approaches the current state of the art without requiring a groundtruth trajectory for training. We also demonstrate the effectiveness of radar odometry under adverse weather conditions."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "摘要未给具体数值，故不填数字。开源代码 github.com/utiasASRL/hero_radar_odometry（摘要自述）。"
+    },
+    {
+      "title": "ORORA: Outlier-Robust Radar Odometry",
+      "authors": ["Hyungtae Lim", "Kawon Han", "Gunhee Shin", "Giseop Kim", "Songcheol Hong", "Hyun Myung"],
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/icra48891.2023.10160997",
+      "arxiv_id": "2303.01876",
+      "url": "https://arxiv.org/abs/2303.01876",
+      "keywords": ["radar odometry", "outlier rejection", "GNC", "anisotropic uncertainty", "radar interference"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "针对雷达噪声与多机互干扰造成的外点问题提出 GNC 旋转估计 + 各向异性平移估计；提醒选型时必须考虑雷达外点与互干扰抑制能力，是 RINO 的基线。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2303.01876 返回标题/作者/摘要全文；Crossref 命中 ICRA 2023 DOI 10.1109/icra48891.2023.10160997。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无具体数值（'yields robust ego-motion estimation performance compared with other state-of-the-art methods'），不填数字。"
+    },
+    {
+      "title": "A Normal Distribution Transform-Based Radar Odometry Designed For Scanning and Automotive Radars",
+      "authors": ["Pou-Chun Kung", "Chieh-Chih Wang", "Wen-Chieh Lin"],
+      "year": 2021,
+      "venue": "2021 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/icra48506.2021.9561413",
+      "arxiv_id": "2103.07908",
+      "url": "https://arxiv.org/abs/2103.07908",
+      "keywords": ["NDT", "scanning radar", "automotive radar", "nuScenes", "Oxford Radar RobotCar"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "同一算法同时支持扫描式雷达（Navtech 类）与车载点云雷达（nuScenes 类），并给出两类雷达精度相似的证据——直接支撑本项目'车载 77GHz 点云雷达 vs 扫描式雷达'的选型问题。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2103.07908 返回标题/作者/摘要全文；Crossref 命中 ICRA 2021 DOI 10.1109/icra48506.2021.9561413。",
+      "performance_data": [
+        {
+          "metric": "translational error reduction vs SOTA",
+          "value": "51% (scanning/Oxford), 30% (automotive/nuScenes)",
+          "unit": "%",
+          "conditions": "Oxford Radar RobotCar（扫描式）与 nuScenes（车载雷达）两公开数据集，对比各自 SOTA 雷达里程计",
+          "source_level": "ABSTRACT",
+          "snippet": "The results show that our approach surpasses state-of-the-art RO using either automotive or scanning radar by reducing translational error by 51% and 30%, respectively, and rotational error by 17% and 29%, respectively."
+        },
+        {
+          "metric": "accuracy class",
+          "value": "centimeter-level (comparable to lidar odometry)",
+          "unit": "",
+          "conditions": "同上两数据集；扫描式与车载雷达精度相近",
+          "source_level": "ABSTRACT",
+          "snippet": "we show that our RO achieves centimeter-level accuracy as lidar odometry, and automotive and scanning RO have similar accuracy."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "DRO: Doppler-Aware Direct Radar Odometry",
+      "authors": ["Cedric Le Gentil", "Leonardo Brizi", "Daniil Lisus", "Xinyuan Qiao", "Giorgio Grisetti", "Timothy D. Barfoot"],
+      "year": 2025,
+      "venue": "Robotics: Science and Systems XXI (RSS 2025)",
+      "doi": "10.15607/rss.2025.xxi.006",
+      "arxiv_id": "2504.20339",
+      "url": "https://arxiv.org/abs/2504.20339",
+      "keywords": ["direct odometry", "Doppler", "Boreas leaderboard", "MulRan", "SE(2)", "gyroscope", "tunnel"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "当前公开榜单最强的雷达里程计之一，直接利用 Doppler 消除运动畸变并在无特征隧道保持可行——正对本项目'几何+Doppler 补充观测'的定位；其消融实验还量化了 IMU/陀螺偏向与雷达安装角误差的影响。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2504.20339 返回标题/作者/摘要全文；Crossref 命中 RSS 2025 DOI 10.15607/rss.2025.xxi.006；arXiv HTML 全文 https://arxiv.org/html/2504.20339v1 抓到 Boreas leaderboard 表、MulRan 表、平台与消融数据。",
+      "performance_data": [
+        {
+          "metric": "average relative translation error (Boreas odometry leaderboard)",
+          "value": "0.26",
+          "unit": "% (rotation 0.05 deg/100m)",
+          "conditions": "Boreas leaderboard 13 条测试序列（自车 2D 旋转雷达+sawtooth 调制+RTK-GNSS/INS GT）；DRO-G 含陀螺；对比 CFEAR++ 0.51%/0.14、CFEAR 0.61%/0.21、STEAM-RIO++ 0.62%/0.18",
+          "source_level": "FULLTEXT",
+          "snippet": "With the aid of a gyroscope, it outperforms state-of-the-art methods and achieves an average relative translation error of 0.26% on the Boreas leaderboard. ... TABLE III: Boreas dataset SE(2) odometry leaderboard. DRO-G (ours) 0.26 0.05 CFEAR++ [46] 0.51 0.14 CFEAR [3] 0.61 0.21 STEAM-RIO++ [17] 0.62 0.18"
+        },
+        {
+          "metric": "translation error with Doppler-enabling FM pattern",
+          "value": "0.18",
+          "unit": "%",
+          "conditions": "与 Boreas 类似环境、雷达调频波形使径向 Doppler 可观测时",
+          "source_level": "ABSTRACT",
+          "snippet": "When using data with the appropriate Doppler-enabling frequency modulation pattern, the translation error is reduced to 0.18% in similar environments."
+        },
+        {
+          "metric": "average KITTI-style translation/rotation error (MulRan)",
+          "value": "1.45 / 0.38",
+          "unit": "% / deg-per-100m",
+          "conditions": "MulRan 三场景(KAIST 1.44/0.42, DCC 1.54/0.41, Riverside 1.38/0.31)平均；对比 CFEAR-3 平均 1.62/0.57",
+          "source_level": "FULLTEXT",
+          "snippet": "Average 1.62 / 0.57 1.50 / 0.56 1.45 / 0.38 ... KITTI odometry metric reported as XX / YY with XX [%] and YY [°/100m]"
+        },
+        {
+          "metric": "featureless tunnel performance",
+          "value": "3 of 4 runs under 2.5% translation error (version without Doppler constraint); Doppler constraint enables robust odometry in tunnels",
+          "unit": "%",
+          "conditions": "隧道（几何特征缺失）序列；无 Doppler 约束的变体 O_ψ 不够稳健",
+          "source_level": "FULLTEXT",
+          "snippet": "Despite not completely failing on all the Tunnel sequences (3 out of 4 runs present a translation error under 2.5%), the Doppler-compensation that happens in O_ψ is not sufficient for robust estimation in feature-deprived environments."
+        },
+        {
+          "metric": "ablation: without gyroscope bias estimation",
+          "value": "6.00 / 1.57",
+          "unit": "% / deg-per-100m (average)",
+          "conditions": "Boreas/MulRan 上关闭陀螺偏向估计后的平均误差（对比正常 0.26%/0.05 量级），说明航向稳定性对雷达里程计影响大",
+          "source_level": "FULLTEXT",
+          "snippet": "without the gyroscope bias estimation, we obtain errors of 6.00% and 1.57° on average. ... we also adjusted the radar heading by 0.172° (without the heading correction DRO-G leads to errors of 1.46% and 0.38°)"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "自采平台：Navtech RAS6 雷达 + Silicon Sensing DMU41 IMU + Velodyne Alpha Prime + Applanix RTK-GNSS/INS 后处理 GT（FULLTEXT）。另指出 MulRan IMU 时间戳间隔存在 ±35% 波动与常数偏移。"
+    },
+    {
+      "title": "Radar-Based Odometry for Low-Speed Driving",
+      "authors": ["Luis Diener", "Jens Kalkkuhl", "Markus Enzweiler"],
+      "year": 2025,
+      "venue": "arXiv preprint (Crossref 另检出 RA-L 2026 版 DOI 10.1109/lra.2026.3686644，题名 Radar-Inertial Odometry for Low-Speed Driving)",
+      "doi": "",
+      "arxiv_id": "2509.07683",
+      "url": "https://arxiv.org/abs/2509.07683",
+      "keywords": ["low-speed", "parking", "4D radar", "Doppler tightly-coupled EKF", "multi-radar", "SNAIL", "HeRCULES"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "与本项目轮式低速平台最贴合：雷达+IMU 紧耦合、特征位置与 Doppler 速度联合、支持多雷达，低速/泊车级厘米精度。含 Continental ARS548 级车载雷达的实测条件描述。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2509.07683 返回标题/作者/摘要；arXiv HTML 全文 https://arxiv.org/html/2509.07683v3 抓到传感器、GT 与精度数据；Crossref 检出 2026 RA-L 版本元数据。",
+      "performance_data": [
+        {
+          "metric": "localization accuracy (low-speed threshold)",
+          "value": "10 cm achieved in 63% of test cases; end position within 13 cm at 63rd percentile",
+          "unit": "cm/m",
+          "conditions": "自采专有数据集：四角 4D 雷达（性能对标 Continental ARS548，量程至 250 m、角度精度 0.5°）+ GT 系统精度约 2 cm；低速/泊车场景",
+          "source_level": "FULLTEXT",
+          "snippet": "The vehicle of our proprietary dataset was equipped with four corner-radar sensors comparable in performance to the Continental ARS548, featuring a detection range of up to 250 m and an angular accuracy of 0.5°. Additionally, the vehicle is equipped with a ground-truth measurement system achieving localization accuracy of approximately 2 cm. ... In 63% of the test cases (performance threshold) a localization accuracy of 10 cm is achieved with the end position being estimated within 13 cm."
+        },
+        {
+          "metric": "end pose / trajectory error percentiles",
+          "value": "end pose 0.13/0.24/0.28 m (63rd/95th/max); trajectory 0.10/0.17/0.28 m",
+          "unit": "m",
+          "conditions": "同上专有低速数据集",
+          "source_level": "FULLTEXT",
+          "snippet": "end pose error 0.13 m 0.24 m 0.28 m trajectory error 0.10 m 0.17 m 0.28 m"
+        },
+        {
+          "metric": "average RPE on public low-speed sequences",
+          "value": "0.06 (ours) vs 0.14 (Doppler-SLAM, next best)",
+          "unit": "m",
+          "conditions": "SNAIL 数据集 113/1、123/3 序列与 HeRCULES Parking Lot Night 3、Street Day 1 序列（低速机动）",
+          "source_level": "FULLTEXT",
+          "snippet": "Across both datasets, our algorithm demonstrates superior performance in low-speed maneuvers, such as the 113/1 and 123/3 sequences from the SNAIL dataset and the Parking Lot Night 3 and Street Day 1 sequences from the Hercules dataset. Our algorithm achieves an average RPE of 0.06 m on these low-speed sequences, outperforming the next best method, Doppler-SLAM, which averages 0.14 m."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "证明 Doppler 速度测量在低速下的关键作用：摘要称 tightly couples feature positions and Doppler velocities。"
+    },
+    {
+      "title": "An EKF Based Approach to Radar Inertial Odometry",
+      "authors": ["C. Doer", "G. Trommer"],
+      "year": 2020,
+      "venue": "2020 International Conference on Multisensor Fusion and Integration for Intelligent Systems (MFI)",
+      "doi": "10.1109/MFI49285.2020.9235254",
+      "arxiv_id": "",
+      "url": "https://doi.org/10.1109/MFI49285.2020.9235254",
+      "keywords": ["EKF", "radar-inertial odometry", "automotive FMCW radar", "ego-velocity RANSAC", "GNSS-denied"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "radar-inertial odometry 的奠基性工程路线：车载 FMCW 雷达逐目标 3D 位置+Doppler 速度 → RANSAC 自车速度 → EKF 与 IMU 融合；明确面向 GNSS 拒止与视觉退化（黑暗/雾/烟），与本项目的传感器主线完全一致。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar API paper/DOI:10.1109/MFI49285.2020.9235254 返回标题/作者/venue(MFI 2020)/摘要全文。",
+      "performance_data": [
+        {
+          "metric": "final position error",
+          "value": "< 0.6% of distance traveled",
+          "unit": "%",
+          "conditions": "室内外真实实验，轨迹长于 200 m，动捕(motion capture)系统 GT；车载级 FMCW 雷达 + IMU EKF；里程计在嵌入式计算机上快于实时",
+          "source_level": "ABSTRACT",
+          "snippet": "Tests in indoor and outdoor environments with trajectories longer than 200m achieved a final position error below 0.6% of the distance traveled. The proposed odometry approach runs faster than realtime even on an embedded computer."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "摘要同时给出动机：'Navigation in GNSS-denied and degraded visual environment is still very challenging. Approaches based on visual sensors usually fail in conditions like darkness, direct sunlight, fog or smoke.'"
+    },
+    {
+      "title": "Tightly-Coupled EKF-Based Radar-Inertial Odometry",
+      "authors": ["Julian Michalczyk", "Ronald Jung", "Stephan Weiss"],
+      "year": 2022,
+      "venue": "2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "doi": "10.1109/IROS47612.2022.9981396",
+      "arxiv_id": "",
+      "url": "https://doi.org/10.1109/IROS47612.2022.9981396",
+      "keywords": ["radar-inertial odometry", "EKF", "tightly-coupled", "UAV", "GNSS-denied", "smoke"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "紧耦合 RIO 的代表性工作：在 EKF 中融合 FMCW 雷达 3D 点的 range 与 velocity 测量 + IMU，面向 GNSS 拒止与烟雾/光照异常环境，给出 UAV 真机验证；对轮式平台可直接降维复用。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar API paper/DOI:10.1109/IROS47612.2022.9981396 返回标题/作者/venue(IROS 2022)/摘要全文；作者名以 S2 返回的 'J. Michalczyk; R. Jung; Stephan Weiss'（检索列表）与详情页对照。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要称 'real experiments ... improvements over similar existing state-of-the-art method'，未给数值，不填数字。"
+    },
+    {
+      "title": "Impact of Temporal Delay on Radar-Inertial Odometry",
+      "authors": ["Vlaho-Josip Štironja", "Luka Petrović", "Juraj Peršić", "Ivan Marković", "Ivan Petrović"],
+      "year": 2025,
+      "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "doi": "10.1109/IROS60139.2025.11246946",
+      "arxiv_id": "2503.02509",
+      "url": "https://arxiv.org/abs/2503.02509",
+      "keywords": ["temporal calibration", "time offset", "factor graph", "automotive radar", "IMU"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "量化了雷达-IMU 时间不同步对 RIO 的影响并给出在线时延标定——直接决定本项目多传感器时间同步硬件要求（雷达需输出稳定时间戳/触发）。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar 检索（radar inertial odometry）返回该条目含 DOI 10.1109/IROS60139.2025.11246946 与 venue IROS 2025；arXiv API id_list=2503.02509 返回标题/作者/摘要全文。",
+      "performance_data": [
+        {
+          "metric": "localization error reduction from online temporal calibration",
+          "value": "significantly reduced (qualitative)",
+          "unit": "",
+          "conditions": "真实车载雷达+IMU 数据，无 scan matching 或目标跟踪的纯雷达-IMU 因子图；对比不处理时间同步的系统",
+          "source_level": "ABSTRACT",
+          "snippet": "The results show that, even without scan matching or target tracking, integration of online temporal calibration significantly reduces localization error compared to systems that disregard time synchronization, thus highlighting the important role of, often neglected, accurate temporal alignment in radar-based sensor fusion systems."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "摘要无数值，不填数字。"
+    },
+    {
+      "title": "4D iRIOM: 4D Imaging Radar Inertial Odometry and Mapping",
+      "authors": ["Yuan Zhuang", "Binliang Wang", "Jianzhu Huai", "Miao Li"],
+      "year": 2023,
+      "venue": "IEEE Robotics and Automation Letters (RA-L)",
+      "doi": "10.1109/LRA.2023.3266669",
+      "arxiv_id": "2303.13962",
+      "url": "https://arxiv.org/abs/2303.13962",
+      "keywords": ["4D imaging radar", "RIO", "mapping", "GNC ego-velocity", "ColoRadar", "loop closure"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "首个 4D 成像雷达惯性 SLAM 系统（里程计+建图+回环），明确 4D 雷达提供距离/方位/高度/速度四类信息；ColoRadar 实测表格给出 4D 雷达相对 3D 方案的精度差异，是 4D 路线的能力锚点。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar 检索（radar inertial odometry）返回 DOI 10.1109/LRA.2023.3266669 与 venue RA-L；arXiv API id_list=2303.13962 返回摘要全文；arXiv HTML 全文 https://arxiv.org/html/2303.13962v2 抓到 ColoRadar 表 IV、GT 与点云稀疏度描述。",
+      "performance_data": [
+        {
+          "metric": "closure error & APE RMSE on ColoRadar (Seq 1: 2_23_2021_edgar_classroom_run0)",
+          "value": "iRIOM 0.351m Hor / 0.043m Vert, Trans 0.916m, Rot 7.198°; vs EKFRIO 15.732m Hor / 6.746m Vert, Trans 5.048m",
+          "unit": "m / deg",
+          "conditions": "ColoRadar 公开数据集室内序列；GT 为 Bynav 模块（RTK 良好时约 3 cm，RTK 中断 10 秒时降至 25 cm）；4D 成像雷达+IMU，iEKF 融合",
+          "source_level": "FULLTEXT",
+          "snippet": "TABLE IV: Statistics of EKFRIO, iRIO, and iRIOM on ColoRadar ... Seq 1 EKFRIO 15.732 6.746 5.048 10.758 iRIO 7.309 0.652 2.377 7.896 iRIOM 0.351 0.043 0.916 7.198"
+        },
+        {
+          "metric": "radar point cloud sparsity",
+          "value": "~400",
+          "unit": "points/scan",
+          "conditions": "4D 成像雷达单帧点云典型稀疏度（论文用于说明 4D 雷达空间分辨率仍低于 LiDAR）",
+          "source_level": "FULLTEXT",
+          "snippet": "Compared to 3D radars, 4D imaging radars significantly improve the elevation resolution, though its point clouds are still very sparse (~400 points/scan)."
+        },
+        {
+          "metric": "capability statement",
+          "value": "distance + azimuth + height + velocity",
+          "unit": "",
+          "conditions": "4D 成像毫米波雷达相对于 3D 雷达（无高度）的能力差异",
+          "source_level": "FULLTEXT",
+          "snippet": "Compared to 3D radars, the 4D imaging millimeter wave radar greatly improves the resolution in the vertical direction, thus providing four types of information: distance, azimuth, height, and velocity."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "摘要强调雾等恶劣条件下毫米波雷达可测距/方向/Doppler，并首次将 4D 雷达成像数据用于 SLAM 建图与回环。"
+    },
+    {
+      "title": "RINO: Accurate, Robust Radar-Inertial Odometry with Non-Iterative Estimation",
+      "authors": ["Shuocheng Yang", "Yueming Cao", "Shengbo Eben Li", "Jianqiang Wang", "Shaobing Xu"],
+      "year": 2024,
+      "venue": "IEEE Transactions on Automation Science and Engineering, vol. 22, pp. 20420-20434, 2025",
+      "doi": "10.1109/TASE.2025.3601838",
+      "arxiv_id": "2411.07699",
+      "url": "https://arxiv.org/abs/2411.07699",
+      "keywords": ["radar-inertial odometry", "adaptive loose coupling", "voting", "uncertainty", "fog rain snow"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "以 ORORA 为基线的自适应松耦合 RIO，把雷达位姿不确定性引入 MAP/KF 融合；给出对基线的明确精度增量，适合作为本项目雷达-IMU 融合的软件参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2411.07699 返回标题/作者/摘要与 journal_ref（IEEE T-ASE vol.22 pp.20420-20434, 2025, DOI 10.1109/TASE.2025.3601838）；Crossref 检索亦见该 DOI 的补充材料条目。",
+      "performance_data": [
+        {
+          "metric": "error reduction vs baseline (ORORA)",
+          "value": "translation -1.06%; rotation -0.09",
+          "unit": "%; deg/100m",
+          "conditions": "公开数据集实验（摘要未列明具体序列）；对比基线为 ORORA",
+          "source_level": "ABSTRACT",
+          "snippet": "Experimental results conducted on publicly available datasets demonstrate that RINO reduces translation and rotation errors by 1.06% and 0.09°/100m, respectively, when compared to the baseline method."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "Ground-Optimized 4D Radar-Inertial Odometry via Continuous Velocity Integration using Gaussian Process",
+      "authors": ["Wooseong Yang", "Hyesu Jang", "Ayoung Kim"],
+      "year": 2025,
+      "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/ICRA55743.2025.11127572",
+      "arxiv_id": "2502.08093",
+      "url": "https://arxiv.org/abs/2502.08093",
+      "keywords": ["4D radar", "ground filtering", "Gaussian process", "velocity preintegration", "vertical drift"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "针对 4D 雷达噪声大的问题提出地面优化滤波与 GP 连续速度预积分，显著改善高程精度——轮式平台上坡/起伏场景的垂直漂移控制直接可用。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar 检索返回 DOI 10.1109/ICRA55743.2025.11127572 与 venue ICRA 2025；arXiv API id_list=2502.08093 返回摘要全文；arXiv HTML 全文 https://arxiv.org/html/2502.08093v2 抓到高程误差数值。",
+      "performance_data": [
+        {
+          "metric": "elevation error",
+          "value": "18 m over 2.5 km (0.72%)",
+          "unit": "m / %",
+          "conditions": "公开数据集（含高动态与恶劣天气条件）上的最优高程误差；对比其他 4D 雷达-惯性里程计",
+          "source_level": "FULLTEXT",
+          "snippet": "The proposed method shows the lowest elevation error (18m over 2.5km of path length, only 0.72%)."
+        },
+        {
+          "metric": "vertical drift",
+          "value": "less than 1%",
+          "unit": "%",
+          "conditions": "公开数据集、恶劣天气与高动态条件",
+          "source_level": "ABSTRACT",
+          "snippet": "Our approach demonstrates remarkable performance (less than 1% vertical drift) in public datasets with meticulous conditions, illustrating substantial improvement in elevation accuracy."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "指出雷达地面点分布不确定导致朴素平面拟合失败，需 zone-based 不确定性地面建模（FULLTEXT 摘要句）。"
+    },
+    {
+      "title": "GaRLIO: Gravity enhanced Radar-LiDAR-Inertial Odometry",
+      "authors": ["Chiyun Noh", "Wooseong Yang", "Minwoo Jung", "Sangwoo Jung", "Ayoung Kim"],
+      "year": 2025,
+      "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/icra55743.2025.11128334",
+      "arxiv_id": "2502.07703",
+      "url": "https://arxiv.org/abs/2502.07703",
+      "keywords": ["radar-lidar-inertial", "gravity estimation", "pointwise velocity", "vertical drift", "dynamic object removal"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "成熟的多传感器融合路线范例：雷达点级速度测量同时用于重力估计（抑制垂直漂移）与动态物剔除，LiDAR 保持几何精度——与本项目'雷达补充、LiDAR 主导'的融合思路高度一致。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2502.07703 返回标题/作者/摘要全文；Crossref 命中 ICRA 2025 DOI 10.1109/icra55743.2025.11128334；arXiv HTML 全文 https://arxiv.org/html/2502.07703v2 抓到垂直误差数值与雷达-LiDAR 时间同步描述。",
+      "performance_data": [
+        {
+          "metric": "vertical mean error",
+          "value": "1.21",
+          "unit": "m over 2.045 km path",
+          "conditions": "易发生垂直漂移环境的真实实验；GaRLIO 用雷达点级速度增强重力估计，优于传统 LIO",
+          "source_level": "FULLTEXT",
+          "snippet": "Our method (blue) reported only 1.21 m vertical mean error over 2.045 km path length."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "FULLTEXT 给出同步细节：'we utilized sweep reconstruction to synchronize the end timestamp of LiDAR and radar, using the radar's timestamp'——对本项目 SYNC_REQUIREMENTS 有直接参考价值。"
+    },
+    {
+      "title": "AF-RLIO: Adaptive Fusion of Radar-LiDAR-Inertial Information for Robust Odometry in Challenging Environments",
+      "authors": ["Chenglong Qian", "Yang Xu", "Xiufang Shi", "Jiming Chen", "Liang Li"],
+      "year": 2025,
+      "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/icra55743.2025.11128046",
+      "arxiv_id": "2507.18317",
+      "url": "https://arxiv.org/abs/2507.18317",
+      "keywords": ["4D mmWave radar", "LiDAR", "IMU", "GPS", "smoke", "tunnel", "IESKF"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "4D 毫米波雷达+LiDAR+IMU+GPS 自适应融合：用雷达判定 LiDAR 退化并剔除动态点，退化时切换点云源；烟尘/隧道场景实测有效，是本项目退化切换策略的直接模板。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2507.18317 返回标题/作者/摘要全文；Crossref 命中 ICRA 2025 DOI 10.1109/icra55743.2025.11128046。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要称 'evaluated on datasets and tested in real-world robotic environments ... advantages over existing methods in challenging conditions such as smoke and tunnels'，摘要未见具体数值，不填数字。"
+    },
+    {
+      "title": "Degradation Resilient LiDAR-Radar-Inertial Odometry",
+      "authors": ["Morten C. Nissov", "Nikhil Khedekar", "Kostas Alexis"],
+      "year": 2024,
+      "venue": "2024 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/ICRA57147.2024.10611444",
+      "arxiv_id": "2403.05332",
+      "url": "https://arxiv.org/abs/2403.05332",
+      "keywords": ["LiDAR degeneracy", "radar factor", "factor graph", "obscurant occlusion", "flying robot"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "因子图内按退化轴传递雷达信息的紧耦合方案：LiDAR 正常时保精度、退化时雷达接力。给出真机退化实验与开源数据集，可指导本项目退化检测与权重切换设计。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Semantic Scholar 检索返回 DOI 10.1109/ICRA57147.2024.10611444 与 venue ICRA 2024；arXiv API id_list=2403.05332 返回标题/作者/摘要全文。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无具体数值。数据集开源：github.com/ntnu-arl/lidar_degeneracy_datasets（摘要自述）。"
+    },
+    {
+      "title": "Adaptive LiDAR-Radar Fusion for Outdoor Odometry Across Dense Smoke Conditions",
+      "authors": ["Chiyun Noh", "Ayoung Kim"],
+      "year": 2024,
+      "venue": "arXiv preprint (venue not independently verified in this session)",
+      "doi": "",
+      "arxiv_id": "2403.17441",
+      "url": "https://arxiv.org/abs/2403.17441",
+      "keywords": ["dense smoke", "LiDAR degeneracy", "radar static point cloud", "adaptive fusion", "NTU4DRadLM"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "在浓烟中定量证明 LiDAR 退化而雷达可用、融合最优——本项目'烟尘/视觉/LiDAR 局部退化用毫米波雷达补充'的核心证据链，含公开数据集上的 APE/RPE 数值。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2403.17441 返回标题/作者/摘要全文；arXiv HTML 全文 https://arxiv.org/html/2403.17441v2 抓到 NTU4DRadLM 上 APE/RPE 表格数据。",
+      "performance_data": [
+        {
+          "metric": "odometry RMSE APE / RPE (smoke sequences)",
+          "value": "cp: ours(LiDAR+Radar) APE 1.133m / RPE 0.886m; radar-only APE 2.142m / RPE 1.094m; LiDAR 失败(无值). garden: ours APE 2.477m / RPE 0.737m; radar-only APE 2.925m / RPE 0.817m",
+          "unit": "m",
+          "conditions": "NTU4DRadLM 公开数据集浓烟条件序列（cp、garden）；RMSE of APE/RPE 评测；FAST-LIO2 作为 LiDAR-IMU 对照在浓烟中无法给出结果",
+          "source_level": "FULLTEXT",
+          "snippet": "Ours (LiDAR+Radar) Radar LiDAR cp APE [m] 1.133 2.142 - - RPE [m] 0.886 1.094 - - garden APE [m] 2.477 2.925 - - RPE [m] 0.737 0.817 - - ... All experiments were evaluated using the NTU4DRadLM dataset [8]."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "摘要：'By comparing the LiDAR point cloud with the radar static point cloud ... identify instances of LiDAR degeneracy ... challenging conditions such as dense smoke'。LiDAR 列为 '-'（退化/失败）。"
+    },
+    {
+      "title": "LiDAR Teach, Radar Repeat: Robust Cross-Modal Navigation in Degenerate and Varying Environments",
+      "authors": ["Renxiang Xiao", "Yichen Chen", "Yuanfan Zhang", "Qianyi Shao", "Yushuai Chen", "Yuxuan Han"],
+      "year": 2026,
+      "venue": "arXiv preprint (venue not independently verified in this session)",
+      "doi": "",
+      "arxiv_id": "2605.02809",
+      "url": "https://arxiv.org/abs/2605.02809",
+      "keywords": ["teach and repeat", "cross-modal registration", "LiDAR map", "4D radar", "Doppler motion prior", "nighttime smoke"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "与本项目场景几乎同构：正常条件用 LiDAR 建图（teach），退化/夜间/烟雾条件用 4D 毫米波雷达重定位（repeat），跨模态配准网络利用 Doppler 运动先验；40+ km、6 个月、3 平台真机验证。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2605.02809 返回标题/作者/摘要全文（2026）。",
+      "performance_data": [
+        {
+          "metric": "long-term deployment localization accuracy",
+          "value": "centimeter-level",
+          "unit": "",
+          "conditions": "3 个机器人平台、40+ km、6 个月长期部署，含夜间烟雾等退化条件；跨模态（LiDAR teach, 4D radar repeat）",
+          "source_level": "ABSTRACT",
+          "snippet": "we validate LTR2 across three robot platforms over a large-scale, long-term deployment (40+ km over 6 months), including challenging conditions such as nighttime smoke. Experimental results and ablation studies demonstrate centimeter-level accuracy and strong robustness against diverse environmental disturbances."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "摘要未给分位数数值，不填具体数字。"
+    },
+    {
+      "title": "Are We Ready for Radar to Replace Lidar in All-Weather Mapping and Localization?",
+      "authors": ["Keenan Burnett", "Yuchen Wu", "David J. Yoon", "Angela P. Schoellig", "Timothy D. Barfoot"],
+      "year": 2022,
+      "venue": "arXiv preprint (v3; peer-reviewed venue not independently verified in this session)",
+      "doi": "",
+      "arxiv_id": "2203.10174",
+      "url": "https://arxiv.org/abs/2203.10174",
+      "keywords": ["topometric localization", "radar vs lidar", "snowstorm", "Boreas", "cross-modal", "map size"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "对'雷达能否全天候替代 LiDAR'给出克制结论：雪暴中 LiDAR 定位依然最准，雷达-only 精度有竞争力且地图小得多；跨模态 radar-to-lidar 定位达 ~0.1m。为本项目定位雷达的角色（补充/冗余而非替代）提供关键校准证据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2203.10174 返回标题/作者/摘要全文；arXiv HTML 全文 https://arxiv.org/html/2203.10174v3 抓到 0.1m 跨模态定位、雪暴/雨/夜序列条件描述。",
+      "performance_data": [
+        {
+          "metric": "cross-modal radar-to-lidar map localization error",
+          "value": "around 0.1",
+          "unit": "m (relative localization error)",
+          "conditions": "Boreas 数据集；用实时雷达扫描配准到预建 LiDAR 地图",
+          "source_level": "FULLTEXT",
+          "snippet": "We demonstrate that we can successfully localize live radar scans to a pre-built lidar map with a relative localization error of around 0.1m."
+        },
+        {
+          "metric": "ranking under snowstorm",
+          "value": "lidar-only best; radar-only competitive with much smaller map",
+          "unit": "",
+          "conditions": "Boreas 雪暴序列 2021-01-26（另有雨 2021-06-29、夜 2021-09-08）；radar-only / lidar-only / radar-to-lidar 三系统对比",
+          "source_level": "ABSTRACT",
+          "snippet": "our lidar-only pipeline achieved the best localization accuracy even during a snowstorm. ... However, our radar-only pipeline was able to achieve competitive accuracy with a much smaller map. Furthermore, radar localization ... may yet prove valuable in extreme weather or as a redundant backup system."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "FULLTEXT 还指出内置目标提取算法不适合建图定位：'recent work seems to indicate that the target extraction algorithms built into automotive radar may not necessarily be optimal for mapping and localization.'"
+    },
+    {
+      "title": "RadarSLAM: Radar based Large-Scale SLAM in All Weathers",
+      "authors": ["Ziyang Hong", "Yvan Petillot", "Sen Wang"],
+      "year": 2020,
+      "venue": "2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "doi": "10.1109/iros45743.2020.9341287",
+      "arxiv_id": "2005.02198",
+      "url": "https://arxiv.org/abs/2005.02198",
+      "keywords": ["radar SLAM", "all weather", "loop closure", "pose graph", "dark night fog snow"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "完整雷达图优化 SLAM 系统（跟踪+局部建图+回环+位姿图），在黑夜/浓雾/大雪条件下验证——证明仅凭雷达即可支撑大规模定位建图闭环。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2005.02198 返回标题/作者/摘要全文；Crossref 命中 IROS 2020 DOI 10.1109/iros45743.2020.9341287。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要定性：'state-of-the-art reliability and localization accuracy in various adverse weather conditions, such as dark night, dense fog and heavy snowfall'，无具体数值。"
+    },
+    {
+      "title": "4DRadarSLAM: A 4D Imaging Radar SLAM System for Large-scale Environments based on Pose Graph Optimization",
+      "authors": ["Jun Zhang", "Huayang Zhuge", "Zhenyu Wu", "Guohao Peng", "Mingxing Wen", "Yiyao Liu", "Danwei Wang"],
+      "year": 2023,
+      "venue": "2023 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/icra48891.2023.10160670",
+      "arxiv_id": "",
+      "url": "https://doi.org/10.1109/icra48891.2023.10160670",
+      "keywords": ["4D imaging radar", "SLAM", "pose graph", "large-scale"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "4D 成像雷达大规模 SLAM 系统代表作（位姿图优化），与 4D iRIOM 共同构成 4D 雷达 SLAM 两条主线；本项目 4D 雷达建图路线的必引系统。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "Crossref API works/10.1109/icra48891.2023.10160670 返回完整标题、作者（Jun Zhang 等 7 人）、年份 2023、venue ICRA 2023。摘要与实验数值本次未抓取到，故仅元数据级验证。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "仅元数据验证：未读摘要/正文，不做任何性能声明。"
+    },
+    {
+      "title": "Open-RadVLAD: Fast and Robust Radar Place Recognition",
+      "authors": ["Matthew Gadd", "Paul Newman"],
+      "year": 2024,
+      "venue": "2024 IEEE Radar Conference (RadarConf24)",
+      "doi": "10.1109/radarconf2458775.2024.10548974",
+      "arxiv_id": "2401.15380",
+      "url": "https://arxiv.org/abs/2401.15380",
+      "keywords": ["radar place recognition", "VLAD", "rotational invariance", "Oxford Radar RobotCar", "recall"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "雷达全局重定位当前公开实现中最强结果之一（870 对轨迹穷举测试），可直接用于本项目 GNSS 拒止下的重定位/回环模块选型。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2401.15380 返回标题/作者/摘要全文；Crossref 命中 RadarConf24 DOI 10.1109/radarconf2458775.2024.10548974。",
+      "performance_data": [
+        {
+          "metric": "median Recall@1",
+          "value": "91.52 (ours) vs 69.55 (RaPlace)",
+          "unit": "%",
+          "conditions": "Oxford Radar RobotCar 30 条序列（每条约 10 km）全部 870 对轨迹组合穷举测试；开源实现对比",
+          "source_level": "ABSTRACT",
+          "snippet": "over an exhaustive combination of all 870 pairs of trajectories from 30 Oxford Radar RobotCar Dataset sequences (each approximately 10 km) ... We achieve a median of 91.52% in Recall@1, outstripping the 69.55% for the only other open implementation, RaPlace."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "A New Wave in Robotics: Survey on Recent mmWave Radar Applications in Robotics",
+      "authors": ["Kyle Harlow", "Hyesu Jang", "Timothy D. Barfoot", "Ayoung Kim", "Christoffer Heckman"],
+      "year": 2023,
+      "venue": "IEEE Transactions on Robotics, 40 (2024) 4544-4560",
+      "doi": "10.1109/TRO.2024.3463504",
+      "arxiv_id": "2305.01135",
+      "url": "https://arxiv.org/abs/2305.01135",
+      "keywords": ["mmWave radar survey", "FMCW 76-81GHz", "motion estimation", "localization", "datasets", "calibration"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "机器人毫米波雷达权威综述（T-RO 2024）：覆盖雷达原理、运动估计/定位/建图、检测、数据集与标定——本项目雷达能力分级（60/77GHz、点云/4D）与路线图的一手入口文献。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2305.01135 返回标题/作者/摘要全文及 journal_ref（IEEE T-RO 40:4544-4560, 2024, DOI 10.1109/TRO.2024.3463504）。",
+      "performance_data": [
+        {
+          "metric": "capability statement (band & weather)",
+          "value": "76-81GHz FMCW; bypasses fog/dust/smoke",
+          "unit": "",
+          "conditions": "综述结论：毫米波长可绕过视觉杂波（雾、尘、烟）",
+          "source_level": "ABSTRACT",
+          "snippet": "Frequency Modulated Continuous Wave (FMCW) mmWave radars operating in the 76--81GHz range are an appealing alternative to lidars, cameras ... its longer wavelengths have the ability to bypass visual clutter such as fog, dust, and smoke."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "综述本身无实验数值；此处引其能力表述。"
+    },
+    {
+      "title": "Radar Odometry for Autonomous Ground Vehicles: A Survey of Methods and Datasets",
+      "authors": ["Nader J. Abu-Alrub", "Nathir A. Rawashdeh"],
+      "year": 2023,
+      "venue": "IEEE Transactions on Intelligent Vehicles (2024; arXiv 2023)",
+      "doi": "10.1109/tiv.2023.3340513",
+      "arxiv_id": "2307.07861",
+      "url": "https://arxiv.org/abs/2307.07861",
+      "keywords": ["radar odometry survey", "ground vehicles", "datasets", "metrics", "Doppler"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "地面自主平台雷达里程计的方法/数据集/指标分类综述（T-IV），为本项目算法分类、评测指标（平移/旋转误差定义）与数据集选择提供索引。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2307.07861 返回标题/作者/摘要全文；Crossref 命中 IEEE T-IV DOI 10.1109/tiv.2023.3340513。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要：'It covers technologies, datasets, metrics, and approaches that have been developed in the last decade ... radars ... provide Doppler information which make them very attractive for such tasks.'"
+    },
+    {
+      "title": "The Oxford Radar RobotCar Dataset: A Radar Extension to the Oxford RobotCar Dataset",
+      "authors": ["Dan Barnes", "Matthew Gadd", "Paul Murcutt", "Paul Newman", "Ingmar Posner"],
+      "year": 2019,
+      "venue": "arXiv 2019; Crossref 检出同题 ICRA 2020 版 DOI 10.1109/icra40945.2020.9196884",
+      "doi": "10.1109/icra40945.2020.9196884",
+      "arxiv_id": "1909.01300",
+      "url": "https://arxiv.org/abs/1909.01300",
+      "keywords": ["dataset", "Navtech CTS350-X", "FMCW scanning radar", "280km", "all weather"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "雷达定位领域最常用基准数据集：280km 城市驾驶、24 万扫描、含 GT 雷达里程计；本项目雷达算法初验证的首选公开数据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=1909.01300 返回标题/作者/摘要全文（280km、Navtech CTS350-X、240,000 scans、4.7TB）；Crossref 检出同题 ICRA 2020 DOI。",
+      "performance_data": [
+        {
+          "metric": "dataset scale",
+          "value": "280 km / 32 traversals / 240,000+ radar scans / 4.7TB",
+          "unit": "",
+          "conditions": "2019 年 1 月牛津城区；Navtech CTS350-X + 2×Velodyne HDL-32E + 相机 + GPS/INS；含优化雷达里程计 GT；天气/交通/光照多样",
+          "source_level": "ABSTRACT",
+          "snippet": "The data were gathered in January 2019 over thirty-two traversals of a central Oxford route spanning a total of 280km of urban driving. ... over 240,000 scans from a Navtech CTS350-X radar ... In addition we release ground truth optimised radar odometry."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "摘要明确动机：雷达对 fog/rain/snow/lens flare 等视觉/LiDAR 受挑战条件鲁棒。venue 以 Crossref ICRA 2020 记录为准（本会话未核验 IJRR 版记录）。"
+    },
+    {
+      "title": "MulRan: Multimodal Range Dataset for Urban Place Recognition",
+      "authors": ["Giseop Kim", "Yeong Sang Park", "Younghun Cho", "Jinyong Jeong"],
+      "year": 2020,
+      "venue": "2020 IEEE International Conference on Robotics and Automation (ICRA)",
+      "doi": "10.1109/icra40945.2020.9197298",
+      "arxiv_id": "",
+      "url": "https://doi.org/10.1109/icra40945.2020.9197298",
+      "keywords": ["dataset", "radar place recognition", "LiDAR", "urban", "polar images", "Daejeon Sejong"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "城市多模态雷达/LiDAR 数据集，提供 raw 1D 强度阵列与 360° 极坐标图像两种数据形态，并实证雷达重定位因量程更长而优于 LiDAR——跨模态重定位与数据格式理解的必备参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "Crossref query.bibliographic 命中 DOI 10.1109/icra40945.2020.9197298（ICRA 2020，作者 Giseop Kim 等）；Semantic Scholar API paper/DOI 同一 DOI 返回摘要全文（数据形态与 radar PR 优于 LiDAR PR 结论）。",
+      "performance_data": [
+        {
+          "metric": "place recognition modality comparison",
+          "value": "radar-based PR outperforms LiDAR-based PR (longer range)",
+          "unit": "",
+          "conditions": "MulRan 城市数据集上的位置描述子检索实验",
+          "source_level": "ABSTRACT",
+          "snippet": "the result shows that radar-based place recognition outperforms LiDAR-based one exploiting its longer-range measurements."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "Boreas: A Multi-Season Autonomous Driving Dataset",
+      "authors": ["Keenan Burnett", "David J. Yoon", "Yuchen Wu", "Andrew Zou Li", "Haowei Zhang", "Shichen Lu"],
+      "year": 2022,
+      "venue": "The International Journal of Robotics Research (IJRR 2023, per Crossref)",
+      "doi": "10.1177/02783649231160195",
+      "arxiv_id": "2203.10168",
+      "url": "https://arxiv.org/abs/2203.10168",
+      "keywords": ["dataset", "Navtech CIR304-H", "multi-season", "snow", "odometry leaderboard"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "跨季节恶劣天气（雨/雪）雷达+LiDAR 数据集与公开里程计/定位榜单（DRO 等在该榜单排名），是本项目算法对标与恶劣天气验证的主基准。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2203.10168 返回标题/作者/摘要全文（350km、Navtech CIR304-H、厘米级后处理 GT）；Crossref 检出 IJRR DOI 10.1177/02783649231160195。",
+      "performance_data": [
+        {
+          "metric": "dataset scale",
+          "value": ">350 km, 1-year repeated route",
+          "unit": "",
+          "conditions": "128 通道 Velodyne Alpha Prime LiDAR + 360° Navtech CIR304-H 扫描雷达 + 5MP FLIR 黑白相机 + 厘米级后处理 GT；支持里程计/度量定位/3D 检测在线榜单",
+          "source_level": "ABSTRACT",
+          "snippet": "the Boreas dataset includes over 350km of driving data featuring a 128-channel Velodyne Alpha Prime lidar, a 360° Navtech CIR304-H scanning radar, a 5MP FLIR Blackfly S camera, and centimetre-accurate post-processed ground truth poses. Our dataset will support live leaderboards for odometry, metric localization, and 3D object detection."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "CIR304-H 厂商 datasheet 未能直接访问（见 rejected），传感器描述以本论文摘要为准。"
+    },
+    {
+      "title": "K-Radar: 4D Radar Object Detection for Autonomous Driving in Various Weather Conditions",
+      "authors": ["Dong-Hee Paek", "Seung-Hyun Kong", "Kevin Tirta Wijaya"],
+      "year": 2022,
+      "venue": "Proceedings of the NeurIPS Track on Datasets and Benchmarks 2022 (per arXiv journal_ref)",
+      "doi": "",
+      "arxiv_id": "2206.08171",
+      "url": "https://arxiv.org/abs/2206.08171",
+      "keywords": ["4D radar tensor", "4DRT", "77-81GHz", "fog rain snow", "elevation", "dataset"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "提供 4D 雷达张量（Doppler/range/azimuth/elevation 功率）与 3D 框标注，实证 4D 雷达在恶劣天气下比 LiDAR 更稳；其 3DRT（无 elevation）不足以支撑 3D 任务的论述直接用于能力分级。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2206.08171 返回标题/作者/摘要全文与 journal_ref（NeurIPS Datasets and Benchmarks 2022）。",
+      "performance_data": [
+        {
+          "metric": "capability statement (band & weather robustness)",
+          "value": "77~81 GHz radio band; robust in adverse weathers",
+          "unit": "",
+          "conditions": "对比 RGB 相机（384~769 THz）与 LiDAR（361~331 THz 红外）的波长差异",
+          "source_level": "ABSTRACT",
+          "snippet": "Radars use relatively longer wavelength radio bands (77~81 GHz), resulting in robust measurements in adverse weathers."
+        },
+        {
+          "metric": "dataset scale & capability",
+          "value": "35K frames 4DRT (Doppler/range/azimuth/elevation); 3DRT 无 elevation 难以 3D 检测",
+          "unit": "",
+          "conditions": "雾/雨/雪等恶劣天气与城市/高速等道路结构；配套高分辨率 LiDAR、环视双目、RTK-GPS",
+          "source_level": "ABSTRACT",
+          "snippet": "most of the existing Radar datasets only provide 3D Radar tensor (3DRT) data that contain power measurements along the Doppler, range, and azimuth dimensions. As there is no elevation information, it is challenging to estimate the 3D bounding box of an object from 3DRT. ... K-Radar ... contains 35K frames of 4D Radar tensor (4DRT) data ... we demonstrate that 4D Radar is a more robust sensor for adverse weather conditions."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "RADIATE: A Radar Dataset for Automotive Perception in Bad Weather",
+      "authors": ["Marcel Sheeny", "Emanuele De Pellegrin", "Saptarshi Mukherjee", "Alireza Ahrabian", "Sen Wang", "Andrew Wallace"],
+      "year": 2020,
+      "venue": "2021 IEEE International Conference on Robotics and Automation (ICRA) (per Crossref)",
+      "doi": "10.1109/icra48506.2021.9562089",
+      "arxiv_id": "2010.09076",
+      "url": "https://arxiv.org/abs/2010.09076",
+      "keywords": ["dataset", "bad weather", "fog snow rain night", "radar images", "stereo", "LiDAR", "GPS"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "首个公路恶劣天气（雾/雪/雨/夜）高分辨率雷达图像数据集，明确雷达在视觉与 LiDAR 失效条件下的价值；可用于本项目恶劣天气鲁棒性预验证。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2010.09076 返回标题/作者/摘要全文；Crossref 命中 DOI 10.1109/icra48506.2021.9562089。",
+      "performance_data": [
+        {
+          "metric": "dataset scale & weather coverage",
+          "value": "3 hours annotated radar images, >200K labels, sun/night/rain/fog/snow",
+          "unit": "",
+          "conditions": "公路/城市/郊区/停车场景；配套双目、32 线 LiDAR、GPS；平均每幅雷达图 4.6 个目标",
+          "source_level": "ABSTRACT",
+          "snippet": "RADIATE includes 3 hours of annotated radar images with more than 200K labelled road actors in total, on average about 4.6 instances per radar image. It covers 8 different categories of actors in a variety of weather conditions (e.g., sun, night, rain, fog and snow) ... The data collected in adverse weather, e.g., fog and snowfall, is unique."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "NTU4DRadLM: 4D Radar-centric Multi-Modal Dataset for Localization and Mapping",
+      "authors": ["Jun Zhang", "Huayang Zhuge", "Yiyao Liu", "Guohao Peng", "Zhenyu Wu", "Haoyuan Zhang"],
+      "year": 2023,
+      "venue": "2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC) (per Crossref)",
+      "doi": "10.1109/itsc57777.2023.10422606",
+      "arxiv_id": "2309.00962",
+      "url": "https://arxiv.org/abs/2309.00962",
+      "keywords": ["dataset", "4D radar", "thermal camera", "IMU", "LiDAR", "RTK GPS", "smoke fog", "low-speed robot"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "唯一同时含 4D 雷达/热像/IMU/LiDAR/可见光/RTK-GPS 六传感器、且专为 SLAM 设计的数据集，含低速机器人平台与雨雪烟雾条件——与本项目传感器组合和退化场景几乎一一对应。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "arXiv API id_list=2309.00962 返回标题/作者/摘要全文（17.6km、6 传感器、低速+快速平台、6 条轨迹 246m-6.95km）；Crossref 命中 ITSC 2023 DOI 10.1109/itsc57777.2023.10422606。",
+      "performance_data": [
+        {
+          "metric": "dataset scale & platform coverage",
+          "value": "17.6 km / 85 min / 6 trajectories (246 m - 6.95 km)",
+          "unit": "",
+          "conditions": "结构化/非结构化/半结构化环境中大型户外；低速机器人平台与快速无人车平台；4D 雷达+热像+IMU+3D LiDAR+可见光+RTK GPS；精调 GT 里程计与预设回环",
+          "source_level": "ABSTRACT",
+          "snippet": "It is the only dataset that simultaneously includes all 6 sensors: 4D radar, thermal camera, IMU, 3D LiDAR, visual camera and RTK GPS. ... Considered both low-speed robot platform and fast-speed unmanned vehicle platform. ... the 6 trajectories range from 246m to 6.95km. Totally, the dataset is around 17.6km, 85mins, 50GB."
+        }
+      ],
+      "candidate_core": false,
+      "notes": ""
+    },
+    {
+      "title": "IWR6843 single-chip 60-64GHz intelligent mmWave sensor (vendor datasheet/product page)",
+      "authors": ["Texas Instruments"],
+      "year": 2026,
+      "venue": "Vendor datasheet/official doc (ti.com product page)",
+      "doi": "",
+      "arxiv_id": "",
+      "url": "https://www.ti.com/product/IWR6843",
+      "keywords": ["60GHz", "FMCW", "3TX/4RX", "4GHz bandwidth", "industrial", "robot"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "60GHz 单芯片毫米波雷达的官方能力锚点：60-64GHz、4GHz 连续带宽（厘米级距离分辨率潜力）、3TX/4RX MIMO 支持方位/俯仰角估计，面向工业与自主机器人。用于回答 60GHz 与 77GHz 的区别。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "WebFetch https://www.ti.com/product/IWR6843 抓取官方产品页：'Single-chip 60-GHz to 64-GHz intelligent mmWave sensor'、'Three transmit channels'、'Four receive channels'、'60 to 64GHz coverage with 4GHz continuous bandwidth'、'FMCW transceiver'、EVM 'enable access to point-cloud data'、接口 CAN-FD/SPI/UART/LVDS/QSPI/I2C、应用含 'autonomous robots, area scanning'。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "厂商规格页非实验论文，real_or_sim 取 UNKNOWN；页面未给量程与 Doppler 显式数值，不作宣称。"
+    },
+    {
+      "title": "AWR2944 automotive 76-81GHz high-performance radar SoC (vendor datasheet/product page)",
+      "authors": ["Texas Instruments"],
+      "year": 2026,
+      "venue": "Vendor datasheet/official doc (ti.com product page)",
+      "doi": "",
+      "arxiv_id": "",
+      "url": "https://www.ti.com/product/AWR2944",
+      "keywords": ["77GHz", "76-81GHz", "4TX/4RX", "corner radar", "long range radar", "automotive"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "77/79GHz 车载雷达官方能力锚点：76-81GHz、>4GHz 连续带宽、4TX/4RX、方位面位置+速度跟踪，短/中/长距可配置。与 60GHz IWR6843 形成'频段-用途'对照。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "WebFetch https://www.ti.com/product/AWR2944 抓取官方产品页：'Automotive, second-generation 76-GHz to 81-GHz high-performance SoC for corner and long-range radar'、'76 to 81GHz coverage with over 4GHz continuous bandwidth'、'4 receive and 3 - 4 transmit channels (AWR2943 with 3 channels and AWR2944 with 4 channels)'、参考设计 'estimate and track the position (in the azimuthal plane) and velocity of objects'、接口 2×CAN-FD/Ethernet/I2C/4-lane Aurora LVDS/CSI2。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "页面未显式确认俯仰角估计；角估计在参考设计中明确为方位面（azimuthal plane）。"
+    }
+  ],
+  "rejected": [
+    {
+      "claimed": "Continental ARS548 官方产品页（4D 成像雷达规格：FOV、量程、elevation、点云输出）作为 vendor datasheet 条目入池",
+      "reason": "官方 URL 返回 301 重定向至 aumovio.com 后为 404 页面，WebFetch 直接返回 403；无法获取官方原文规格，按铁律不得凭记忆填写 ARS548 参数。",
+      "verification_attempt": "WebFetch https://www.continental-automotive.com/en/gl/.../ARS548-RDI/High-Resolution-Radar.html -> 301 重定向提示；WebFetch https://www.aumovio.com/... -> 403 Forbidden；curl（带浏览器 UA）https://www.aumovio.com/... -> 404 Page。替代证据：池内 Low-Speed 论文 FULLTEXT 自述其四角雷达'comparable in performance to the Continental ARS548, ... up to 250 m, angular accuracy 0.5°'。"
+    },
+    {
+      "claimed": "Navtech CIR304-H 官方 datasheet 规格（range bins、分辨率等）作为 vendor 条目入池",
+      "reason": "navtechradar.com 产品页 404，WebSearch 仅返回 CIR204-H/HDR100 等其他型号的二手规格摘要，无法直接核验 CIR304-H datasheet 数值；CIR304-H 仅以 Boreas 论文描述（360° 扫描雷达）入池。",
+      "verification_attempt": "WebFetch https://navtechradar.com/products/cir304-h/ -> 404；curl 带 UA -> 404；WebSearch 'Navtech CIR304-H ... specifications' -> 无官方 datasheet 页面命中。"
+    },
+    {
+      "claimed": "OpenAlex 'radar odometry' 按引用数排序的前 15 条结果作为雷达里程计文献",
+      "reason": "关键词碰撞：返回的是通用机器人/自主驾驶综述（Colomina 2014 摄影测量综述、Thrun 2001 MCL、Yurtsever 2021 自动驾驶综述等），与毫米波雷达定位无关，全部拒绝。",
+      "verification_attempt": "curl https://api.openalex.org/works?search=radar%20odometry&sort=cited_by_count:desc 输出 15 条清单逐条审读。"
+    },
+    {
+      "claimed": "Enhanced K-Radar: Optimal Density Reduction ... (arXiv 2303.06342) 入池",
+      "reason": "检索确认其存在（arXiv API 返回），但主题为 4D 雷达目标检测的密度优化，与定位/里程计主线相关性弱，且池容量有限，按范围排除。",
+      "verification_attempt": "arXiv API all:\"MulRan\" OR all:\"K-Radar\" 检索返回标题/作者/年份。"
+    },
+    {
+      "claimed": "60GHz 频段机器人雷达里程计专门论文（用于 60 vs 77GHz 差异的定位侧证据）",
+      "reason": "arXiv all:'60 GHz' AND all:'radar' AND cat:cs.RO 检索仅返回 RAPTAR 等通信/标定类论文，未找到 60GHz 里程计专门论文；60GHz 能力证据改由 TI IWR6843 官方页 + New Wave 综述（76-81GHz 覆盖机器人主流）支撑。",
+      "verification_attempt": "arXiv API 查询（max_results=12, sortBy=relevance）逐条审读。"
+    }
+  ],
+  "conflicts": [
+    {
+      "claim": "恶劣天气下雷达定位是否优于/可替代 LiDAR",
+      "paper_a": "Are We Ready for Radar to Replace Lidar in All-Weather Mapping and Localization? (arXiv 2203.10174)",
+      "paper_b": "K-Radar (arXiv 2206.08171) 与 NTU4DRadLM (arXiv 2309.00962)、RadarSLAM (arXiv 2005.02198)",
+      "explanation": "Boreas 实测显示雪暴中 LiDAR-only 定位仍最准、雷达只是'有竞争力+地图更小'；而 K-Radar/NTU4DRadLM/RadarSLAM 等在雾、烟、雨雪中给出雷达可用的证据。结论取决于天气类型与任务：中等降水对 LiDAR 的影响被高估，但浓烟/浓雾等遮蔽与低光照下 LiDAR/视觉确实退化，雷达优势最明显。对本项目：应把毫米波雷达定位为遮蔽/退化场景的补充与冗余，而非全天候全面替代。"
+    },
+    {
+      "claim": "CFEAR 雷达里程计误差数字（1.76% vs 0.61%）",
+      "paper_a": "CFEAR Radarodometry (arXiv 2105.01457)",
+      "paper_b": "DRO: Doppler-Aware Direct Radar Odometry (arXiv 2504.20339)",
+      "explanation": "CFEAR 论文在 Oxford 基准自报 1.76%（KITTI 风格 100-800m 子序列），而 DRO 论文在 Boreas leaderboard 引用 CFEAR 0.61%。数据集、序列与评测协议不同，两数不矛盾；说明跨数据集不能直接比较百分比误差，本项目评测必须绑定数据集与指标定义。"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+ "stats": {
+  "total_before_dedup": 246,
+  "total_after_dedup": 239,
+  "duplicates_merged": 7,
+  "by_status": {
+   "VERIFIED": 217,
+   "PARTIALLY_VERIFIED": 22
+  },
+  "by_area": {
+   "UWB": 29,
+   "UWB + Adaptive Fusion": 1,
+   "mmWave Radar": 31,
+   "Event Camera": 27,
+   "Event Camera + Simulation": 3,
+   "Adaptive Fusion": 26,
+   "Adaptive Fusion + GNSS": 1,
+   "Adaptive Fusion + LiDAR Degeneracy": 2,
+   "GNSS": 25,
+   "BeiDou SMS": 10,
+   "Future Outlook": 8,
+   "LiDAR Degeneracy": 15,
+   "LiDAR Dynamic": 11,
+   "Relocalization": 18,
+   "Sync/Calibration": 17,
+   "Simulation": 15
+  },
+  "papers_with_perf": 87,
+  "perf_rows": 189,
+  "core_candidates": 69,
+  "perf_by_source_level": {
+   "ABSTRACT": 104,
+   "FULLTEXT": 85
+  },
+  "rejected_entries": 107,
+  "conflict_entries": 32,
+  "bib_entries": 239
+ },
+ "duplicates": [
+  {
+   "kept": "UWB-28",
+   "dropped": "FUSION-21",
+   "title": "UWB Localization in a Smart Factory: Augmentation Methods and Experimental Assessment",
+   "groups": "UWB+FUSION"
+  },
+  {
+   "kept": "FUSION-19",
+   "dropped": "GNSS-07",
+   "title": "GNSS multipath detection using a machine learning approach",
+   "groups": "FUSION+GNSS"
+  },
+  {
+   "kept": "FUSION-23",
+   "dropped": "LDG-01",
+   "title": "On degeneracy of optimization-based state estimation problems",
+   "groups": "FUSION+LIDAR"
+  },
+  {
+   "kept": "FUSION-24",
+   "dropped": "LDG-03",
+   "title": "GenZ-ICP: Generalizable and Degeneracy-Robust LiDAR Odometry Using an Adaptive Weighting",
+   "groups": "FUSION+LIDAR"
+  },
+  {
+   "kept": "EVENT-26",
+   "dropped": "SIM-01",
+   "title": "ESIM: an Open Event Camera Simulator",
+   "groups": "EVENT+SIM"
+  },
+  {
+   "kept": "EVENT-25",
+   "dropped": "SIM-02",
+   "title": "The event-camera dataset and simulator: Event-based data for pose estimation, visual odometry, and SLAM",
+   "groups": "EVENT+SIM"
+  },
+  {
+   "kept": "EVENT-27",
+   "dropped": "SIM-03",
+   "title": "v2e: From Video Frames to Realistic DVS Events",
+   "groups": "EVENT+SIM"
+  }
+ ]
+}

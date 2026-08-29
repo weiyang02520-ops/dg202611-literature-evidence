@@ -1,0 +1,942 @@
+{
+  "area": "UWB",
+  "papers": [
+    {
+      "title": "NLOS identification and mitigation for localization based on UWB experimental data",
+      "authors": ["Stefano Maranò", "Wesley M. Gifford", "Henk Wymeersch", "Moe Z. Win"],
+      "year": 2010,
+      "venue": "IEEE Journal on Selected Areas in Communications",
+      "doi": "10.1109/jsac.2010.100907",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsac.2010.100907",
+      "keywords": ["UWB", "NLOS identification", "machine learning", "channel pulse response features", "ranging error mitigation"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "NLOS 检测/拒绝方向的奠基性工作：用实测 UWB 信道脉冲响应提取特征，机器学习同时完成 LOS/NLOS 判别与测距偏差回归校正，直接支撑'信号质量判断+按质量取舍量测'的策略设计。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "本会话用 python urllib 调用 OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jsac.2010.100907) 实际抓取，返回标题/作者/年份/venue(IEEE JSAC)/完整摘要，内容与记录一致；另对 doi.org 发 HEAD 请求验证 DOI 可解析(HTTP 202)。正文为付费墙，未抓取，未引用正文数字。",
+      "performance_data": [],
+      "candidate_core": true,
+      "notes": "摘要无具体数字。要点：FCC 兼容 UWB 射频室内实测 campaign；NLOS 导致距离估计正偏；从信道脉冲响应提取特征；优化式 ML 分类+回归，比依赖统计模型的概率法更抗建模误差。"
+    },
+    {
+      "title": "NLOS Identification and Mitigation for UWB Localization Systems",
+      "authors": ["Ismail Güvenç", "Chia-Chin Chong", "Fujio Watanabe"],
+      "year": 2007,
+      "venue": "IEEE Wireless Communications and Networking Conference (WCNC)（venue 依 DOI 前缀 10.1109/wcnc 推断，OpenAlex venue 字段为 null）",
+      "doi": "10.1109/wcnc.2007.296",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/wcnc.2007.296",
+      "keywords": ["UWB", "NLOS identification", "kurtosis", "mean excess delay spread", "RMS delay spread", "weighted least squares"],
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "经典统计特征 NLOS 判别：用多径信道统计量（峭度、平均超额时延、RMS 时延扩展）做联合似然比检验，并据此对 NLOS 量测降权的 WLS 定位——'降权'路线的最早范式之一。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/wcnc.2007.296) 返回标题/作者/年份/完整摘要，一致；DOI HEAD 解析成功。venue 字段在 OpenAlex 为 null，会议名依 DOI 前缀推断，故标 PARTIALLY_VERIFIED。",
+      "performance_data": [
+        {
+          "metric": "LOS/NLOS 正确识别率",
+          "value": "over 90%（大多数信道模型下）",
+          "unit": "%",
+          "conditions": "仿真；IEEE 802.15.4a UWB 信道模型；基于峭度/平均超额时延扩展/RMS 时延扩展的联合似然比检验",
+          "source_level": "ABSTRACT",
+          "snippet": "Simulation results show that correct identification can be achieved with over 90% of the realizations for most channel models."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "其期刊扩展版为 Güvenç et al., EURASIP JASP 2008 (10.1155/2008/271984)，本会话亦经 OpenAlex 核验（摘要已读），含 MPC 统计加权 WLS 三种方案；为避免重复仅保留会议版条目。"
+    },
+    {
+      "title": "NLOS Identification and Mitigation Using Low-Cost UWB Devices",
+      "authors": ["Valentín Barral", "Carlos J. Escudero", "José A. García-Naya", "Roberto Maneiro-Catoira"],
+      "year": 2019,
+      "venue": "Sensors",
+      "doi": "10.3390/s19163464",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/1424-8220/19/16/3464",
+      "keywords": ["UWB", "NLOS identification", "low-cost UWB", "RSS", "ranging error mitigation", "Gaussian process"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "低成本 UWB（Pozyx/DW1000）真实测量下的 NLOS 软/硬遮挡分级识别与测距误差校正，给出 RSS 类特征的判别上限与'非 LOS 直接弃用'的工程结论，是本策略最直接的文献依据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/s19163464) 摘要核验一致；再用 mcp web_reader 抓取 MDPI 全文页 https://www.mdpi.com/1424-8220/19/16/3464 全文 HTML，逐句提取到性能数字（见 performance_data 摘录）。direct curl 访问 MDPI 返回 403 后改用 web_reader。",
+      "performance_data": [
+        {
+          "metric": "NLOS Soft / NLOS Hard 测距误差增幅（相对 LOS）",
+          "value": "Soft 约 +30 cm；Hard 约 +1 m",
+          "unit": "m",
+          "conditions": "Pozyx(DW1000) 等两台商用 UWB 设备实测；室内走廊；静态；NLOS Soft=轻遮挡、NLOS Hard=硬遮挡",
+          "source_level": "FULLTEXT",
+          "snippet": "The distribution of the error and the mean error are similar for both devices, with the NLOS Soft and the NLOS Hard errors increasing by approximately 30 cm and 1 m, respectively, with respect to the LOS measurements"
+        },
+        {
+          "metric": "NLOS Hard 场景原始测距 MAE（校正前）",
+          "value": "约 1.9 m",
+          "unit": "m",
+          "conditions": "Pozyx 与 TREK1000；走廊；NLOS Hard；静态测距",
+          "source_level": "FULLTEXT",
+          "snippet": "we can see that the mean error is close to 1.9 m in both cases"
+        },
+        {
+          "metric": "NLOS Hard 经 GP 回归校正后 MAE",
+          "value": "<0.2 m（训练集含 NLOS Hard 数据时）",
+          "unit": "m",
+          "conditions": "Gaussian Process 回归校正；训练数据来自同场景（含 NLOS Hard）；若仅有 NLOS combined 训练数据则为 0.2–0.3 m",
+          "source_level": "FULLTEXT",
+          "snippet": "when it is trained with NLOS Hard data, the mean error is below 0.2 m, and when it is trained with NLOS combined data, the mean error is between 0.2 and 0.3 m."
+        },
+        {
+          "metric": "NLOS combined (Soft+Hard) 原始测距 MAE",
+          "value": "约 1 m",
+          "unit": "m",
+          "conditions": "Pozyx；走廊；Soft+Hard 混合 NLOS",
+          "source_level": "FULLTEXT",
+          "snippet": "the mean error is close to 1 m"
+        },
+        {
+          "metric": "LOS/NLOS 二分类 F1-score",
+          "value": ">0.9",
+          "unit": "F1",
+          "conditions": "Pozyx；走廊；特征=测距值与 RSS 的均值/标准差；60/40% 交替训练",
+          "source_level": "FULLTEXT",
+          "snippet": "For the Pozyx device, the binary classifier, in both cases, obtains F1-scores above 0.9."
+        },
+        {
+          "metric": "CIR 内存读取时延（工程约束）",
+          "value": "约 300 ms/次",
+          "unit": "ms",
+          "conditions": "Pozyx 设备读取 CIR 原始内存数据的耗时",
+          "source_level": "FULLTEXT",
+          "snippet": "we demonstrated that the CIR memory data extraction on the Pozyx device is a slow process (300 ms)"
+        }
+      ],
+      "candidate_core": true,
+      "notes": "全文结论原文：'in a real scenario without prior knowledge of the interference conditions, it seems more feasible to mitigate only the LOS measurements, whereas the rest (any measurement not classified as LOS) are simply ignored.'——直接支持老师'稳定才用、不稳定即弃用'的策略。可用测距范围受设备限制（本文走廊实验 3–9.5 m 内有效，>9 m 出现设备缺陷）。"
+    },
+    {
+      "title": "Identification of NLOS and Multi-Path Conditions in UWB Localization Using Machine Learning Methods",
+      "authors": ["Cung Lian Sang", "Bastian Steinhagen", "Jonas Dominik Homburg", "Michael Adams", "Marc Hesse", "Ulrich Rückert"],
+      "year": 2020,
+      "venue": "Applied Sciences",
+      "doi": "10.3390/app10113980",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/2076-3417/10/11/3980",
+      "keywords": ["UWB", "LOS/NLOS/MP three-class", "machine learning", "SVM", "random forest", "MLP", "public dataset"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "把'质量分级'从二分类扩展到 LOS/NLOS/MP 三类并给出量化精度与跨环境退化幅度；给出 DW1000 阈值法首径功率差的 LOS/NLOS 实测门限，可作本项目质量指标的起步阈值参考。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/app10113980) 摘要核验一致；再用 mcp web_reader 抓取 MDPI 全文 https://www.mdpi.com/2076-3417/10/11/3980，逐句提取门限与精度数字。",
+      "performance_data": [
+        {
+          "metric": "阈值法首径功率差（RX power − first path power）LOS/NLOS 实测统计",
+          "value": "LOS 4.12±1.13 dBm；NLOS 10.75±5.51 dBm",
+          "unit": "dBm",
+          "conditions": "Decawave DWM1000，AltDS-TWR，约 3.99 GHz 信道 2/PRF 16 MHz；7 种室内环境；静态；距离约 3–18 m；天线高 1.06 m；GT 为激光测距仪（±1.5 mm）",
+          "source_level": "FULLTEXT",
+          "snippet": "the mean values for LOS and NLOS are 4.12 dBm ± 1.13 and 10.75 dBm ± 5.51, respectively."
+        },
+        {
+          "metric": "厂商阈值约定",
+          "value": "LOS<6 dBm，NLOS>10 dBm（threshold method）",
+          "unit": "dBm",
+          "conditions": "Decawave 官方约定（论文转述）",
+          "source_level": "FULLTEXT",
+          "snippet": "Decawave defines the limit between NLOS and LOS conditions as 6 dBm with the threshold method, and values larger than 10 dBm for NLOS conditions."
+        },
+        {
+          "metric": "三分类（LOS/NLOS/MP）总体准确率",
+          "value": "最好 91.9%，最差 72.9%；F1 最好 0.92、最差 0.69",
+          "unit": "%",
+          "conditions": "真实测量数据集（DWM1000）；SVM/RF/MLP 三分类器；最好=同环境（RF，acc 91.90%），最差=跨环境（MLP 72.86%）",
+          "source_level": "ABSTRACT",
+          "snippet": "the overall accuracy reached up to 91.9% in the best-case scenario and 72.9% in the worst-case scenario. Regarding the F1-score, it was 0.92 in the best-case and 0.69 in the worst-case scenario."
+        },
+        {
+          "metric": "跨环境三分类退化",
+          "value": "SVM F1 0.75（acc 75.35%）、RF 0.73（73.52%）、MLP 0.73（72.86%）",
+          "unit": "%",
+          "conditions": "训练环境与测试环境不同（跨环境泛化）",
+          "source_level": "FULLTEXT",
+          "snippet": "the SVM classifier achieves an F1-score of 0.75 ... 0.73 for the RF and MLP ... corresponding overall accuracies of 75.35%, 73.52%, and 72.86%"
+        },
+        {
+          "metric": "DW1000 数据手册标称精度",
+          "value": "10 cm",
+          "unit": "cm",
+          "conditions": "DWM1000 器件标称（LOS，论文转述）",
+          "source_level": "FULLTEXT",
+          "snippet": "The DW1000 is a low-cost and low-power transceiver integrated with a microcontroller that operates in the 6.5 GHz frequency band with a reported precision of 10 cm."
+        },
+        {
+          "metric": "MP（多径）条件测距误差量级（论文转引 Schmid et al. IPIN 2019）",
+          "value": "数 cm 至 60 cm",
+          "unit": "cm",
+          "conditions": "MP 条件；原文引用实验中测距距离约 6 m；属二手转引",
+          "source_level": "FULLTEXT",
+          "snippet": "In the literature, it is reported that such conditions introduce errors of a few centimeters up to 60 cm [34]."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "论文提供公开数据集（PUB, Bielefeld University）。MP 类最难识别；遮挡物（人）完全遮挡 NLOS 误差最大。最佳 3 特征组合含 reported distance + CIR 幅值 + first FP harmonic（含首径功率类特征）。"
+    },
+    {
+      "title": "UWB NLOS/LOS Classification Using Deep Learning Method",
+      "authors": ["Changhui Jiang", "Jichun Shen", "Shuai Chen", "Yuwei Chen", "Di Liu", "Yuming Bo"],
+      "year": 2020,
+      "venue": "IEEE Communications Letters",
+      "doi": "10.1109/lcomm.2020.2999904",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/lcomm.2020.2999904",
+      "keywords": ["UWB", "CIR", "CNN-LSTM", "LOS/NLOS classification", "deep learning"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "直接以 CIR 波形输入 CNN-LSTM 做 LOS/NLOS 分类（免去人工特征工程），用于'挑选干净信道'——与本项目按信号质量取舍 UWB 量测的思路一致；数据来自 7 个站点的开源数据集。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/lcomm.2020.2999904) 返回标题/作者/年份/venue/完整摘要，一致；DOI HEAD 解析成功。付费墙，未抓正文。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无具体数字，仅称 'obtained state-of-the-art classification performance'（7 站点开源数据集）。动机句：分类用于 selecting the 'clean' channels。"
+    },
+    {
+      "title": "Feature-Based Generalized Gaussian Distribution Method for NLoS Detection in Ultra-Wideband (UWB) Indoor Positioning System",
+      "authors": ["Fuhu Che", "Qasim Zeeshan Ahmed", "Jaron Fontaine", "Ben Van Herbruggen", "Adnan Shahid", "Eli De Poorter"],
+      "year": 2022,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2022.3198680",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2022.3198680",
+      "keywords": ["UWB", "NLoS detection", "generalized Gaussian distribution", "imbalanced dataset", "feature-based"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "针对'NLoS 样本少、LoS 样本多'的不平衡数据做 NLoS 检测（实际部署常见情形），说明小样本 NLoS 仍会显著拖累定位，需要专门的检测器而非通用 ML 分类器。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jsen.2022.3198680) 返回标题/作者/年份/venue/完整摘要（含全部精度数字），一致；DOI HEAD 解析成功。",
+      "performance_data": [
+        {
+          "metric": "不平衡数据集 NLoS 检测准确率",
+          "value": "GD 98.0%；GGD 96.7%（对比 SVM 92.6%、DT 92.8%、NB 93.2%、NN 95.5%）",
+          "unit": "%",
+          "conditions": "UWB 室内定位 NLoS 检测；数据集高度不平衡（NLoS 少、LoS 多）；摘要未说明数据为实测或仿真",
+          "source_level": "ABSTRACT",
+          "snippet": "By employing our detection algorithm for the imbalanced dataset, a classification accuracy of 96.7% and 98.0% can be achieved."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "real_or_sim 标 UNKNOWN：摘要未说明数据来源。核心信息是方法论与不平衡场景下的相对优势。"
+    },
+    {
+      "title": "UWB Positioning System Based on LSTM Classification With Mitigated NLOS Effects",
+      "authors": ["Daeho Kim", "Arshad Farhad", "Jae-Young Pyun"],
+      "year": 2022,
+      "venue": "IEEE Internet of Things Journal",
+      "doi": "10.1109/jiot.2022.3209735",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jiot.2022.3209735",
+      "keywords": ["UWB", "LSTM", "CIR", "NLOS mitigation", "EKF", "channel classification"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "LSTM 学习 CIR 与 UWB 测距误差的映射（而非位置坐标），判别信道状态后送 EKF 做定位——'质量判别+滤波级处理'的代表性架构，且强调对未训练位置的可泛化性。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jiot.2022.3209735) 返回标题/作者/年份/venue/完整摘要，一致（摘要含 'experimental setup and performance evaluation results'）；DOI HEAD 解析成功。付费墙，未抓正文数字。",
+      "performance_data": [],
+      "candidate_core": true,
+      "notes": "摘要无具体数字（'significantly improved its accuracy performance compared with the existing positioning methods'）。要点：训练目标是 CIR 对应的 UWB 测距误差而非坐标，从而可用于未训练位置。"
+    },
+    {
+      "title": "Transfer Learning for UWB Error Correction and (N)LOS Classification in Multiple Environments",
+      "authors": ["Jaron Fontaine", "Fuhu Che", "Adnan Shahid", "Ben Van Herbruggen", "Qasim Zeeshan Ahmed", "Waqas Bin Abbas"],
+      "year": 2023,
+      "venue": "IEEE Internet of Things Journal",
+      "doi": "10.1109/jiot.2023.3299319",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jiot.2023.3299319",
+      "keywords": ["UWB", "transfer learning", "NLOS error correction", "CIR", "(N)LOS classification", "machine learning"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "给出 LOS/NLOS 精度量级的权威区间（1–10 cm vs >30 cm）并证明用少量新环境样本(50 条)即可恢复 ±10 cm 精度与 93% 分类率——支撑'UWB 需按环境校准质量判别器'的结论。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jiot.2023.3299319) 返回标题/作者/年份/venue/完整摘要（含全部数字），一致；DOI HEAD 解析成功。",
+      "performance_data": [
+        {
+          "metric": "UWB 定位误差量级（工业场景）",
+          "value": "LOS 1–10 cm；NLOS typically >30 cm",
+          "unit": "cm",
+          "conditions": "industry 4.0 用例的 UWB 室内定位（摘要级通用陈述）",
+          "source_level": "ABSTRACT",
+          "snippet": "In line-of-sight (LOS) environments, UWB positioning errors in the order of 1–10 cm can be achieved. However, in non-line-of-sight (NLOS) conditions, this precision drops significantly, with errors typically >30 cm."
+        },
+        {
+          "metric": "跨环境迁移学习收益",
+          "value": "误差改善 50%；(N)LOS 分类准确率提升 15%",
+          "unit": "%",
+          "conditions": "特征基与 CIR 基两种模型；与'在其他环境训练的模型'直接部署相比",
+          "source_level": "ABSTRACT",
+          "snippet": "Our TL solutions show a 50% error improvement and 15% (N)LOS classification accuracy improvement (for both feature- and CIR-based approaches) compared to a model trained in a different environment."
+        },
+        {
+          "metric": "新环境小样本校正后精度",
+          "value": "±10 cm 精度，(N)LOS 检测率 93%",
+          "unit": "cm / %",
+          "conditions": "CIR-based 方法；新混合 (N)LOS 环境仅采集 50 个样本",
+          "source_level": "ABSTRACT",
+          "snippet": "with only 50 samples from the new mixed (N)LOS environment, we show ±10 cm precision after error correction with 93% (N)LOS detection"
+        },
+        {
+          "metric": "NLOS 环境定位误差改善（绝对值）",
+          "value": "643 mm → 245 mm",
+          "unit": "mm",
+          "conditions": "挑战性 NLOS 环境；ML 误差校正",
+          "source_level": "ABSTRACT",
+          "snippet": "The presented results demonstrate high-precision UWB localization (from 643 to 245 mm) through ML with minimal data collection effort in challenging NLOS environments."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "同组早期工作 Fontaine et al. 2020 IEEE Access (10.1109/access.2020.3012822, autoencoder) 摘要亦称 NLOS 下误差 >300 mm，本会话已核验、因内容重叠未单列。"
+    },
+    {
+      "title": "A Novel NLOS Mitigation Algorithm for UWB Localization in Harsh Indoor Environments",
+      "authors": ["Kegen Yu", "Kai Wen", "Yingbing Li", "Shuai Zhang", "Kefei Zhang"],
+      "year": 2018,
+      "venue": "IEEE Transactions on Vehicular Technology",
+      "doi": "10.1109/tvt.2018.2883810",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tvt.2018.2883810",
+      "keywords": ["UWB", "NLOS mitigation", "robust least squares", "harsh indoor", "channel identification"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "不依赖先验阈值/分布的 NLOS 识别+量测选择+约束鲁棒最小二乘（ECTSRLS），在恶劣室内静态/移动实测中优于四种对比算法——'先判别、再选量测、再鲁棒估计'三步法的完整范例。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/tvt.2018.2883810) 返回标题/作者/年份/venue/完整摘要，一致；DOI HEAD 解析成功。付费墙，未抓正文。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数字。要点：能评估 NLOS 影响幅度；按识别出的信道信息选择合适 NLOS 量测参与解算；鲁棒最小二乘抑制残余 NLOS 误差。"
+    },
+    {
+      "title": "A Machine Learning Approach to Ranging Error Mitigation for UWB Localization",
+      "authors": ["Henk Wymeersch", "Stefano Maranò", "Wesley M. Gifford", "Moe Z. Win"],
+      "year": 2012,
+      "venue": "IEEE Transactions on Communications",
+      "doi": "10.1109/tcomm.2012.042712.110035",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tcomm.2012.042712.110035",
+      "keywords": ["UWB", "ranging error mitigation", "non-parametric regression", "physical layer", "NLOS bias"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "与 Maranò 2010 同一实测 campaign 的姊妹篇：不做二元判别而直接在物理层用非参数回归估计 LOS/NLOS 两类偏差并扣除——'偏差校正'路线（相对'拒绝'路线）的代表。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/tcomm.2012.042712.110035) 返回标题/作者/年份/venue/完整摘要，一致；DOI HEAD 解析成功。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数字。基于并验证于 FCC 兼容 UWB 射频的大规模室内实测 campaign；结论为各实际场景显著改善。"
+    },
+    {
+      "title": "Model of distance and bandwidth dependency of TOA-based UWB ranging error",
+      "authors": ["Giovanni Bellusci", "Gerard J. M. Janssen", "Junlin Yan", "Christian Tiberius"],
+      "year": 2008,
+      "venue": "IEEE International Conference on Ultra-Wideband (ICUWB 2008)（venue 依 DOI 前缀 10.1109/icuwb 推断，OpenAlex venue 字段为 null）",
+      "doi": "10.1109/icuwb.2008.4653448",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/icuwb.2008.4653448",
+      "keywords": ["UWB", "TOA", "range error model", "Gaussian", "exponential", "NLOS"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "基于 3.1–10.6 GHz 大规模实测的测距误差统计模型：LOS 误差为高斯、NLOS 为高斯+指数（正偏），且均值/标准差随距离与带宽变化——方案书中描述 UWB 误差特性与设计自适应 R 的模型依据。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/icuwb.2008.4653448) 返回标题/作者/年份/完整摘要，一致；DOI HEAD 解析成功。venue 字段为 null，会议名依 DOI 前缀推断。",
+      "performance_data": [
+        {
+          "metric": "LOS 测距误差（满带宽 TOA）",
+          "value": "centimeter level（厘米级）",
+          "unit": "m",
+          "conditions": "3.1–10.6 GHz 大规模 UWB 信道实测；LOS；使用满带宽",
+          "source_level": "ABSTRACT",
+          "snippet": "For LOS, using the full bandwidth, the range error is at centimeter level; it increases in NLOS due to the additional delay introduced by the propagation through dielectric materials and to the more dense multipath."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "模型形式：LOS 误差 ~ 高斯；NLOS ~ 高斯+指数（体现正偏尾部）。距离与带宽显著影响误差均值/标准差。"
+    },
+    {
+      "title": "Ranging With Ultrawide Bandwidth Signals in Multipath Environments",
+      "authors": ["Davide Dardari", "Andrea Conti", "Ulric J. Ferner", "Andrea Giorgetti", "Moe Z. Win"],
+      "year": 2009,
+      "venue": "Proceedings of the IEEE",
+      "doi": "10.1109/jproc.2008.2008846",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jproc.2008.2008846",
+      "keywords": ["UWB", "TOA ranging", "error sources", "Cramér-Rao bound", "multipath", "first path detection"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "UWB 测距误差来源的权威综述（传播效应、时钟漂移、干扰；直射径缺失或非最强），给出 TOA 误差的理论界与实用估计技术——方案书'误差来源'章节的标准引文。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jproc.2008.2008846) 返回标题/作者/年份/venue/完整摘要，一致；DOI HEAD 解析成功。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "使用 IEEE 802.15.4a 信道模型与室内住宅实测数据。核心论点：直射径可能不存在或不是最强径，是 TOA 误差的首要来源。"
+    },
+    {
+      "title": "Survey on NLOS Identification and Error Mitigation for UWB Indoor Positioning",
+      "authors": ["Fang Wang", "Hai Tang", "Jialei Chen"],
+      "year": 2023,
+      "venue": "Electronics",
+      "doi": "10.3390/electronics12071678",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/2079-9292/12/7/1678",
+      "keywords": ["UWB", "NLOS survey", "residual analysis", "statistical features", "machine learning", "weighting", "filtering"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "2023 年 NLOS 识别/抑制方法分类综述：识别（残差分析、统计特征、机器学习、几何特征）与抑制（加权、滤波、视线重构、神经网络、约束优化、路径跟踪）两大族——决策框架分档设计的目录级依据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/electronics12071678) 返回标题/作者/年份/venue/完整摘要，一致。另尝试 web_reader 抓取 MDPI 全文页，仅返回页面导航框架未获正文，故数字仅取摘要级。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "综述类条目，real_or_sim 标 UNKNOWN。摘要明确 NLOS 是 UWB 室内定位误差的主要来源，并列出识别/抑制方法族谱。"
+    },
+    {
+      "title": "Tightly coupled UWB/IMU pose estimation",
+      "authors": ["Jeroen D. Hol", "Fred Dijkstra", "Henk Luinge", "Thomas B. Schön"],
+      "year": 2009,
+      "venue": "IEEE International Conference on Ultra-Wideband (ICUWB 2009)（venue 依 DOI 前缀 10.1109/icuwb 推断，OpenAlex venue 字段为 null）",
+      "doi": "10.1109/icuwb.2009.5288724",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/icuwb.2009.5288724",
+      "keywords": ["UWB", "IMU", "tightly coupled", "6DOF", "EKF", "NLOS robustness"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "UWB/IMU 紧组合的开创性工作之一：6DOF 位姿估计，在多径/NLOS 下仍保持连续可靠——证明紧耦合结构天然具备对 UWB 短时质量恶化的容错能力。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/icuwb.2009.5288724) 返回标题/作者/年份/完整摘要，一致；DOI HEAD 解析成功。venue 字段为 null，会议名依 DOI 前缀推断。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无数字。低成本 MEMS IMU + UWB；实验为真实室内场景，声称 multipath/NLOS 下 robust and continuous tracking。"
+    },
+    {
+      "title": "UWB-Based Localization System Aided With Inertial Sensor for Underground Coal Mine Applications",
+      "authors": ["Menggang Li", "Hua Zhu", "Shaoze You", "Chaoquan Tang"],
+      "year": 2020,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2020.2976097",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2020.2976097",
+      "keywords": ["UWB", "IMU", "ESKF", "coal mine", "anchor deployment", "multipath"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "受限巷道类恶劣环境（信号丢失+多径）下 UWB+IMU ESKF 融合，并讨论基站优化部署以维持精度——与本项目'轮式平台+受限场地+基站部署约束'高度同构。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jsen.2020.2976097) 返回标题/作者/年份/venue/完整摘要，一致；DOI HEAD 解析成功。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无具体数字：性能表述为'接近当前井下使用的最先进激光里程计方法'。含井下实际巷道在内的大量现场测试；在线估计 IMU 零偏与杆臂；讨论锚点最优部署策略。"
+    },
+    {
+      "title": "An Improved UWB/IMU Tightly Coupled Positioning Algorithm Study",
+      "authors": ["Airu Zou", "Wenwu Hu", "Yahui Luo", "Ping Jiang"],
+      "year": 2023,
+      "venue": "Sensors",
+      "doi": "10.3390/s23135918",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/1424-8220/23/13/5918",
+      "keywords": ["UWB", "IMU", "tightly coupled", "adaptive measurement noise", "NLOS judgment", "EKF"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "按 NLOS 判决结果实时调整量测噪声协方差 R 的 UWB/IMU 紧组合——'自适应协方差降权'的直接可引用范例，与本项目融合器设计意图一致。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/s23135918) 返回标题/作者/年份/venue/完整摘要（含 46.15% 数字），一致。",
+      "performance_data": [
+        {
+          "metric": "紧组合定位精度提升（相对常规紧耦合）",
+          "value": "46.15%",
+          "unit": "%",
+          "conditions": "实测（field experiment）；UWB 测距值先经 KF 一维预处理抑制跳变；EKF 融合 UWB+IMU；依 NLOS 判决结果实时调整量测噪声协方差矩阵",
+          "source_level": "ABSTRACT",
+          "snippet": "Compared with conventional tightly coupled positioning, the positioning accuracy of the method in this paper is improved by 46.15% in the field experimental positioning results."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "方法链：KF 预处理（抑制 range 突变）→ EKF 紧组合 → NLOS 判据调制 R → 最优估计回授调整下一帧量测。"
+    },
+    {
+      "title": "NR-UIO: NLOS-Robust UWB-Inertial Odometry Based on Interacting Multiple Model and NLOS Factor Estimation",
+      "authors": ["Jieum Hyun", "Hyun Myung"],
+      "year": 2021,
+      "venue": "Sensors",
+      "doi": "10.3390/s21237886",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/1424-8220/21/23/7886",
+      "keywords": ["UWB", "inertial odometry", "interacting multiple model", "NLOS factor estimation", "robot localization"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "面向机器人室内定位的 NLOS 鲁棒 UWB/IMU 里程计：IMM 多模型并行假设 LOS/NLOS 并在线估计 NLOS 因子——'不硬判别、让滤波器自己分档'的另一种降权路线。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/s21237886) 返回标题/作者/年份/venue/完整摘要，一致。",
+      "performance_data": [],
+      "candidate_core": true,
+      "notes": "摘要无数字。动机明确：UWB 测距在锚-标间有遮挡/墙体（多径）时产生大误差，恶化位姿估计；框架在真实室内环境验证。"
+    },
+    {
+      "title": "UWB Localization Based on Improved Robust Adaptive Cubature Kalman Filter",
+      "authors": ["Jiaqi Dong", "Zengzeng Lian", "Jingcheng Xu", "Zhe Yue"],
+      "year": 2023,
+      "venue": "Sensors",
+      "doi": "10.3390/s23052669",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/1424-8220/23/5/2669",
+      "keywords": ["UWB", "robust adaptive filtering", "cubature Kalman filter", "NLOS outliers", "sliding window recognition"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "关键方法论：鲁棒滤波（抗观测离群）与自适应滤波（抗模型误差）适用条件不同，用滑窗多项式拟合先识别误差类型再分路处理——直接回答'何时降权、何时拒绝'的机理问题。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/s23052669) 返回标题/作者/年份/venue/完整摘要（含 38.0/45.1/25.3% 数字），一致。",
+      "performance_data": [
+        {
+          "metric": "位置误差降低（IRACKF 对比三基线）",
+          "value": "38.0% / 45.1% / 25.3%",
+          "unit": "%",
+          "conditions": "UWB 系统 NLOS 观测误差+运动模型不准场景；滑窗多项式拟合实时识别误差类型；分别对比 robust CKF / adaptive CKF / robust adaptive CKF；仿真与实验（摘要未区分二者占比）",
+          "source_level": "ABSTRACT",
+          "snippet": "compared to the robust CKF, adaptive CKF, and robust adaptive CKF, the IRACKF algorithm reduces the position error by 38.0%, 45.1%, and 25.3%, respectively."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "核心论点原文：'Robust and adaptive filtering can weaken the influence of observed outliers and kinematic model errors on filtering, respectively. However, their application conditions are different, and improper use may reduce positioning accuracy.'"
+    },
+    {
+      "title": "Robust Error State Sage-Husa Adaptive Kalman Filter for UWB Localization",
+      "authors": ["Marius Juston", "Soumil Gupta", "Sandeep Mathur", "William R. Norris", "Dustin Nottage", "Ahmet Soylemezoglu"],
+      "year": 2025,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2025.3549315",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2025.3549315",
+      "keywords": ["UWB", "Sage-Husa adaptive filter", "differential drive robot", "wheel encoder", "IMU", "ANFIS", "outlier robustness"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "与本平台最接近的系统文献：Clearpath Jackal 轮式差分机器人 + Qorvo UWB + IMU/轮编码器融合运动学 + 模糊自适应（Sage-Husa/ANFIS）抗差滤波——直接示范轮式平台 UWB 质量自适应的实现方式。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jsen.2025.3549315) 返回标题/作者/年份/venue/完整摘要（含 30%–25% 数字与 Clearpath Jackal/Qorvo 硬件描述），一致；DOI HEAD 解析成功。",
+      "performance_data": [
+        {
+          "metric": "定位精度提升（相对先前 SHFAF 实现）",
+          "value": "约 30%–25%",
+          "unit": "%",
+          "conditions": "Clearpath Jackal 差分轮式机器人；Qorvo UWB 传感器+静态基站；IMU 与轮编码器运动学融合控制输入；两条实测测试路线；VelSHFAF（速度基 Sage-Husa 模糊自适应，含 P/R 正定约束改进）",
+          "source_level": "ABSTRACT",
+          "snippet": "the proposed velocity-based SHFAF (VelSHFAF) system outperformed the previous SHFAF implementation by approximately 30%–25% across two test courses"
+        }
+      ],
+      "candidate_core": false,
+      "notes": "重点：动态估计 R 时施加正定约束以增强对离群值的鲁棒性；ANFIS 结构训练模糊系统。"
+    },
+    {
+      "title": "Position error bound for UWB localization in dense cluttered environments",
+      "authors": ["Damien Jourdan", "Davide Dardari", "Moe Z. Win"],
+      "year": 2008,
+      "venue": "IEEE Transactions on Aerospace and Electronic Systems",
+      "doi": "10.1109/taes.2008.4560210",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/taes.2008.4560210",
+      "keywords": ["UWB", "position error bound", "PEB", "NLOS bias", "geometry", "localization outage probability"],
+      "real_or_sim": "SIMULATION",
+      "potential_relevance": "理论界（PEB）证明：测距质量随距离退化、正偏 NLOS 偏差与基站几何共同决定精度上限；提出 localization outage probability 刻画区域内的定位质量分布——'覆盖边缘'问题的理论工具。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/taes.2008.4560210) 返回标题/作者/年份/venue/完整摘要，一致；DOI HEAD 解析成功。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "关键结论（摘要原文）：任何关于 NLOS 基站的先验知识都能显著提升定位精度（密集杂波环境尤甚）；不同基站的量测信息价值随传播条件（LOS/NLOS）变化。real_or_sim 标 SIMULATION（理论界+实测偏差统计的代入分析）。"
+    },
+    {
+      "title": "UWB Anchor Node Optimization Deployment Using MGWO for the Coal Mine Working Face End",
+      "authors": ["Bo Cao", "Shibo Wang", "Shirong Ge", "Feng Chen", "Hua Zhang"],
+      "year": 2023,
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "doi": "10.1109/tim.2023.3250304",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tim.2023.3250304",
+      "keywords": ["UWB", "anchor deployment", "WPDOP", "gray wolf optimizer", "coal mine"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "提出考虑各基站误差方差的加权 PDOP（WPDOP）闭式算法并优化布站——把'几何质量'纳入 UWB 量测可用性评估的量化工具，V 形布站最优。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/tim.2023.3250304) 返回标题/作者/年份/venue/完整摘要（含 37.6% 数字），一致；DOI HEAD 解析成功。",
+      "performance_data": [
+        {
+          "metric": "MGWO 优化布站的平均 WPDOP 改善",
+          "value": "≥37.6%（最低平均改善幅度）",
+          "unit": "%",
+          "conditions": "煤矿工作面末端 UWB 定位系统；仿真+实验验证；对比随机布站；V 形布站最优",
+          "source_level": "ABSTRACT",
+          "snippet": "the lowest average improvement percentage was approximately equal to 37.6%."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "WPDOP 相比经典 PDOP 的改进点：对不同锚点使用不同误差方差（对应不同 LOS/NLOS 状态）。"
+    },
+    {
+      "title": "Combining Dilution of Precision and Kalman Filtering for UWB Positioning in a Narrow Space",
+      "authors": ["Yunjian Guo", "Weihong Li", "Guang Yang", "Zhenhang Jiao", "Jiachen Yan"],
+      "year": 2022,
+      "venue": "Remote Sensing",
+      "doi": "10.3390/rs14215409",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/2072-4292/14/21/5409",
+      "keywords": ["UWB", "DOP", "narrow space", "Kalman filter", "weighted least squares"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "实测证明：无论基站如何配置，窄空间内 DOP 显著高于开阔区并导致更大定位误差——'覆盖边缘/受限区域 UWB 必然劣化'的直接实验证据；并把 DOP 值自适应引入 KF。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/rs14215409) 返回标题/作者/年份/venue/完整摘要，一致。摘要为转写式英文但结论明确；未抓全文正文数字。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "核心结论原文：'no matter how the base stations are configured, the DOP values of the narrow space are much higher than that of the wide space, thus causing larger positioning errors.' 算法：WLS 初值→KF，DOP 值自适应引入更新。"
+    },
+    {
+      "title": "A Practical and Economical Ultra-wideband Base Station Placement Approach for Indoor Autonomous Driving Systems",
+      "authors": ["Shengchuan Jiang", "Cong Zhao", "Yifan Zhu", "Chenwei Wang", "Yuchuan Du"],
+      "year": 2022,
+      "venue": "Journal of Advanced Transportation",
+      "doi": "10.1155/2022/3815306",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1155/2022/3815306",
+      "keywords": ["UWB", "base station placement", "automated valet parking", "TDOA", "HDOP", "underground parking"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "地下停车场（轮式车辆自主代客泊车）UWB 基站三分区布站方法（坡道/表面起伏区/狭窄区差异化精度要求，TDOA+HDOP 评价）——与本项目'轮式平台+场地分区'的应用场景几乎一致。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1155/2022/3815306) 返回标题/作者/年份/venue/完整摘要，一致。真实停车场实验（摘要声明）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无具体数字：结论为'更少基站+满足 AVP 精度要求且稳定'。分区思想可直接借鉴到赛场基站在覆盖边缘区域的部署与降权策略。"
+    },
+    {
+      "title": "Estimating the Localizability in Tunnel-like Environments using LiDAR and UWB",
+      "authors": ["Weikun Zhen", "Sebastian Scherer"],
+      "year": 2019,
+      "venue": "IEEE International Conference on Robotics and Automation (ICRA 2019)（venue 依 DOI 前缀 10.1109/icra 推断，OpenAlex venue 字段为 null）",
+      "doi": "10.1109/icra.2019.8794167",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/icra.2019.8794167",
+      "keywords": ["UWB", "LiDAR", "localizability", "degeneration", "tunnel", "sensor fusion"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "提出退化表征模型估计给定位置的'可定位性'（含 UWB 与 LiDAR），并做 IMU/LiDAR/UWB 概率融合——为'覆盖边缘/几何退化区域检测并切换权重'提供可定位性评估范式。",
+      "verification_status": "PARTIALLY_VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/icra.2019.8794167) 返回标题/作者/年份/完整摘要，一致；DOI HEAD 解析成功。venue 字段为 null，会议名依 DOI 前缀推断。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "实验：长直隧道内鲁棒定位。核心概念：degeneration characterization model → localizability at a given location。"
+    },
+    {
+      "title": "Enhanced EKF-Based Time Calibration for GNSS/UWB Tight Integration",
+      "authors": ["Yihan Guo", "Oliviero Vouch", "Simone Zocca", "Alex Minetto", "Fabio Dovis"],
+      "year": 2022,
+      "venue": "IEEE Sensors Journal",
+      "doi": "10.1109/jsen.2022.3223974",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/jsen.2022.3223974",
+      "keywords": ["GNSS", "UWB", "tight integration", "EKF", "time calibration", "adaptive weighting"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "GNSS/UWB 紧组合 EKF，把时钟偏移建为状态在线标定，且内置 UWB 量测自适应加权（double-update 模型）——'自适应加权 UWB 量测'在 GNSS/UWB 融合中的量化收益证据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/jsen.2022.3223974) 返回标题/作者/年份/venue/完整摘要（含全部百分比数字），一致；DOI HEAD 解析成功。",
+      "performance_data": [
+        {
+          "metric": "水平定位精度改善（RMSE）",
+          "value": "实测 57.58% / 31.03%；仿真 41.60% / 15.43%",
+          "unit": "%",
+          "conditions": "GNSS/UWB 紧组合 EKF；在线时间偏移标定+UWB 自适应加权 double-update；对比'未校时偏 EKF'与'朴素时偏校准 EKF'",
+          "source_level": "ABSTRACT",
+          "snippet": "a real-world experimental assessment demonstrates improved root-mean-square error (RMSE) performance of 57.58% and 31.03%, respectively."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "COTS UWB/GNSS 芯片时钟独立导致量测时序错位，是该融合路线必须处理的工程问题（本项目北斗/RTK + UWB 融合同样适用）。"
+    },
+    {
+      "title": "A Seamless Navigation System and Applications for Autonomous Vehicles Using a Tightly Coupled GNSS/UWB/INS/Map Integration Scheme",
+      "authors": ["Changqiang Wang", "Aigong Xu", "Xin Sui", "Yushi Hao", "Zhengxu Shi", "Zhijian Chen"],
+      "year": 2021,
+      "venue": "Remote Sensing",
+      "doi": "10.3390/rs14010027",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/2072-4292/14/1/27",
+      "keywords": ["GNSS", "RTK", "UWB", "INS", "map matching", "NLOS elimination", "adaptive robust EKF"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "多源RTK/INS/UWB/地图紧组合+改进自适应鲁棒 EKF（AREKF），用 INS+地图信息识别并剔除 UWB NLOS 误差——室外北斗/RTK 与室内 UWB 无缝切换场景的完整参考架构。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/rs14010027) 返回标题/作者/年份/venue/完整摘要，一致。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "摘要无具体数字；声称在含大量量测离群与环境干扰的室内外复杂环境中保持无缝定位精度。NLOS 处理方式：INS+地图几何判别并消除。"
+    },
+    {
+      "title": "Improved-UWB/LiDAR-SLAM Tightly Coupled Positioning System with NLOS Identification Using a LiDAR Point Cloud in GNSS-Denied Environments",
+      "authors": ["Zhijian Chen", "Aigong Xu", "Xin Sui", "Changqiang Wang", "Siyu Wang", "Jiaxin Gao"],
+      "year": 2022,
+      "venue": "Remote Sensing",
+      "doi": "10.3390/rs14061380",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/2072-4292/14/6/1380",
+      "keywords": ["UWB", "LiDAR-SLAM", "tightly coupled", "NLOS identification", "point cloud", "robust EKF"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "用 LiDAR 点云地图实时做 UWB NLOS 识别（障碍物检测）+鲁棒 EKF——本项目已有 LiDAR，可复用该'用几何感知判 UWB 质量'的路线，且给出 0.094 m RMSE 的量化结果。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/rs14061380) 返回标题/作者/年份/venue/完整摘要（含 0.094 m 数字），一致。",
+      "performance_data": [
+        {
+          "metric": "UWB/LiDAR-SLAM 紧组合定位 RMSE",
+          "value": "0.094 m（亚分米级）",
+          "unit": "m",
+          "conditions": "室内 GNSS-denied；LiDAR 点云实时障碍检测+UWB NLOS 识别(NI)；鲁棒 EKF(REKF)；实测",
+          "source_level": "ABSTRACT",
+          "snippet": "The TC integrated method combining NI and REKF achieves better positioning effectiveness and robustness than other comparative methods and satisfactory control of sensor errors with a root-mean-square error of 0.094 m, realizing subdecimeter indoor positioning."
+        }
+      ],
+      "candidate_core": false,
+      "notes": "论文自称首个将 LiDAR 点云地图与 UWB 锚点位置结合实时区分 LOS/NLOS 量测的紧耦合方案。"
+    },
+    {
+      "title": "UWB Localization in a Smart Factory: Augmentation Methods and Experimental Assessment",
+      "authors": ["Luca Barbieri", "Mattia Brambilla", "Andrea Trabattoni", "Stefano Mervic", "Monica Nicoli"],
+      "year": 2021,
+      "venue": "IEEE Transactions on Instrumentation and Measurement",
+      "doi": "10.1109/tim.2021.3074403",
+      "arxiv_id": null,
+      "url": "https://doi.org/10.1109/tim.2021.3074403",
+      "keywords": ["UWB", "RTLS", "smart factory", "visibility tracking", "particle filter", "NLOS", "Decawave", "Sewio", "Ubisense"],
+      "real_or_sim": "REAL",
+      "potential_relevance": "工业现场实测三种商用 UWB（Decawave/Sewio/Ubisense），用贝叶斯滤波联合跟踪运动与'随时间变化的视距可见性状态'——把'UWB 信号是否稳定'显式建模为可估计状态，正是弃用/降权开关的状态化实现。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1109/tim.2021.3074403) 返回标题/作者/年份/venue/完整摘要，一致；DOI HEAD 解析成功。",
+      "performance_data": [],
+      "candidate_core": true,
+      "notes": "摘要无具体数字：结论为联合跟踪目标动态与可见性条件可显著降低密集多径与 NLOS 引起的定位误差。实验室+工业实验两级验证。"
+    },
+    {
+      "title": "UTIL: An ultra-wideband time-difference-of-arrival indoor localization dataset",
+      "authors": ["Wenda Zhao", "Abhishek Goudar", "Xinyuan Qiao", "Angela P. Schoellig"],
+      "year": 2024,
+      "venue": "The International Journal of Robotics Research",
+      "doi": "10.1177/02783649241230640",
+      "arxiv_id": "2203.14471",
+      "url": "https://arxiv.org/abs/2203.14471",
+      "keywords": ["UWB", "TDOA", "dataset", "LOS/NLOS", "SNR", "power difference", "ESKF", "chi-square outlier rejection"],
+      "real_or_sim": "PUBLIC_DATASET",
+      "potential_relevance": "公开 UWB TDOA 数据集+基准：给出 SNR/功率差质量指标定义、静态 NLOS 一致偏差与动态 NLOS 不可预测性的实证、以及 ESKF 中卡方检验离群剔除的基准实现——质量指标与拒绝机制的可复现依据。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.1177/02783649241230640) 摘要核验一致；再用 mcp web_reader 抓取 arXiv 全文 HTML https://arxiv.org/html/2203.14471v6（含 Table 4 RMSE 基准与质量指标定义）；arXiv API 亦确认 arXiv:2203.14471 为同名论文。",
+      "performance_data": [
+        {
+          "metric": "无遮挡环境 UWB TDOA+IMU 定位 RMSE（基准）",
+          "value": "约 10 cm（Const.1–2：TDOA2 ESKF 0.094–0.123 m；Const.3：0.19–0.34 m，含手动采集序列）",
+          "unit": "m",
+          "conditions": "8 个 DWM1000 基站；7.0×8.0×3.5 m 场馆；四旋翼 0.45 m/s；Vicon 毫米级 GT；constellation #1–#3 无障碍；ESKF 含卡方检验离群剔除；数值取自 Table 4（列为 TDOA2/TDOA3 × ESKF/Batch）",
+          "source_level": "FULLTEXT",
+          "snippet": "The benchmark results reveal that ESKF and batch estimation demonstrates commendable performance with an approximate positioning error of 10 cm in obstacle-free environments (constellations #1, #2, and #3).（HTML 原文 '10 10 cm' 为公式渲染伪影，实为 10 cm；Table 4 Const.1 序列 1：0.108 0.097 0.144 0.099 等）"
+        },
+        {
+          "metric": "遮挡/边缘环境定位 RMSE 恶化（最差序列）",
+          "value": "Const.4 全部序列 ESKF 0.16–0.92 m；最差序列 3.1：TDOA2 ESKF 0.919 / TDOA2 Batch 0.788 / TDOA3 ESKF 0.742 / TDOA3 Batch 0.563 m",
+          "unit": "m",
+          "conditions": "constellation #4；金属+木质静态障碍与人工移动金属柜的动态遮挡；其余条件同上；数值取自 Table 4 行 '3.1 0.919 0.788 0.742 0.563'",
+          "source_level": "FULLTEXT",
+          "snippet": "However, in constellation #4, the positioning performance of conventional estimation algorithms deteriorates greatly, primarily due to obstacle-induced measurement errors."
+        },
+        {
+          "metric": "质量指标定义（DW1000 寄存器）",
+          "value": "SNR=Amf/σn；Pd=Pr−Pf；SNR 越高、Pd 越低→信号质量越好",
+          "unit": "-",
+          "conditions": "Decawave 用户手册第 4.7 节定义；Amf=First Path Amplitude，σn=CIR 估计噪声标准差，Pr=总接收功率，Pf=首径功率；四原始量 {Amf, σn, Pr, Pf} 可从 DW1000 芯片读取",
+          "source_level": "FULLTEXT",
+          "snippet": "In general, a higher SNR value or a lower Pd indicates the received radio signal is of good quality (Decawave, 2017).（式(3)：SNR = Amf/σn, Pd = Pr − Pf；Pd 在原文中因公式标记显示为 P d）"
+        },
+        {
+          "metric": "静态/动态 NLOS 偏差特性",
+          "value": "静态障碍→一致可重复的正偏差；严重 NLOS→量测可完全中断；动态 NLOS→误差不可预测",
+          "unit": "-",
+          "conditions": "同一重复圆形轨迹，切换不同障碍配置（金属/木材）对比 UWB TDOA 测量 d23",
+          "source_level": "FULLTEXT",
+          "snippet": "static obstacles consistently influence the UWB measurements. Also, UWB measurements can be completely blocked due to severe NLOS conditions."
+        }
+      ],
+      "candidate_core": true,
+      "notes": "基准使用 error-state KF + 'A Chi-square test outlier rejection mechanism is applied in the ESKF to discard large outliers'——卡方检验拒绝机制的公开参考实现。LOS 距离试验 0.5–6.5 m（0.5 m 步进）、角度试验 180°–15°（15° 步进）；NLOS 障碍材质含纸板/金属/木材/塑料/泡沫。"
+    },
+    {
+      "title": "Ultra Wideband Indoor Positioning Technologies: Analysis and Recent Advances",
+      "authors": ["Abdulrahman Alarifi", "AbdulMalik S. Al-Salman", "Mansour Alsaleh", "Ahmad Alnafessah", "Suheer Al-Hadhrami", "Mai Al-Ammar", "et al."],
+      "year": 2016,
+      "venue": "Sensors",
+      "doi": "10.3390/s16050707",
+      "arxiv_id": null,
+      "url": "https://www.mdpi.com/1424-8220/16/5/707",
+      "keywords": ["UWB", "indoor positioning survey", "TWR", "TDOA", "taxonomy", "SWOT"],
+      "real_or_sim": "UNKNOWN",
+      "potential_relevance": "UWB 室内定位技术的经典综述（引用>1100）：技术分类（TWR/TDOA/相位等）、优劣势与挑战清单——方案书技术背景与'UWB 并非万能'论述的引用基座。",
+      "verification_status": "VERIFIED",
+      "verification_evidence": "OpenAlex API (https://api.openalex.org/works/https://doi.org/10.3390/s16050707) 返回标题/作者/年份/venue/完整摘要，一致（OpenAlex cited_by_count=1132）。",
+      "performance_data": [],
+      "candidate_core": false,
+      "notes": "综述类，real_or_sim 标 UNKNOWN。作者列表按 OpenAlex 抓取截取前 6 名，加 et al.。"
+    }
+  ],
+  "rejected": [
+    {
+      "claimed": "Güvenç, Chong, Watanabe, Inamura, 'NLOS Identification and Weighted Least-Squares Localization for UWB Systems Using Multipath Channel Statistics', EURASIP JASP 2008, DOI 10.1155/2008/271984",
+      "reason": "同团队会议版（WCNC 2007，DOI 10.1109/wcnc.2007.296）已保留收录，期刊扩展版内容重叠，为控制池规模不重复收录",
+      "verification_attempt": "OpenAlex API works/https://doi.org/10.1155/2008/271984 已抓取：标题/作者/年份/完整摘要均真实存在（含 MPC 统计加权 WLS 方法描述），DOI HEAD 解析成功(200)"
+    },
+    {
+      "claimed": "Li-Ta Hsu, 'GNSS multipath detection using a machine learning approach', ITSC 2017, DOI 10.1109/itsc.2017.8317700",
+      "reason": "主题为 GNSS 多径/NLOS 检测，非 UWB 文献，超出本研究组范围",
+      "verification_attempt": "OpenAlex 搜索 'UWB GNSS integration fusion' 结果中出现并阅读摘要，确认为 GNSS 领域"
+    },
+    {
+      "claimed": "Zhenghua Chen et al., 'Fusion of WiFi, Smartphone Sensors and Landmarks Using the Kalman Filter for Indoor Localization', Sensors 2015, DOI 10.3390/s150100715",
+      "reason": "WiFi/PDR/地标融合，不含 UWB，不相关",
+      "verification_attempt": "OpenAlex 搜索 'robust adaptive Kalman filter UWB localization' 结果中出现并阅读摘要确认为 WiFi 系统"
+    },
+    {
+      "claimed": "Rainer Mautz, 'Indoor positioning technologies', ETH Zurich 论文 2012, DOI 10.3929/ethz-a-007313554",
+      "reason": "通用室内定位综述，非 UWB 专题；已有 UWB 专题综述（Alarifi 2016、Wang 2023）覆盖",
+      "verification_attempt": "OpenAlex 搜索 'UWB indoor positioning survey review' 结果中出现并阅读摘要"
+    },
+    {
+      "claimed": "Ala Al-Fuqaha et al., 'Internet of Things: A Survey on Enabling Technologies, Protocols, and Applications', IEEE COMST 2015, DOI 10.1109/comst.2015.2444095",
+      "reason": "物联网通识综述，与 UWB 定位质量/弃用策略无关",
+      "verification_attempt": "OpenAlex 搜索 'UWB indoor positioning survey review' 结果中出现，标题/摘要确认不相关"
+    },
+    {
+      "claimed": "Ali Yassin et al., 'Recent Advances in Indoor Localization: A Survey...', IEEE COMST 2016, DOI 10.1109/comst.2016.2632427",
+      "reason": "通用室内定位综述，非 UWB 专题",
+      "verification_attempt": "OpenAlex 检索结果中阅读摘要确认"
+    },
+    {
+      "claimed": "Ramón Brena et al., 'Evolution of Indoor Positioning Technologies: A Survey', J. Sensors 2017, DOI 10.1155/2017/2630413",
+      "reason": "通用 IPS 综述，非 UWB 专题",
+      "verification_attempt": "OpenAlex 检索结果中阅读摘要确认"
+    },
+    {
+      "claimed": "Mary B. Alatise, Gerhard P. Hancke, 'A Review on Challenges of Autonomous Mobile Robot and Sensor Fusion Methods', IEEE Access 2020, DOI 10.1109/access.2020.2975643",
+      "reason": "移动机器人传感器融合通识综述，UWB 非主题",
+      "verification_attempt": "OpenAlex 搜索 'UWB LiDAR fusion robot localization' 结果中出现并阅读摘要确认"
+    },
+    {
+      "claimed": "Xiaobin Xu et al., 'A Review of Multi-Sensor Fusion SLAM Systems Based on 3D LIDAR', Remote Sensing 2022, DOI 10.3390/rs14122835",
+      "reason": "LiDAR SLAM 综述，非 UWB 文献",
+      "verification_attempt": "OpenAlex 搜索 'UWB LiDAR fusion robot localization' 结果中出现并阅读摘要确认"
+    },
+    {
+      "claimed": "Samuel G. Leitch et al., 'On Indoor Localization Using WiFi, BLE, UWB, and IMU Technologies', Sensors 2023, DOI 10.3390/s23208598",
+      "reason": "多技术横评综述，UWB 部分深度不及专题综述，池规模有限未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB dataset LOS NLOS public' 结果中出现并阅读摘要确认"
+    },
+    {
+      "claimed": "Yang Song et al., 'UWB/LiDAR Fusion For Cooperative Range-Only SLAM', ICRA 2019, DOI 10.1109/icra.2019.8794222",
+      "reason": "相关但池规模有限；UWB/LiDAR 融合已有 Chen 2022 (Remote Sensing, 含 NLOS 识别+0.094 m RMSE) 收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB LiDAR fusion robot localization' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Giulio Delama et al., 'UVIO: An UWB-Aided Visual-Inertial Odometry Framework with Bias-Compensated Anchors Initialization', IROS 2023, DOI 10.1109/iros55552.2023.10342012",
+      "reason": "相关（GDOP 引导锚点建图航迹规划）但池规模有限；几何/GDOP 已由 Cao 2023、Guo 2022、Jourdan 2008 覆盖",
+      "verification_attempt": "OpenAlex 搜索 'UWB inertial odometry' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Abbas Albaidhani et al., 'Anchor selection for UWB indoor positioning', Trans. Emerging Telecom. Tech. 2019, DOI 10.1002/ett.3598",
+      "reason": "GDOP 基站选择主题相关，但摘要无量化性能数据且池规模有限，未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB anchor placement geometry dilution of precision' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Hao Xu et al., 'Omni-Swarm: A Decentralized Omnidirectional Visual–Inertial–UWB State Estimation System for Aerial Swarms', IEEE T-RO 2022, DOI 10.1109/tro.2022.3182503",
+      "reason": "无人机集群方向，与轮式平台方案相关性低，未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB inertial odometry' 结果中出现并阅读摘要，确认真实存在（含 centimeter 级表述）"
+    },
+    {
+      "claimed": "Thien-Minh Nguyen et al., 'VIRAL SLAM: Tightly Coupled Camera-IMU-UWB-Lidar SLAM', arXiv:2105.03296, 2021",
+      "reason": "多传感器 SLAM 框架与本项目相关，但质量门控主题由池内其他文献覆盖，且本条以 arXiv 预印本为主，未收录",
+      "verification_attempt": "OpenAlex 搜索 'tightly coupled UWB IMU' 结果中出现（DOI 10.48550/arxiv.2105.03296）并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Zhichao Cui et al., 'LOS/NLOS Identification for Indoor UWB Positioning Based on Morlet Wavelet Transform and Convolutional Neural Networks', IEEE Comm. Letters 2020, DOI 10.1109/lcomm.2020.3039251",
+      "reason": "纯仿真（802.15.4a 模型+开源数据集），NLOS 分类方向已收录实测类文献（Maranò/Barral/Sang/Jiang），未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB positioning accuracy LOS NLOS' 结果中出现并阅读摘要（含 100%/99.89%/96.10% 场景精度），确认真实存在"
+    },
+    {
+      "claimed": "Shoude Wang, Nur Syazreen Ahmad, 'Improved UWB-based indoor positioning system via NLOS classification and error mitigation', Eng. Sci. Tech. Int. J. 2025, DOI 10.1016/j.jestch.2025.101979",
+      "reason": "摘要声明'NLOS 下定位误差通常超过 30 cm'与已收录 Fontaine 2023 一致，方法(SVM-RFE 特征选择)与池内文献重叠，未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB dataset LOS NLOS public' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Valentín Barral et al., 'Using the Power Delay Profile to Accelerate the Training of Neural Network-Based Classifiers for the Identification of LOS and NLOS UWB Propagation Conditions', IEEE Access 2020, DOI 10.1109/access.2020.3043503",
+      "reason": "与已收录 Barral 2019 同团队、主题高度重叠（PDP 特征加速训练），未重复收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB RSSI first path power NLOS features' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Jaron Fontaine et al., 'Edge Inference for UWB Ranging Error Correction Using Autoencoders', IEEE Access 2020, DOI 10.1109/access.2020.3012822",
+      "reason": "同团队 Fontaine 2023 (IoT-J) 已收录且更新更全面（摘要含 NLOS >300 mm 表述，与 2023 篇 >30 cm 一致）",
+      "verification_attempt": "OpenAlex 搜索 'UWB anchor placement geometry dilution of precision' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Giovanni Miraglia et al., 'Comparison of two sensor data fusion methods in a tightly coupled UWB/IMU 3-D localization system', ICE/ITMC 2017, DOI 10.1109/ice.2017.8279941",
+      "reason": "会议影响面小、摘要无量化数据；UWB/IMU 紧组合已由 Hol 2009/Li 2020/Zou 2023/Juston 2025 覆盖",
+      "verification_attempt": "OpenAlex 搜索 'tightly coupled UWB IMU' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Alwin Poulose, Dong Seog Han, 'UWB Indoor Localization Using Deep Learning LSTM Networks', Applied Sciences 2020, DOI 10.3390/app10186290",
+      "reason": "UWB+LSTM 定位（非 NLOS 质量判别主题），池规模有限未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB number of anchors accuracy experimental' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Matteo Ridolfi et al., 'Experimental Evaluation of UWB Indoor Positioning for Sport Postures', Sensors 2018, DOI 10.3390/s18010168",
+      "reason": "运动姿态下 UWB 精度实测，与轮式平台场景相关性弱，未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB number of anchors accuracy experimental' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Kai Wen et al., 'A New Quaternion Kalman Filter Based Foot-Mounted IMU and UWB Tightly-Coupled Method for Indoor Pedestrian Navigation', IEEE TVT 2020, DOI 10.1109/tvt.2020.2974667",
+      "reason": "行人导航专用（足绑 IMU），与轮式平台不符，未收录",
+      "verification_attempt": "OpenAlex 搜索 'tightly coupled UWB IMU' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Weide You et al., 'Data Fusion of UWB and IMU Based on Unscented Kalman Filter for Indoor Localization of Quadrotor UAV', IEEE Access 2020, DOI 10.1109/access.2020.2985053",
+      "reason": "四旋翼 UKF 融合，融合方法学已由更贴近平台的文献覆盖，未收录",
+      "verification_attempt": "OpenAlex 多个查询结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Jian Wang et al., 'A Tightly-Coupled GPS/INS/UWB Cooperative Positioning Sensors System Supported by V2I Communication', Sensors 2016, DOI 10.3390/s16070944",
+      "reason": "GPS/INS/UWB 鲁棒 KF 路线真实存在，但 GNSS/UWB 融合已由 Guo 2022 (JSEN) 与 Wang 2021 (RS) 收录，未重复",
+      "verification_attempt": "OpenAlex 搜索 'GNSS UWB tightly coupled urban canyon' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Vincenzo Di Pietra et al., 'Loosely Coupled GNSS and UWB with INS Integration for Indoor/Outdoor Pedestrian Navigation', Sensors 2020, DOI 10.3390/s20216292",
+      "reason": "行人场景松组合；车辆场景无缝组合已由 Wang 2021 (RS) 覆盖，未重复",
+      "verification_attempt": "OpenAlex 搜索 'UWB GNSS integration fusion' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Xiaofei Yang et al., 'A Novel NLOS Error Compensation Method Based IMU for UWB Indoor Positioning System', IEEE Sensors J. 2021, DOI 10.1109/jsen.2021.3061468",
+      "reason": "IMU 虚拟点 NLOS 补偿思路相关，但池规模有限且同类方法已收录（Zou 2023/Hyun 2021），未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB positioning accuracy LOS NLOS' 结果中出现并阅读摘要，确认真实存在"
+    },
+    {
+      "claimed": "Huei-Yung Lin, Jia-Rong Zhan, 'GNSS-denied UAV indoor navigation with UWB incorporated visual inertial odometry', Measurement 2022, DOI 10.1016/j.measurement.2022.112256；Bo Gao et al., IET Communications 2022, DOI 10.1049/cmu2.12359；Sungjae Shin et al., MIR-VIO, ICCAS 2021, DOI 10.23919/iccas52745.2021.9649888",
+      "reason": "UWB+VIO 方向文献，与质量判别主题关联较间接，池规模有限未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB inertial odometry' 结果中出现并阅读摘要，确认均真实存在"
+    },
+    {
+      "claimed": "Fazeelat Mazhar et al., 'Precise Indoor Positioning Using UWB: A Review of Methods, Algorithms and Implementations', Wireless Personal Communications 2017, DOI 10.1007/s11277-017-4734-x",
+      "reason": "UWB 综述，与已收录 Alarifi 2016/Wang 2023 重叠，未重复收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB indoor positioning survey review' 结果中出现（标题/作者/年份/venue），确认真实存在"
+    },
+    {
+      "claimed": "Jasurbek Khodjaev et al., 'Survey of NLOS identification and error mitigation problems in UWB-based positioning algorithms for dense environments', Annals of Telecommunications 2009, DOI 10.1007/s12243-009-0124-z",
+      "reason": "早期 NLOS 综述，已被 2023 年 Wang 综述覆盖，未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB NLOS identification'/'UWB NLOS mitigation' 结果中多次出现，确认真实存在"
+    },
+    {
+      "claimed": "Weijie Li et al., ICCT 2013 (DOI 10.1109/icct.2013.6820422)；Zhuoqi Zeng et al., ICCE 2019 (DOI 10.1109/icce.2019.8662065)；Xiaofeng Yang, IEEE Sensors J. 2018 (DOI 10.1109/jsen.2018.2818158)；Yifeng Wu et al., IEEE IoT-J 2024 (DOI 10.1109/jiot.2024.3349462)；Bowen Deng et al., IEEE Sensors J. 2023 (DOI 10.1109/jsen.2023.3323564)；Hongchao Yang et al., IEEE Sensors J. 2023 (DOI 10.1109/jsen.2022.3232479)",
+      "reason": "均为真实存在的 UWB NLOS 识别/ML 文献（OpenAlex 摘要已读），但主题与池内已收录文献重叠度高、或为纯仿真，按'宁缺毋滥'与池规模上限（30 篇）未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB NLOS identification'/'UWB NLOS mitigation' 结果中逐一阅读摘要确认"
+    },
+    {
+      "claimed": "Vedran Dizdarevic, Klaus Witrisal, ICICS 2007 (DOI 10.1109/icics.2007.4449805)；Z. Şahinoğlu, İ. Güvenç, ICU 2006 (DOI 10.1109/icu.2005.1570024)；Harris Perakis, Vassilis Gikas, IPIN 2018 (DOI 10.1109/ipin.2018.8533755)",
+      "reason": "真实存在的测距误差/TOA 估计/误差标定文献（摘要已读），但测距误差建模已由 Bellusci 2008 收录，池规模有限未收录",
+      "verification_attempt": "OpenAlex 搜索 'UWB ranging error model' 结果中出现并阅读摘要确认"
+    }
+  ],
+  "conflicts": [
+    {
+      "claim": "UWB NLOS 误差恶化量级",
+      "paper_a": "Fontaine et al. 2023 (10.1109/jiot.2023.3299319)：NLOS 误差 typically >30 cm",
+      "paper_b": "Barral et al. 2019 (10.3390/s19163464)：NLOS Hard 原始 MAE 约 1.9 m；NLOS Soft 约 +30 cm",
+      "explanation": "两者不矛盾但粒度不同：NLOS 严重程度分层（软遮挡 vs 硬遮挡、材质与几何），30 cm 量级对应轻度遮挡的'典型下限'，完全遮挡（墙/金属柜/人体）可达 1–2 m 甚至完全中断（Zhao 2024 UTIL）。方案书不得使用单一 NLOS 数字，必须写'0.3 m（轻度）至 1–2 m（硬遮挡）并可能完全失锁'的区间表述。"
+    },
+    {
+      "claim": "UWB LOS 典型精度",
+      "paper_a": "Fontaine et al. 2023：LOS 1–10 cm（工业场景，TWR 型）",
+      "paper_b": "Zhao et al. 2024 (UTIL, 10.1177/02783649241230640)：低成本 DWM1000 TDOA 模式 + ESKF 全场约 10 cm RMSE（无遮挡）",
+      "explanation": "LOS 精度与测距模式/硬件强相关：TWR 双向测距可达 1–10 cm，TDOA（低成本模块、8 基站）基准约 10 cm。写性能声明时必须注明测距模式（TWR/TDOA）与硬件型号，不能笼统写'厘米级'。"
+    },
+    {
+      "claim": "RSSI/接收功率类特征对 NLOS 识别是否足够",
+      "paper_a": "Barral et al. 2019：仅用测距值+RSS 均值/方差的特征，单场景二分类 F1>0.9（够用）",
+      "paper_b": "Sang et al. 2020 (10.3390/app10113980)：跨环境时三分类准确率从 91.9% 降到 72.9–75.4%（不足），且 MP 类最难分",
+      "explanation": "结论依赖条件：单环境、二分类（LOS/非LOS）时 RSS 类特征基本够用；跨环境泛化、或需区分多径(MP)与硬 NLOS 时 RSS 单独不足，应组合 CIR/首径功率差/残差等特征并按环境重校准（Fontaine 2023 迁移学习：50 样本恢复 93% 检测率）。"
+    }
+  ]
+}

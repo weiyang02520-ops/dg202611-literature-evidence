@@ -1,0 +1,2392 @@
+[
+ {
+  "id": "UWB-01",
+  "t": "NLOS identification and mitigation for localization based on UWB experimental data",
+  "y": 2010,
+  "v": "IEEE Journal on Selected Areas in Communications",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "UWB-02",
+  "t": "NLOS Identification and Mitigation for UWB Localization Systems",
+  "y": 2007,
+  "v": "IEEE Wireless Communications and Networking Conference (WCNC)（venue 依 DOI 前缀 10.1109/wcnc 推断，OpenAlex venue 字段为 null）",
+  "a": "UWB",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-03",
+  "t": "NLOS Identification and Mitigation Using Low-Cost UWB Devices",
+  "y": 2019,
+  "v": "Sensors",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 6,
+  "c": 1
+ },
+ {
+  "id": "UWB-04",
+  "t": "Identification of NLOS and Multi-Path Conditions in UWB Localization Using Machine Learnin",
+  "y": 2020,
+  "v": "Applied Sciences",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 6,
+  "c": 0
+ },
+ {
+  "id": "UWB-05",
+  "t": "UWB NLOS/LOS Classification Using Deep Learning Method",
+  "y": 2020,
+  "v": "IEEE Communications Letters",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-06",
+  "t": "Feature-Based Generalized Gaussian Distribution Method for NLoS Detection in Ultra-Wideban",
+  "y": 2022,
+  "v": "IEEE Sensors Journal",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-07",
+  "t": "UWB Positioning System Based on LSTM Classification With Mitigated NLOS Effects",
+  "y": 2022,
+  "v": "IEEE Internet of Things Journal",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "UWB-08",
+  "t": "Transfer Learning for UWB Error Correction and (N)LOS Classification in Multiple Environme",
+  "y": 2023,
+  "v": "IEEE Internet of Things Journal",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "UWB-09",
+  "t": "A Novel NLOS Mitigation Algorithm for UWB Localization in Harsh Indoor Environments",
+  "y": 2018,
+  "v": "IEEE Transactions on Vehicular Technology",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-10",
+  "t": "A Machine Learning Approach to Ranging Error Mitigation for UWB Localization",
+  "y": 2012,
+  "v": "IEEE Transactions on Communications",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-11",
+  "t": "Model of distance and bandwidth dependency of TOA-based UWB ranging error",
+  "y": 2008,
+  "v": "IEEE International Conference on Ultra-Wideband (ICUWB 2008)（venue 依 DOI 前缀 10.1109/icuwb 推断，OpenAlex venue 字段为 null）",
+  "a": "UWB",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-12",
+  "t": "Ranging With Ultrawide Bandwidth Signals in Multipath Environments",
+  "y": 2009,
+  "v": "Proceedings of the IEEE",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-13",
+  "t": "Survey on NLOS Identification and Error Mitigation for UWB Indoor Positioning",
+  "y": 2023,
+  "v": "Electronics",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-14",
+  "t": "Tightly coupled UWB/IMU pose estimation",
+  "y": 2009,
+  "v": "IEEE International Conference on Ultra-Wideband (ICUWB 2009)（venue 依 DOI 前缀 10.1109/icuwb 推断，OpenAlex venue 字段为 null）",
+  "a": "UWB",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-15",
+  "t": "UWB-Based Localization System Aided With Inertial Sensor for Underground Coal Mine Applica",
+  "y": 2020,
+  "v": "IEEE Sensors Journal",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-16",
+  "t": "An Improved UWB/IMU Tightly Coupled Positioning Algorithm Study",
+  "y": 2023,
+  "v": "Sensors",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "UWB-17",
+  "t": "NR-UIO: NLOS-Robust UWB-Inertial Odometry Based on Interacting Multiple Model and NLOS Fac",
+  "y": 2021,
+  "v": "Sensors",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "UWB-18",
+  "t": "UWB Localization Based on Improved Robust Adaptive Cubature Kalman Filter",
+  "y": 2023,
+  "v": "Sensors",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-19",
+  "t": "Robust Error State Sage-Husa Adaptive Kalman Filter for UWB Localization",
+  "y": 2025,
+  "v": "IEEE Sensors Journal",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-20",
+  "t": "Position error bound for UWB localization in dense cluttered environments",
+  "y": 2008,
+  "v": "IEEE Transactions on Aerospace and Electronic Systems",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-21",
+  "t": "UWB Anchor Node Optimization Deployment Using MGWO for the Coal Mine Working Face End",
+  "y": 2023,
+  "v": "IEEE Transactions on Instrumentation and Measurement",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-22",
+  "t": "Combining Dilution of Precision and Kalman Filtering for UWB Positioning in a Narrow Space",
+  "y": 2022,
+  "v": "Remote Sensing",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-23",
+  "t": "A Practical and Economical Ultra-wideband Base Station Placement Approach for Indoor Auton",
+  "y": 2022,
+  "v": "Journal of Advanced Transportation",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-24",
+  "t": "Estimating the Localizability in Tunnel-like Environments using LiDAR and UWB",
+  "y": 2019,
+  "v": "IEEE International Conference on Robotics and Automation (ICRA 2019)（venue 依 DOI 前缀 10.1109/icra 推断，OpenAlex venue 字段为 null）",
+  "a": "UWB",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-25",
+  "t": "Enhanced EKF-Based Time Calibration for GNSS/UWB Tight Integration",
+  "y": 2022,
+  "v": "IEEE Sensors Journal",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-26",
+  "t": "A Seamless Navigation System and Applications for Autonomous Vehicles Using a Tightly Coup",
+  "y": 2021,
+  "v": "Remote Sensing",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "UWB-27",
+  "t": "Improved-UWB/LiDAR-SLAM Tightly Coupled Positioning System with NLOS Identification Using ",
+  "y": 2022,
+  "v": "Remote Sensing",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "UWB-28",
+  "t": "UWB Localization in a Smart Factory: Augmentation Methods and Experimental Assessment",
+  "y": 2021,
+  "v": "IEEE Transactions on Instrumentation and Measurement",
+  "a": "UWB + Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "UWB-29",
+  "t": "UTIL: An ultra-wideband time-difference-of-arrival indoor localization dataset",
+  "y": 2024,
+  "v": "The International Journal of Robotics Research",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "UWB-30",
+  "t": "Ultra Wideband Indoor Positioning Technologies: Analysis and Recent Advances",
+  "y": 2016,
+  "v": "Sensors",
+  "a": "UWB",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-01",
+  "t": "CFEAR Radarodometry -- Conservative Filtering for Efficient and Accurate Radar Odometry",
+  "y": 2021,
+  "v": "2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "RADAR-02",
+  "t": "Radar Odometry Combining Probabilistic Estimation and Unsupervised Feature Learning",
+  "y": 2021,
+  "v": "Robotics: Science and Systems XVII (RSS 2021)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-03",
+  "t": "ORORA: Outlier-Robust Radar Odometry",
+  "y": 2023,
+  "v": "2023 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-04",
+  "t": "A Normal Distribution Transform-Based Radar Odometry Designed For Scanning and Automotive ",
+  "y": 2021,
+  "v": "2021 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "RADAR-05",
+  "t": "DRO: Doppler-Aware Direct Radar Odometry",
+  "y": 2025,
+  "v": "Robotics: Science and Systems XXI (RSS 2025)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 5,
+  "c": 1
+ },
+ {
+  "id": "RADAR-06",
+  "t": "Radar-Based Odometry for Low-Speed Driving",
+  "y": 2025,
+  "v": "arXiv preprint (Crossref 另检出 RA-L 2026 版 DOI 10.1109/lra.2026.3686644，题名 Radar-Inertial Odometry for Low-Speed Driving)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 0
+ },
+ {
+  "id": "RADAR-07",
+  "t": "An EKF Based Approach to Radar Inertial Odometry",
+  "y": 2020,
+  "v": "2020 International Conference on Multisensor Fusion and Integration for Intelligent Systems (MFI)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "RADAR-08",
+  "t": "Tightly-Coupled EKF-Based Radar-Inertial Odometry",
+  "y": 2022,
+  "v": "2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-09",
+  "t": "Impact of Temporal Delay on Radar-Inertial Odometry",
+  "y": 2025,
+  "v": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-10",
+  "t": "4D iRIOM: 4D Imaging Radar Inertial Odometry and Mapping",
+  "y": 2023,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 1
+ },
+ {
+  "id": "RADAR-11",
+  "t": "RINO: Accurate, Robust Radar-Inertial Odometry with Non-Iterative Estimation",
+  "y": 2024,
+  "v": "IEEE Transactions on Automation Science and Engineering, vol. 22, pp. 20420-20434, 2025",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-12",
+  "t": "Ground-Optimized 4D Radar-Inertial Odometry via Continuous Velocity Integration using Gaus",
+  "y": 2025,
+  "v": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "RADAR-13",
+  "t": "GaRLIO: Gravity enhanced Radar-LiDAR-Inertial Odometry",
+  "y": 2025,
+  "v": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "RADAR-14",
+  "t": "AF-RLIO: Adaptive Fusion of Radar-LiDAR-Inertial Information for Robust Odometry in Challe",
+  "y": 2025,
+  "v": "2025 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-15",
+  "t": "Degradation Resilient LiDAR-Radar-Inertial Odometry",
+  "y": 2024,
+  "v": "2024 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-16",
+  "t": "Adaptive LiDAR-Radar Fusion for Outdoor Odometry Across Dense Smoke Conditions",
+  "y": 2024,
+  "v": "arXiv preprint (venue not independently verified in this session)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "RADAR-17",
+  "t": "LiDAR Teach, Radar Repeat: Robust Cross-Modal Navigation in Degenerate and Varying Environ",
+  "y": 2026,
+  "v": "arXiv preprint (venue not independently verified in this session)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-18",
+  "t": "Are We Ready for Radar to Replace Lidar in All-Weather Mapping and Localization?",
+  "y": 2022,
+  "v": "arXiv preprint (v3; peer-reviewed venue not independently verified in this session)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "RADAR-19",
+  "t": "RadarSLAM: Radar based Large-Scale SLAM in All Weathers",
+  "y": 2020,
+  "v": "2020 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-20",
+  "t": "4DRadarSLAM: A 4D Imaging Radar SLAM System for Large-scale Environments based on Pose Gra",
+  "y": 2023,
+  "v": "2023 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-21",
+  "t": "Open-RadVLAD: Fast and Robust Radar Place Recognition",
+  "y": 2024,
+  "v": "2024 IEEE Radar Conference (RadarConf24)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-22",
+  "t": "A New Wave in Robotics: Survey on Recent mmWave Radar Applications in Robotics",
+  "y": 2023,
+  "v": "IEEE Transactions on Robotics, 40 (2024) 4544-4560",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "RADAR-23",
+  "t": "Radar Odometry for Autonomous Ground Vehicles: A Survey of Methods and Datasets",
+  "y": 2023,
+  "v": "IEEE Transactions on Intelligent Vehicles (2024; arXiv 2023)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-24",
+  "t": "The Oxford Radar RobotCar Dataset: A Radar Extension to the Oxford RobotCar Dataset",
+  "y": 2019,
+  "v": "arXiv 2019; Crossref 检出同题 ICRA 2020 版 DOI 10.1109/icra40945.2020.9196884",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "RADAR-25",
+  "t": "MulRan: Multimodal Range Dataset for Urban Place Recognition",
+  "y": 2020,
+  "v": "2020 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-26",
+  "t": "Boreas: A Multi-Season Autonomous Driving Dataset",
+  "y": 2022,
+  "v": "The International Journal of Robotics Research (IJRR 2023, per Crossref)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-27",
+  "t": "K-Radar: 4D Radar Object Detection for Autonomous Driving in Various Weather Conditions",
+  "y": 2022,
+  "v": "Proceedings of the NeurIPS Track on Datasets and Benchmarks 2022 (per arXiv journal_ref)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "RADAR-28",
+  "t": "RADIATE: A Radar Dataset for Automotive Perception in Bad Weather",
+  "y": 2020,
+  "v": "2021 IEEE International Conference on Robotics and Automation (ICRA) (per Crossref)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-29",
+  "t": "NTU4DRadLM: 4D Radar-centric Multi-Modal Dataset for Localization and Mapping",
+  "y": 2023,
+  "v": "2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC) (per Crossref)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RADAR-30",
+  "t": "IWR6843 single-chip 60-64GHz intelligent mmWave sensor (vendor datasheet/product page)",
+  "y": 2026,
+  "v": "Vendor datasheet/official doc (ti.com product page)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RADAR-31",
+  "t": "AWR2944 automotive 76-81GHz high-performance radar SoC (vendor datasheet/product page)",
+  "y": 2026,
+  "v": "Vendor datasheet/official doc (ti.com product page)",
+  "a": "mmWave Radar",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-01",
+  "t": "Event-Based Vision: A Survey",
+  "y": 2022,
+  "v": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 1
+ },
+ {
+  "id": "EVENT-02",
+  "t": "Ultimate SLAM? Combining Events, Images, and IMU for Robust Visual SLAM in HDR and High-Sp",
+  "y": 2018,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "EVENT-03",
+  "t": "Continuous-Time Visual-Inertial Odometry for Event Cameras",
+  "y": 2018,
+  "v": "IEEE Transactions on Robotics (TRO)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "EVENT-04",
+  "t": "ESVO2: Direct Visual-Inertial Odometry with Stereo Event Cameras",
+  "y": 2025,
+  "v": "IEEE Transactions on Robotics (TRO)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 5,
+  "c": 1
+ },
+ {
+  "id": "EVENT-05",
+  "t": "Deep Visual Odometry for Stereo Event Cameras",
+  "y": 2025,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-06",
+  "t": "Event Camera-Based Visual Odometry for Dynamic Motion Tracking of a Legged Robot Using Ada",
+  "y": 2023,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-07",
+  "t": "Visual Odometry with an Event Camera Using Continuous Ray Warping and Volumetric Contrast ",
+  "y": 2022,
+  "v": "Sensors (MDPI)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-08",
+  "t": "CMax-SLAM: Event-Based Rotational-Motion Bundle Adjustment and SLAM System Using Contrast ",
+  "y": 2024,
+  "v": "IEEE Transactions on Robotics (TRO)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-09",
+  "t": "Low-latency automotive vision with event cameras",
+  "y": 2024,
+  "v": "Nature",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "EVENT-10",
+  "t": "High Speed and High Dynamic Range Video with an Event Camera",
+  "y": 2021,
+  "v": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "EVENT-11",
+  "t": "TUMTraf Event: Calibration and Fusion Resulting in a Dataset for Roadside Event-Based and ",
+  "y": 2024,
+  "v": "IEEE Transactions on Intelligent Vehicles (TIV)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "EVENT-12",
+  "t": "AdaFuse-Det: Adaptive Cross-Modal Fusion of Event Cameras for Robust Object Detection in L",
+  "y": 2026,
+  "v": "arXiv (CoRR)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 0
+ },
+ {
+  "id": "EVENT-13",
+  "t": "EvLight++: Low-Light Video Enhancement with an Event Camera: A Large-Scale Real-World Data",
+  "y": 2026,
+  "v": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 0
+ },
+ {
+  "id": "EVENT-14",
+  "t": "Fusion techniques of frame and event cameras in autonomous driving: A review",
+  "y": 2026,
+  "v": "Information Fusion (Elsevier)",
+  "a": "Event Camera",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-15",
+  "t": "Event-Triggered Asynchronous Fusion Localization for an Autonomous Mobile Robot With a Cam",
+  "y": 2026,
+  "v": "IEEE Transactions on Industrial Electronics (TIE)",
+  "a": "Event Camera",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-16",
+  "t": "Asynchronous Multi-Sensor Fusion for 3D Mapping and Localization",
+  "y": 2018,
+  "v": "IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "Event Camera",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-17",
+  "t": "Simultaneous Synchronization and Calibration for Wide-baseline Stereo Event Cameras",
+  "y": 2023,
+  "v": "arXiv (CoRR)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "EVENT-18",
+  "t": "Hardware-Free Event Cameras Temporal Synchronization Based on Event Density Alignment",
+  "y": 2023,
+  "v": "International Conference on Intelligent Robotics and Applications (ICIRA), LNCS 14273",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "EVENT-19",
+  "t": "Spatio-Temporal Calibration for Omni-Directional Vehicle-Mounted Event Cameras",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "EVENT-20",
+  "t": "Temporal and Rotational Calibration for Event-Centric Multi-Sensor Systems",
+  "y": 2025,
+  "v": "IEEE International Conference on Robotics and Biomimetics (ROBIO); arXiv 2508.12564",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-21",
+  "t": "Rotation and Temporal Calibration of Event Camera and IMU Based on Contrast Maximization",
+  "y": 2025,
+  "v": "IEEE Transactions on Instrumentation and Measurement (TIM)",
+  "a": "Event Camera",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-22",
+  "t": "DSEC: A Stereo Event Camera Dataset for Driving Scenarios",
+  "y": 2021,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "EVENT-23",
+  "t": "The Multivehicle Stereo Event Camera Dataset: An Event Camera Dataset for 3D Perception",
+  "y": 2018,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "EVENT-24",
+  "t": "TUM-VIE: The TUM Stereo Visual-Inertial Event Dataset",
+  "y": 2021,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "EVENT-25",
+  "t": "The event-camera dataset and simulator: Event-based data for pose estimation, visual odome",
+  "y": 2017,
+  "v": "International Journal of Robotics Research (IJRR)",
+  "a": "Event Camera + Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "EVENT-26",
+  "t": "ESIM: an Open Event Camera Simulator",
+  "y": 2018,
+  "v": "Conference on Robot Learning (CoRL), PMLR v87",
+  "a": "Event Camera + Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "EVENT-27",
+  "t": "v2e: From Video Frames to Realistic DVS Events",
+  "y": 2021,
+  "v": "CVPR Workshops (EventVision)",
+  "a": "Event Camera + Simulation",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "EVENT-28",
+  "t": "HOTS: A Hierarchy of Event-Based Time-Surfaces for Pattern Recognition",
+  "y": 2017,
+  "v": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)",
+  "a": "Event Camera",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-29",
+  "t": "EV-FlowNet: Self-Supervised Optical Flow Estimation for Event-based Cameras",
+  "y": 2018,
+  "v": "Robotics: Science and Systems (RSS)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "EVENT-30",
+  "t": "Frame-Event Alignment and Fusion Network for High Frame Rate Tracking",
+  "y": 2023,
+  "v": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+  "a": "Event Camera",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "FUSION-01",
+  "t": "Algorithms for sequential adaptive estimation of prior statistics",
+  "y": 1969,
+  "v": "1969 IEEE Symposium on Adaptive Processes (8th) Decision and Control",
+  "a": "Adaptive Fusion",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-02",
+  "t": "Approaches to adaptive filtering",
+  "y": 1972,
+  "v": "IEEE Transactions on Automatic Control",
+  "a": "Adaptive Fusion",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-03",
+  "t": "A Chi-square test for fault-detection in Kalman filters",
+  "y": 1987,
+  "v": "IEEE Transactions on Automatic Control",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-04",
+  "t": "Adaptive Kalman Filtering for INS/GPS",
+  "y": 1999,
+  "v": "Journal of Geodesy",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-05",
+  "t": "Recursive Noise Adaptive Kalman Filtering by Variational Bayesian Approximations",
+  "y": 2009,
+  "v": "IEEE Transactions on Automatic Control",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-06",
+  "t": "Modified Sage-Husa Adaptive Kalman Filter-Based SINS/DVL Integrated Navigation System for ",
+  "y": 2021,
+  "v": "Journal of Sensors",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-07",
+  "t": "A Variational Bayesian-Based Unscented Kalman Filter With Both Adaptivity and Robustness",
+  "y": 2016,
+  "v": "IEEE Sensors Journal",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-08",
+  "t": "Multi-Sensor Optimal Data Fusion Based on the Adaptive Fading Unscented Kalman Filter",
+  "y": 2018,
+  "v": "Sensors",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-09",
+  "t": "Performance evaluation of the filters with adaptive factor and fading factor for GNSS/INS ",
+  "y": 2021,
+  "v": "GPS Solutions",
+  "a": "Adaptive Fusion",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-10",
+  "t": "An outlier-robust Kalman filter",
+  "y": 2011,
+  "v": "2011 IEEE International Conference on Robotics and Automation",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-11",
+  "t": "Robust Variational-Based Kalman Filter for Outlier Rejection With Correlated Measurements",
+  "y": 2020,
+  "v": "IEEE Transactions on Signal Processing",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-12",
+  "t": "A Hypothesis Test-Constrained Robust Kalman Filter for INS/GNSS Integration With Abnormal ",
+  "y": 2022,
+  "v": "IEEE Transactions on Vehicular Technology",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "FUSION-13",
+  "t": "Kalman Filter-Based Integrity Monitoring Against Sensor Faults",
+  "y": 2013,
+  "v": "Journal of Guidance Control and Dynamics",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-14",
+  "t": "A State-Domain Robust Chi-Square Test Method for GNSS/INS Integrated Navigation",
+  "y": 2021,
+  "v": "Journal of Sensors",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-15",
+  "t": "Design of a Fault Detection and Isolation System for Intelligent Vehicle Navigation System",
+  "y": 2015,
+  "v": "International Journal of Navigation and Observation",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-16",
+  "t": "Localization Integrity for Intelligent Vehicles Through Fault Detection and Position Error",
+  "y": 2020,
+  "v": "IEEE Transactions on Intelligent Transportation Systems",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-17",
+  "t": "Validation Gating for Non-Linear Non-Gaussian Target Tracking",
+  "y": 2006,
+  "v": "2006 9th International Conference on Information Fusion",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-18",
+  "t": "Site-Specific Unmodeled Error Mitigation for GNSS Positioning in Urban Environments Using ",
+  "y": 2018,
+  "v": "Remote Sensing",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-19",
+  "t": "GNSS multipath detection using a machine learning approach",
+  "y": 2017,
+  "v": "2017 IEEE 20th International Conference on Intelligent Transportation Systems (ITSC)",
+  "a": "Adaptive Fusion + GNSS",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "FUSION-20",
+  "t": "NLOS Identification and Weighted Least-Squares Localization for UWB Systems Using Multipat",
+  "y": 2007,
+  "v": "EURASIP Journal on Advances in Signal Processing",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-22",
+  "t": "An Integrated GNSS/UWB/DR/VMM Positioning Strategy for Intelligent Vehicles",
+  "y": 2020,
+  "v": "IEEE Transactions on Vehicular Technology",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-23",
+  "t": "On degeneracy of optimization-based state estimation problems",
+  "y": 2016,
+  "v": "2016 IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "Adaptive Fusion + LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "FUSION-24",
+  "t": "GenZ-ICP: Generalizable and Degeneracy-Robust LiDAR Odometry Using an Adaptive Weighting",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters",
+  "a": "Adaptive Fusion + LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 9,
+  "c": 1
+ },
+ {
+  "id": "FUSION-25",
+  "t": "Empirical Analysis of Autonomous Vehicle's LiDAR Detection Performance Degradation for Act",
+  "y": 2023,
+  "v": "Sensors",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "FUSION-26",
+  "t": "D3VO: Deep Depth, Deep Pose and Deep Uncertainty for Monocular Visual Odometry",
+  "y": 2020,
+  "v": "arXiv",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-27",
+  "t": "Relocalization based on millimeter wave radar point cloud for visually degraded environmen",
+  "y": 2023,
+  "v": "Journal of Field Robotics",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-28",
+  "t": "DGRO: Doppler Velocity and Gyroscope-Aided Radar Odometry",
+  "y": 2024,
+  "v": "Sensors",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUSION-29",
+  "t": "Switchable constraints for robust pose graph SLAM",
+  "y": 2012,
+  "v": "2012 IEEE/RSJ International Conference on Intelligent Robots and Systems",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "FUSION-30",
+  "t": "Inference on networks of mixtures for robust robot mapping",
+  "y": 2013,
+  "v": "The International Journal of Robotics Research",
+  "a": "Adaptive Fusion",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-01",
+  "t": "Navigation sensors and systems in GNSS degraded and denied environments",
+  "y": 2014,
+  "v": "Chinese Journal of Aeronautics",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-02",
+  "t": "Shadow Matching: A New GNSS Positioning Technique for Urban Canyons",
+  "y": 2011,
+  "v": "Journal of Navigation",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "GNSS-03",
+  "t": "Height Aiding, C/N0 Weighting and Consistency Checking for GNSS NLOS and Multipath Mitigat",
+  "y": 2013,
+  "v": "Journal of Navigation",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "GNSS-04",
+  "t": "Measuring GNSS Multipath Distributions in Urban Canyon Environments",
+  "y": 2014,
+  "v": "IEEE Transactions on Instrumentation and Measurement",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-05",
+  "t": "LiDAR Scan Matching Aided Inertial Navigation System in GNSS-Denied Environments",
+  "y": 2015,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "GNSS-06",
+  "t": "NLOS Correction/Exclusion for GNSS Measurement Using RAIM and City Building Models",
+  "y": 2015,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "GNSS-08",
+  "t": "Loose and Tight GNSS/INS Integrations: Comparison of Performance Assessed in Real Urban Sc",
+  "y": 2017,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "GNSS-09",
+  "t": "An INS/GNSS integrated navigation in GNSS denied environment using recurrent neural networ",
+  "y": 2019,
+  "v": "Defence Technology",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "GNSS-10",
+  "t": "Smart Device-Supported BDS/GNSS Real-Time Kinematic Positioning for Sub-Meter-Level Accura",
+  "y": 2016,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 0
+ },
+ {
+  "id": "GNSS-11",
+  "t": "Instantaneous BeiDou+GPS RTK positioning with high cut-off elevation angles",
+  "y": 2013,
+  "v": "Journal of Geodesy",
+  "a": "GNSS",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-12",
+  "t": "Combined GPS + BDS for short to long baseline RTK positioning",
+  "y": 2015,
+  "v": "Measurement Science and Technology",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-13",
+  "t": "GNSS Multipath Detection Using Continuous Time-Series C/N0",
+  "y": 2020,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-14",
+  "t": "NLOS Multipath Classification of GNSS Signal Correlation Output Using Machine Learning",
+  "y": 2021,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "GNSS-15",
+  "t": "Anomaly Detection for Urban Vehicle GNSS Observation with a Hybrid Machine Learning System",
+  "y": 2020,
+  "v": "Remote Sensing",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "GNSS-16",
+  "t": "3D Mapping Database Aided GNSS Based Collaborative Positioning Using Factor Graph Optimiza",
+  "y": 2020,
+  "v": "IEEE Transactions on Intelligent Transportation Systems",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "GNSS-17",
+  "t": "Using Sky-pointing fish-eye camera and LiDAR to aid GNSS single-point positioning in urban",
+  "y": 2020,
+  "v": "IET Intelligent Transport Systems",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "GNSS-18",
+  "t": "GVINS: Tightly Coupled GNSS–Visual–Inertial Fusion for Smooth and Consistent State Estimat",
+  "y": 2022,
+  "v": "IEEE Transactions on Robotics",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "GNSS-19",
+  "t": "Semi-tightly coupled integration of multi-GNSS PPP and S-VINS for precise positioning in G",
+  "y": 2021,
+  "v": "Satellite Navigation",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-20",
+  "t": "GNSS/IMU/ODO/LiDAR-SLAM Integrated Navigation System Using IMU/ODO Pre-Integration",
+  "y": 2020,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "GNSS-21",
+  "t": "Modified RTK-GNSS for Challenging Environments",
+  "y": 2024,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-22",
+  "t": "An Improved Robust Adaptive Kalman Filter for GNSS Precise Point Positioning",
+  "y": 2018,
+  "v": "IEEE Sensors Journal",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-23",
+  "t": "Research on Integrated Navigation System of Agricultural Machinery Based on RTK-BDS/INS",
+  "y": 2022,
+  "v": "Agriculture",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-24",
+  "t": "HDOP and VDOP Analysis in an Ideal Placement Environment for Dual GNSSs",
+  "y": 2022,
+  "v": "Sensors",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-25",
+  "t": "Tight Fusion of a Monocular Camera, MEMS-IMU, and Single-Frequency Multi-GNSS RTK for Prec",
+  "y": 2019,
+  "v": "Remote Sensing",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "GNSS-26",
+  "t": "Low-cost GNSS/INS integration for enhanced land vehicle performance",
+  "y": 2019,
+  "v": "Measurement Science and Technology",
+  "a": "GNSS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "BDS-01",
+  "t": "北斗三号建成开通新闻发布会（短报文服务规格官方表述）",
+  "y": 2020,
+  "v": "beidou.gov.cn（北斗卫星导航系统官方网站）",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "BDS-02",
+  "t": "Introduction to global short message communication service of BeiDou-3 navigation satellit",
+  "y": 2021,
+  "v": "Advances in Space Research",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "BDS-03",
+  "t": "Featured services and performance of BDS-3",
+  "y": 2021,
+  "v": "Science Bulletin",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 6,
+  "c": 0
+ },
+ {
+  "id": "BDS-04",
+  "t": "High-precision GNSS ocean positioning with BeiDou short-message communication",
+  "y": 2019,
+  "v": "Journal of Geodesy",
+  "a": "BeiDou SMS",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "BDS-05",
+  "t": "An offshore real-time precise point positioning technique based on a single set of BeiDou ",
+  "y": 2020,
+  "v": "Journal of Geodesy",
+  "a": "BeiDou SMS",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "BDS-06",
+  "t": "Research on BeiDou anti-spoofing technology based on comprehensive radio determination sat",
+  "y": 2020,
+  "v": "Satellite Navigation",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "BDS-07",
+  "t": "Global capabilities of BeiDou Navigation Satellite System",
+  "y": 2020,
+  "v": "Satellite Navigation",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "BDS-08",
+  "t": "UAV Path Replanning Based on BeiDou Short Message Communication Function",
+  "y": 2023,
+  "v": "Proceedings of the 42nd Chinese Control Conference (CCC)",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "BDS-09",
+  "t": "An Efficient Dual-Stage Compression Model for Maritime Safety Information Based on BeiDou ",
+  "y": 2023,
+  "v": "Journal of Marine Science and Engineering",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "BDS-10",
+  "t": "New Orbit Determination Method for GEO Satellites Based on BeiDou Short-Message Communicat",
+  "y": 2022,
+  "v": "Remote Sensing",
+  "a": "BeiDou SMS",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUT-01",
+  "t": "Review on bio-inspired polarized skylight navigation",
+  "y": 2023,
+  "v": "Chinese Journal of Aeronautics",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "FUT-02",
+  "t": "Bio-Inspired Polarized Skylight-Based Navigation Sensors: A Review",
+  "y": 2012,
+  "v": "Sensors",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUT-03",
+  "t": "Polarized skylight navigation",
+  "y": 2016,
+  "v": "Applied Optics",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUT-04",
+  "t": "Multi-sensor fusion SLAM approach for the mobile robot with a bio-inspired polarised skyli",
+  "y": 2020,
+  "v": "IET Radar, Sonar & Navigation",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 0
+ },
+ {
+  "id": "FUT-05",
+  "t": "Limitation of Rayleigh sky model for bioinspired polarized skylight navigation in three-di",
+  "y": 2020,
+  "v": "Bioinspiration & Biomimetics",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUT-06",
+  "t": "A Bio-Inspired Multi-Sensor System for Robust Orientation and Position Estimation",
+  "y": 2021,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUT-07",
+  "t": "A Novel Polarized Skylight Navigation Model for Bionic Navigation With Marginalized Unscen",
+  "y": 2021,
+  "v": "IEEE Sensors Journal",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "FUT-08",
+  "t": "StarNAV: Autonomous Optical Navigation of a Spacecraft by the Relativistic Perturbation of",
+  "y": 2019,
+  "v": "Sensors",
+  "a": "Future Outlook",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-02",
+  "t": "X-ICP: Localizability-Aware LiDAR Registration for Robust Localization in Extreme Environm",
+  "y": 2024,
+  "v": "IEEE Transactions on Robotics",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 1
+ },
+ {
+  "id": "LDG-04",
+  "t": "LF-GICP: Parameter-Free Degeneracy-Aware LiDAR Odometry via a Voxel-Normal Localizability ",
+  "y": 2026,
+  "v": "arXiv preprint",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 1
+ },
+ {
+  "id": "LDG-05",
+  "t": "Heterogeneous LiDAR Dataset for Benchmarking Robust Localization in Diverse Degenerate Sce",
+  "y": 2025,
+  "v": "The International Journal of Robotics Research (IJRR)",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 1
+ },
+ {
+  "id": "LDG-06",
+  "t": "Probabilistic Degeneracy Detection for Point-to-Plane Error Minimization",
+  "y": 2024,
+  "v": "arXiv preprint",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-07",
+  "t": "Informed, Constrained, Aligned: A Field Analysis on Degeneracy-aware Point Cloud Registrat",
+  "y": 2024,
+  "v": "arXiv preprint",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-08",
+  "t": "P2d-DO: Degeneracy Optimization for LiDAR SLAM With Point-to-Distribution Detection Factor",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-09",
+  "t": "A Real-Time Degeneracy Sensing and Compensation Method for Enhanced LiDAR SLAM",
+  "y": 2025,
+  "v": "IEEE Transactions on Intelligent Transportation Systems (T-ITS)",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-10",
+  "t": "Switch-SLAM: Switching-Based LiDAR-Inertial-Visual SLAM for Degenerate Environments",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-11",
+  "t": "Anti-Degeneracy Scheme for Lidar SLAM Based on Particle Filter in Geometry Feature-Less En",
+  "y": 2025,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-12",
+  "t": "LIVER: A Tightly Coupled LiDAR-Inertial-Visual State Estimator With High Robustness for Un",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-13",
+  "t": "LiDAR–Inertial Integration for Rail Vehicle Localization and Mapping in Tunnels",
+  "y": 2023,
+  "v": "IEEE Sensors Journal",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-14",
+  "t": "MULLS: Versatile LiDAR SLAM via Multi-metric Linear Least Square",
+  "y": 2021,
+  "v": "arXiv preprint",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "LDG-15",
+  "t": "LODESTAR: Degeneracy-Aware LiDAR-Inertial Odometry with Adaptive Schmidt-Kalman Filter and",
+  "y": 2025,
+  "v": "arXiv preprint",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-16",
+  "t": "LP-ICP: General Localizability-Aware Point Cloud Registration for Robust Localization in E",
+  "y": 2025,
+  "v": "arXiv preprint",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDG-17",
+  "t": "FAST-LIO2: Fast Direct LiDAR-inertial Odometry",
+  "y": 2022,
+  "v": "arXiv preprint (IEEE T-RO 2022 版本未在本次独立核验)",
+  "a": "LiDAR Degeneracy",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDY-01",
+  "t": "ERASOR: Egocentric Ratio of Pseudo Occupancy-based Dynamic Object Removal for Static 3D Po",
+  "y": 2021,
+  "v": "IEEE Robotics and Automation Letters (RA-L)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "LDY-02",
+  "t": "Remove, then Revert: Static Point Cloud Map Construction using Multiresolution Range Image",
+  "y": 2020,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "LDY-03",
+  "t": "ERASOR++: Height Coding Plus Egocentric Ratio Based Dynamic Object Removal for Static Poin",
+  "y": 2024,
+  "v": "IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 0
+ },
+ {
+  "id": "LDY-04",
+  "t": "ERASOR2: Instance-Aware Robust 3D Mapping of the Static World in Dynamic Scenes",
+  "y": 2023,
+  "v": "Robotics: Science and Systems (RSS)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDY-05",
+  "t": "DynaHull: Density-centric Dynamic Point Filtering in Point Clouds",
+  "y": 2024,
+  "v": "arXiv preprint",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 1
+ },
+ {
+  "id": "LDY-06",
+  "t": "RF-LIO: Removal-First Tightly-coupled Lidar Inertial Odometry in High Dynamic Environments",
+  "y": 2021,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "LDY-07",
+  "t": "DOR-LINS: Dynamic Objects Removal LiDAR-Inertial SLAM Based on Ground Pseudo Occupancy",
+  "y": 2023,
+  "v": "IEEE Sensors Journal",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDY-08",
+  "t": "Nonparametric Background Model-Based LiDAR SLAM in Highly Dynamic Urban Environments",
+  "y": 2022,
+  "v": "IEEE Transactions on Intelligent Transportation Systems (T-ITS)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDY-09",
+  "t": "SPLIN: A Structured Plane-Based LiDAR–Inertial SLAM With Dynamic Object Removal",
+  "y": 2025,
+  "v": "IEEE Transactions on Instrumentation and Measurement (T-IM)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDY-10",
+  "t": "A Review of Dynamic Object Filtering in SLAM Based on 3D LiDAR",
+  "y": 2024,
+  "v": "Sensors (MDPI)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "LDY-11",
+  "t": "A Coarse-to-Fine LiDAR-Based SLAM with Dynamic Object Removal in Dense Urban Areas",
+  "y": 2021,
+  "v": "ION GNSS+ (Proceedings of the International Technical Meeting of the Satellite Division)",
+  "a": "LiDAR Dynamic",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-01",
+  "t": "Active mobile robot localization by entropy minimization",
+  "y": 1997,
+  "v": "Second EUROMICRO Workshop on Advanced Mobile Robots (EUROBOT)",
+  "a": "Relocalization",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-02",
+  "t": "Active Markov localization for mobile robots",
+  "y": 1998,
+  "v": "Robotics and Autonomous Systems",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-03",
+  "t": "Coastal navigation - mobile robot navigation with uncertainty in dynamic environments",
+  "y": 1999,
+  "v": "IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "Relocalization",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-04",
+  "t": "Active global localization for a mobile robot using multiple hypothesis tracking",
+  "y": 2001,
+  "v": "IEEE Transactions on Robotics and Automation",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-05",
+  "t": "Robust Monte Carlo localization for mobile robots",
+  "y": 2001,
+  "v": "Artificial Intelligence",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-06",
+  "t": "Expansion resetting for recovery from fatal error in Monte Carlo localization - comparison",
+  "y": 2004,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-07",
+  "t": "Active Visual Perception for Mobile Robot Localization",
+  "y": 2009,
+  "v": "Journal of Intelligent and Robotic Systems",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-08",
+  "t": "Heuristic Search Assisted Active Localization for Mobile Robot",
+  "y": 2012,
+  "v": "ROBOT (机器人)",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-09",
+  "t": "Robust Relocalization Based on Active Loop Closure for Real-Time Monocular SLAM",
+  "y": 2017,
+  "v": "International Conference on Computer Vision Systems (ICVS), LNCS",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-10",
+  "t": "Active Camera Relocalization with RGBD Camera from a Single 2D Image",
+  "y": 2018,
+  "v": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-11",
+  "t": "Active Camera Relocalization from a Single Reference Image without Hand-Eye Calibration",
+  "y": 2019,
+  "v": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+  "a": "Relocalization",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-12",
+  "t": "Illumination-Invariant Active Camera Relocalization for Fine-Grained Change Detection in t",
+  "y": 2022,
+  "v": "Neurocomputing (会议版 arXiv:2204.06580)",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 1,
+  "c": 0
+ },
+ {
+  "id": "RLC-13",
+  "t": "Active Pose Relocalization for Intelligent Substation Inspection Robot",
+  "y": 2022,
+  "v": "IEEE Transactions on Industrial Electronics",
+  "a": "Relocalization",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "RLC-14",
+  "t": "Relocalization With Submaps: Multi-Session Mapping for Planetary Rovers Equipped With Ster",
+  "y": 2020,
+  "v": "IEEE Robotics and Automation Letters",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "RLC-15",
+  "t": "A Survey on Active Simultaneous Localization and Mapping: State of the Art and New Frontie",
+  "y": 2023,
+  "v": "IEEE Transactions on Robotics",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "RLC-16",
+  "t": "Active Search and Relocalization Framework for Position-Lost Recovery Under Limited Number",
+  "y": 2024,
+  "v": "IEEE/SICE International Symposium on System Integration (SII)",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "RLC-17",
+  "t": "GOReloc: Graph-Based Object-Level Relocalization for Visual SLAM",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "RLC-18",
+  "t": "Tackling the Kidnapped Robot Problem via Sparse Feasible Hypothesis Sampling and Reliable ",
+  "y": 2026,
+  "v": "IEEE Transactions on Instrumentation and Measurement",
+  "a": "Relocalization",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-01",
+  "t": "Unified temporal and spatial calibration for multi-sensor systems",
+  "y": 2013,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "SYN-02",
+  "t": "3-D motion estimation and online temporal calibration for camera-IMU systems",
+  "y": 2013,
+  "v": "IEEE International Conference on Robotics and Automation (ICRA)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-03",
+  "t": "Online Temporal Calibration for Monocular Visual-Inertial Systems",
+  "y": 2018,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-04",
+  "t": "Online Spatial and Temporal Calibration for Monocular Direct Visual-Inertial Odometry",
+  "y": 2019,
+  "v": "Sensors (MDPI)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 4,
+  "c": 1
+ },
+ {
+  "id": "SYN-05",
+  "t": "Targetless Calibration of LiDAR-IMU System Based on Continuous-time Batch Estimation",
+  "y": 2020,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-06",
+  "t": "Automatic Targetless Extrinsic Calibration of a 3D Lidar and Camera by Maximizing Mutual I",
+  "y": 2012,
+  "v": "AAAI Conference on Artificial Intelligence (AAAI-26)",
+  "a": "Sync/Calibration",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-07",
+  "t": "Automatic targetless LiDAR-camera calibration: a survey",
+  "y": 2023,
+  "v": "Artificial Intelligence Review",
+  "a": "Sync/Calibration",
+  "s": "PARTIALLY_VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-08",
+  "t": "Accurate and Consistent Spatiotemporal Calibration for Heterogenous-Camera/IMU/LiDAR Syste",
+  "y": 2024,
+  "v": "IEEE/ASME Transactions on Mechatronics",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-09",
+  "t": "GRIL-Calib: Targetless Ground Robot IMU-LiDAR Extrinsic Calibration Method Using Ground Pl",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 2,
+  "c": 1
+ },
+ {
+  "id": "SYN-10",
+  "t": "EF-Calib: Spatiotemporal Calibration of Event- and Frame-Based Cameras Using Continuous-Ti",
+  "y": 2024,
+  "v": "IEEE Robotics and Automation Letters",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "SYN-11",
+  "t": "LiDAR-IMU Time Delay Calibration Based on Iterative Closest Point and Iterated Sigma Point",
+  "y": 2017,
+  "v": "Sensors (MDPI)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 1
+ },
+ {
+  "id": "SYN-12",
+  "t": "EKF-Based Radar-Inertial Odometry With Online Temporal Calibration",
+  "y": 2025,
+  "v": "IEEE Robotics and Automation Letters",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "SYN-13",
+  "t": "Camera, LiDAR, and IMU Spatiotemporal Calibration: Methodological Review and Research Pers",
+  "y": 2025,
+  "v": "Sensors (MDPI)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-14",
+  "t": "GLIC-Calib: Targetless and One-Shot Spatial-Temporal Calibration of LiDAR-IMU-Camera for G",
+  "y": 2025,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-15",
+  "t": "Joint Spatial-Temporal Calibration for Camera and Global Pose Sensor",
+  "y": 2024,
+  "v": "International Conference on 3D Vision (3DV)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-16",
+  "t": "Hardware-Based Time Synchronization for a Multi-Sensor System",
+  "y": 2024,
+  "v": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SYN-17",
+  "t": "Targetless Radar–Camera Calibration via Trajectory Alignment",
+  "y": 2025,
+  "v": "Sensors (MDPI)",
+  "a": "Sync/Calibration",
+  "s": "VERIFIED",
+  "n": 3,
+  "c": 0
+ },
+ {
+  "id": "SIM-04",
+  "t": "Physical-Based Event Camera Simulator",
+  "y": 2024,
+  "v": "ECCV 2024",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-05",
+  "t": "Combined Physics and Event Camera Simulator for Slip Detection",
+  "y": 2025,
+  "v": "2025 IEEE/CVF Winter Conference on Applications of Computer Vision Workshops (WACVW)",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-06",
+  "t": "ADV2E: Bridging the Gap Between Analogue Circuit and Discrete Frames in the Video-to-Event",
+  "y": 2024,
+  "v": "arXiv preprint",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-07",
+  "t": "EVIS: A Physics-Grounded Event Camera Plugin for NVIDIA Isaac Sim",
+  "y": 2026,
+  "v": "arXiv preprint",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-08",
+  "t": "EsaacSim: A Multimodal Event Camera Add-on for NVIDIA Isaac Sim",
+  "y": 2026,
+  "v": "arXiv preprint",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-09",
+  "t": "CARLA: An Open Urban Driving Simulator",
+  "y": 2017,
+  "v": "arXiv:1711.03938",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "SIM-10",
+  "t": "AirSim: High-Fidelity Visual and Physical Simulation for Autonomous Vehicles",
+  "y": 2017,
+  "v": "Field and Service Robotics (Springer Proceedings in Advanced Robotics)",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-11",
+  "t": "High Fidelity Physics-Based Simulation of a 512-Channel 4D-Radar Sensor for Automotive App",
+  "y": 2023,
+  "v": "IEEE Access",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-12",
+  "t": "Low-Cost, Triple-Frequency, Multi-GNSS PPP and MEMS IMU Integration for Continuous Navigat",
+  "y": 2023,
+  "v": "NAVIGATION: Journal of the Institute of Navigation",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "SIM-13",
+  "t": "Realistic Rainy Weather Simulation for LiDARs in CARLA Simulator",
+  "y": 2023,
+  "v": "arXiv preprint",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-14",
+  "t": "Lidar Light Scattering Augmentation (LISA): Physics-based Simulation of Adverse Weather Co",
+  "y": 2021,
+  "v": "arXiv preprint",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "SIM-15",
+  "t": "RadioRange: An Open-Source Digital Twin-based Ranging Simulator for UWB, Wi-Fi, and 5G",
+  "y": 2026,
+  "v": "arXiv preprint",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 1
+ },
+ {
+  "id": "SIM-16",
+  "t": "UUV Simulator: A Gazebo-based package for underwater intervention and multi-robot simulati",
+  "y": 2016,
+  "v": "OCEANS 2016 MTS/IEEE Monterey",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-17",
+  "t": "Scalability of Sensor Simulation in Ros-gazebo Platform with and without Using GPU",
+  "y": 2020,
+  "v": "Spring Simulation Conference (SpringSim 2020)",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ },
+ {
+  "id": "SIM-18",
+  "t": "KITTI-CARLA: a KITTI-like dataset generated by CARLA Simulator",
+  "y": 2021,
+  "v": "arXiv preprint",
+  "a": "Simulation",
+  "s": "VERIFIED",
+  "n": 0,
+  "c": 0
+ }
+]

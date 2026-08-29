@@ -1,0 +1,277 @@
+{
+  "area": "RADAR",
+  "queries": [
+    {
+      "query": "radar odometry",
+      "tool": "Semantic Scholar API (graph/v1/paper/search)",
+      "screened": 0,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "两次调用均返回 429 Too Many Requests；改用 arXiv/OpenAlex 完成该主题检索。"
+    },
+    {
+      "query": "radar inertial odometry",
+      "tool": "Semantic Scholar API",
+      "screened": 20,
+      "accepted": 9,
+      "rejected": 11,
+      "notes": "命中 Doer&Trommer MFI2020、Michalczyk IROS2022、4D iRIOM RA-L2023、Go-RIO ICRA2025、Nissov ICRA2024、Temporal Delay IROS2025、RINO TASE2025 入池；VGC-RIO/FD-RIO/UNRIO/Multi-State/Baro-Radar/Multi-Radar(ICRA24)/DRIO/Drones2024/Tightly-Coupled FG(JROS2024)/GV-iRIOM/JIRS2026-smoke 筛除（容量与主线相关性）。"
+    },
+    {
+      "query": "all:\"radar odometry\" (sortBy=relevance)",
+      "tool": "arXiv API",
+      "screened": 20,
+      "accepted": 6,
+      "rejected": 14,
+      "notes": "入池 CFEAR/ORORA/Burnett/Kung/DRO 相关候选等；Masking-by-Moving、Fast-MbyM、SE(3)、What-Goes-Around、BFAR、LodeStar、RaDiVe、Equi-RO、DNOI-4DRO、off-road 2026、subarctic 2026 等未入池（容量限制，方法主线已由入池文献覆盖）。"
+    },
+    {
+      "query": "radar odometry (cited_by_count:desc)",
+      "tool": "OpenAlex API",
+      "screened": 15,
+      "accepted": 0,
+      "rejected": 15,
+      "notes": "按引用排序造成关键词碰撞，返回通用机器人综述（Thrun 2001、Colomina 2014 等），全部拒绝，已记录于 rejected。"
+    },
+    {
+      "query": "all:\"radar place recognition\"",
+      "tool": "arXiv API",
+      "screened": 15,
+      "accepted": 1,
+      "rejected": 14,
+      "notes": "入池 Open-RadVLAD；RaPlace/SHeRLoc/AutoPlace/Off-the-Radar/ReFeree/OORD/XPRESS 等筛除。"
+    },
+    {
+      "query": "all:\"4D radar\" AND all:\"SLAM\"",
+      "tool": "arXiv API",
+      "screened": 15,
+      "accepted": 2,
+      "rejected": 13,
+      "notes": "入池 NTU4DRadLM（另经 Crossref 升级 venue）；Doppler-SLAM/SNAIL/HeRCULES/DIDLM/Introspective-Loop-Closure/AgriLiRa4D 等筛除（SNAIL/HeRCULES 作为对比出现于 Low-Speed 论文全文）。"
+    },
+    {
+      "query": "all:\"radar\" AND all:\"fog\" AND cat:cs.RO",
+      "tool": "arXiv API",
+      "screened": 15,
+      "accepted": 3,
+      "rejected": 12,
+      "notes": "入池 Oxford Radar RobotCar、RADIATE、RadarSLAM、New Wave 综述（同批命中）；RMap/RadarHD(2206.09273)/Get-It-For-Free/RaNDT 等筛除。"
+    },
+    {
+      "query": "all:\"Oxford Radar\" OR all:\"MulRan\" OR all:\"Boreas dataset\"",
+      "tool": "arXiv API",
+      "screened": 15,
+      "accepted": 3,
+      "rejected": 12,
+      "notes": "入池 Oxford、Boreas、Are-We-Ready、Under-the-Radar(后因容量调整未入池，其后续 Burnett RSS2021 在池)。"
+    },
+    {
+      "query": "all:\"Doppler-Aware Direct Radar Odometry\" OR all:\"Doppler radar odometry\"",
+      "tool": "arXiv API",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "入池 DRO (2504.20339)。"
+    },
+    {
+      "query": "all:\"MulRan\" OR all:\"K-Radar\" OR all:\"View of Delft\"",
+      "tool": "arXiv API",
+      "screened": 15,
+      "accepted": 1,
+      "rejected": 14,
+      "notes": "入池 K-Radar；VoD 未命中；LoGG3D-Net/CenterRadarNet/SpikingRTNH 等检测类筛除。"
+    },
+    {
+      "query": "all:\"MulRan\"",
+      "tool": "arXiv API",
+      "screened": 10,
+      "accepted": 0,
+      "rejected": 0,
+      "notes": "确认 MulRan 数据集论文不在 arXiv；改走 Crossref + Semantic Scholar DOI 核验。"
+    },
+    {
+      "query": "all:\"radar-lidar\" AND cat:cs.RO",
+      "tool": "arXiv API",
+      "screened": 15,
+      "accepted": 2,
+      "rejected": 13,
+      "notes": "入池 GaRLIO（经 Crossref 升级 ICRA2025）与 AF-RLIO（经 Crossref 升级 ICRA2025）；Pointing-the-Way/IMU-Preintegrated-ASF/iKalibr/CaRLi-V 等筛除。"
+    },
+    {
+      "query": "all:\"radar\" AND all:\"smoke\" AND cat:cs.RO",
+      "tool": "arXiv API",
+      "screened": 12,
+      "accepted": 2,
+      "rejected": 10,
+      "notes": "入池 Noh 浓烟融合 (2403.17441)；SubT IMU-drift 2026/RadarHD/Teach-Repeat/Kramer-Suburban 等筛除。"
+    },
+    {
+      "query": "all:\"60 GHz\" AND all:\"radar\" AND cat:cs.RO",
+      "tool": "arXiv API",
+      "screened": 2,
+      "accepted": 0,
+      "rejected": 2,
+      "notes": "未找到 60GHz 机器人里程计专门论文（记入 rejected 数组第 5 条）；60GHz 证据改由 TI IWR6843 官方页支撑。"
+    },
+    {
+      "query": "all:\"cross-modal\" AND all:\"radar\" AND cat:cs.RO",
+      "tool": "arXiv API",
+      "screened": 12,
+      "accepted": 1,
+      "rejected": 11,
+      "notes": "入池 LiDAR Teach, Radar Repeat (2605.02809)；Hidden-Gems/Towards-Dense-Accurate/UWB-SLAM 等筛除。"
+    },
+    {
+      "query": "all:\"automotive radar\" AND all:\"survey\"",
+      "tool": "arXiv API",
+      "screened": 2,
+      "accepted": 0,
+      "rejected": 2,
+      "notes": "仅命中 radar-communication 共存类，与定位无关；汽车雷达能力差异证据改由 TI AWR2944 官方页 + New Wave 综述支撑。"
+    },
+    {
+      "query": "all:\"4DRadarSLAM\" OR all:\"4D imaging radar\"",
+      "tool": "arXiv API",
+      "screened": 15,
+      "accepted": 0,
+      "rejected": 15,
+      "notes": "4DRadarSLAM 论文本体未在 arXiv 命中，改走 Crossref DOI 10.1109/icra48891.2023.10160670 核验（PARTIALLY_VERIFIED）；检测类条目筛除。"
+    },
+    {
+      "query": "query.bibliographic=MulRan Multimodal Range Dataset Urban Place Recognition",
+      "tool": "Crossref API",
+      "screened": 2,
+      "accepted": 1,
+      "rejected": 1,
+      "notes": "命中 MulRan ICRA2020 DOI 10.1109/icra40945.2020.9197298（无摘要）；第二条为无关 VPR 论文。"
+    },
+    {
+      "query": "paper/DOI:10.1109/MFI49285.2020.9235254",
+      "tool": "Semantic Scholar API",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "Doer & Trommer MFI2020 摘要全文（含 <0.6% 位置误差、200m+ 轨迹、动捕 GT）。"
+    },
+    {
+      "query": "paper/DOI:10.1109/icra40945.2020.9197298",
+      "tool": "Semantic Scholar API",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "MulRan 摘要全文（数据形态、radar PR 优于 LiDAR PR）。"
+    },
+    {
+      "query": "paper/DOI:10.1109/IROS47612.2022.9981396",
+      "tool": "Semantic Scholar API",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "Michalczyk IROS2022 摘要全文。"
+    },
+    {
+      "query": "id_list=2105.01457,2303.01876,2105.14152,2001.10789,2103.07908,2504.20339,2509.07683,2503.02509,2303.13962,2411.07699,2502.08093,2502.07703,2507.18317,2403.05332,2403.17441,2605.02809,2203.10174,2005.02198,2401.15380,2305.01135,2307.07861,1909.01300,2203.10168,2206.08171,2010.09076,2309.00962,2206.09273",
+      "tool": "arXiv API (bulk id_list)",
+      "screened": 27,
+      "accepted": 26,
+      "rejected": 1,
+      "notes": "一次抓取 27 篇摘要全文；2206.09273 (RadarHD) 后因容量让位未入池，其余 26 篇全部入池成为核心证据。"
+    },
+    {
+      "query": "https://www.ti.com/product/IWR6843",
+      "tool": "WebFetch",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "官方页规格引用：60-64GHz、3TX/4RX、4GHz 带宽、FMCW、点云访问（EVM）、CAN-FD/SPI/UART 等。"
+    },
+    {
+      "query": "https://www.ti.com/product/AWR2944",
+      "tool": "WebFetch",
+      "screened": 1,
+      "accepted": 1,
+      "rejected": 0,
+      "notes": "官方页规格引用：76-81GHz、>4GHz 带宽、4TX/4RX、方位面位置+速度跟踪、CAN-FD/Ethernet/LVDS/CSI2。"
+    },
+    {
+      "query": "Continental ARS548 High-Resolution-Radar 页面",
+      "tool": "WebFetch + curl(UA)",
+      "screened": 1,
+      "accepted": 0,
+      "rejected": 1,
+      "notes": "continental-automotive.com -> 301 aumovio.com -> 404 / WebFetch 403；记入 rejected，ARS548 参数仅采信池内论文 (2509.07683) 全文自述。"
+    },
+    {
+      "query": "navtechradar.com/products/cir304-h/",
+      "tool": "WebFetch + curl(UA)",
+      "screened": 1,
+      "accepted": 0,
+      "rejected": 1,
+      "notes": "404；WebSearch 未获官方 datasheet 数值；CIR304-H 仅以 Boreas 论文描述入池。"
+    },
+    {
+      "query": "Navtech CIR304-H specifications",
+      "tool": "WebSearch",
+      "screened": 8,
+      "accepted": 0,
+      "rejected": 8,
+      "notes": "返回 Boreas 论文 PDF、pyboreas、Scribd 转载 HDR100 等二手源，无官方 datasheet；仅采纳'Boreas 含 360° Navtech CIR304-H 扫描雷达'这一与 arXiv 摘要一致的信息。"
+    },
+    {
+      "query": "arxiv.org/html/2502.08093v2 | 2502.07703v2 | 2403.17441v2",
+      "tool": "curl + HTML 文本抽取",
+      "screened": 3,
+      "accepted": 3,
+      "rejected": 0,
+      "notes": "全文抽取：Go-RIO 高程误差 18m/2.5km(0.72%)；GaRLIO 垂直均值误差 1.21m/2.045km、sweep reconstruction 同步；Noh 烟雾 NTU4DRadLM APE/RPE 表。"
+    },
+    {
+      "query": "arxiv.org/html/2203.10174v3 | 2509.07683v3 | 2303.13962v2",
+      "tool": "curl + HTML 文本抽取",
+      "screened": 3,
+      "accepted": 3,
+      "rejected": 0,
+      "notes": "全文抽取：Are-We-Ready 0.1m 跨模态定位与雪暴序列条件；Low-Speed ARS548 级传感器、2cm GT、10cm@63%、RPE 0.06m vs Doppler-SLAM 0.14m；iRIOM ColoRadar 表 IV、~400 points/scan、Bynav GT 3cm/25cm。"
+    },
+    {
+      "query": "arxiv.org/html/2105.01457v3 | 2504.20339v1",
+      "tool": "curl + HTML 文本抽取",
+      "screened": 2,
+      "accepted": 2,
+      "rejected": 0,
+      "notes": "全文抽取：CFEAR 1.76%/0.5°/100m、CTS350-X 4.38cm、矿区 15m/1235m；DRO Boreas 榜 0.26%/0.05°、MulRan 1.45%/0.38°、消融 6.00%/1.57°、隧道 3/4<2.5%。"
+    },
+    {
+      "query": "query.bibliographic=4DRadarSLAM ... / Kellner Doppler ego-motion ...",
+      "tool": "Crossref API",
+      "screened": 8,
+      "accepted": 2,
+      "rejected": 6,
+      "notes": "4DRadarSLAM ICRA2023 DOI 核验（入池，PARTIALLY_VERIFIED）；Kellner 2013/2014/2015 Doppler 自车运动系列确认存在（经典，未入池因容量）；其余条目为无关命中。"
+    },
+    {
+      "query": "14 项标题逐一 query.bibliographic（CFEAR/Kung/RadarSLAM/DRO/Low-Speed/Oxford/Boreas/RADIATE/NTU4DRadLM/Open-RadVLAD/Burnett/AGV-survey/AF-RLIO/GaRLIO）",
+      "tool": "Crossref API (python 批处理)",
+      "screened": 14,
+      "accepted": 14,
+      "rejected": 0,
+      "notes": "为入池条目升级 venue/DOI：IROS2021、ICRA2021、IROS2020、RSS2025、RA-L2026(检出)、ICRA2020、IJRR2023、ICRA2021、ITSC2023、RadarConf24、RSS2021、T-IV2024、ICRA2025×2。"
+    },
+    {
+      "query": "ORORA / Noh-Smoke venue 复核",
+      "tool": "Crossref API",
+      "screened": 4,
+      "accepted": 1,
+      "rejected": 3,
+      "notes": "ORORA 命中 ICRA2023 DOI 10.1109/icra48891.2023.10160997；Noh 浓烟论文未检索到正式版，保持 arXiv preprint 标注。"
+    },
+    {
+      "query": "The Oxford Radar RobotCar Dataset（复核会议/期刊版本）",
+      "tool": "Crossref API",
+      "screened": 5,
+      "accepted": 1,
+      "rejected": 4,
+      "notes": "同题 ICRA2020 DOI 10.1109/icra40945.2020.9196884 为本次实际核验到的记录；池内注明本会话未核验 IJRR 版记录。"
+    }
+  ]
+}
