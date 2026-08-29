@@ -46,9 +46,9 @@ STAGING_CONTENT_MODIFIED: NO
 ## Git 发布记录
 
 ```text
-PRE_PUSH_GIT_WORKTREE_STATUS: PENDING
-PUSHED_REMOTE_COMMIT: PENDING
-POST_PUSH_REMOTE_VERIFICATION: PENDING
+PRE_PUSH_GIT_WORKTREE_STATUS: CLEAN
+PUSHED_REMOTE_COMMIT: f553e8e4634d39e2da5ce8adced4eb633fbfb281
+POST_PUSH_REMOTE_VERIFICATION: LOCAL HEAD AND REMOTE main MATCHED; REPOSITORY PUBLIC
 ```
 
-最终发布核验会在首轮 push 完成后更新本节；该更新只修改本生成审计文件，不修改任何源研究资产。
+首轮 push 后已读取远端 `main`，其 commit 与当时本地 HEAD 一致；仓库可见性经 GitHub API 确认为 `PUBLIC`。本节的审计更新只修改本生成文件，不修改任何源研究资产。最终审计更新 commit 将在第二轮 push 后由本轮任务报告单独核验。
