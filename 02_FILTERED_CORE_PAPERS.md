@@ -1,13 +1,13 @@
 # 02 FILTERED CORE PAPERS — DG-202611 高价值论文与核心证据论文
 
-生成日期：2026-08-29
-数据来源：`01_RAW_LITERATURE_POOL.csv`（239 篇去重后论文，217 VERIFIED / 22 PARTIALLY_VERIFIED）
+生成日期：2026-08-29（2026-08-30 P0 增量修复轮更新：新增 9 篇入池、7 篇入 CORE，另 2 篇不确定性过滤机制文献入池未入核）
+数据来源：`01_RAW_LITERATURE_POOL.csv`（248 篇去重后论文，222 VERIFIED / 26 PARTIALLY_VERIFIED）
 筛选原则：①与项目方法直接相关；②有真实实验；③实验条件清楚；④Ground Truth 清楚；⑤指标定义清楚；⑥有具体数值；⑦近 5 年优先；⑧经典可保留；⑨高质量 venue 优先；⑩可复现性优先。不按引用数排名。
 
 筛选结果：
-- **FILTERED（高价值层）：60 篇**（下表 A+B）
-- **CORE EVIDENCE（核心证据层）：30 篇**（A 表，用于性能声明与实验设计的直接依据）
-- 其余 179 篇保留在 raw pool 中作为背景/检索线索，不进入方案书引用主体。
+- **FILTERED（高价值层）：67 篇**（下表 A+B）
+- **CORE EVIDENCE（核心证据层）：37 篇**（A 表，用于性能声明与实验设计的直接依据）
+- 其余 181 篇保留在 raw pool 中作为背景/检索线索，不进入方案书引用主体。
 
 ---
 
@@ -81,14 +81,29 @@
 | ID | 论文 | 年份/Venue | 入选理由 | 关键证据（含条件） |
 |---|---|---|---|---|
 | RLC-15 | A Survey on Active Simultaneous Localization and Mapping | 2023, T-RO | 主动定位/主动 SLAM 权威综述，"健康评估→主动重定位"模块的选型地图 | 综述（ABSTRACT） |
-| RLC-17 | GOReloc: Graph-Based Object-Level Relocalization for Visual SLAM | 2024, RA-L | 明确的"成功率-阈值"定义与逐帧耗时，供比赛指标口径设计参照 | 成功率强烈依赖阈值：TE<2 m 17.43% vs TE<5 m 96.11%；单帧 19.025 ms（FULLTEXT） |
+| RLC-17 | GOReloc: Graph-Based Object-Level Relocalization for Visual SLAM | 2024, RA-L | 明确的"成功率-阈值"定义与逐帧耗时，供比赛指标口径设计参照 | 成功率强烈依赖阈值与序列（Table II）：fr2_person TE<2 m 64.87% / TE<5 m 96.11%；ICL Diamond 'Head' TE<2 m 17.43% / TE<5 m 38.23%；单帧 19.025 ms（FULLTEXT）【FIX-001 修正 2026-08-30】 |
 
 ### 时间同步/标定方向（2 篇）
-
 | ID | 论文 | 年份/Venue | 入选理由 | 关键证据（含条件） |
 |---|---|---|---|---|
 | SYN-01 | Unified temporal and spatial calibration for multi-sensor systems | 2013, IROS | Kalibr 奠基论文，标定链路的理论与工具起点 | 方法论文（ABSTRACT） |
 | SYN-04 | Online Spatial and Temporal Calibration for Monocular Direct Visual-Inertial Odometry | 2019, Sensors | "未补偿 100 ms 时偏→轨迹 RMSE 1.141 m，补偿后 0.205 m"的量化证据链 | EuRoC MH5：100 ms 时偏未补偿 RMSE 1.141 m vs 补偿后 0.205 m；初始化时偏误差 <3 ms（FULLTEXT） |
+
+---
+
+### P0 增量修复轮新增核心（7 篇，2026-08-30）
+
+> 依据 `20_FORMAL_REBUILD_CORRECTION_LOG.md` 与 `18_FORMAL_REBUILD_P0_NEW_LITERATURE.md`：两处聚合错误修复后，为正式方案书重建强制新增 7 个核心来源。证据等级逐条标注；ABSTRACT 级条目引用前必须完成全文核验。
+
+| ID | 论文 | 年份/Venue | 入选理由 | 关键证据（含条件与边界） |
+|---|---|---|---|---|
+| GNSS-27 | A robust stochastic model for GNSS RTK... combining elevation-angle, C/N0, and PLD | 2025, Adv. Space Res. | 观测质量综合随机模型（仰角+C/N0+PLD），支撑"质量驱动降权"方法族 | 四场景验证（open-sky/urban canyon/glass curtain wall/tree）；综合模型较三类单指标模型精度提升 50.0%/17.6%/8.5%；open-sky fix 率 >99%（ABSTRACT/PREVIEW）。**E/N/U 绝对值未核验（付费墙）；不得迁移到 BDS outage** |
+| GNSS-28 | Improving positioning performance of PPP-RTK by tightly coupled integration with INS in urban environment | 2026, Adv. Space Res. | 城市 PPP-RTK/INS 紧组合完整方法链（概率周跳检测+PDOP/高程残差抗差） | 完整摘要核验（WHU 门户）：significantly improve ambiguity fix rate & positioning accuracy（**纯定性，摘要无数值**；是否分 E/N/U 未说明）（ABSTRACT 完整） |
+| LDG-18 | MMC-LIG: a LiDAR-INS-GNSS integration navigation system with multi-metric constraints | 2026, Measurement | 城市多度量约束 LIG；垂直观测不足地图点优化 | urban canyon 位置+姿态精度改善 41.29%（对比基线未在摘要出现）；测量方程多度量约束保证地图点精度（ABSTRACT/HIGHLIGHTS）。**3D LiDAR 系统，不得映射为 DG 2D RPLidar 能力** |
+| VIS-01 | Indoor positioning and mapping method combining stereo VIO and neural volume rendering | 2025, Measurement | 视觉定位+神经渲染稠密建图方法学参照 | SVIO 实时位置+深度、立体匹配深度约束、体渲染（ABSTRACT）。**X/Y/Z 误差、数据集、传感器配置未核验；禁止写成 ZED 2i 实测** |
+| FRM-01 | Two-Fold and Symmetric Repeatability Rates for Comparing Keypoint Detectors | 2022, CMC | 重复率度量定义权威：min/average/调和分母、双向不对称、对称均值 | R1=min 分母、R2=平均分母、R4=调和平均分母（Eq.9）、symmetric mean=双向算术平均 RiM=(RA+RB)/2（Eq.11）；图像域影响数值（FULLTEXT）。**DG 的 R_avg=2M/(N1+N2) 是平均分母家族的项目伴随指标，不是本文唯一 symmetric formula** |
+| RLC-19 | A Real-Time Global Re-Localization Framework for a 3D LiDAR-Based Navigation System | 2024, Sensors | 成功率-阈值口径参照（1.0 m 纯位置阈值）+级联 vs 穷举权衡 | 仿真 99.85%→摘要约99% @1m（同传感器模板，~11 Hz）；Newer College 级联 94.67% @1m（异构地图，0.135 s/帧）；穷举 97.83% @1m（191 s/帧）（FULLTEXT） |
+| RLC-20 | ActLoc: Learning to Localize on the Move via Active Viewpoint Selection | 2025, CoRL/PMLR 305 | 主动视角选择提升定位：ACTIVE_RELOCALIZATION 核心机制参照 | LocMap yaw/pitch 精度分布单次前向；混合代价图接入 OMPL；@1m：远点 +35%/近点 +11%/全部 +5.8%；110 ms/航点 vs LWL 8230 ms（FULLTEXT-HTML）。**视觉 SfM 地图口径；禁止写成 DG 已使用 ActLoc** |
 
 ---
 

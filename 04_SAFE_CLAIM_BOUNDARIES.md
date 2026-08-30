@@ -24,7 +24,7 @@
 ## 2. 高程定位误差 < 20 cm
 
 - **COMPETITION_REQUIREMENT**：高程定位误差 < 20 cm。
-- **LITERATURE_BEST_REPORTED**：RTK FIX 开阔天空高程厘米级（GNSS-12/GNSS-11；手机级 BDS/GPS RTK 高程 0.25–0.30 m，GNSS-10，说明低成本接收机高程是弱轴）；LiDAR SLAM 高程依赖几何（Go-RIO RADAR-12：2.5 km 高程漂移 18 m = 0.72%——这是雷达里程计，反证非 RTK 源高程难达 20 cm 量级）。
+- **LITERATURE_BEST_REPORTED**：RTK FIX 开阔天空高程厘米级（GNSS-12/GNSS-11）；低成本 RTK（GNSS-10，NovAtel OEM615+手机端，城市，whole-solutions RMS）静态垂向 0.25 m、动态垂向 0.45 m（静态横向 0.15 m、动态横向 0.30 m）【FIX-002 修正 2026-08-30：原稿"高程 0.25–0.30 m"误将动态横向并入垂向】——低成本接收机高程是弱轴且动态下进一步恶化；LiDAR SLAM 高程依赖几何（Go-RIO RADAR-12：2.5 km 高程漂移 18 m = 0.72%——这是雷达里程计，反证非 RTK 源高程难达 20 cm 量级）。
 - **LITERATURE_TYPICAL_RANGE**：RTK FIX 时 <10 cm；RTK FLOAT/遮挡时高程 0.3–1 m 量级；无 RTK 时（LiDAR/视觉里程计）漂移随里程增长，米级。
 - **DIRECTLY_COMPARABLE**：NO。高程是文献公认的弱轴，<20 cm 高程实际上等价于"RTK FIX 可用率"指标。
 - **WHY**：除 RTK 外，其余传感器（LiDAR/视觉/雷达/UWB）对高程的约束都明显弱于平面；UWB 三维定位的高程分量对基站几何极度敏感（UWB 池）。
@@ -48,11 +48,11 @@
 ## 4. 重定位成功率 >95%
 
 - **COMPETITION_REQUIREMENT**：重定位成功率 >95%。
-- **LITERATURE_BEST_REPORTED**：GOReloc（RLC-17，RA-L 2024）：同方法同序列，成功率随阈值定义剧烈变化——TE<5 m 达 96.11%，TE<2 m 仅 17.43%，TE<1 m 下 ORB-SLAM2 仅 6.42%；单帧重定位 19.025 ms。
+- **LITERATURE_BEST_REPORTED**：GOReloc（RLC-17，RA-L 2024）：成功率随阈值与序列剧烈变化（Table II，纯平移阈值）——fr2_person：TE<5 m 96.11% → TE<2 m 64.87%；ICL-Data Diamond 'Head'：TE<5 m 38.23% → TE<2 m 17.43%【FIX-001 修正 2026-08-30：原稿将两序列数值并列误作"同序列"】。TE<1 m 下 ORB-SLAM2 仅 6.42%（Table III，fr2_person）；单帧重定位 19.025 ms。
 - **LITERATURE_TYPICAL_RANGE**：文献"成功率"普遍在 50–96% 区间，但阈值（平移/旋转）、初始不确定度、评测序列定义各不相同。
 - **DIRECTLY_COMPARABLE**：NO。成功率是一个"口径函数"，不定义口径的数值无意义（CF-19）。
 - **OUR_CURRENT_EVIDENCE**：NONE。
-- **SAFE_CURRENT_WORDING**："文献表明重定位成功率强烈依赖成功判据（GOReloc：同一方法因阈值从 5 m 放宽到 2 m，成功率从 96% 降至 17%）【RLC-17】。本项目将按'位置+姿态双阈值+初始不确定度'定义成功率并在统一口径下报告。"
+- **SAFE_CURRENT_WORDING**："文献表明重定位成功率强烈依赖成功判据（GOReloc：同一方法因阈值从 5 m 收紧到 2 m，成功率在 fr2_person 从 96% 降至 65%，在 ICL-Data Diamond 'Head' 从 38% 降至 17%）【RLC-17】。本项目将按'位置+姿态双阈值+初始不确定度'定义成功率并在统一口径下报告。"
 - **SAFE_TARGET_WORDING**："设计目标：在给定初始不确定度界与阈值（建议 0.25 m/5° 量级，最终以方案书定义为准）下重定位成功率 >95%（PROJECT_DESIGN_TARGET）。"
 - **UNSAFE_WORDING**："重定位成功率 96%（文献已证明）"——那是别人在 5 m 阈值下的数字；不写阈值直接写 ">95%"。
 - **NEEDED_EXPERIMENT**：绑架实验（多点、多初始不确定度档），报告成功率-阈值曲线与重定位时间分布。
@@ -117,7 +117,7 @@
 | 平面 <20 cm | UWB LOS 1–10 cm；RTK FIX 厘米级 | 设计目标+文献条件化引用 | 混合环境设计目标 <20 cm |
 | 高程 <20 cm | RTK FIX 厘米级 | 设计目标（绑定 RTK FIX 状态） | RTK FIX 时 <20 cm |
 | 特征重复率 ≥95% | 无标准对应 | 自定义口径声明 | 定义后自测 |
-| 重定位 >95% | 96.11% @5m 阈值（GOReloc） | 阈值依赖性警示 | 双阈值定义后自测 |
+| 重定位 >95% | 96.11% @5m 阈值（GOReloc，fr2_person 序列） | 阈值依赖性警示 | 双阈值定义后自测 |
 | 重定位时间 | 单帧 19 ms；系统级秒级 | 分口径声明 | 全链路分布报告 |
 | GNSS 拒止 | 分米级（结构化+LiDAR+UWB）至数十米（退化几何） | 条件化区间 | 短时拒止有界+降级行为声明 |
 | UWB 精度 | LOS 1–10 cm | 条件化引用 | 集成后实测 |

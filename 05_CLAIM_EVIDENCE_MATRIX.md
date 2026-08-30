@@ -32,7 +32,7 @@
 
 ## CLAIM-04：LiDAR 在退化几何（走廊/隧道/开阔/重复结构）下会失效，需几何质量感知的降权/降级机制
 
-- **EVIDENCE**：LDG-05（GEODE, IJRR 2025：FAST-LIO2 内陆水道 ATE 70.26 m、盾构隧道失败）、FUSION-23（Zhang/Kaess/Singh 2016：退化方向在线分离奠基方法）、LDG-02（X-ICP, T-RO 2024：逐方向 localizability 约束更新）、FUSION-24（GenZ-ICP, RA-L 2024：自适应加权，走廊 APE 0.18–1.69 m）
+- **EVIDENCE**：LDG-05（GEODE, IJRR 2025：FAST-LIO2 内陆水道 ATE 70.26 m、盾构隧道失败）、FUSION-23（Zhang/Kaess/Singh 2016：退化方向在线分离奠基方法）、LDG-02（X-ICP, T-RO 2024：逐方向 localizability 约束更新）、FUSION-24（GenZ-ICP, RA-L 2024：自适应加权，走廊 APE 0.18–1.69 m）、LDG-18（MMC-LIG, Measurement 2026【P0新增】：测量方程多度量约束保证地图点精度、对未知高度/弱可观地图点做垂直观测优化——垂向观测不足的约束化处理参照；ABSTRACT 级，41.29% 边界见矩阵 PM-193）
 - **STRENGTH**：STRONG
 - **CONDITIONS**：退化基准（GEODE 64 轨迹/7 场景）；X-ICP 在超长直走廊亦有第三方复现发散记录（CF-16）——退化处理本身不是银弹。
 - **SAFE_WORDING**："公开退化基准显示主流 LiDAR 惯性系统在长走廊/隧道等几何退化场景可漂移数十米；文献已形成'检测退化方向→约束/降权更新'的方法族。"
@@ -56,7 +56,7 @@
 
 ## CLAIM-07：GNSS 城市退化观测应"先降权、慎剔除"，权重可由 C/N0 等质量指标驱动
 
-- **EVIDENCE**：GNSS-03（Groves & Jiang 2013, J. Navigation：C/N0 加权 +8%，常规顺序剔除 -60%）、GNSS-06（Hsu 2015：3D 模型+RAIM 中/深峡谷错侧解 -8.4%/-36.2%）、FUSION-18（Zhang 2018：C/N0 相对标称模板自适应加权）、GNSS-14（相关器波形 ML NLOS 判别 97.7%）
+- **EVIDENCE**：GNSS-03（Groves & Jiang 2013, J. Navigation：C/N0 加权 +8%，常规顺序剔除 -60%）、GNSS-06（Hsu 2015：3D 模型+RAIM 中/深峡谷错侧解 -8.4%/-36.2%）、FUSION-18（Zhang 2018：C/N0 相对标称模板自适应加权）、GNSS-14（相关器波形 ML NLOS 判别 97.7%）、GNSS-27（Dai 2025, ASR【P0新增】：仰角+C/N0+PLD 三指标综合随机模型，挑战环境较三类单指标模型精度提升 50.0%/17.6%/8.5%——"多指标综合随机建模优于单指标"的直接文献证据；ABSTRACT 级，E/N/U 绝对值未核验，不得迁移到 BDS outage）
 - **STRENGTH**：STRONG
 - **CONDITIONS**：权重函数形式依赖接收机类型（测地型 vs 消费级，CF-09）；单时刻 C/N0 硬阈值不可靠、需连续时间序列判据（CF-13）。
 - **SAFE_WORDING**："城市环境 GNSS 退化观测的主流处理是质量加权（C/N0/高度角/机器学习判别）配合环境先验辅助剔除；盲目顺序剔除可能适得其反（伦敦实测水平精度劣化 60%）。"
@@ -88,8 +88,8 @@
 
 ## CLAIM-11：主动重定位/恢复（做动作改善定位）有文献范式可循，但系统级成功率数字少
 
-- **EVIDENCE**：RLC-15（Active SLAM 综述, T-RO 2023：目标函数与动作选择框架）、RLC-16（SII 2024：丢位→主动搜索→恢复状态机）、RLC-13（T-IE 2022：变电站巡检机器人主动重定位，PARTIALLY_VERIFIED）
-- **STRENGTH**：MODERATE（框架强、条件化数值少）
+- **EVIDENCE**：RLC-15（Active SLAM 综述, T-RO 2023：目标函数与动作选择框架）、RLC-16（SII 2024：丢位→主动搜索→恢复状态机）、RLC-13（T-IE 2022：变电站巡检机器人主动重定位，PARTIALLY_VERIFIED）、RLC-20（ActLoc, CoRL 2025【P0新增】：学习型主动视角选择，LocMap yaw/pitch 精度分布预测+混合代价图接入路径规划，@1m 阈值远点定位准确率 +35%/全部可定位点 +5.8%，110 ms/航点——主动视角提升定位的系统级量化证据；视觉 SfM 地图口径）、RLC-21（Mason, IROS 2023【P0补查】：带不确定度的 LiDAR 地点识别，不确定度过滤候选——候选质量门控机制参照）
+- **STRENGTH**：MODERATE→STRONG（P0 轮后：框架 + 学习型量化证据齐备；RLC-20 数值为视觉口径，非 DG 传感器口径）
 - **CONDITIONS**：多为结构化/已知地图场景；"主动停止+旋转扫描+候选验证"的完整闭环在我们场景需自证。
 - **SAFE_WORDING**："主动 SLAM/主动定位文献提供了基于不确定性下降与信息增益的恢复行为设计范式，可映射为本项目的'健康评估→主动重定位'状态机。"
 - **UNSAFE_EXAGGERATION**："主动重定位成功率 >95%（文献支持）"——文献未给出该系统级数字。

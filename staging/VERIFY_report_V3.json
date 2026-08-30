@@ -1,0 +1,123 @@
+{
+  "report": "VERIFY_report_V3 (P0 delta round)",
+  "date": "2026-08-30",
+  "fix_verification": [
+    {
+      "Matrix_ID": "PM-174",
+      "Paper_ID": "RLC-17",
+      "verdict": "YES",
+      "checked_url": "https://arxiv.org/html/2408.07917",
+      "note": "FIX-001 复核：17.43 确属 ICL-Data Diamond 'Head' @2m；fr2_person 为 64.87@2m/96.11@5m；Table II 无旋转列；Table III fr2_person 紧阈值对比确认。聚合层 02/04/06/16 已修复。"
+    },
+    {
+      "Matrix_ID": "PM-126",
+      "Paper_ID": "GNSS-10",
+      "verdict": "YES",
+      "checked_url": "https://www.mdpi.com/1424-8220/16/12/2201",
+      "note": "FIX-002 复核：静态 whole H0.15/V0.25 属实；升级 FULLTEXT；新增固定解行 PM-190。"
+    },
+    {
+      "Matrix_ID": "PM-127",
+      "Paper_ID": "GNSS-10",
+      "verdict": "YES",
+      "checked_url": "https://www.mdpi.com/1424-8220/16/12/2201",
+      "note": "FIX-002 复核：动态 whole H0.30/V0.45 补全（原摘要截断 0.45 缺失）；新增固定解行 PM-191。"
+    }
+  ],
+  "new_matrix_rows": [
+    {
+      "Matrix_ID": "PM-192",
+      "Paper_ID": "GNSS-27",
+      "verdict": "ABSTRACT_ONLY",
+      "note": "50.0/17.6/8.5 = 综合 vs 三单指标模型相对提升；E/N/U 未核验，禁止当 E/N/U 引用。"
+    },
+    {
+      "Matrix_ID": "PM-193",
+      "Paper_ID": "LDG-18",
+      "verdict": "ABSTRACT_ONLY",
+      "note": "41.29% = urban canyon 位置+姿态精度改善；基线未核验。"
+    },
+    {
+      "Matrix_ID": "PM-194",
+      "Paper_ID": "RLC-19",
+      "verdict": "YES",
+      "note": "MDPI 全文核验：仿真 99.85/约99 @1m。"
+    },
+    {
+      "Matrix_ID": "PM-195",
+      "Paper_ID": "RLC-19",
+      "verdict": "YES",
+      "note": "MDPI 全文核验：NCD 级联 94.67 @1m。"
+    },
+    {
+      "Matrix_ID": "PM-196",
+      "Paper_ID": "RLC-19",
+      "verdict": "YES",
+      "note": "MDPI 全文核验：NCD 穷举 97.83 @1m（191s）。"
+    },
+    {
+      "Matrix_ID": "PM-197",
+      "Paper_ID": "RLC-19",
+      "verdict": "YES",
+      "note": "MDPI 全文核验：0.135s 级联匹配 / ~11Hz 仿真整体。"
+    },
+    {
+      "Matrix_ID": "PM-198",
+      "Paper_ID": "RLC-20",
+      "verdict": "YES",
+      "note": "arXiv HTML：+35/+11/+5.8 @1m（视觉口径相对提升）。"
+    },
+    {
+      "Matrix_ID": "PM-199",
+      "Paper_ID": "RLC-20",
+      "verdict": "YES",
+      "note": "arXiv HTML：110ms vs 8230ms 每航点。"
+    }
+  ],
+  "paper_level": [
+    {
+      "ID": "GNSS-27",
+      "level": "ABSTRACT/PREVIEW"
+    },
+    {
+      "ID": "GNSS-28",
+      "level": "ABSTRACT-FULLTEXT-TEXT (no numbers)"
+    },
+    {
+      "ID": "LDG-18",
+      "level": "ABSTRACT/HIGHLIGHTS"
+    },
+    {
+      "ID": "VIS-01",
+      "level": "ABSTRACT"
+    },
+    {
+      "ID": "FRM-01",
+      "level": "FULLTEXT"
+    },
+    {
+      "ID": "RLC-19",
+      "level": "FULLTEXT"
+    },
+    {
+      "ID": "RLC-20",
+      "level": "FULLTEXT-HTML"
+    },
+    {
+      "ID": "RLC-21",
+      "level": "ABSTRACT (metadata verified)"
+    },
+    {
+      "ID": "RLC-22",
+      "level": "PREPRINT/ABSTRACT"
+    }
+  ],
+  "counts": {
+    "fulltext_verified": 3,
+    "abstract_only": 4,
+    "preprint": 1,
+    "matrix_rows_added": 8,
+    "raw_pool_added": 9,
+    "bib_added": 9
+  }
+}

@@ -46,11 +46,25 @@ mean(|x|)。
 **relocalization time（重定位时间）**
 ⚠️ 不一致风险：极高。起点（触发/图像输入）与终点（位姿输出/收敛/控制权交回）定义不同，毫秒级与秒级可并存。
 
+**success threshold 实例对照【P0新增】**
+- GOReloc（RLC-17）Table II：成功 = TE<2 m 或 TE<5 m（**纯平移、无旋转列**）；Table III（fr2_person，紧阈值 @0.5/1/2/3 m）与 ORB-SLAM2 同表对比【FIX-001 修正口径】。
+- RLC-19（Sensors 2024）：成功 = 3D **位置误差** <1.0 m（**纯位置、无旋转阈值**）；仿真 99.85%→摘要约99%，真实异构 NCD 级联 94.67%、穷举 97.83%。
+⚠️ 两者都不含姿态阈值；DG 若按"0.25 m/5° 双阈值"定义，文献无 >95% 支持，数值不可直接对标。
+
 ## 特征与匹配类
 
 **feature repeatability（特征重复率）**
 Schmid/Mohr/Bauckhage（IJCV 2000）定义：同一物理点在不同视角图像中被重复检测的比例（ε 邻域判定）。
 ⚠️ 不一致风险：高。检测器级跨视角指标，与"相邻帧跟踪保持率""比赛'相邻帧有效特征重复率'"**不是同一指标**（见 06 专项审计）。
+
+**repeatability denominator family（重复率分母家族，FRM-01【P0新增 FULLTEXT】）**
+同一"重复点数 N_rp"在不同分母下数值不可比（El rube', CMC 2022, Eq.5–11）：
+- R1 = N_rp / min(N_a, N_b)——min 分母（Schmid 系），数值最高；
+- R2 = N_rp / average(N_a, N_b′)——存活特征算术平均分母（Ehsan 系）；
+- R4 = N_rp / 调和平均(N_a, N_b)——Awrangjeb & Lu 形式（Eq.9）；
+- directional：对图像对 (A,B) 沿 A→B 与 B→A 计算不对称（RA ≠ RB），需报告双向（two-fold, Eq.10）；
+- symmetric mean：R_i^M = (R_i^A + R_i^B)/2——**双向 directional 率的算术平均**（Eq.11），i∈{1,2,3,4}。
+⚠️ 项目口径警示：DG 伴随指标 R_avg = 2M/(N₁+N₂) 等价于"算术平均分母"形式（M/((N₁+N₂)/2)），属于 R2 家族的双向合并计算，**不是** FRM-01 定义的 symmetric mean 公式本身；方案书应写"采用平均分母形式的双向重复率（项目伴随指标）"，不得写"采用文献 symmetric formula"。
 
 **inlier ratio（内点率）**
 匹配/对应点中通过几何校验（RANSAC 等）的比例。
@@ -76,6 +90,14 @@ Schmid/Mohr/Bauckhage（IJCV 2000）定义：同一物理点在不同视角图�
 **fix type（定位解类型）**
 RTK: FIX / FLOAT / DGPS / Single 等。
 ⚠️ 不一致风险：低（接收机协议定义），但 FIX 判据（ratio 阈值）各厂商不同。
+
+**whole-solutions RMS vs fixed-solutions RMS（全解 RMS vs 固定解 RMS）【FIX-002 新增词条】**
+同一 RTK 实验"全部历元（含未固定）"与"仅固定历元"的 RMS 差异可达数倍。GNSS-10 实例：静态垂向 whole 0.25 m vs fixed ≤0.04 m；动态垂向 whole 0.45 m vs fixed 约 0.13 m。
+⚠️ 引用任何"XX cm 级"RTK 精度前必须先声明口径；摘要常只报其一。
+
+**PLD（pseudo-linear deviation 类信号质量指标，GNSS-27【P0新增】）**
+与仰角、C/N0 并列的观测质量指示量，用于综合随机模型建模（Dai 2025, ASR）。
+⚠️ 摘要未给出其归一化定义与逐分量 E/N/U 数字（付费墙未核验）；引用仅限机制层面。
 
 **differential age（差分数据龄期）**
 RTK 改正数年龄，秒。
