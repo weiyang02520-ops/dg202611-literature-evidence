@@ -1,12 +1,12 @@
 # DG-202611 正式研究资产索引
 
-本索引依据 20 份实际文件的标题、章节、字段和内容建立，不改变任何原始研究结论。优先级用于 MASTER 审阅导航，不代表证据等级。（2026-08-30 P0 增量修复轮更新：新增 18/19/20 三份文件并修正 01/02/03 的数量口径。）
+本索引依据 21 份实际文件的标题、章节、字段和内容建立，不改变任何原始研究结论。优先级用于 MASTER 审阅导航，不代表证据等级。（2026-08-30 P0 增量修复轮 + 北斗短报文官方证据补丁更新：新增 18/19/20/21 四份文件并修正 01/02/03 的数量口径。）
 
 | 编号 | 文件名 | 用途与主要内容 | 性能数字 | 引用 | 综合资产 | 审核优先级 |
 |---:|---|---|:---:|:---:|:---:|:---:|
-| 01 | [`01_RAW_LITERATURE_POOL.csv`](01_RAW_LITERATURE_POOL.csv) | 248 条原始文献池（P0 轮新增 9 条）；记录元数据、研究方向、相关性、核验状态、核验依据与性能数据计数 | 是 | 是 | 否 | 中 |
+| 01 | [`01_RAW_LITERATURE_POOL.csv`](01_RAW_LITERATURE_POOL.csv) | 253 条原始文献池（P0 轮 +9、BDS 补丁 +5 官方文件/国标）；记录元数据、研究方向、相关性、核验状态、核验依据与性能数据计数 | 是 | 是 | 否 | 中 |
 | 02 | [`02_FILTERED_CORE_PAPERS.md`](02_FILTERED_CORE_PAPERS.md) | 67 篇高价值论文与其中 37 篇核心证据论文的筛选结果、入选理由和淘汰记录（含 P0 轮新增 7 篇核心） | 是 | 是 | 否 | 高 |
-| 03 | [`03_PERFORMANCE_BENCHMARK_MATRIX.csv`](03_PERFORMANCE_BENCHMARK_MATRIX.csv) | 197 条条件绑定性能记录；含场景、传感器、指标定义、数值、来源层级、限制与独立核验字段（P0 轮新增 PM-190~199 并修复 PM-126/127 口径） | 是 | 是 | 否 | 最高 |
+| 03 | [`03_PERFORMANCE_BENCHMARK_MATRIX.csv`](03_PERFORMANCE_BENCHMARK_MATRIX.csv) | 202 条条件绑定性能记录；含场景、传感器、指标定义、数值、来源层级、限制与独立核验字段（P0 轮 PM-190~199；BDS 补丁 PM-200~202） | 是 | 是 | 否 | 最高 |
 | 04 | [`04_SAFE_CLAIM_BOUNDARIES.md`](04_SAFE_CLAIM_BOUNDARIES.md) | 对平面/高程误差、特征重复率、重定位、GNSS 拒止、UWB、雷达与事件相机声明划定安全边界 | 是 | 是 | 是 | 最高 |
 | 05 | [`05_CLAIM_EVIDENCE_MATRIX.md`](05_CLAIM_EVIDENCE_MATRIX.md) | 将 12 类技术主张绑定证据、强度、适用条件、安全措辞、禁用措辞与所需项目验证 | 是 | 是 | 是 | 最高 |
 | 06 | [`06_COMPETITION_METRIC_LITERATURE_AUDIT.md`](06_COMPETITION_METRIC_LITERATURE_AUDIT.md) | 审计平面/高程定位、特征重复率、重定位、重定位时间和北斗短报文等比赛指标 | 是 | 是 | 是 | 最高 |
@@ -23,7 +23,8 @@
 | 17 | [`17_RESEARCH_SYNTHESIS_FOR_DG202611.md`](17_RESEARCH_SYNTHESIS_FOR_DG202611.md) | 综合回答成熟路线、项目路线合理性、各传感器角色、同步标定、融合、重定位和指标可声明边界 | 是 | 是 | 是 | 最高 |
 | 18 | [`18_FORMAL_REBUILD_P0_NEW_LITERATURE.md`](18_FORMAL_REBUILD_P0_NEW_LITERATURE.md) | P0 修复轮新增 7 篇核心文献逐篇档案（NEW-01~07）+ 五空缺限定补查结论 + 证据等级与引用边界 | 是 | 是 | 是 | 最高 |
 | 19 | [`19_FORMAL_REBUILD_CLAIM_REFERENCE_MAP.md`](19_FORMAL_REBUILD_CLAIM_REFERENCE_MAP.md) | 正式方案书五大 claim（ALTITUDE_20CM / FEATURE_REPEATABILITY_95 / RELOCALIZATION_95 / ACTIVE_RELOCALIZATION / UWB_QUALITY_GATE）的安全表述、可引数值与禁用表述映射 | 是 | 是 | 是 | 最高 |
-| 20 | [`20_FORMAL_REBUILD_CORRECTION_LOG.md`](20_FORMAL_REBUILD_CORRECTION_LOG.md) | P0 轮纠错日志：FIX-001（GOReloc 序列串位）与 FIX-002（RTK 高程口径串位）的旧值/新值/证据/波及文件，及本轮全部资产变更清单 | 否 | 是 | 是 | 最高 |
+| 20 | [`20_FORMAL_REBUILD_CORRECTION_LOG.md`](20_FORMAL_REBUILD_CORRECTION_LOG.md) | 纠错日志：FIX-001（GOReloc 序列串位）、FIX-002（RTK 高程口径串位）、CORRECTION-003（短报文"频次无官方数值"被 BDS-ASA-1.0 证伪）的旧值/新值/证据/波及文件，及变更清单 | 否 | 是 | 是 | 最高 |
+| 21 | [`21_BDS_SHORT_MESSAGE_OFFICIAL_STANDARD_PATCH.md`](21_BDS_SHORT_MESSAGE_OFFICIAL_STANDARD_PATCH.md) | 北斗短报文官方证据补丁：应用服务体系 1.0 表5/表6（RSMC 频度 1次/30秒一般、1次/1秒最高）、白皮书规格、GB/T 44087/44086 现行国标核验记录与旧结论修复明细 | 是 | 是 | 是 | 最高 |
 
 ## 补充入口
 
